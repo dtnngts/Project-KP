@@ -26,6 +26,7 @@
 <?= $this->renderSection('myscript'); ?>
 <body>
 <?= $this->renderSection('content'); ?>
+
       <!-- Bootstrap core JavaScript-->
     <script src="assets/sb/vendor/jquery/jquery.min.js"></script>
     <script src="assets/sb/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
