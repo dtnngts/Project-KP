@@ -38,15 +38,19 @@ class Daftar extends Migration
 				'type' => 'VARCHAR',
 				'constraint' => '255',
 			],
+			'kode_kendaraan' => [
+				'type' => 'VARCHAR',
+				'constraint' => '255',
+			],
 			'instruktur' => [
 				'type' => 'VARCHAR',
 				'constraint'     => '255'
 			],
 			'paket' => [
 				'type' => 'VARCHAR',
-				'constraint'     => '255'
+				'constraint'     => '1'
 			],
-            'jam_belajar' => [
+            'jadwal' => [
 				'type' => 'VARCHAR',
 				'constraint'     => '255'
 			],

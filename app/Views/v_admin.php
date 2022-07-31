@@ -41,19 +41,17 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Akun Murid</span>
+                    <span>Data Kursus</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" >Account Baru</a>
-                      
+                        <h6 class="collapse-header">Data Kursus:</h6>
+                        <a class="collapse-item">Siswa Kursus</a>
+                        <a class="collapse-item">Alumni Kursus</a>
                     </div>
                 </div>
             </li>
-
-         
-
+            
             <!-- Divider -->
             <hr class="sidebar-divider">
 
