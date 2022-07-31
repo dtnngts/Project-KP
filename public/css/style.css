@@ -5,22 +5,37 @@
 * ==========================================
 *
 */
+@font-face {
+  font-family: cleanwork;
+  src:url('/css/font/Cleanwork.ttf');
+}
+
+@font-face {
+  font-family: agency;
+  src:url('/css/font/AGENCYR.TTF');
+}
 
 body {
   min-height: 100vh;
-  background: linear-gradient(to right, white, black);
+  background: #484e52;
 }
 
 h2 {
   padding-top:50px;
   text-align:center;
   color: #fff;
+  font-family: cleanwork;
 }
 
 p {
   text-align:center;
   color: #fff;
   font-style: italic;
+  font-family: agency;
+}
+
+.daftar {
+  font-family: agency;
 }
 
 td {
@@ -32,20 +47,46 @@ td {
 }
 
 .card1 {
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   margin-bottom: 30px;
   padding: 20px;
-  /* margin-bottom: 30px;
-  margin-top: 135px; */
-  border-radius: 6px;
+  border-radius: 10px;
   color: rgba(0, 0, 0, .87);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   width: 100%;
 }
 
 img {
   margin-right: 10px;
 }
+
+.alert-box {
+  position: absolute;
+  user-select: none;
+  width: 400px;
+  background: white;
+  padding: 40px;
+  border: 1px solid #b3b3b3;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+}
+
+.btnJadwal:hover {
+  letter-spacing: 0.10em;
+  background: var(--clr);
+  box-shadow: 0 0 35px var(--clr)
+}
+
+/* .jenis_kendaraan {
+  display: flex;
+  justify-content: center;
+} */
+
+/* input[type="radio"] {
+  display: none;
+} */
 
 /* .form-control:not(select) {
   padding: 1.5rem 0.5rem;
@@ -64,7 +105,6 @@ select.form-control {
 .form-control:focus {
   box-shadow: none;
 } */
-
 
 #pkManual
 {
