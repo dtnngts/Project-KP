@@ -9,6 +9,11 @@ class Home extends BaseController
         return view('v_admin');
     }
 
+    public function wellcome()
+    {
+        return view('v_dashboard');
+    }
+
     public function daftar()
     {
         return view('v_daftar');

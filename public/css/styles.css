@@ -1,0 +1,24 @@
+@font-face {
+    font-family: agency;
+    src:url('/css/AGENCYR.TTF');
+  }
+  
+  body {
+    min-height: 120vh;
+    background: #484e52;
+    font-family: agency;
+  }
+
+  html { 
+    background-color: transparent;
+    background: url('assets/images/background.jpg');
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+   }
+    
+   body{
+        
+    background-color: transparent;
+       }
