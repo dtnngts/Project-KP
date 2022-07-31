@@ -7,13 +7,13 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                 <img class="img-profile rounded-circle"
-                             src="/assets/images/logo.jpg" width=50px;>
+                             src="/assets/images/logo.png" width=50px;>
                 </div>
                 <div class="sidebar-brand-text mx-3"> Princess Solution <sup></sup></div>
             </a>
