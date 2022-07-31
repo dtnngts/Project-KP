@@ -39,6 +39,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/daftar', 'DaftarController::daftar');
 $routes->get('/jadwal', 'DaftarController::jadwal');
 $routes->post('/regis', 'DaftarController::regis');
+$routes->get('/siswa', 'AdminController::siswa');
 
 /*
  * --------------------------------------------------------------------

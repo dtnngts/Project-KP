@@ -22,4 +22,11 @@ class DaftarModel extends Model
 		}
 		return $this->where(['no_registrasi' => $no_registrasi])->first();
 	}
+
+    public function search($keyword)
+	{
+		return $this->table('daftar')->like('no_registrasi', $keyword)
+		->orLike('nama', $keyword)->orLike('kode_kendaraan', $keyword)
+        ->orLike('instruktur', $keyword)->orLike('paket', $keyword);
+	}
 }

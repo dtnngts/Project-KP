@@ -5,6 +5,12 @@ use App\Models\DaftarModel;
 
 class DaftarController extends BaseController
 {
+
+    public function __construct()
+	{
+		$this->DaftarModel = new DaftarModel();
+	}
+
     public function daftar()
     {
         return view('v_daftar');
@@ -42,5 +48,20 @@ class DaftarController extends BaseController
             $i++;
         }
         return view('v_jadwal',$data);
+    }
+
+    public function siswa()
+    {
+        $keyword = $this->request->getVar('keyword');
+		if ($keyword) {
+			$siswa = $this->DaftarModel->where('status', 'siswa')->search($keyword);
+		} else {
+			$siswa = $this->DaftarModel;
+		}
+
+        $data = [
+			'siswa' => $siswa->where('status', 'siswa')->findAll(),
+		];
+        return view('data_kursus/v_siswa', $data);
     }
 }
