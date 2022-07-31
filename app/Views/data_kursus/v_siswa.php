@@ -323,7 +323,7 @@
                 <div class="container-fluid">
 
                     <div id="container">
-                        <h1>Siswa Kursus <br></br></h1>
+                        <h1>Alumni Kursus <br></br></h1>
 
                         <div id="body">
                             <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
