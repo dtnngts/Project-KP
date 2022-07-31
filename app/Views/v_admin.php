@@ -1,4 +1,4 @@
-<?= $this->extend('template'); ?>
+<?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
 <body id="page-top">
@@ -90,7 +90,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/jadwal">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Jadwal</span></a>
             </li>
