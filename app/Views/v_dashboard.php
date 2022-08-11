@@ -21,8 +21,7 @@
 </nav>
 <div
   class="p-5 text-center bg-image"
-    style=" background-image: url(/assets/images/bggd.jpeg);
-      height: 700px;"
+    style=" background-image: url(/assets/images/bgg.jpeg);"
 >
 <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
 
@@ -53,6 +52,7 @@
   </a>
 </div>
 </head>
+
 
 <div class="container my-5">
 

@@ -7,11 +7,16 @@
     min-height: 120vh;
     background: #484e52;
     font-family: agency;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
   }
 
   html { 
     background-color: transparent;
-    background: url('assets/images/background.jpg');
+    background: url('assets/images/bgg.jpeg');
      -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
@@ -21,4 +26,9 @@
    body{
         
     background-color: transparent;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
        }
