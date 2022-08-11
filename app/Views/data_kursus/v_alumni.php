@@ -1,4 +1,4 @@
-<?= $this->extend('template'); ?>
+<?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
 <body id="page-top">
@@ -7,13 +7,13 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                 <img class="img-profile rounded-circle"
-                             src="/assets/images/logo.jpg" width=50px;>
+                             src="/assets/images/logo.png" width=50px;>
                 </div>
                 <div class="sidebar-brand-text mx-3"> Princess Solution <sup></sup></div>
             </a>
@@ -46,8 +46,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data Kursus:</h6>
-                        <a class="collapse-item">Siswa Kursus</a>
-                        <a class="collapse-item">Alumni Kursus</a>
+                        <a class="collapse-item" href="/siswa">Siswa Kursus</a>
+                        <a class="collapse-item" href="/alumni">Alumni Kursus</a>
                     </div>
                 </div>
             </li>
@@ -90,7 +90,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/jadwal">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Jadwal</span></a>
             </li>
@@ -128,7 +128,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="keyword" autocomplete="off" placeholder="Search">
                                     <div class="input-group-append">
-                                        <button class="btn btn-info" type="submit" name="submit">
+                                        <button class="btn btn-primary" type="submit" name="submit">
                                             <i class="fas fa-search fa-sm"></i>
                                         </button>
                                     </div>
@@ -323,21 +323,24 @@
                 <div class="container-fluid">
 
                     <div id="container">
-                        <h1>Siswa Kursus <br></br></h1>
+                        <h1>Alumni Kursus <br></br></h1>
 
                         <div id="body">
                             <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
+                            <thead>
                                 <tr>
                                     <td scope="col">No.Registrasi</td>
                                     <td scope="col">Nama</td>
                                     <td scope="col">Kode</td>
                                     <td scope="col">Instruktur</td>
                                     <td scope="col">Paket</td>
-                                    <!-- <td scope="col">Kehadiran</td> -->
+                                    <td scope="col">Kehadiran</td>
                                     <td scope="col">Action</td>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <?php
-                                foreach ($siswa as $row) :
+                                foreach ($alumni as $row) :
                                 ?>
                                     <tr>
                                         <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>
@@ -345,6 +348,7 @@
                                         <td scope="row"><?= $row['kode_kendaraan'] ?></td>
                                         <td scope="row"><?= $row['instruktur'] ?></td>
                                         <td scope="row"><?= $row['paket'] ?></td>
+                                        <td scope="row"><?= $row['kehadiran'] ?></td>
                                         <td scope="row" style="text-align:center">
                                             <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
                                             <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['status'] ?>" method="post" class="d-inline">
@@ -360,6 +364,7 @@
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
+                            </tbody>
                             </table>
                         </div>
                     </div>
@@ -415,6 +420,8 @@
             </div>
         </div>
     </div>
-</body>
 
+   
+
+</body>
 <?php $this->endSection(); ?>

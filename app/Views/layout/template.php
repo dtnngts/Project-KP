@@ -13,6 +13,7 @@
     <title>Princess Solution</title>
 
     <!-- Custom fonts for this template-->
+    <link href="/assets/sb/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/sb/vendor/fontawesome-free/css/AGENCYR.TTF" rel="stylesheet" type="text/css">
     <link
         href="/assets/sb/https://fonts.googleapis.com/css?family=AgencyFB:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -45,6 +46,76 @@
     <script src="assets/sb/js/demo/chart-area-demo.js"></script>
     <script src="assets/sb/js/demo/chart-pie-demo.js"></script>
 
+    <!-- <script>
+        document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+
+        var valueCount
+
+        document.querySelector(".plus-btn").addEventListener("click", function() {
+            valueCount = document.getElementById("absen").value;
+            const minimum = 0;
+            // const maximum = 20;
+            valueCount++;
+
+            document.getElementById('paket').onchange = function() {
+                if (this.value == 'a') {
+                    const maximum = 10;
+                    document.getElementById("absen").value =  valueCount
+
+                    if (valueCount > 0) {
+                        document.querySelector(".minus-btn").removeAttribute("disabled");
+                        document.querySelector(".minus-btn").classList.remove("disabled");
+                    }
+
+                    else if (valueCount == maximum) {
+                        document.querySelector(".plus-btn").setAttribute("disabled", "disabled");
+                    }
+                } else if(this.value == 'b'){
+                    const maximum = 15;
+                    document.getElementById("absen").value =  valueCount
+
+                    if (valueCount > 0) {
+                        document.querySelector(".minus-btn").removeAttribute("disabled");
+                        document.querySelector(".minus-btn").classList.remove("disabled");
+                    }
+
+                    else if (valueCount == maximum) {
+                        document.querySelector(".plus-btn").setAttribute("disabled", "disabled");
+                    }
+                } else {
+                    const maximum = 20;
+                    document.getElementById("absen").value =  valueCount
+
+                    if (valueCount > 0) {
+                        document.querySelector(".minus-btn").removeAttribute("disabled");
+                        document.querySelector(".minus-btn").classList.remove("disabled");
+                    }
+
+                    else if (valueCount == maximum) {
+                        document.querySelector(".plus-btn").setAttribute("disabled", "disabled");
+                    }
+                }
+            }
+
+            if (valueCount > 0) {
+                document.querySelector(".minus-btn").removeAttribute("disabled");
+                document.querySelector(".minus-btn").classList.remove("disabled");
+            }
+        })
+
+        document.querySelector(".minus-btn").addEventListener("click", function() {
+            valueCount = document.getElementById("absen").value;
+
+            valueCount--;
+
+            document.getElementById("absen").value =  valueCount
+            
+            if (valueCount == 0) {
+                document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+            }
+        })
+        
+    </script> -->
 </body>
 
 

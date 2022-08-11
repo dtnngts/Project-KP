@@ -8,6 +8,7 @@ class DaftarController extends BaseController
 
     public function __construct()
 	{
+        
 		$this->DaftarModel = new DaftarModel();
 	}
 
@@ -29,6 +30,7 @@ class DaftarController extends BaseController
 			'instruktur' => $this->request->getVar('instruktur'),
 			'paket' => $this->request->getVar('paket'),
 			'jadwal' => implode('; ', $this->request->getVar('jadwal')), 
+            // 'jadwal' => $this->request->getVar('jadwal'),
 			'status' => $this->request->getVar('status'),
 		];
 
@@ -48,20 +50,5 @@ class DaftarController extends BaseController
             $i++;
         }
         return view('v_jadwal',$data);
-    }
-
-    public function siswa()
-    {
-        $keyword = $this->request->getVar('keyword');
-		if ($keyword) {
-			$siswa = $this->DaftarModel->where('status', 'siswa')->search($keyword);
-		} else {
-			$siswa = $this->DaftarModel;
-		}
-
-        $data = [
-			'siswa' => $siswa->where('status', 'siswa')->findAll(),
-		];
-        return view('data_kursus/v_siswa', $data);
     }
 }

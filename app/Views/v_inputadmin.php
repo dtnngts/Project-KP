@@ -323,61 +323,62 @@
                 <div class="container-fluid">
 
                     <div id="container">
-                        <h1>Siswa Kursus <br></br></h1>
+                        <h1>Tambah Data Admin<br></br></h1>
 
                         <div id="body">
-                            <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
-                            <thead>
+                        <form action="/storeadmin" method="post">
+                            <table border="0" cellpadding="12" cellspacing="5">
                                 <tr>
-                                    <td scope="col">No.Registrasi</td>
-                                    <td scope="col">Nama</td>
-                                    <td scope="col">Kode</td>
-                                    <td scope="col">Instruktur</td>
-                                    <td scope="col">Paket</td>
-                                    <td scope="col">Kehadiran</td>
-                                    <td scope="col">Action</td>
+                                    <td>Username</td>
+                                    <td class="col-sm-6"><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="username" autocomplete="off" required></td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($siswa as $row) :
-                                ?>
-                                    <tr>
-                                        <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>
-                                        <td scope="row"><?= ucwords($row['nama']) ?></td>
-                                        <td scope="row"><?= $row['kode_kendaraan'] ?></td>
-                                        <td scope="row"><?= $row['instruktur'] ?></td>
-                                        <td scope="row"><?= $row['paket'] ?></td>
-                                        <td scope="row"><?= $row['kehadiran'] ?></td>
-                                        <td scope="row" style="text-align:center">
-                                            <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
-                                            <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['status'] ?>" method="post" class="d-inline">
-                                                <?= csrf_field(); ?>
-                                                <input type="hidden" name="_method" value="Delete">
-                                                <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
-                                            </form>
-                                            <?php if ($row['status'] == 2) : ?>
-                                                <a href="<?= base_url("cetak/" . $row['no_registrasi']) ?>" class="btn btn-warning" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Cetak</a>
-                                            <?php else : ?>
-                                                <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Cetak</button>
-                                            <?php endif ?>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
+                                <tr>
+                                    <td>Password</td>
+                                    <td class="col-sm-6"><input type="password" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="password" autocomplete="off" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Nama</td>
+                                    <td class="col-sm-6"><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="nama" autocomplete="off" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Role</td>
+                                    <td class="col-sm-6">
+                                        <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="admin" id="admin" required>
+                                            <option selected="true" value="" disabled selected>Pilih...</option>
+                                            <option value="AdminModel" id="Admin">Admin</option>
+                                            <option value="SuperModel" id="Super">Super Admin</option>
+                                            <option value="ValidatorModel" id="Validator">Validator</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <input type="hidden" name="role" id="role" value="">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input class="btn btn-info btn-md" style="float:right" type="submit" value="          Save          "></td>
+                                </tr>
                             </table>
+                        </form>
                         </div>
                     </div>
                 </div>
                 <!-- /.container-fluid -->
+
+                <script>
+                    document.getElementById('admin').onchange = function() {
+                        if (this.value == 'AdminModel') {
+                            document.getElementById('role').value = "Admin";
+                        } 
+                        else if (this.value == 'SuperModel') {
+                            document.getElementById('role').value = "Super";
+                        }
+                        else {
+                            document.getElementById('role').value = "Validator";
+                        }
+                    }
+                </script>
             </div>
-            
-            <script src="<?= base_url('vendor/simple-datatables/simple-datatables.js') ?>"></script>
-            <script>
-                // Simple Datatable
-                let table1 = document.querySelector('#table1');
-                let dataTable = new simpleDatatables.DataTable(table1);
-            </script>
             <!-- End of Main Content -->
 
             <!-- Footer -->
@@ -420,8 +421,6 @@
             </div>
         </div>
     </div>
-
-   
-
 </body>
+
 <?php $this->endSection(); ?>

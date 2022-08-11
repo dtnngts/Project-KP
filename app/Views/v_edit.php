@@ -323,49 +323,78 @@
                 <div class="container-fluid">
 
                     <div id="container">
-                        <h1>Siswa Kursus <br></br></h1>
+                        <h1>Edit Data <br></br></h1>
 
                         <div id="body">
-                            <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
-                            <thead>
+                        <form action="/update/<?= $row['no_registrasi'] ?>/<?= $row['status'] ?>" method="post">
+                            <table border="0" cellpadding="12" cellspacing="5">
                                 <tr>
-                                    <td scope="col">No.Registrasi</td>
-                                    <td scope="col">Nama</td>
-                                    <td scope="col">Kode</td>
-                                    <td scope="col">Instruktur</td>
-                                    <td scope="col">Paket</td>
-                                    <td scope="col">Kehadiran</td>
-                                    <td scope="col">Action</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($siswa as $row) :
-                                ?>
-                                    <tr>
-                                        <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>
-                                        <td scope="row"><?= ucwords($row['nama']) ?></td>
-                                        <td scope="row"><?= $row['kode_kendaraan'] ?></td>
-                                        <td scope="row"><?= $row['instruktur'] ?></td>
-                                        <td scope="row"><?= $row['paket'] ?></td>
-                                        <td scope="row"><?= $row['kehadiran'] ?></td>
-                                        <td scope="row" style="text-align:center">
-                                            <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
-                                            <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['status'] ?>" method="post" class="d-inline">
-                                                <?= csrf_field(); ?>
-                                                <input type="hidden" name="_method" value="Delete">
-                                                <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
-                                            </form>
-                                            <?php if ($row['status'] == 2) : ?>
-                                                <a href="<?= base_url("cetak/" . $row['no_registrasi']) ?>" class="btn btn-warning" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Cetak</a>
+                                <td rowspan="3">Kehadiran<br>
+                                        <div class="absen">
+                                            <!-- <button class="btn minus-btn disabled" type="button">-</button> -->
+                                            <?php if ($row['paket'] == 'a') : ?>
+                                                <input type="number" name="kehadiran" id="absen" value="0" max="10" min="0">
+                                            <?php elseif ($row['paket'] == 'b') : ?>
+                                                <input type="number" name="kehadiran" id="absen" value="0" max="15" min="0">
                                             <?php else : ?>
-                                                <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Cetak</button>
+                                                <input type="number" name="kehadiran" id="absen" value="0" max="20" min="0">
                                             <?php endif ?>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
+                                            <!-- <button class="btn plus-btn" type="button">+</button> -->
+                                        </div>
+                                    </td>
+                                    <td>No.Registrasi</td>
+                                    <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" value="<?php echo strtoupper($row['no_registrasi']) ?>" disabled></td>
+                                    <td><input type="hidden" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="no_registrasi" value="<?php echo $row['no_registrasi'] ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td>Nama</td>
+                                    <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="nama" autocomplete="off" required value="<?php echo $row['nama'] ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td>Tempat, Tanggal Lahir</td>
+                                    <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="ttl" autocomplete="off" required value="<?php echo $row['ttl'] ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Pekerjaan</td>
+                                    <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="pekerjaan" autocomplete="off" required value="<?php echo $row['pekerjaan'] ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Alamat</td>
+                                    <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="alamat" autocomplete="off" required value="<?php echo $row['alamat'] ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Telpon</td>
+                                    <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="telpon" autocomplete="off" required value="<?php echo $row['telpon'] ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Paket</td>
+                                    <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="paket" autocomplete="off" required value="<?php echo $row['paket'] ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Status</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="status" id="status" required>
+                                                <option selected="true" disabled="disabled">Status</option>
+                                                <option value="siswa">Siswa</option>
+                                                <option value="alumni">Alumni</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input class="btn btn-primary btn-md" style="float:right" type="submit" value="          Save          "></td>
+                                </tr>
                             </table>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -420,8 +449,6 @@
             </div>
         </div>
     </div>
-
-   
-
 </body>
+
 <?php $this->endSection(); ?>

@@ -120,23 +120,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-                    <!-- Topbar Search -->
-                    <div class="col-4">
-                        <ul class="navbar-nav ml-auto">
-                            <form action="" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-5 my-md-0 mw-100 navbar-search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" name="keyword" autocomplete="off" placeholder="Search">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="submit" name="submit">
-                                            <i class="fas fa-search fa-sm"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </ul>
-                    </div>
-
+                    
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -323,61 +307,116 @@
                 <div class="container-fluid">
 
                     <div id="container">
-                        <h1>Siswa Kursus <br></br></h1>
+                        <h1>Data Admin <br></br></h1>
 
                         <div id="body">
-                            <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
-                            <thead>
-                                <tr>
-                                    <td scope="col">No.Registrasi</td>
-                                    <td scope="col">Nama</td>
-                                    <td scope="col">Kode</td>
-                                    <td scope="col">Instruktur</td>
-                                    <td scope="col">Paket</td>
-                                    <td scope="col">Kehadiran</td>
-                                    <td scope="col">Action</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($siswa as $row) :
-                                ?>
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-admin" role="tab">Admin</a>
+                                <a class="nav-item nav-link" id="nav-profil-tab" data-toggle="tab" href="#nav-super" role="tab">Super Admin</a>
+                                <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-validator" role="tab">Validator Admin</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-admin" role="tabpanel">
+                                <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
+                                <thead>
                                     <tr>
-                                        <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>
-                                        <td scope="row"><?= ucwords($row['nama']) ?></td>
-                                        <td scope="row"><?= $row['kode_kendaraan'] ?></td>
-                                        <td scope="row"><?= $row['instruktur'] ?></td>
-                                        <td scope="row"><?= $row['paket'] ?></td>
-                                        <td scope="row"><?= $row['kehadiran'] ?></td>
-                                        <td scope="row" style="text-align:center">
-                                            <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
-                                            <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['status'] ?>" method="post" class="d-inline">
-                                                <?= csrf_field(); ?>
-                                                <input type="hidden" name="_method" value="Delete">
-                                                <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
-                                            </form>
-                                            <?php if ($row['status'] == 2) : ?>
-                                                <a href="<?= base_url("cetak/" . $row['no_registrasi']) ?>" class="btn btn-warning" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Cetak</a>
-                                            <?php else : ?>
-                                                <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Cetak</button>
-                                            <?php endif ?>
-                                        </td>
+                                        <td scope="col">Username</td>
+                                        <td scope="col">Password</td>
+                                        <td scope="col">Nama</td>
+                                        <td scope="col">Action</td>
                                     </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                            </table>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($admin as $row) :
+                                    ?>
+                                        <tr>
+                                            <td scope="row"><?= $row['username'] ?></td>
+                                            <td scope="row"><?= $row['password'] ?></td>
+                                            <td scope="row"><?= $row['nama'] ?></td>
+                                            <td scope="row" style="text-align:center">
+                                                <a href="<?= base_url("edit/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
+                                                <form action="delete/<?= $row['id'] ?>" method="post" class="d-inline">
+                                                    <?= csrf_field(); ?>
+                                                    <input type="hidden" name="_method" value="Delete">
+                                                    <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="nav-super" role="tabpanel">
+                            <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
+                                <thead>
+                                    <tr>
+                                        <td scope="col">Username</td>
+                                        <td scope="col">Password</td>
+                                        <td scope="col">Nama</td>
+                                        <td scope="col">Action</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($super as $row) :
+                                    ?>
+                                        <tr>
+                                            <td scope="row"><?= $row['username'] ?></td>
+                                            <td scope="row"><?= $row['password'] ?></td>
+                                            <td scope="row"><?= $row['nama'] ?></td>
+                                            <td scope="row" style="text-align:center">
+                                                <a href="<?= base_url("edit/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
+                                                <form action="delete/<?= $row['id'] ?>" method="post" class="d-inline">
+                                                    <?= csrf_field(); ?>
+                                                    <input type="hidden" name="_method" value="Delete">
+                                                    <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="nav-validator" role="tabpanel">
+                            <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
+                                <thead>
+                                    <tr>
+                                        <td scope="col">Username</td>
+                                        <td scope="col">Password</td>
+                                        <td scope="col">Nama</td>
+                                        <td scope="col">Action</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($validator as $row) :
+                                    ?>
+                                        <tr>
+                                            <td scope="row"><?= $row['username'] ?></td>
+                                            <td scope="row"><?= $row['password'] ?></td>
+                                            <td scope="row"><?= $row['nama'] ?></td>
+                                            <td scope="row" style="text-align:center">
+                                                <a href="<?= base_url("edit/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
+                                                <form action="delete/<?= $row['id'] ?>" method="post" class="d-inline">
+                                                    <?= csrf_field(); ?>
+                                                    <input type="hidden" name="_method" value="Delete">
+                                                    <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
                 <!-- /.container-fluid -->
             </div>
-            
-            <script src="<?= base_url('vendor/simple-datatables/simple-datatables.js') ?>"></script>
-            <script>
-                // Simple Datatable
-                let table1 = document.querySelector('#table1');
-                let dataTable = new simpleDatatables.DataTable(table1);
-            </script>
             <!-- End of Main Content -->
 
             <!-- Footer -->

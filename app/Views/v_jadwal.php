@@ -328,21 +328,22 @@
 		function pilihSatu (event){
 			var nilai = event.value;
 			nilai = nilai.split(" ")
-			var hari = nilai[0]
 			var jam = nilai[1]
 			var cekbokses = document.querySelectorAll('input[type=checkbox]');
+            var result = cekbokses.map((c)=>{
+                if(c.checked && !c.disabled){
+                    return c.value
+                }
+            }).filter((c)=>{return c.includes(jam)})
 			for(var cekboks of cekbokses){
-				var val = cekboks.value
-				if(cekboks != event){
-					if(val.includes(hari) || !val.includes(jam)){
-						if(event.checked){
-							cekboks.setAttribute('disabled',true);
-						}else{
-							cekboks.removeAttribute("disabled");
-							jadwalOrang()
-						}
-					}
-				}
+                var val = cekboks.value
+                if(event.checked){
+                    if(cekboks != event && !val.includes(jam)){
+                        cekboks.setAttribute('disabled',true);
+                    }
+				}else if(result.length > 1){
+                    cekboks.removeAttribute("disabled");
+                }
 			}
 		}
 		window.addEventListener('load',()=>{
