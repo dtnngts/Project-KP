@@ -5,6 +5,13 @@ use App\Models\DaftarModel;
 
 class DaftarController extends BaseController
 {
+
+    public function __construct()
+	{
+        
+		$this->DaftarModel = new DaftarModel();
+	}
+
     public function daftar()
     {
         return view('v_daftar');
@@ -23,6 +30,7 @@ class DaftarController extends BaseController
 			'instruktur' => $this->request->getVar('instruktur'),
 			'paket' => $this->request->getVar('paket'),
 			'jadwal' => implode('; ', $this->request->getVar('jadwal')), 
+            // 'jadwal' => $this->request->getVar('jadwal'),
 			'status' => $this->request->getVar('status'),
 		];
 

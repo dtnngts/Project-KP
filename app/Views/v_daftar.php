@@ -18,7 +18,7 @@
 						<td colspan="2">NEW AVANZA BIRU</td>
 					</tr>
 					<tr>
-						<td><img src="assets/images/hendri.png" style="width:180px;"></td>
+						<td><img src="assets/images/hendri.png" style="width:220px;"></td>
 						<td>Instruktur : Agus Hendri</td>
 					</tr>
 					<tr>
@@ -34,7 +34,7 @@
 						<td colspan="2">NEW AVANZA SILVER</td>
 					</tr>
 					<tr>
-						<td><img src="assets/images/suhadi.png" style="width:210px;"></td>
+						<td><img src="assets/images/suhadi.png" style="width:220px;"></td>
 						<td>Instruktur : Suhadi</td>
 					</tr>
 					<tr>
@@ -50,7 +50,7 @@
 						<td colspan="2">ALL NEW AVANZA</td>
 					</tr>
 					<tr>
-						<td><img src="assets/images/yono.png" style="width:180px;"></td>
+						<td><img src="assets/images/yono.png" style="width:220px;"></td>
 						<td>Instruktur : Sumaryono</td>
 					</tr>
 					<tr>
@@ -169,12 +169,12 @@
 				</div>
 			</div>
 			<div class="form-group form-input">
-				<input type="text" name="jadwal" id="jadwal" value="" required/>
+				<input type="text" name="jadwal" id="jadwal" value=""/>
 				<label for="jadwal" class="form-label">Jadwal</label>
 			</div>
 			<div class="form-group">
 				<div class="select-list">
-					<select name="status" id="status" required>
+					<select name="status" id="status" for="status" required>
 						<option value="">Status</option>
 						<option value="siswa">Siswa</option>
 						<option value="alumni">Alumni</option>
