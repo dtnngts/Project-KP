@@ -21,8 +21,7 @@
 </nav>
 <div
   class="p-5 text-center bg-image"
-    style=" background-image: url(/assets/images/bggd.jpeg);
-      height: 700px;"
+    style=" background-image: url(/assets/images/bgg.jpeg);"
 >
 <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
 
@@ -37,10 +36,10 @@
       <img class="d-block w-100" src="/assets/images/MobilBanyak.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Second slide">
+      <img class="d-block w-100" src="/assets/images/MobilBanyak.png" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
+      <img class="d-block w-100" src="/assets/images/MobilBanyak.png" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -54,7 +53,234 @@
 </div>
 </head>
 
-<div class="container my-5">
+
+
+<!-- Carousel wrapper -->
+<div id="carouselMulti" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+  <!-- Controls -->
+  <a class="carousel-control-prev" href="#carouselMulti" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselMulti" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  
+  <!-- Inner -->
+  <div class="carousel-inner py-4">
+    <!-- Single item -->
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Anna Deynah</h5>
+            <p>UX Designer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id
+              officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">John Doe</h5>
+            <p>Web Developer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+              suscipit laboriosam, nisi ut aliquid commodi.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li>
+                <i class="fas fa-star-half-alt fa-sm"></i>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Maria Kate</h5>
+            <p>Photographer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+              praesentium voluptatum deleniti atque corrupti.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="far fa-star fa-sm"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(3).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">John Doe</h5>
+            <p>UX Designer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id
+              officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Alex Rey</h5>
+            <p>Web Developer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+              suscipit laboriosam, nisi ut aliquid commodi.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li>
+                <i class="fas fa-star-half-alt fa-sm"></i>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(5).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Maria Kate</h5>
+            <p>Photographer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+              praesentium voluptatum deleniti atque corrupti.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="far fa-star fa-sm"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(6).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Anna Deynah</h5>
+            <p>UX Designer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id
+              officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(8).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">John Doe</h5>
+            <p>Web Developer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+              suscipit laboriosam, nisi ut aliquid commodi.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li>
+                <i class="fas fa-star-half-alt fa-sm"></i>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <img class="rounded-circle shadow-1-strong mb-4"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(7).webp" alt="avatar"
+              style="width: 150px;" />
+            <h5 class="mb-3">Maria Kate</h5>
+            <p>Photographer</p>
+            <p class="text-muted">
+              <i class="fas fa-quote-left pe-2"></i>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+              praesentium voluptatum deleniti atque corrupti.
+            </p>
+            <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="fas fa-star fa-sm"></i></li>
+              <li><i class="far fa-star fa-sm"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Inner -->
+</div>
+<!-- Carousel wrapper -->
+
+<div class="container-fluid">
 
   <footer class="text-white text-center text-lg-start bg-dark">
     <!-- Grid container -->
@@ -70,7 +296,7 @@
           </p>
 
           <p>
-             No.06, Jl.Jenderal Ahmad Yani, Gotong Royong, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35119.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
           </p>
 
           
@@ -93,7 +319,7 @@
          
           <ul class="fa-ul" style="margin-left: 1.65em;">
             <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Warsaw, 00-967, Poland</span>
+              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">No.06, Jl.Jenderal Ahmad Yani, Gotong Royong, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35119.</span>
             </li>
             <li class="mb-3">
               <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">contact@example.com</span>

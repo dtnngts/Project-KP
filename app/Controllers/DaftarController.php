@@ -14,7 +14,7 @@ class DaftarController extends BaseController
 
     public function daftar()
     {
-        return view('v_daftar');
+        return view('users/v_daftar');
     }
 
     public function regis()
