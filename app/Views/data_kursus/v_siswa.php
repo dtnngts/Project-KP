@@ -325,6 +325,10 @@
                     <div id="container">
                         <h1>Siswa Kursus <br></br></h1>
 
+                        <div class="col-md">
+                            <a href="/download" class="btn btn-outline-primary shadow float-right"><i class="fa fa-file-excel"></i> Excel</a>
+                        </div>
+
                         <div id="body">
                             <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
                             <thead>
@@ -334,6 +338,7 @@
                                     <td scope="col">Kode</td>
                                     <td scope="col">Instruktur</td>
                                     <td scope="col">Paket</td>
+                                    <td scope="col">Telpon</td>
                                     <td scope="col">Kehadiran</td>
                                     <td scope="col">Action</td>
                                 </tr>
@@ -348,6 +353,7 @@
                                         <td scope="row"><?= $row['kode_kendaraan'] ?></td>
                                         <td scope="row"><?= $row['instruktur'] ?></td>
                                         <td scope="row"><?= $row['paket'] ?></td>
+                                        <td scope="row"><?= $row['telpon'] ?></td>
                                         <td scope="row"><?= $row['kehadiran'] ?></td>
                                         <td scope="row" style="text-align:center">
                                             <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
@@ -362,6 +368,7 @@
                                                 <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Cetak</button>
                                             <?php endif ?>
                                         </td>
+                                        <td><a href="https://kirimwa.id/<?=$row['telpon'] ?>" target="_blank"><i class="fa fa-user"></i></a></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

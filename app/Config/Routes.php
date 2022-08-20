@@ -35,7 +35,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/admin', 'Home::admin');
+$routes->get('/admin', 'AdminController::admin');
 $routes->get('/wellcome', 'Home::wellcome');
 $routes->get('/daftar', 'DaftarController::daftar');
 $routes->get('/jadwal', 'DaftarController::jadwal');
@@ -47,9 +47,11 @@ $routes->post('/update/(:any)/(:any)', 'AdminController::update/$1/$2');
 $routes->delete('/delete/(:any)/(:any)', 'AdminController::delete/$1/$2');
 $routes->get('/login', 'LoginController::login');
 $routes->post('/login_action', 'LoginController::login_action');
+$routes->get('/logout', 'LoginController::logout');
 $routes->post('/storeadmin', 'AdminController::store');
 $routes->get('/inputadmin', 'AdminController::create');
 $routes->get('/lihatadmin', 'AdminController::lihatadmin');
+$routes->get('/download', 'AdminController::excel');
 
 
 /*

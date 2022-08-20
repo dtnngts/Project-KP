@@ -169,4 +169,25 @@ class AdminController extends BaseController
 		];
 		return view('v_lihatadmin', $data);
     }
+
+	public function excel () 
+	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
+        $keyword = $this->request->getVar('keyword');
+		if ($keyword) {
+			$siswa = $this->DaftarModel->where('status', 'siswa')->search($keyword);
+		} else {
+			$siswa = $this->DaftarModel;
+		}
+
+        $data = [
+			'siswa' => $siswa->where('status', 'siswa')->findAll(),
+		];
+        
+        return view('data_kursus/excel_siswa', $data);
+	}
 }

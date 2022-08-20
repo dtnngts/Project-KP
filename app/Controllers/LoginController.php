@@ -8,10 +8,10 @@ class LoginController extends BaseController
 
 	public function login()
 	{
-		if (session()->get('username') == '') {
-			return redirect()->to(base_url('/login'));
+		if (!session()->get('username') == '') {
+			return redirect()->to(base_url('/admin'));
 		}
-		return view('v_login');
+        echo view('v_login');
 	}
 
 	public function login_action()

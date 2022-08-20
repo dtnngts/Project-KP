@@ -44,6 +44,9 @@
     <script src="assets/sb/js/demo/chart-area-demo.js"></script>
     <script src="assets/sb/js/demo/chart-pie-demo.js"></script>
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'></script>
+
     <script>
         $('#pkManual').hide();
         $('#pkMatic').hide();

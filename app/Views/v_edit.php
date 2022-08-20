@@ -333,11 +333,11 @@
                                         <div class="absen">
                                             <!-- <button class="btn minus-btn disabled" type="button">-</button> -->
                                             <?php if ($row['paket'] == 'a') : ?>
-                                                <input type="number" name="kehadiran" id="absen" value="0" max="10" min="0">
+                                                <input type="number" name="kehadiran" id="absen" value="<?= $row['kehadiran'] ?>" max="10" min="0">
                                             <?php elseif ($row['paket'] == 'b') : ?>
-                                                <input type="number" name="kehadiran" id="absen" value="0" max="15" min="0">
+                                                <input type="number" name="kehadiran" id="absen" value="<?= $row['kehadiran'] ?>" max="15" min="0">
                                             <?php else : ?>
-                                                <input type="number" name="kehadiran" id="absen" value="0" max="20" min="0">
+                                                <input type="number" name="kehadiran" id="absen" value="<?= $row['kehadiran'] ?>" max="20" min="0">
                                             <?php endif ?>
                                             <!-- <button class="btn plus-btn" type="button">+</button> -->
                                         </div>

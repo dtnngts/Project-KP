@@ -334,6 +334,7 @@
                                     <td scope="col">Kode</td>
                                     <td scope="col">Instruktur</td>
                                     <td scope="col">Paket</td>
+                                    <td scope="col">Telpon</td>
                                     <td scope="col">Kehadiran</td>
                                     <td scope="col">Action</td>
                                 </tr>
@@ -348,6 +349,7 @@
                                         <td scope="row"><?= $row['kode_kendaraan'] ?></td>
                                         <td scope="row"><?= $row['instruktur'] ?></td>
                                         <td scope="row"><?= $row['paket'] ?></td>
+                                        <td scope="row"><?= $row['telpon'] ?></td>
                                         <td scope="row"><?= $row['kehadiran'] ?></td>
                                         <td scope="row" style="text-align:center">
                                             <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
