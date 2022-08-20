@@ -53,7 +53,7 @@ class AdminController extends BaseController
 			'siswa' => $siswa->where('status', 'siswa')->findAll(),
 		];
         
-        return view('data_kursus/v_siswa', $data);
+        return view('admin/data_kursus/v_siswa', $data);
     }
 
 	public function alumni()
