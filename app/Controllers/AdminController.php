@@ -88,7 +88,7 @@ class AdminController extends BaseController
 			'row' => $this->DaftarModel->getDaftar($no_registrasi),
 		];
 
-		return view("v_edit", $data);
+		return view("admin/v_edit", $data);
 	}
 
 	public function update($no_registrasi, $status)
@@ -188,6 +188,6 @@ class AdminController extends BaseController
 			'siswa' => $siswa->where('status', 'siswa')->findAll(),
 		];
         
-        return view('data_kursus/excel_siswa', $data);
+        return view('admin/data_kursus/excel_siswa', $data);
 	}
 }

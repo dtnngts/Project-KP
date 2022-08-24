@@ -39,14 +39,14 @@ class LoginController extends BaseController
 				'username' => $username,
 			];
 			session()->set($login);
-			return redirect()->to(base_url('super'));
+			return redirect()->to(base_url('/super'));
 		} 
 		else if($cekvalidator != null) {
 			$login = [
 				'username' => $username,
 			];
 			session()->set($login);
-			return redirect()->to(base_url('entryvalid'));
+			return redirect()->to(base_url('/entryvalid'));
 		}
 		else {
 			session()->setFlashdata('gagal', 'Username/Password salah');
@@ -58,24 +58,6 @@ class LoginController extends BaseController
 	{
 		session()->destroy();
 		return redirect()->to(base_url('/login'));
-	}
-
-	public function create()
-	{
-		$AdminModel = new AdminModel();
-		$ValidatorModel = new ValidatorModel();
-		if (session()->get('username') == '') {
-			session()->setFlashdata('gagal', 'Anda belum login');
-			return redirect()->to(base_url('/login'));
-		}
-
-		$data = [
-			'title' => "Input Admin",
-			'vaksinasi' => $AdminModel->findAll(),
-			'vaksin' => $ValidatorModel->findAll(),
-			'nama' => session()->get('username')
-		];
-		return view('v_inputadmin', $data);
 	}
 
 	public function store() {

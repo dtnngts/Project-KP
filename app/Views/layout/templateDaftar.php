@@ -50,6 +50,11 @@
     <script>
         $('#pkManual').hide();
         $('#pkMatic').hide();
+        $('#detailsnab').hide();
+        $('#detailsnas').hide();
+        $('#detailsavnew').hide();
+        $('#detailsgmb').hide();
+        $('#detailsgmm').hide();
 
         $('#btnManual').click(function() {
             $('#pkManual').toggle();
@@ -60,14 +65,6 @@
             $('#pkMatic').toggle();
             $('#pkManual').hide();
         });
-    </script>
-
-    <script>
-        $('#detailsnab').hide();
-        $('#detailsnas').hide();
-        $('#detailsavnew').hide();
-        $('#detailsgmb').hide();
-        $('#detailsgmm').hide();
 
         $('#nab').click(function() {
             $('#detailsnab').toggle();
@@ -111,6 +108,4 @@
     </script>
 
 </body>
-
-
 </html>
