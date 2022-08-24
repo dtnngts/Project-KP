@@ -25,4 +25,12 @@ class DaftarModel extends Model
 		->orLike('nama', $keyword)->orLike('kode_kendaraan', $keyword)
         ->orLike('instruktur', $keyword)->orLike('paket', $keyword);
 	}
+
+	public function getInstruktur($instruktur = false)
+	{
+		if ($instruktur == false) {
+			return $this->findAll();
+		}
+		return $this->where('instruktur', $instruktur)->find();
+	}
 }

@@ -20,8 +20,9 @@ body {
   background: #484e52;
 }
 
-h2 {
+h5 {
   padding-top:50px;
+  padding-left: 45px;
   text-align:center;
   color: #fff;
   font-family: cleanwork;
@@ -29,6 +30,7 @@ h2 {
 
 p {
   text-align:center;
+  padding-left: 45px;
   color: #fff;
   font-style: italic;
   font-family: agency;
@@ -40,13 +42,22 @@ p {
 
 td {
   padding: 10px;
-  color: black;
+  color: white;
+  text-align: center;
+  font-style: bold;
+  font-size: large;
+}
+
+th {
+  padding: 10px;
+  color: white;
   text-align: center;
   font-style: bold;
   font-size: large;
 }
 
 .card1 {
+  margin-top: 50px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   margin-bottom: 30px;
   padding: 20px;
@@ -59,8 +70,23 @@ td {
   width: 100%;
 }
 
+nav li {
+  display: inline;
+  list-style-type: none;
+  margin: 5px;
+  color: white;
+  font-weight: 100 bold;
+  font-family: agency;
+}
+
+.li1 {
+  float: left;
+  font-family: cleanwork;
+}
+
 img {
   margin-right: 10px;
+  max-width: 500px;
 }
 
 .alert-box {
@@ -77,6 +103,16 @@ img {
   letter-spacing: 0.10em;
   background: var(--clr);
   box-shadow: 0 0 35px var(--clr)
+}
+
+.btnPilih:hover {
+  letter-spacing: 0.10em;
+  background: var(--clr);
+  box-shadow: 0 0 35px var(--clr)
+}
+
+a {
+  color: black;
 }
 
 /* .jenis_kendaraan {
@@ -106,14 +142,28 @@ select.form-control {
   box-shadow: none;
 } */
 
+.jenis_kendaraan {
+  padding-left: 45px;
+  padding-top: 20px;
+  font-family: agency;
+}
+
+.btn-lg {
+  margin-right: 20px;
+}
+
 #pkManual
 {
+  padding-left: 35px;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
 }
 
 #pkMatic
 {
+  padding-left: 35px;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
 }

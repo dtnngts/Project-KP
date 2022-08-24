@@ -4,235 +4,124 @@
 
 <form action="/regis" method="post">
 
-	<table id="jadwal">
-		<tr>
-			<th>Jam/Hari</th>
-			<th>Senin</th>
-			<th>Selasa</th>
-			<th>Rabu</th>
-			<th>Kamis</th>
-			<th>Jum'at</th>
-			<th>Sabtu</th>
-		</tr>
-
-		<tr>
-			<td>08.00-09.00</td>
-			<td><label><input type="checkbox" id="0" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 08.00-09.00"></label></td>
-			<td><label><input type="checkbox" id="1" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 08.00-09.00"></label></td>
-			<td><label><input type="checkbox" id="2" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 08.00-09.00"></label></td>
-			<td><label><input type="checkbox" id="3" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 08.00-09.00"></label></td>
-			<td><label><input type="checkbox" id="4" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 08.00-09.00"></label></td>
-			<td><label><input type="checkbox" id="5" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 08.00-09.00"></label></td>
-		</tr>
-
-		<tr>
-			<td>09.00-10.00</td>
-			<td><label><input type="checkbox" id="6" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 09.00-10.00"></label></td>
-			<td><label><input type="checkbox" id="7" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 09.00-10.00"></label></td>
-			<td><label><input type="checkbox" id="8" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 09.00-10.00"></label></td>
-			<td><label><input type="checkbox" id="9" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 09.00-10.00"></label></td>
-			<td><label><input type="checkbox" id="10" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 09.00-10.00"></label></td>
-			<td><label><input type="checkbox" id="11" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 09.00-10.00"></label></td>
-		</tr>
-
-		<tr>
-			<td>10.00-11.00</td>
-			<td><label><input type="checkbox" id="12" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 10.00-11.00"></label></td>
-			<td><label><input type="checkbox" id="13" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 10.00-11.00"></label></td>
-			<td><label><input type="checkbox" id="14" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 10.00-11.00"></label></td>
-			<td><label><input type="checkbox" id="15" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 10.00-11.00"></label></td>
-			<td><label><input type="checkbox" id="16" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 10.00-11.00"></label></td>
-			<td><label><input type="checkbox" id="17" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 10.00-11.00"></label></td>
-		</tr>
-
-		<tr>
-			<td>11.00-12.00</td>
-			<td><label><input type="checkbox" id="18" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 11.00-12.00"></label></td>
-			<td><label><input type="checkbox" id="19" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 11.00-12.00"></label></td>
-			<td><label><input type="checkbox" id="20" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 11.00-12.00"></label></td>
-			<td><label><input type="checkbox" id="21" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 11.00-12.00"></label></td>
-			<td><label><input type="checkbox" id="22" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 11.00-12.00"></label></td>
-			<td><label><input type="checkbox" id="23" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 11.00-12.00"></label></td>
-		</tr>
-
-		<tr>
-			<td>12.00-13.00</td>
-			<td><label><input type="checkbox" id="24" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 12.00-13.00"></label></td>
-			<td><label><input type="checkbox" id="25" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 12.00-13.00"></label></td>
-			<td><label><input type="checkbox" id="26" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 12.00-13.00"></label></td>
-			<td><label><input type="checkbox" id="27" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 12.00-13.00"></label></td>
-			<td><label><input type="checkbox" id="28" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 12.00-13.00"></label></td>
-			<td><label><input type="checkbox" id="29" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 12.00-13.00"></label></td>
-		</tr>
-
-		<tr>
-			<td>13.00-14.00</td>
-			<td><label><input type="checkbox" id="30" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 13.00-14.00"></label></td>
-			<td><label><input type="checkbox" id="31" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 13.00-14.00"></label></td>
-			<td><label><input type="checkbox" id="32" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 13.00-14.00"></label></td>
-			<td><label><input type="checkbox" id="33" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 13.00-14.00"></label></td>
-			<td><label><input type="checkbox" id="34" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 13.00-14.00"></label></td>
-			<td><label><input type="checkbox" id="35" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 13.00-14.00"></label></td>
-		</tr>
-
-		<tr>
-			<td>14.00-15.00</td>
-			<td><label><input type="checkbox" id="36" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 14.00-15.00"></label></td>
-			<td><label><input type="checkbox" id="37" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 14.00-15.00"></label></td>
-			<td><label><input type="checkbox" id="38" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 14.00-15.00"></label></td>
-			<td><label><input type="checkbox" id="39" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 14.00-15.00"></label></td>
-			<td><label><input type="checkbox" id="40" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 14.00-15.00"></label></td>
-			<td><label><input type="checkbox" id="41" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 14.00-15.00"></label></td>
-		</tr>
-
-		<tr>
-			<td>15.00-16.00</td>
-			<td><label><input type="checkbox" id="42" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 15.00-16.00"></label></td>
-			<td><label><input type="checkbox" id="43" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 15.00-16.00"></label></td>
-			<td><label><input type="checkbox" id="44" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 15.00-16.00"></label></td>
-			<td><label><input type="checkbox" id="45" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 15.00-16.00"></label></td>
-			<td><label><input type="checkbox" id="46" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 15.00-16.00"></label></td>
-			<td><label><input type="checkbox" id="47" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 15.00-16.00"></label></td>
-		</tr>
-
-		<tr>
-			<td>16.00-17.00</td>
-			<td><label><input type="checkbox" id="48" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 16.00-17.00"></label></td>
-			<td><label><input type="checkbox" id="49" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 16.00-17.00"></label></td>
-			<td><label><input type="checkbox" id="50" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 16.00-17.00"></label></td>
-			<td><label><input type="checkbox" id="51" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 16.00-17.00"></label></td>
-			<td><label><input type="checkbox" id="52" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 16.00-17.00"></label></td>
-			<td><label><input type="checkbox" id="53" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 16.00-17.00"></label></td>
-		</tr>
-	</table>
-	<div id="detailsnab" style="display:none">
-		<input type="hidden" name="instruktur" value="Hendri">
-		<img src="assets/images/coba.png" class="card-img-top">
-		<table border=0>
+	<center>
+		<table id="jadwal">
 			<tr>
-				<td colspan="2">NEW AVANZA BIRU</td>
+				<th>Jam/Hari</th>
+				<th>Senin</th>
+				<th>Selasa</th>
+				<th>Rabu</th>
+				<th>Kamis</th>
+				<th>Jum'at</th>
+				<th>Sabtu</th>
 			</tr>
+
 			<tr>
-				<td><img src="assets/images/hendri.png" style="width:180px;"></td>
-				<td>Instruktur : Agus Hendri</td>
+				<td>08.00-09.00</td>
+				<td><label><input type="checkbox" id="0" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 08.00-09.00"></label></td>
+				<td><label><input type="checkbox" id="1" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 08.00-09.00"></label></td>
+				<td><label><input type="checkbox" id="2" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 08.00-09.00"></label></td>
+				<td><label><input type="checkbox" id="3" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 08.00-09.00"></label></td>
+				<td><label><input type="checkbox" id="4" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 08.00-09.00"></label></td>
+				<td><label><input type="checkbox" id="5" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 08.00-09.00"></label></td>
 			</tr>
+
 			<tr>
-				<td colspan="2"><button class="btn btn-primary">Lihat Jadwal Tersedia</button></td>
+				<td>09.00-10.00</td>
+				<td><label><input type="checkbox" id="6" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 09.00-10.00"></label></td>
+				<td><label><input type="checkbox" id="7" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 09.00-10.00"></label></td>
+				<td><label><input type="checkbox" id="8" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 09.00-10.00"></label></td>
+				<td><label><input type="checkbox" id="9" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 09.00-10.00"></label></td>
+				<td><label><input type="checkbox" id="10" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 09.00-10.00"></label></td>
+				<td><label><input type="checkbox" id="11" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 09.00-10.00"></label></td>
+			</tr>
+
+			<tr>
+				<td>10.00-11.00</td>
+				<td><label><input type="checkbox" id="12" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 10.00-11.00"></label></td>
+				<td><label><input type="checkbox" id="13" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 10.00-11.00"></label></td>
+				<td><label><input type="checkbox" id="14" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 10.00-11.00"></label></td>
+				<td><label><input type="checkbox" id="15" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 10.00-11.00"></label></td>
+				<td><label><input type="checkbox" id="16" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 10.00-11.00"></label></td>
+				<td><label><input type="checkbox" id="17" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 10.00-11.00"></label></td>
+			</tr>
+
+			<tr>
+				<td>11.00-12.00</td>
+				<td><label><input type="checkbox" id="18" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 11.00-12.00"></label></td>
+				<td><label><input type="checkbox" id="19" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 11.00-12.00"></label></td>
+				<td><label><input type="checkbox" id="20" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 11.00-12.00"></label></td>
+				<td><label><input type="checkbox" id="21" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 11.00-12.00"></label></td>
+				<td><label><input type="checkbox" id="22" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 11.00-12.00"></label></td>
+				<td><label><input type="checkbox" id="23" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 11.00-12.00"></label></td>
+			</tr>
+
+			<tr>
+				<td>12.00-13.00</td>
+				<td><label><input type="checkbox" id="24" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 12.00-13.00"></label></td>
+				<td><label><input type="checkbox" id="25" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 12.00-13.00"></label></td>
+				<td><label><input type="checkbox" id="26" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 12.00-13.00"></label></td>
+				<td><label><input type="checkbox" id="27" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 12.00-13.00"></label></td>
+				<td><label><input type="checkbox" id="28" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 12.00-13.00"></label></td>
+				<td><label><input type="checkbox" id="29" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 12.00-13.00"></label></td>
+			</tr>
+
+			<tr>
+				<td>13.00-14.00</td>
+				<td><label><input type="checkbox" id="30" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 13.00-14.00"></label></td>
+				<td><label><input type="checkbox" id="31" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 13.00-14.00"></label></td>
+				<td><label><input type="checkbox" id="32" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 13.00-14.00"></label></td>
+				<td><label><input type="checkbox" id="33" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 13.00-14.00"></label></td>
+				<td><label><input type="checkbox" id="34" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 13.00-14.00"></label></td>
+				<td><label><input type="checkbox" id="35" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 13.00-14.00"></label></td>
+			</tr>
+
+			<tr>
+				<td>14.00-15.00</td>
+				<td><label><input type="checkbox" id="36" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 14.00-15.00"></label></td>
+				<td><label><input type="checkbox" id="37" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 14.00-15.00"></label></td>
+				<td><label><input type="checkbox" id="38" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 14.00-15.00"></label></td>
+				<td><label><input type="checkbox" id="39" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 14.00-15.00"></label></td>
+				<td><label><input type="checkbox" id="40" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 14.00-15.00"></label></td>
+				<td><label><input type="checkbox" id="41" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 14.00-15.00"></label></td>
+			</tr>
+
+			<tr>
+				<td>15.00-16.00</td>
+				<td><label><input type="checkbox" id="42" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 15.00-16.00"></label></td>
+				<td><label><input type="checkbox" id="43" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 15.00-16.00"></label></td>
+				<td><label><input type="checkbox" id="44" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 15.00-16.00"></label></td>
+				<td><label><input type="checkbox" id="45" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 15.00-16.00"></label></td>
+				<td><label><input type="checkbox" id="46" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 15.00-16.00"></label></td>
+				<td><label><input type="checkbox" id="47" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 15.00-16.00"></label></td>
+			</tr>
+
+			<tr>
+				<td>16.00-17.00</td>
+				<td><label><input type="checkbox" id="48" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 16.00-17.00"></label></td>
+				<td><label><input type="checkbox" id="49" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 16.00-17.00"></label></td>
+				<td><label><input type="checkbox" id="50" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 16.00-17.00"></label></td>
+				<td><label><input type="checkbox" id="51" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 16.00-17.00"></label></td>
+				<td><label><input type="checkbox" id="52" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 16.00-17.00"></label></td>
+				<td><label><input type="checkbox" id="53" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 16.00-17.00"></label></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><button type="button" class="btnPilih" id="btnPilih" style="--clr:#c5c9d3" disabled="">Pilih Jadwal</button></td>
 			</tr>
 		</table>
-	</div>
-	<div id="detailsnas" style="display:none">
-		<input type="hidden" name="instruktur" value="Suhadi">
-		<img src="assets/images/coba.png" class="card-img-top">
-		<table border=0>
-			<tr>
-				<td colspan="2">NEW AVANZA SILVER</td>
-			</tr>
-			<tr>
-				<td><img src="assets/images/suhadi.png" style="width:210px;"></td>
-				<td>Instruktur : Suhadi</td>
-			</tr>
-			<tr>
-				<td colspan="2"><button class="btn btn-primary">Lihat Jadwal Tersedia</button></td>
-			</tr>
-		</table>
-	</div>
-	<div id="detailsavnew" style="display:none">
-		<input type="hidden" name="instruktur" value="Yono">
-		<img src="assets/images/coba.png" class="card-img-top">
-		<table border=0>
-			<tr>
-				<td colspan="2">ALL NEW AVANZA</td>
-			</tr>
-			<tr>
-				<td><img src="assets/images/yono.png" style="width:180px;"></td>
-				<td>Instruktur : Sumaryono</td>
-			</tr>
-			<tr>
-				<td colspan="2"><button class="btn btn-primary">Lihat Jadwal Tersedia</button></td>
-			</tr>
-		</table>
-	</div>
-	<div id="detailsgmb" style="display:none">
-		<input type="hidden" name="instruktur" value="Suhadi/Yono">
-		<img src="assets/images/coba.png" class="card-img-top">
-		<table border=0>
-			<tr>
-				<td colspan="5">GRAND MATIC BIRU</td>
-			</tr>
-			<tr>
-				<td><img src="assets/images/suhadi.png" style="width:180px;"></td>
-				<td>Instruktur : Suhadi</td>
-			</tr>
-			<tr>
-				<td colspan="2">atau</td>
-			</tr>
-			<tr>
-				<td><img src="assets/images/yono.png" style="width:180px;"></td>
-				<td>Instruktur : Sumaryono</td>
-			</tr>
-			<tr>
-				<td colspan="2"><button class="btn btn-primary">Lihat Jadwal Tersedia</button></td>
-			</tr>
-		</table>
-	</div>
-	<div id="detailsgmm" style="display:none">
-		<input type="hidden" name="instruktur" value="Eko">
-		<img src="assets/images/coba.png" class="card-img-top">
-		<table border=0>
-			<tr>
-				<td colspan="2">GRAND MATIC MERAH</td>
-			</tr>
-			<tr>
-				<td><img src="assets/images/eko.png" style="width:220px;"></td>
-				<td>Instruktur : Eko Disyanto</td>
-			</tr>
-			<tr>
-				<td colspan="2"><button class="btn btn-primary">Lihat Jadwal Tersedia</button></td>
-			</tr>
-		</table>
-	</div>
-	</div>
+	</center>
 
-	<div class="col-md-7 col-lg-6 ml-auto">
+	<div class="container" id="formDaDir">
 		<div class="card1">
-			<div>
-				<center>
-					<div class="btn btn-outline-info btn-lg">
-						<input type="radio" name="jenis_kendaraan" value="Manual" id="btnManual">
-						<label for="manual">Manual</label>
-					</div>
-					<div class="btn btn-outline-info btn-lg">
-						<input type="radio" name="jenis_kendaraan" value="Matic" id="btnMatic">
-						<label for="matic">Matic</label>
-					</div>
-				</center>
-			</div>
-			<div id="pkManual" style="display:none">
-				<div id="nab" class="card">
-					<input type="hidden" name="kode_kendaraan" value="nab">
-					<img src="assets/images/coba.png" class="card-img-top">
-				</div>
-				<div id="nas" class="card">
-					<input type="hidden" name="kode_kendaraan" value="nas">
-					<img src="assets/images/coba.png" class="card-img-top">
-				</div>
-				<div id="avnew" class="card">
-					<input type="hidden" name="kode_kendaraan" value="avnew">
-					<img src="assets/images/coba.png" class="card-img-top">
-				</div>
-			</div>
-			<div id="pkMatic" style="display:none">
-				<div id="gmb" class="card">
-					<input type="hidden" name="kode_kendaraan" value="gmb">
-					<img src="assets/images/coba.png" class="card-img-top">
-				</div>
-				<div id="gmm" class="card">
-					<input type="hidden" name="kode_kendaraan" value="gmm">
-					<img src="assets/images/coba.png" class="card-img-top">
-				</div>
-			</div>
-
+			<p>Silahkan lanjut mengisi data diri Anda</p>
 			<div class="form-group">
 				<label for="nama">Nama</label>
 				<input required type="text" class="form-control" name="nama" id="nama">
@@ -248,6 +137,10 @@
 			<div class="form-group">
 				<label for="alamat">Alamat</label>
 				<input required type="text" class="form-control" name="alamat" id="alamat">
+			</div>
+			<div class="form-group">
+				<label for="kode_kendaraan">Kode Kendaraan</label>
+				<input required type="text" class="form-control" name="kode_kendaraan" id="kode_kendaraan" value="" disabled>
 			</div>
 			<div class="form-group">
 				<label for="telpon">Telpon</label>
@@ -306,6 +199,8 @@
 				</div>
 			</div>
 			<input type="submit" class="btn btn-primary" value="Daftar" name="submit" id="submit">
+		</div>
+	</div>
 </form>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
@@ -339,6 +234,7 @@
 			if (event.checked) {
 				if (cekboks != event && !val.includes(jam)) {
 					cekboks.setAttribute('disabled', true);
+					$("button[id=btnPilih]").prop("disabled", false);
 				}
 			} else {
 				for (var cek of cekbokses){
@@ -346,6 +242,7 @@
 					if(cval.includes(jam) && cek.checked && !cek.disabled){
 						var Stop = true;
 					}
+					$("button[id=btnPilih]").prop("disabled", true);
 				}
 				if(!Stop){
 					cekboks.removeAttribute("disabled");
@@ -363,6 +260,26 @@
 	$(document).ready(function() {
 		$('#telpon').inputmask("(9999-9999-9999)||(9999-9999-99999)");
 	});
+
+	window.addEventListener('load',()=>{
+		document.getElementById('kode_kendaraan').value = localStorage.getItem('kode_kendaraan');
+	});
+
+	$('#formDaDir').hide();
+
+	$('#btnPilih').click(function() {
+		$('#formDaDir').toggle();
+	});
+
+	// $("input[type=checkbox]").on( "change", function(evt) {
+	// var jadwal = $('input[name=jadwal]:checked');
+	// 	if(jadwal.length == 0){
+	// 		$("button[id=btnPilih]").prop("disabled", false);
+	// 	}else{
+	// 		$("button[id=btnPilih]").prop("disabled", true);
+	// 	}
+	// });
+
 </script>
 
 <?php $this->endSection(); ?>

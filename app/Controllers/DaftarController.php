@@ -51,4 +51,29 @@ class DaftarController extends BaseController
         }
         return view('v_jadwal',$data);
     }
+
+    public function instruktur($ins = false){
+        $daftar_model = new DaftarModel();
+        if($ins == false){
+            $data['daftar'] = $daftar_model->findAll();
+         
+            $i=0;
+            foreach($data['daftar'] as $dt){
+                $data['jadwal_orang'][$i] = $dt['jadwal'];
+                $i++;
+            }
+            return view('v_jadwal',$data);
+        }
+        else{
+            $data['daftar'] = $daftar_model->getInstruktur($ins);
+         
+            $i=0;
+            foreach($data['daftar'] as $dt){
+                $data['jadwal_orang'][$i] = $dt['jadwal'];
+                $i++;
+            }
+            return view('v_jadwal',$data);
+
+        }
+    }
 }
