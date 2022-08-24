@@ -32,7 +32,7 @@ class AdminController extends BaseController
 			'alumni' => $DaftarModel->where('status', 'alumni')->findAll(),
 			'nama' => session()->get('username')
 		];
-		return view('v_admin', $data);
+		return view('admin/v_admin', $data);
 	}
 
     public function siswa()
@@ -74,7 +74,7 @@ class AdminController extends BaseController
 			'alumni' => $alumni->where('status', 'alumni')->findAll(),
 		];
         
-        return view('data_kursus/v_alumni', $data);
+        return view('admin/data_kursus/v_alumni', $data);
     }
 
 	public function edit($no_registrasi)
@@ -133,7 +133,7 @@ class AdminController extends BaseController
 			'validator' => $ValidatorModel->findAll(),
 			'nama' => session()->get('username')
 		];
-		return view('v_inputadmin', $data);
+		return view('admin/v_inputadmin', $data);
 	}
 
 	public function store() {
@@ -147,7 +147,7 @@ class AdminController extends BaseController
 
 		model($data['admin'])->insert($data);
 
-		return redirect()->to(base_url('/inputadmin'));
+		return redirect()->to(base_url('admin/inputadmin'));
 	}
 
 	public function lihatadmin()
@@ -167,7 +167,7 @@ class AdminController extends BaseController
 			'validator' => $ValidatorModel->findAll(),
 			'nama' => session()->get('username')
 		];
-		return view('v_lihatadmin', $data);
+		return view('admin/v_lihatadmin', $data);
     }
 
 	public function excel () 
