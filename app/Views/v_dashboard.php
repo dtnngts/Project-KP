@@ -14,7 +14,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/wellcome">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="/daftar">Daftar</a>
-      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link" href="#">Harga</a>
       <a class="nav-item nav-link disabled" href="#">Disabled</a>
     </div>
   </div>

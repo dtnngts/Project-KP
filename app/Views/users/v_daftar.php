@@ -21,6 +21,8 @@
 				</ul>
 			</nav>
 		</div>
+		
+
 
 		<!-- <img src="assets/images/logo.png" style="width: 230px; float: right;" id="logo"> -->
 		<h5>Pendaftaran Kursus Mengemudi Mobil</h5>
