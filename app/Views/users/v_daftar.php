@@ -14,10 +14,10 @@
 		<div>
 			<nav>
 				<ul style="margin: 30px 0px 0px 100px;">
-					<li>Dashboard</li>
+					<li><a href="<?= base_url('/')?>">Dashboard</li></a> 
 					<li>Daftar</li>
 					<li>Pricing</li>
-					<li>Login</li>
+					<li><a href="<?= base_url('/login')?>">Login</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -29,11 +29,11 @@
 			<div class="daftar">
 				<div class="jenis_kendaraan">
 					<div class="btn btn-outline-info btn-lg">
-						<button style="border: none; background-color: Transparent; color: white;" name="jenis_kendaraan" id="btnManual" value="Manual">
+						<button onclick="klikjenis(this)" style="border: none; background-color: Transparent; color: white;" id="btnManual" value="Manual">
 						<label for="manual">Manual</label>
 					</div>
 					<div class="btn btn-outline-info btn-lg">
-						<button style="border: none; background-color: Transparent; color: white;" name="jenis_kendaraan" id="btnMatic" value="Matic">
+						<button onclick="klikjenis(this)" style="border: none; background-color: Transparent; color: white;" id="btnMatic" value="Matic">
 						<label for="matic">Matic</label>
 					</div>
 				</div>
@@ -77,7 +77,7 @@
 							<td>Instruktur : Agus Hendri</td>
 						</tr>
 						<tr>
-							<td colspan="2"><button class="btnJadwal" style="--clr:#c5c9d3"><a href="/jadwal/Hendri">Lihat Jadwal Tersedia</a></button></td>
+							<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Hendri"><a href="/jadwal/Hendri">Lihat Jadwal Tersedia</a></button></td>
 						</tr>
 					</table>
 				</div>
@@ -93,7 +93,7 @@
 							<td>Instruktur : Suhadi</td>
 						</tr>
 						<tr>
-							<td colspan="2"><button class="btnJadwal" style="--clr:#c5c9d3"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
+							<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
 						</tr>
 					</table>
 				</div>
@@ -109,7 +109,7 @@
 							<td>Instruktur : Sumaryono</td>
 						</tr>
 						<tr>
-							<td colspan="2"><button class="btnJadwal" style="--clr:#c5c9d3"><a href="/jadwal/Yono">Lihat Jadwal Tersedia</a></button></td>
+							<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Yono"><a href="/jadwal/Yono">Lihat Jadwal Tersedia</a></button></td>
 						</tr>
 					</table>
 				</div>
@@ -129,10 +129,10 @@
 							<td data-nama = 'instruktur'>Instruktur : Sumaryono</td>
 						</tr>
 						<tr>
-							<td colspan="2"><button class="btnJadwal" style="--clr:#c5c9d3"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
+							<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
 							<td></td>
 							<td></td>
-							<td colspan="2"><button class="btnJadwal" style="--clr:#c5c9d3"><a href="/jadwal/Yono">Lihat Jadwal Tersedia</a></button></td>
+							<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Yono"><a href="/jadwal/Yono">Lihat Jadwal Tersedia</a></button></td>
 						</tr>
 					</table>
 				</div>
@@ -148,7 +148,7 @@
 							<td data-nama = 'instruktur'>Instruktur : Eko Disyanto</td>
 						</tr>
 						<tr>
-							<td colspan="2"><button class="btnJadwal" style="--clr:#c5c9d3"><a href="/jadwal/Eko">Lihat Jadwal Tersedia</a></button></td>
+							<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Eko"><a href="/jadwal/Eko">Lihat Jadwal Tersedia</a></button></td>
 						</tr>
 					</table>
 				</div>
@@ -165,8 +165,16 @@
 		})
 	}
 
+	function klikjenis(obj){
+		localStorage.setItem("jenis_kendaraan",obj.value);
+	}
+
 	function klikmobil(obj){
 		localStorage.setItem("kode_kendaraan",obj.value);
+	}
+
+	function klikins(obj){
+		localStorage.setItem("instruktur",obj.value);
 	}
 
 </script>

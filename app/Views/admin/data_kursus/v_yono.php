@@ -323,11 +323,7 @@
                 <div class="container-fluid">
 
                     <div id="container">
-                        <h1>Siswa Kursus <br></br></h1>
-
-                        <div class="col-md">
-                            <a href="/download" class="btn btn-outline-primary shadow float-right"><i class="fa fa-file-excel"></i> Excel</a>
-                        </div>
+                        <h1>Siswa Yono <br></br></h1>
 
                         <div id="body">
                             <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
@@ -345,7 +341,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                foreach ($siswa as $row) :
+                                foreach ($yono as $row) :
                                 ?>
                                     <tr>
                                         <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>
@@ -368,7 +364,6 @@
                                                 <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Cetak</button>
                                             <?php endif ?>
                                         </td>
-                                        <td><a href="https://kirimwa.id/<?=$row['telpon'] ?>" target="_blank"><i class="fa fa-user"></i></a></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -427,5 +422,8 @@
             </div>
         </div>
     </div>
+
+   
+
 </body>
 <?php $this->endSection(); ?>

@@ -17,30 +17,11 @@ class DaftarController extends BaseController
         return view('users/v_daftar');
     }
 
-    public function regis()
-    {
-        $data = [
-			'nama' => $this->request->getVar('nama'),
-			'ttl' => $this->request->getVar('ttl'),
-			'pekerjaan' => $this->request->getVar('pekerjaan'),
-			'alamat' => $this->request->getVar('alamat'),
-			'telpon' => $this->request->getVar('telpon'),
-			'jenis_kendaraan' => $this->request->getVar('jenis_kendaraan'),
-			'kode_kendaraan' => $this->request->getVar('kode_kendaraan'),
-			'instruktur' => $this->request->getVar('instruktur'),
-			'paket' => $this->request->getVar('paket'),
-			'jadwal' => implode('; ', $this->request->getVar('jadwal')), 
-            // 'jadwal' => $this->request->getVar('jadwal'),
-			'status' => $this->request->getVar('status'),
-		];
-
-        $DaftarModel = model("DaftarModel");
-		$DaftarModel->insert($data);
-
-        return redirect()->to(base_url('/daftar'));
-    }
-
     public function jadwal(){
+        $data = [
+            'validation' => \Config\Services::validation()
+        ];
+
         $daftar_model = new DaftarModel();
         $data['daftar'] = $daftar_model->findAll();
      
@@ -53,6 +34,10 @@ class DaftarController extends BaseController
     }
 
     public function instruktur($ins = false){
+        $data = [
+            'validation' => \Config\Services::validation()
+        ];
+
         $daftar_model = new DaftarModel();
         if($ins == false){
             $data['daftar'] = $daftar_model->findAll();
@@ -75,5 +60,36 @@ class DaftarController extends BaseController
             return view('v_jadwal',$data);
 
         }
+    }
+
+    public function regis()
+    {
+        if(!$this->validate([
+            'nama' => [
+                'rules' => 'required',
+                'errors' => '{field} harus diisi'
+            ]
+        ])) {
+            return redirect()->to(base_url().'/jadwal')->withInput();
+        }
+        $data = [
+			'nama' => $this->request->getVar('nama'),
+			'ttl' => $this->request->getVar('ttl'),
+			'pekerjaan' => $this->request->getVar('pekerjaan'),
+			'alamat' => $this->request->getVar('alamat'),
+			'telpon' => $this->request->getVar('telpon'),
+			'jenis_kendaraan' => $this->request->getVar('jenis_kendaraan'),
+			'kode_kendaraan' => $this->request->getVar('kode_kendaraan'),
+			'instruktur' => $this->request->getVar('instruktur'),
+			'paket' => $this->request->getVar('paket'),
+			'jadwal' => implode('; ', $this->request->getVar('jadwal')), 
+            // 'jadwal' => $this->request->getVar('jadwal'),
+			'status' => $this->request->getVar('status'),
+		];
+
+        $DaftarModel = model("DaftarModel");
+		$DaftarModel->insert($data);
+
+        return redirect()->to(base_url('/jadwal'));
     }
 }

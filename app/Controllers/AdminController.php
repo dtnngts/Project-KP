@@ -28,14 +28,18 @@ class AdminController extends BaseController
 		$DaftarModel = model("DaftarModel");
 		$data = [
 			'title' => "Home",
-			'siswa' => $DaftarModel->where('status', 'siswa')->findAll(),
-			'alumni' => $DaftarModel->where('status', 'alumni')->findAll(),
+			'hendri' => $DaftarModel->where('instruktur', 'Hendri')->findAll(),
+			'suhadi' => $DaftarModel->where('instruktur', 'Suhadi')->findAll(),
+			'yono' => $DaftarModel->where('instruktur', 'Yono')->findAll(),
+			'eko' => $DaftarModel->where('instruktur', 'Eko')->findAll(),
+			// 'siswa' => $DaftarModel->where('status', 'siswa')->findAll(),
+			// 'alumni' => $DaftarModel->where('status', 'alumni')->findAll(),
 			'nama' => session()->get('username')
 		];
 		return view('admin/v_admin', $data);
 	}
 
-    public function siswa()
+    public function hendri()
     {
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
@@ -44,19 +48,19 @@ class AdminController extends BaseController
 
         $keyword = $this->request->getVar('keyword');
 		if ($keyword) {
-			$siswa = $this->DaftarModel->where('status', 'siswa')->search($keyword);
+			$hendri = $this->DaftarModel->where('instruktur', 'Hendri')->search($keyword);
 		} else {
-			$siswa = $this->DaftarModel;
+			$hendri = $this->DaftarModel;
 		}
 
         $data = [
-			'siswa' => $siswa->where('status', 'siswa')->findAll(),
+			'hendri' => $hendri->where('instruktur', 'hendri')->findAll(),
 		];
         
-        return view('admin/data_kursus/v_siswa', $data);
+        return view('admin/data_kursus/v_hendri', $data);
     }
 
-	public function alumni()
+	public function suhadi()
     {
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
@@ -65,16 +69,58 @@ class AdminController extends BaseController
 		
         $keyword = $this->request->getVar('keyword');
 		if ($keyword) {
-			$alumni = $this->DaftarModel->where('status', 'alumni')->search($keyword);
+			$suhadi = $this->DaftarModel->where('instruktur', 'Suhadi')->search($keyword);
 		} else {
-			$alumni = $this->DaftarModel;
+			$suhadi = $this->DaftarModel;
 		}
 
         $data = [
-			'alumni' => $alumni->where('status', 'alumni')->findAll(),
+			'suhadi' => $suhadi->where('instruktur', 'Suhadi')->findAll(),
 		];
         
-        return view('admin/data_kursus/v_alumni', $data);
+        return view('admin/data_kursus/v_suhadi', $data);
+    }
+
+	public function yono()
+    {
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+		
+        $keyword = $this->request->getVar('keyword');
+		if ($keyword) {
+			$yono = $this->DaftarModel->where('instruktur', 'Yono')->search($keyword);
+		} else {
+			$yono = $this->DaftarModel;
+		}
+
+        $data = [
+			'yono' => $yono->where('instruktur', 'Yono')->findAll(),
+		];
+        
+        return view('admin/data_kursus/v_yono', $data);
+    }
+
+	public function eko()
+    {
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+		
+        $keyword = $this->request->getVar('keyword');
+		if ($keyword) {
+			$eko = $this->DaftarModel->where('instruktur', 'Eko')->search($keyword);
+		} else {
+			$eko = $this->DaftarModel;
+		}
+
+        $data = [
+			'eko' => $eko->where('instruktur', 'Eko')->findAll(),
+		];
+        
+        return view('admin/data_kursus/v_eko', $data);
     }
 
 	public function edit($no_registrasi)
