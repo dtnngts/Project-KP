@@ -159,71 +159,115 @@
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                     </div>
                         
-                        <div class="row">
-                            <?php
-                            $count1 = 0;
-                            $count2 = 0;
-                           
+                    <div class="row">
+                        <?php
+                        $count1 = 0;
+                        $count2 = 0;
+                        $count3 = 0;
+                        $count4 = 0;
 
-                            foreach ($siswa as $i => $data['siswa']) :
-                                $count1++;
-                            endforeach;
-                            foreach ($alumni as $i => $data['alumni']) :
-                                $count2++;
-                            endforeach;
-                            
-                            ?>
+                        foreach ($hendri as $i => $data['Hendri']) :
+                            $count1++;
+                        endforeach;
+                        foreach ($suhadi as $i => $data['Suhadi']) :
+                            $count2++;
+                        endforeach;
+                        foreach ($yono as $i => $data['Yono']) :
+                            $count3++;
+                        endforeach;
+                        foreach ($eko as $i => $data['Eko']) :
+                            $count4++;
+                        endforeach;
+                        
+                        ?>
 
-                          
+                        
 
-                            <!-- Pending Requests Card Example -->
-                            <div class="col-xl-3 col-md-6 mb-4">
-                                    <a href="siswa">
-                                        <div class="card border-left-danger shadow h-100 py-2">
-                                            <div class="card-body">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                                            Data Murid</div>
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                            <?= $count1 ?>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fa fa-users" style="font-size:48px"></i>
-                                                    </div>
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="<?= base_url('/hendri') ?>">
+                                <div class="card border-left-danger shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                                    Hendri</div>
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                    <?= $count1 ?>
                                                 </div>
                                             </div>
+                                            <div class="col-auto">
+                                                <i class="fa fa-users" style="font-size:48px"></i>
+                                            </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
-                            
-                            <div class="col-xl-3 col-md-6 mb-4">
-                                    <a href="alumni">
-                                        <div class="card border-left-success shadow h-100 py-2">
-                                            <div class="card-body">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                            Data Alumni</div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                            <?= $count2 ?>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fa fa-user" style="font-size:48px"></i>
-                                                    </div>
+                            </a>
+                        </div>
+                        
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="<?= base_url('/suhadi') ?>">
+                                <div class="card border-left-success shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                    Suhadi</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <?= $count2 ?>
                                                 </div>
                                             </div>
+                                            <div class="col-auto">
+                                                <i class="fa fa-users" style="font-size:48px"></i>
+                                            </div>
                                         </div>
-                                    </a>
-                            </div>                 
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-                        <div class="col-lg-6 mb-2">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="<?= base_url('/yono') ?>">
+                                <div class="card border-left-info shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                    Yono</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <?= $count3 ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fa fa-users" style="font-size:48px"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="<?= base_url('/eko') ?>">
+                                <div class="card border-left-warning shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                    Eko</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <?= $count4 ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fa fa-users" style="font-size:48px"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    
-
                 </div>
                 <!-- /.container-fluid -->
 
