@@ -32,12 +32,34 @@ class AdminController extends BaseController
 			'suhadi' => $DaftarModel->where('instruktur', 'Suhadi')->findAll(),
 			'yono' => $DaftarModel->where('instruktur', 'Yono')->findAll(),
 			'eko' => $DaftarModel->where('instruktur', 'Eko')->findAll(),
-			// 'siswa' => $DaftarModel->where('status', 'siswa')->findAll(),
+			'allMem' => $DaftarModel->findAll(),
 			// 'alumni' => $DaftarModel->where('status', 'alumni')->findAll(),
 			'nama' => session()->get('username')
 		];
 		return view('admin/v_admin', $data);
 	}
+
+	public function allMem()
+    {
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
+        $keyword = $this->request->getVar('keyword');
+		if ($keyword) {
+			$allMem = $this->DaftarModel->search($keyword);
+		} else {
+			$allMem = $this->DaftarModel;
+		}
+		
+
+        $data = [
+			'allMem' => $allMem->findAll(),
+		];
+        
+        return view('admin/data_kursus/v_allMem', $data);
+    }
 
     public function hendri()
     {
@@ -137,7 +159,7 @@ class AdminController extends BaseController
 		return view("admin/v_edit", $data);
 	}
 
-	public function update($no_registrasi, $status)
+	public function update($no_registrasi, $instruktur)
 	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
@@ -148,10 +170,10 @@ class AdminController extends BaseController
 		$data = $this->request->getPost();
 		$DaftarModel->update($no_registrasi, $data);
 
-		return redirect()->to(base_url($status));
+		return redirect()->to(base_url($instruktur));
 	}
 
-	public function delete($no_registrasi, $status)
+	public function delete($no_registrasi, $instruktur)
 	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
@@ -160,7 +182,7 @@ class AdminController extends BaseController
 
 		$row = new DaftarModel();
 		$row->where(['no_registrasi' => $no_registrasi])->delete();
-		return redirect()->to(base_url($status));
+		return redirect()->to(base_url($instruktur));
 	}
 
 	public function create() {

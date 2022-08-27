@@ -323,7 +323,7 @@
                 <div class="container-fluid">
 
                     <div id="container">
-                        <h1>Siswa Yono <br></br></h1>
+                        <h1>Data Seluruh Siswa <br></br></h1>
 
                         <div id="body">
                             <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
@@ -341,7 +341,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                foreach ($yono as $row) :
+                                foreach ($allMem as $row) :
                                 ?>
                                     <tr>
                                         <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>

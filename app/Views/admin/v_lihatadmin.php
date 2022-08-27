@@ -305,8 +305,6 @@
             </div>
         </div>
     </div>
-
-   
-
+    
 </body>
 <?php $this->endSection(); ?>

@@ -40,7 +40,10 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Data Kursus:</h6>
+                        <h6 class="collapse-header">Data Keseluruhan:</h6>
+                        <a class="collapse-item" href="/seluruhsiswa">Data Seluruh Siswa</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Data per Instruktur:</h6>
                         <a class="collapse-item" href="/hendri">Siswa Hendri</a>
                         <a class="collapse-item" href="/suhadi">Siswa Suhadi</a>
                         <a class="collapse-item" href="/yono">Siswa Yono</a>
@@ -67,8 +70,6 @@
                     </div>
                 </div>
             </li>
-
-            
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
