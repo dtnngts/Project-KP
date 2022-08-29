@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 
-<form action="/regis" method="post" enctype="multipart/form-data">
+<form action="/regis" method="post" enctype="multipart/form-data" onsubmit="validasi()">
 	<?= csrf_field(); ?>
 
 	<center>
@@ -115,53 +115,84 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td><button type="button" class="btnPilih" id="btnPilih" style="--clr:#c5c9d3" disabled="">Pilih Jadwal</button></td>
+				<td><button type="button" class="btnPilih" id="btnPilih" style="--clr:#c5c9d3">Pilih Jadwal</button></td>
 			</tr>
 		</table>
 	</center>
+
+<script type="text/javascript">
+	function validasi() {
+		var nama = document.getElementById("nama").value;
+		var ttl = document.getElementById("ttl").value;
+		var pekerjaan = document.getElementById("pekerjaan").value;
+		var alamat = document.getElementById("alamat").value;
+		var jenis_kendaraan = document.getElementById("jenis_kendaraan").value;
+		var kode_kendaraan = document.getElementById("kode_kendaraan").value;
+		var instruktur = document.getElementById("instruktur").value;
+		var telpon = document.getElementById("telpon").value;
+		var paket = document.getElementById("paket").value;
+		if (nama != "" && ttl!="" && pekerjaan !="" && alamat !="" && jenis_kendaraan !="" && kode_kendaraan !="" && instruktur !="" && telpon !="" && paket !="") {
+			return true;
+		}else{
+			alert('Isi data diri Anda dengan lengkap !');
+		}
+	}
+</script>
 
 	<div class="container" id="formDaDir">
 		<div class="card1">
 			<p>Silahkan lanjut mengisi data diri Anda</p>
 			<div class="form-group">
 				<label for="nama">Nama</label>
-				<input type="text" name="nama" id="nama" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>">
-				<div class="invalid-feedback">
-					<?= $validation->getError('nama'); ?>
-				</div>
+				<input type="text" class="form-control" name="nama" id="nama">
 			</div>
 			<div class="form-group">
 				<label for="ttl">Tempat Tanggal Lahir</label>
-				<input required type="text" class="form-control" name="ttl" id="ttl">
+				<input type="text" class="form-control" name="ttl" id="ttl">
 			</div>
 			<div class="form-group">
 				<label for="pekerjaan">Pekerjaan</label>
-				<input required type="text" class="form-control" name="pekerjaan" id="pekerjaan">
+				<input type="text" class="form-control" name="pekerjaan" id="pekerjaan">
 			</div>
 			<div class="form-group">
 				<label for="alamat">Alamat</label>
-				<input required type="text" class="form-control" name="alamat" id="alamat">
+				<input type="text" class="form-control" name="alamat" id="alamat">
 			</div>
 			<div class="form-group">
 				<label for="jenis_kendaraan">Jenis Kendaraan</label>
 				<input type="text" class="form-control" name="jenis_kendaraan" id="jenis_kendaraan" value="">
+				<script>
+					window.addEventListener('load',()=>{
+						document.getElementById('jenis_kendaraan').value = localStorage.getItem('jenis_kendaraan');
+					});
+				</script>
 			</div>
 			<div class="form-group">
 				<label for="kode_kendaraan">Kode Kendaraan</label>
 				<input type="text" class="form-control" name="kode_kendaraan" id="kode_kendaraan" value="">
+				<script>
+					window.addEventListener('load',()=>{
+						document.getElementById('kode_kendaraan').value = localStorage.getItem('kode_kendaraan');
+					});
+				</script>
 			</div>
 			<div class="form-group">
 				<label for="instruktur">Instruktur</label>
 				<input type="text" class="form-control" name="instruktur" id="instruktur" value="">
+				<script>
+					window.addEventListener('load',()=>{
+						document.getElementById('instruktur').value = localStorage.getItem('instruktur');
+					});
+				</script>
 			</div>
 			<div class="form-group">
 				<label for="telpon">Telpon</label>
-				<input required type="text" class="form-control" name="telpon" id="telpon">
+				<input type="text" class="form-control" name="telpon" id="telpon">
 			</div>
 			<div class="form-group">
 				<div class="select-list">
-					<select required name="paket" id="paket">
-						<option value="">Paket</option>
+					<select name="paket" id="paket">
+						<option selected="true" disabled="disabled">Paket</option>
 						<option value="a">A</option>
 						<option value="b">B</option>
 						<option value="c">C</option>
@@ -171,13 +202,13 @@
 			<div class="form-group">
 				<label for="telpon">Bukti Transfer</label>
 				<div class="custom-file">
-					<input required type="file" class="custom-file-input" id="buktiTF">
+					<input type="file" class="custom-file-input" id="buktiTF">
 					<label class="custom-file-label" for="buktiTF">Upload Bukti Transfer</label>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="select-list">
-					<select required name="status" id="status">
+					<select name="status" id="status">
 						<option value="">Status</option>
 						<option value="siswa">Siswa</option>
 						<option value="alumni">Alumni</option>
@@ -186,7 +217,7 @@
 			</div>
 			<div class="form-group">
 				<div class="form-check">
-					<input required class="form-check-input" type="checkbox" id="defaultCheck1">
+					<input class="form-check-input" type="checkbox" id="defaultCheck1">
 					<label class="form-check-label" for="defaultCheck1">
 						Saya telah membaca, memahami, dan setuju berdasarkan syarat dan ketentuan yang telah ditetapkan
 						<a type="button" data-toggle="modal" data-target="#exampleModal" style="color:blue">
@@ -253,7 +284,6 @@
 			if (event.checked) {
 				if (cekboks != event && !val.includes(jam)) {
 					cekboks.setAttribute('disabled', true);
-					$("button[id=btnPilih]").prop("disabled", false);
 				}
 			} else {
 				for (var cek of cekbokses){
@@ -261,7 +291,6 @@
 					if(cval.includes(jam) && cek.checked && !cek.disabled){
 						var Stop = true;
 					}
-					$("button[id=btnPilih]").prop("disabled", true);
 				}
 				if(!Stop){
 					cekboks.removeAttribute("disabled");
@@ -276,28 +305,29 @@
 		<?php } ?>
 	})
 
+</script>
+
+<script>
+	$('#formDaDir').hide();
+	$(document).ready(function () {
+		$('#btnPilih').click(function() {
+		checked = $("input[type=checkbox]:checked").length;
+
+		if(!checked) {
+			alert("Pilih jadwal kursus");
+			return false;
+		}
+		else {
+			$('#formDaDir').toggle();
+		}
+
+		});
+	});
+</script>
+
+<script>
 	$(document).ready(function() {
 		$('#telpon').inputmask("(9999-9999-9999)||(9999-9999-99999)");
 	});
-
-	window.addEventListener('load',()=>{
-		document.getElementById('jenis_kendaraan').value = localStorage.getItem('jenis_kendaraan');
-	});
-
-	window.addEventListener('load',()=>{
-		document.getElementById('kode_kendaraan').value = localStorage.getItem('kode_kendaraan');
-	});
-
-	window.addEventListener('load',()=>{
-		document.getElementById('instruktur').value = localStorage.getItem('instruktur');
-	});
-
-	$('#formDaDir').hide();
-
-	$('#btnPilih').click(function() {
-		$('#formDaDir').toggle();
-	});
-
 </script>
-
 <?php $this->endSection(); ?>
