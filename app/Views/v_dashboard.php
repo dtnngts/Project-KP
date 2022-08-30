@@ -14,8 +14,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="/daftar">Daftar</a>
-      <a class="nav-item nav-link" href="#">Harga</a>
-      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+      <a class="nav-item nav-link" href="#">Paket Kursus</a>
     </div>
   </div>
 </nav>
@@ -53,6 +52,96 @@
 </div>
 </head>
 
+
+<!-- Grid container -->
+<div class="container p-4">
+      <!--Grid row-->
+      <div class="row mt-4">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-justify">
+          <h5 class="text-uppercase mb-4">Sejarah</h5>
+
+          <p>
+          Perusahaan PRINCESS berawal dari sebuah usaha Kursus Mengemudi yang kemudian juga dikembangkan di bidang Biro Jasa. Perusahaan ini didirikan oleh Bapak Rinaldo PB dan Ibu Fatmawati S. pada tanggal 5 Mei 1990 yang bertempat di sebuah lokasi kecil di sisi Jalan Raden Intan, Bandar Lampung. Perusahaan ini dirintis pertama kali dengan hanya memiliki 3 karyawan untuk melayani konsumen Biro Jasa dan memiliki sebuah mobil Jimny Katana merah sebagai armada Kursus Mengemudi. Pendiri memberi nama usahanya tersebut dengan nama PRINCESS.
+          </p>
+        </div>
+      
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-justify">
+            <h5 class="text-uppercase mb-4">Visi</h5>
+            <p>
+            Menjadi Perusahaan Jasa yang profesional dan berkualitas dalam memberikan pelayanan serta menjadi sebuah solusi yang tepat bagi masyarakat.
+            </p>
+        </div>
+
+
+       <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-justify">
+          <ol class="fa-ol" >
+          <h5 class="text-uppercase mb-4">Misi</h5>
+            <li>Memberikan pelayanan terbaik terhadap konsumen dan mitra perusahaan.</li>
+            <li>Menciptakan kemandirian masyarakat di bidang berkendara.</li>
+            <li>Menjadi suatu solusi, baik dalam permasalahan waktu ataupun jarak yang dirasakan masyarakat dalam melakukan tanggung jawab pembayaran pajak, sehingga menjadi acuan pelaksanaan terhadap suatu kepatuhan atas sebuah kewajiban pembayaran pajak.</li>
+            <li>Membantu instansi pemerintah dalam hal pendapatan daerah dengan menjadi acuan pelaksanaan kewajiban yang didasari solusi bagi masyarakat dalam kemudahan pembayaran pajak wilayah setempat.</li>
+          </ol>
+        </div>
+        
+      </div>
+</div>
+
+        
+
+
+<!-- <div class="card-columns pl-4 pr-4">
+  <div class="card bg-white text-dark text-justify p-3">
+  <h3 class="card-title text-center ">Sejarah</h3>
+      <blockquote class="blockquote mb-0">
+        <p>Perusahaan PRINCESS berawal dari sebuah usaha Kursus Mengemudi yang kemudian juga dikembangkan di bidang Biro Jasa. Perusahaan ini didirikan oleh Bapak Rinaldo PB dan Ibu Fatmawati S. pada tanggal 5 Mei 1990 yang bertempat di sebuah lokasi kecil di sisi Jalan Raden Intan, Bandar Lampung. Perusahaan ini dirintis pertama kali dengan hanya memiliki 3 karyawan untuk melayani konsumen Biro Jasa dan memiliki sebuah mobil Jimny Katana merah sebagai armada Kursus Mengemudi. Pendiri memberi nama usahanya tersebut dengan nama PRINCESS.</p>
+      </blockquote>
+    </div>
+
+    <div class="card bg-white text-dark text-center p-3">
+    <div class="card-body py-3 ">      
+    <h3 class="card-title">Visi</h3>
+      <blockquote class="blockquote mb-0">
+        <p> Menjadi Perusahaan Jasa yang profesional dan berkualitas dalam memberikan pelayanan serta menjadi sebuah solusi yang tepat bagi masyarakat.</p>
+      
+      </blockquote>
+    </div>
+    </div>
+
+    <div class="card text-justify">
+      <div class="card-body ">
+        <h3 class="card-title text-center">Misi</h3>
+        <ol>
+          <li>Memberikan pelayanan terbaik terhadap konsumen dan mitra perusahaan.</li>
+          <li>Menciptakan kemandirian masyarakat di bidang berkendara.</li>
+          <li>Menjadi suatu solusi, baik dalam permasalahan waktu ataupun jarak yang dirasakan masyarakat dalam melakukan tanggung jawab pembayaran pajak, sehingga menjadi acuan pelaksanaan terhadap suatu kepatuhan atas sebuah kewajiban pembayaran pajak.</li>
+          <li>Membantu instansi pemerintah dalam hal pendapatan daerah dengan menjadi acuan pelaksanaan kewajiban yang didasari solusi bagi masyarakat dalam kemudahan pembayaran pajak wilayah setempat.</li>
+        </ol>
+      
+      </div>
+    </div>
+</div> -->
+
+
+    <h1>Kursus Mengemudi Mobil</h1>
+
+
+<div class="card-deck pl-4 pr-4">
+  <div class="card">
+    <img class="card-img-top" src="/assets/images/1.png" alt="Card image cap"> 
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="/assets/images/2.png" alt="Card image cap"> 
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="/assets/images/3.png" alt="Card image cap">
+  </div>
+</div>
+
+<h1>Testimonial</h1>
 
 
 <!-- Carousel wrapper -->
@@ -296,7 +385,7 @@
           </p>
 
           <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+         Biro Jasa dan Kursus Mengemudi Mobil di Lampung yang berdiri sejak pulluhan tahun yang lalu
           </p>
 
           

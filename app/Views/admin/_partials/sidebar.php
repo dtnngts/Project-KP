@@ -1,13 +1,4 @@
-<?= $this->extend('layout/template'); ?>
-
-<?= $this->section('content'); ?>
-<body id="page-top">
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -21,20 +12,15 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+           <!-- Nav Item - Dashboard -->
+           <li class="nav-item active">
+                <a class="nav-link" href="/admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -45,9 +31,14 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Data Kursus:</h6>
-                        <a class="collapse-item" href="/siswa">Siswa Kursus</a>
-                        <a class="collapse-item" href="/alumni">Alumni Kursus</a>
+                        <h6 class="collapse-header">Data Keseluruhan:</h6>
+                        <a class="collapse-item" href="/seluruhsiswa">Data Seluruh Siswa</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Data per Instruktur:</h6>
+                        <a class="collapse-item" href="/hendri">Siswa Hendri</a>
+                        <a class="collapse-item" href="/suhadi">Siswa Suhadi</a>
+                        <a class="collapse-item" href="/yono">Siswa Yono</a>
+                        <a class="collapse-item" href="/eko">Siswa Eko</a>
                     </div>
                 </div>
             </li>
@@ -55,17 +46,20 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-
-            <!-- Nav Item - Charts -->
+            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Admin</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Data Admin:</h6>
+                        <a class="collapse-item" href="/inputadmin">Tambah Data Admin</a>
+                        <a class="collapse-item" href="/lihatadmin">Lihat Data Admin</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Tables -->
@@ -85,4 +79,3 @@
 
            
         </ul>
-        <!-- End of Sidebar -->
