@@ -79,12 +79,12 @@ class DaftarController extends BaseController
 			'paket' => $this->request->getVar('paket'),
 			'jadwal' => implode('; ', $this->request->getVar('jadwal')), 
             // 'jadwal' => $this->request->getVar('jadwal'),
-			'status' => $this->request->getVar('status'),
+			'status' => " ",
 		];
-
+//
         $DaftarModel = model("DaftarModel");
 		$DaftarModel->insert($data);
 
-        return redirect()->to(base_url('/jadwal'));
+        return redirect()->to(base_url('/jadwal')); 
     }
 }

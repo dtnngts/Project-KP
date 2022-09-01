@@ -2,9 +2,8 @@
 
 <?= $this->section('content'); ?>
 
-<<<<<<< HEAD
 <form action="/regis" method="post" enctype="multipart/form-data" onsubmit="validasi()">
-=======
+
 <head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" >
@@ -30,10 +29,7 @@
 </head>
 
 <form action="/regis" method="post" enctype="multipart/form-data">
->>>>>>> 110d6075ad256535df001765fe05bce1ea6566df
 	<?= csrf_field(); ?>
-
-
 	<center>
 		<table id="jadwal">
 			<tr>
@@ -168,6 +164,7 @@
 	}
 </script>
 
+	<?= csrf_field(); ?>
 	<div class="container" id="formDaDir">
 		<div class="card1">
 			<p>Silahkan lanjut mengisi data diri Anda</p>
@@ -221,7 +218,7 @@
 			<div class="form-group">
 				<div class="select-list">
 					<select name="paket" id="paket">
-						<option selected="true" disabled="disabled">Paket</option>
+						<option selected="true">Paket</option>
 						<option value="a">A</option>
 						<option value="b">B</option>
 						<option value="c">C</option>

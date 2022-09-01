@@ -38,7 +38,7 @@ $routes->set404Override();
 $routes->get('/admin', 'AdminController::admin');
 $routes->get('/', 'Home::wellcome');
 $routes->get('/daftar', 'DaftarController::daftar');
-$routes->get('/jadwal', 'DaftarController::jadwal');
+// $routes->get('/jadwal', 'DaftarController::jadwal');
 $routes->get('/jadwal/(:any)', 'DaftarController::instruktur/$1');
 $routes->post('/regis', 'DaftarController::regis');
 $routes->get('/seluruhsiswa', 'AdminController::allMem');
@@ -56,7 +56,8 @@ $routes->post('/storeadmin', 'AdminController::store');
 $routes->get('/inputadmin', 'AdminController::create');
 $routes->get('/lihatadmin', 'AdminController::lihatadmin');
 $routes->get('/download', 'AdminController::excel');
-
+$routes->get('/validasisiswa', 'AdminController::valid');
+$routes->post('/validasi/(:any)', 'AdminController::validasi/$1');
 
 /*
  * --------------------------------------------------------------------

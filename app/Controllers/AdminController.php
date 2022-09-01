@@ -56,6 +56,7 @@ class AdminController extends BaseController
 
         $data = [
 			'allMem' => $allMem->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/v_allMem', $data);
@@ -77,6 +78,7 @@ class AdminController extends BaseController
 
         $data = [
 			'hendri' => $hendri->where('instruktur', 'hendri')->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/v_hendri', $data);
@@ -98,6 +100,7 @@ class AdminController extends BaseController
 
         $data = [
 			'suhadi' => $suhadi->where('instruktur', 'Suhadi')->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/v_suhadi', $data);
@@ -119,6 +122,7 @@ class AdminController extends BaseController
 
         $data = [
 			'yono' => $yono->where('instruktur', 'Yono')->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/v_yono', $data);
@@ -140,6 +144,7 @@ class AdminController extends BaseController
 
         $data = [
 			'eko' => $eko->where('instruktur', 'Eko')->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/v_eko', $data);
@@ -154,6 +159,7 @@ class AdminController extends BaseController
 
 		$data = [
 			'row' => $this->DaftarModel->getDaftar($no_registrasi),
+			'nama' => session()->get('username')
 		];
 
 		return view("admin/v_edit", $data);
@@ -254,8 +260,40 @@ class AdminController extends BaseController
 
         $data = [
 			'siswa' => $siswa->where('status', 'siswa')->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/excel_siswa', $data);
+	}
+
+	public function valid()
+	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
+        $keyword = $this->request->getVar('keyword');
+		if ($keyword) {
+			$allMem = $this->DaftarModel->search($keyword);
+		} else {
+			$allMem = $this->DaftarModel;
+		}
+		
+		$data = [
+			'allMem' => $allMem->findAll(),
+			'nama' => session()->get('username')
+		];
+		return view("admin/v_validator", $data);
+	}
+
+	public function validasi ($no_registrasi) {
+		$data = [
+			'status' => "siswa"
+		];
+		$where = array('no_registrasi' => $no_registrasi);
+
+		$this->DaftarModel->update($where, $data, 'allMem');
+		return redirect()->to(base_url('/validasisiswa'));
 	}
 }

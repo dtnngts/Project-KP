@@ -32,7 +32,7 @@ class LoginController extends BaseController
 					'username' => $username,
 				];
 				session()->set($login);
-				return redirect()->to(base_url('/login'));
+				return redirect()->to(base_url('/admin'));
 		} 
 		else if ($ceksuper != null) {
 			$login = [
@@ -46,7 +46,7 @@ class LoginController extends BaseController
 				'username' => $username,
 			];
 			session()->set($login);
-			return redirect()->to(base_url('/entryvalid'));
+			return redirect()->to(base_url('/validasisiswa'));
 		}
 		else {
 			session()->setFlashdata('gagal', 'Username/Password salah');
