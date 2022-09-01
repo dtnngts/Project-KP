@@ -56,6 +56,7 @@ class AdminController extends BaseController
 
         $data = [
 			'allMem' => $allMem->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/v_allMem', $data);
@@ -77,6 +78,7 @@ class AdminController extends BaseController
 
         $data = [
 			'hendri' => $hendri->where('instruktur', 'hendri')->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/v_hendri', $data);
@@ -98,6 +100,7 @@ class AdminController extends BaseController
 
         $data = [
 			'suhadi' => $suhadi->where('instruktur', 'Suhadi')->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/v_suhadi', $data);
@@ -119,6 +122,7 @@ class AdminController extends BaseController
 
         $data = [
 			'yono' => $yono->where('instruktur', 'Yono')->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/v_yono', $data);
@@ -140,6 +144,7 @@ class AdminController extends BaseController
 
         $data = [
 			'eko' => $eko->where('instruktur', 'Eko')->findAll(),
+			'nama' => session()->get('username')
 		];
         
         return view('admin/data_kursus/v_eko', $data);

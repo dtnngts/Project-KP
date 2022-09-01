@@ -1,6 +1,7 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -12,8 +13,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                <img class="img-profile rounded-circle"
-                             src="/assets/images/logo.png" width=50px;>
+                    <img class="img-profile rounded-circle" src="/assets/images/logo.png" width=50px;>
                 </div>
                 <div class="sidebar-brand-text mx-3"> Princess Solution <sup></sup></div>
             </a>
@@ -22,19 +22,18 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
-           <!-- Divider -->
-           <hr class="sidebar-divider">
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+            <li class="nav-item active">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Data Kursus</span>
                 </a>
@@ -57,8 +56,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Admin</span>
                 </a>
@@ -87,11 +85,11 @@
             </div>
 
 
-            </ul>
-            <!-- End of Sidebar -->
+        </ul>
+        <!-- End of Sidebar -->
 
-            <!-- Content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
@@ -99,25 +97,26 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mr-auto static-top shadow">
 
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-5">
-                    <i class="fa fa-bars"></i>
-                </button>
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-5">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
 
-                <!-- Navbar -->
-                <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <i class="fas fa-user-circle fa-fw"></i> Admin
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-                        </div>
-                    </li>
-                </ul>
+                    <!-- Navbar -->
+                    <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-800"><?php echo ucwords($nama) ?></span>
+                                <i class="fa fa-user mr-2 text-gray-800"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                            </div>
+                        </li>
+                    </ul>
 
                 </nav>
                 <!-- End of Topbar -->
@@ -130,53 +129,53 @@
 
                         <div id="body">
                             <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
-                            <thead>
-                                <tr>
-                                    <td scope="col">No.Registrasi</td>
-                                    <td scope="col">Nama</td>
-                                    <td scope="col">Kode</td>
-                                    <td scope="col">Instruktur</td>
-                                    <td scope="col">Paket</td>
-                                    <td scope="col">Telpon</td>
-                                    <td scope="col">Kehadiran</td>
-                                    <td scope="col">Action</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($allMem as $row) :
-                                ?>
+                                <thead>
                                     <tr>
-                                        <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>
-                                        <td scope="row"><?= ucwords($row['nama']) ?></td>
-                                        <td scope="row"><?= $row['kode_kendaraan'] ?></td>
-                                        <td scope="row"><?= $row['instruktur'] ?></td>
-                                        <td scope="row"><?= $row['paket'] ?></td>
-                                        <td scope="row"><?= $row['telpon'] ?></td>
-                                        <td scope="row"><?= $row['kehadiran'] ?></td>
-                                        <td scope="row" style="text-align:center">
-                                            <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
-                                            <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['instruktur'] ?>" method="post" class="d-inline">
-                                                <?= csrf_field(); ?>
-                                                <input type="hidden" name="_method" value="Delete">
-                                                <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
-                                            </form>
-                                            <?php if ($row['status'] == 2) : ?>
-                                                <a href="<?= base_url("cetak/" . $row['no_registrasi']) ?>" class="btn btn-warning" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Cetak</a>
-                                            <?php else : ?>
-                                                <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Cetak</button>
-                                            <?php endif ?>
-                                        </td>
+                                        <td scope="col">No.Registrasi</td>
+                                        <td scope="col">Nama</td>
+                                        <td scope="col">Kode</td>
+                                        <td scope="col">Instruktur</td>
+                                        <td scope="col">Paket</td>
+                                        <td scope="col">Telpon</td>
+                                        <td scope="col">Kehadiran</td>
+                                        <td scope="col">Action</td>
                                     </tr>
-                                <?php endforeach; ?>
-                            </tbody>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($allMem as $row) :
+                                    ?>
+                                        <tr>
+                                            <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>
+                                            <td scope="row"><?= ucwords($row['nama']) ?></td>
+                                            <td scope="row"><?= $row['kode_kendaraan'] ?></td>
+                                            <td scope="row"><?= $row['instruktur'] ?></td>
+                                            <td scope="row"><?= $row['paket'] ?></td>
+                                            <td scope="row"><?= $row['telpon'] ?></td>
+                                            <td scope="row"><?= $row['kehadiran'] ?></td>
+                                            <td scope="row" style="text-align:center">
+                                                <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
+                                                <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['instruktur'] ?>" method="post" class="d-inline">
+                                                    <?= csrf_field(); ?>
+                                                    <input type="hidden" name="_method" value="Delete">
+                                                    <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
+                                                </form>
+                                                <?php if ($row['status'] == 2) : ?>
+                                                    <a href="<?= base_url("cetak/" . $row['no_registrasi']) ?>" class="btn btn-warning" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Cetak</a>
+                                                <?php else : ?>
+                                                    <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Cetak</button>
+                                                <?php endif ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
                 <!-- /.container-fluid -->
             </div>
-            
+
             <script src="<?= base_url('vendor/simple-datatables/simple-datatables.js') ?>"></script>
             <script>
                 // Simple Datatable
@@ -207,8 +206,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

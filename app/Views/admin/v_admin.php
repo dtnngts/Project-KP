@@ -1,6 +1,7 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -12,8 +13,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
-                <img class="img-profile rounded-circle"
-                             src="/assets/images/logo.png" width=50px;>
+                    <img class="img-profile rounded-circle" src="/assets/images/logo.png" width=50px;>
                 </div>
                 <div class="sidebar-brand-text mx-3"> Princess Solution <sup></sup></div>
             </a>
@@ -33,8 +33,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Data Kursus</span>
                 </a>
@@ -51,14 +50,13 @@
                     </div>
                 </div>
             </li>
-            
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Admin</span>
                 </a>
@@ -86,7 +84,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-           
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -99,29 +97,30 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mr-auto static-top shadow">
 
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-5">
-                    <i class="fa fa-bars"></i>
-                </button>
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-5">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
 
-                <!-- Navbar -->
-                <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <i class="fas fa-user-circle fa-fw"></i> Admin
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-                        </div>
-                    </li>
-                </ul>
+                    <!-- Navbar -->
+                    <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-800"><?php echo ucwords($nama) ?></span>
+                                <i class="fa fa-user mr-2 text-gray-800"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                            </div>
+                        </li>
+                    </ul>
 
                 </nav>
                 <!-- End of Topbar -->
-                
+
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -130,7 +129,7 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                     </div>
-                        
+
                     <div class="row">
                         <?php
                         $count1 = 0;
@@ -150,10 +149,10 @@
                         foreach ($eko as $i => $data['Eko']) :
                             $count4++;
                         endforeach;
-                        
+
                         ?>
 
-                        
+
 
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
@@ -176,7 +175,7 @@
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div class="col-xl-3 col-md-6 mb-4">
                             <a href="<?= base_url('/suhadi') ?>">
                                 <div class="card border-left-success shadow h-100 py-2">
@@ -246,15 +245,7 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+          >
 
         </div>
         <!-- End of Content Wrapper -->
@@ -268,8 +259,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
