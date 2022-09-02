@@ -127,18 +127,20 @@
                 <div class="container-fluid">
 
                     <div id="container">
-                        <h1>Data Admin <br></br></h1>
+                        <h1>Jadwal Instruktur <br></br></h1>
 
                         <div id="body">
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab">
-                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-admin" role="tab">Admin</a>
-                                    <a class="nav-item nav-link" id="nav-profil-tab" data-toggle="tab" href="#nav-super" role="tab">Super Admin</a>
-                                    <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-validator" role="tab">Validator Admin</a>
+                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-hendri" role="tab">Hendri</a>
+                                    <a class="nav-item nav-link" id="nav-profil-tab" data-toggle="tab" href="#nav-suhadi" role="tab">Suhadi</a>
+                                    <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-yono" role="tab">Yono</a>
+                                    <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-eko" role="tab">Eko</a>
                                 </div>
                             </nav>
+
                             <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-admin" role="tabpanel">
+                                <div class="tab-pane fade show active" id="nav-hendri" role="tabpanel">
                                     <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
                                         <thead>
                                             <tr>
@@ -169,7 +171,8 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="tab-pane fade" id="nav-super" role="tabpanel">
+
+                                <div class="tab-pane fade" id="nav-suhadi" role="tabpanel">
                                     <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
                                         <thead>
                                             <tr>
@@ -200,7 +203,40 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="tab-pane fade" id="nav-validator" role="tabpanel">
+
+                                <div class="tab-pane fade" id="nav-yono" role="tabpanel">
+                                    <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
+                                        <thead>
+                                            <tr>
+                                                <td scope="col">Username</td>
+                                                <td scope="col">Password</td>
+                                                <td scope="col">Nama</td>
+                                                <td scope="col">Action</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            foreach ($validator as $row) :
+                                            ?>
+                                                <tr>
+                                                    <td scope="row"><?= $row['username'] ?></td>
+                                                    <td scope="row"><?= $row['password'] ?></td>
+                                                    <td scope="row"><?= $row['nama'] ?></td>
+                                                    <td scope="row" style="text-align:center">
+                                                        <a href="<?= base_url("edit/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
+                                                        <form action="delete/<?= $row['id'] ?>" method="post" class="d-inline">
+                                                            <?= csrf_field(); ?>
+                                                            <input type="hidden" name="_method" value="Delete">
+                                                            <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="tab-pane fade" id="nav-eko" role="tabpanel">
                                     <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
                                         <thead>
                                             <tr>

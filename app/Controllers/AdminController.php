@@ -221,7 +221,7 @@ class AdminController extends BaseController
 
 		model($data['admin'])->insert($data);
 
-		return redirect()->to(base_url('admin/inputadmin'));
+		return redirect()->to(base_url('/inputadmin'));
 	}
 
 	public function lihatadmin()
