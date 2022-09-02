@@ -15,6 +15,9 @@ class DaftarController extends BaseController
 
     public function daftar()
     {
+        // $uri = new \CodeIgniter\HTTP\URI();
+        // $data['url'] = $uri->getSegment('1');
+        // return var_dump($data['url']);
         return view('users/v_daftar');
     }
 
@@ -34,6 +37,7 @@ class DaftarController extends BaseController
     public function instruktur($ins = false)
     {
         $daftar_model = new DaftarModel();
+
         if ($ins == false) {
             $data['daftar'] = $daftar_model->findAll();
 

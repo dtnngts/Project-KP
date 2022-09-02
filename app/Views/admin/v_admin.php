@@ -71,7 +71,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/jadwal">
+                <a class="nav-link" href="/lihatjadwal">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Jadwal</span></a>
             </li>
