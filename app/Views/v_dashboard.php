@@ -1,8 +1,285 @@
-<?= $this->extend('layout/template'); ?>
-
-<?= $this->section('content'); ?>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+
+  <title>Princess Solution</title>
+
+  <!--
+
+DIGITAL TREND
+
+https://templatemo.com/tm-538-digital-trend
+
+-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="css/templatemo-digital-trend.css">
+
+</head>
+
+<body>
+
+  <!-- MENU BAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+
+        <img class="img-profile rounded-circle" src="assets/images/logo.png" width=75px;></i>
+        Princess Solution
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#about" class="nav-link smoothScroll">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="#project" class="nav-link smoothScroll">Paket Kursus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/daftar" class="nav-link">Daftar</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero hero-bg d-flex justify-content-center align-items-center">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-6 col-md-10 col-12 d-flex flex-column justify-content-center align-items-center">
+          <div class="hero-text">
+
+            <h1 class="text-white" data-aos="fade-up">Ayo Belajar Mengemudi di Princess Solution</h1>
+
+            <a href="contact.html" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Let us discuss together!</a>
+
+            <strong class="d-block py-3 pl-5 text-white" data-aos="fade-up" data-aos-delay="200"><i class="fa fa-phone mr-2"></i> +99 080 070 4224</strong>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-12">
+          <div class="hero-image" data-aos="fade-up" data-aos-delay="300">
+
+            <img src="assets/images/coba.png" class="img-fluid" alt="working girl">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about section-padding pb-0" id="about">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-7 mx-auto col-md-10 col-12">
+          <div class="about-info">
+
+            <h2 class="mb-4" data-aos="fade-up">the best <strong>Car Driving Course</strong> in Lampung</h2>
+
+            <p class="mb-0" data-aos="fade-up">Perusahaan PRINCESS berawal dari sebuah usaha Kursus Mengemudi yang kemudian juga dikembangkan di bidang Biro Jasa.
+              Perusahaan ini didirikan oleh Bapak Rinaldo PB dan Ibu Fatmawati S. pada tanggal 5 Mei 1990 yang bertempat di sebuah
+              lokasi kecil di sisi Jalan Raden Intan, Bandar Lampung.
+              <br><br>Perusahaan ini dirintis <strong>pertama</strong> kali dengan hanya memiliki 3
+              karyawan untuk melayani konsumen Biro Jasa dan memiliki sebuah mobil Jimny Katana merah sebagai armada Kursus Mengemudi.
+              Pendiri memberi nama usahanya tersebut dengan nama PRINCESS..
+            </p>
+          </div>
+
+          <div class="about-image" data-aos="fade-up" data-aos-delay="200">
+
+            <img src="assets/images/pp.png" class="img-fluid" alt="office">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECT -->
+  <section class="project section-padding" id="project">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-lg-12 col-12">
+
+          <h2 class="mb-5 text-center" data-aos="fade-up">
+            Daftar Paket
+            <strong>Kursus Mengemudi Mobil</strong>
+          </h2>
+
+          <div class="owl-carousel owl-theme" id="project-slide">
+            <div class="item project-wrapper" data-aos="fade-up" data-aos-delay="100">
+              <img src="assets/images/1.png" class="img-fluid" alt="project image">
+
+
+            </div>
+
+            <div class="item project-wrapper" data-aos="fade-up">
+              <img src="assets/images/2.png" class="img-fluid" alt="project image">
+
+
+            </div>
+
+            <div class="item project-wrapper" data-aos="fade-up">
+              <img src="assets/images/3.png" class="img-fluid" alt="project image">
+
+
+            </div>
+
+
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial section-padding">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-6 col-md-5 col-12">
+          <div class="contact-image" data-aos="fade-up">
+
+            <img src="images/female-avatar.png" class="img-fluid" alt="website">
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-7 col-12">
+          <h4 class="my-5 pt-3" data-aos="fade-up" data-aos-delay="100">Opening Hours</h4>
+
+          <div class="quote" data-aos="fade-up" data-aos-delay="200"></div>
+
+          <h2 class="mb-4" data-aos="fade-up" data-aos-delay="300">Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo.</h2>
+
+          <p data-aos="fade-up" data-aos-delay="400">
+            <strong>Mary Zoe</strong>
+
+            <span class="mx-1">/</span>
+
+            <small>Digital Agency (CEO)</small>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-5 mx-lg-auto col-md-8 col-10">
+          <h1 class="text-white" data-aos="fade-up" data-aos-delay="100">Princess <strong>Solution</strong>.</h1>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+          <h4 class="my-4">Contact Info</h4>
+
+          <p class="mb-1">
+            <i class="fa fa-phone mr-2 footer-icon"></i>
+            +99 080 070 4224
+          </p>
+
+          <p>
+            <a href="#">
+              <i class="fa fa-envelope mr-2 footer-icon"></i>
+              hello@company.com
+            </a>
+          </p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+          <h4 class="my-4">Alamat</h4>
+
+          <p class="mb-1">
+            <i class="fa fa-home mr-2 footer-icon"></i>
+            No.06, Jl.Jenderal Ahmad Yani, Gotong Royong, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35119.
+          </p>
+        </div>
+
+        <div class="col-lg-4 mx-lg-auto text-center col-md-8 col-12" data-aos="fade-up" data-aos-delay="400">
+          <p class="copyright-text">Copyright &copy; 2022 DotaAprilLase
+            <br>
+          </p>
+        </div>
+
+        <div class="col-lg-4 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
+
+          <ul class="footer-link">
+            <li><a href="#">Stories</a></li>
+            <li><a href="#">Work with us</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
+          <ul class="social-icon">
+            <li><a href="#" class="fa fa-instagram"></a></li>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-dribbble"></a></li>
+            <li><a href="#" class="fa fa-behance"></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- SCRIPTS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/custom.js"></script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+<!-- <head>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand">
       <img class="img-profile rounded-circle" src="/assets/images/logo.png" width=25px;> Princess Solution</a>
@@ -49,11 +326,11 @@
 </head>
 
 
-<!-- Grid container -->
+
 <div class="container p-4">
-  <!--Grid row-->
+
   <div class="row mt-4">
-    <!--Grid column-->
+ 
     <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-justify">
       <h5 id="judul" class="text-uppercase mb-4">Sejarah</h5>
 
@@ -63,7 +340,7 @@
     </div>
 
 
-    <!--Grid column-->
+    
     <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-justify">
       <h5 class="text-uppercase mb-4" >Visi</h5>
       <p>
@@ -72,7 +349,7 @@
     </div>
 
 
-    <!--Grid column-->
+  >
     <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-justify">
       <ol class="fa-ol">
         <h5 class="text-uppercase mb-4">Misi</h5>
@@ -86,7 +363,7 @@
   </div>
 </div>
 
-
+aaa -->
 
 
 <!-- <div class="card-columns pl-4 pr-4">
@@ -121,7 +398,7 @@
     </div>
 </div> -->
 
-
+<!-- 
 <h1>Kursus Mengemudi Mobil</h1>
 
 
@@ -140,11 +417,11 @@
 <div class="container-fluid">
 
   <footer class="text-white text-center text-lg-start bg-dark">
-    <!-- Grid container -->
+ 
     <div class="container p-4">
-      <!--Grid row-->
+   
       <div class="row mt-4">
-        <!--Grid column-->
+      
         <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">About company</h5>
 
@@ -158,20 +435,20 @@
 
 
           <div class="mt-4">
-            <!-- Facebook -->
+           
             <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-facebook-f"></i></a>
-            <!-- Dribbble -->
+          
             <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-dribbble"></i></a>
-            <!-- Twitter -->
+      
             <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-twitter"></i></a>
-            <!-- Google + -->
+     
             <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-google-plus-g"></i></a>
-            <!-- Linkedin -->
+   
           </div>
         </div>
-        <!--Grid column-->
+   
 
-        <!--Grid column-->
+        
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
 
           <ul class="fa-ul" style="margin-left: 1.65em;">
@@ -186,9 +463,7 @@
             </li>
           </ul>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
+     
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">Opening hours</h5>
 
@@ -206,21 +481,19 @@
             </tbody>
           </table>
         </div>
-        <!--Grid column-->
+    
       </div>
-      <!--Grid row-->
-    </div>
-    <!-- Grid container -->
 
-    <!-- Copyright -->
+    </div>
+
+
+ 
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2022 Copyright:
       <a class="text-white" href="https://mdbootstrap.com/">DotaAprilLase@2022</a>
     </div>
-    <!-- Copyright -->
+  
   </footer>
 
-</div>
+</div> -->
 <!-- End of .container -->
-
-<?php $this->endSection(); ?>

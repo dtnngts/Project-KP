@@ -3,25 +3,45 @@
 <?= $this->section('content'); ?>
 
 
-<head>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand">
-			<img class="img-profile rounded-circle" src="/assets/images/logo.png" width=25px;> Princess Solution</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container">
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-			<div class="navbar-nav">
-				<a class="nav-item nav-link active" href="/wellcome">Dashboard<span class="sr-only">(current)</span></a>
-				<a class="nav-item nav-link" href="/daftar">Daftar</a>
-				<a class="nav-item nav-link" href="#">Harga</a>
-				<a class="nav-item nav-link disabled" href="#">Disabled</a>
-			</div>
+
+		<div>
+			<nav>
+				<ul class="navbar-brand" href="index.html">
+
+					<img class="img-profile rounded-circle" src="assets/images/logo.png" width=40px;></i>
+					Princess Solution
+				</ul>
+			</nav>
 		</div>
-	</nav>
-	<div class="p-5 text-center bg-image" style=" background-image: url(/assets/images/bgg.jpeg);">
-		<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-</head>
+
+
+
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a href="#about" class="nav-link smoothScroll">Dashboard</a>
+				</li>
+				<li class="nav-item">
+					<a href="#project" class="nav-link smoothScroll">Paket Kursus</a>
+				</li>
+				<li class="nav-item">
+					<a href="/daftar" class="nav-link">Daftar</a>
+				</li>
+				<li class="nav-item">
+					<a href="contact.html" class="nav-link contact">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
 
 <form action="/regis" method="post" enctype="multipart/form-data" id='form-daftar'>
 	<?= csrf_field(); ?>

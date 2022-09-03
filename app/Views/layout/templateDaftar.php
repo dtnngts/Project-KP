@@ -14,9 +14,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="/assets/sb/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="/assets/sb/https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="/assets/sb/https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="/assets/sb/css/sb-admin-2.min.css" rel="stylesheet">
@@ -24,10 +22,11 @@
 </head>
 
 <?= $this->renderSection('myscript'); ?>
-<body>
-<?= $this->renderSection('content'); ?>
 
-      <!-- Bootstrap core JavaScript-->
+<body>
+    <?= $this->renderSection('content'); ?>
+
+    <!-- Bootstrap core JavaScript-->
     <script src="assets/sb/vendor/jquery/jquery.min.js"></script>
     <script src="assets/sb/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -43,6 +42,13 @@
     <!-- Page level custom scripts -->
     <script src="assets/sb/js/demo/chart-area-demo.js"></script>
     <script src="assets/sb/js/demo/chart-pie-demo.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'></script>
@@ -108,4 +114,5 @@
     </script>
 
 </body>
+
 </html>
