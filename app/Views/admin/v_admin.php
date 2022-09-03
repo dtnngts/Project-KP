@@ -71,7 +71,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/jadwal">
+                <a class="nav-link" href="/lihatjadwal">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Jadwal</span></a>
             </li>
@@ -111,9 +111,11 @@
                                 <i class="fa fa-user mr-2 text-gray-800"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+
                             </div>
                         </li>
                     </ul>
@@ -245,7 +247,7 @@
             </div>
             <!-- End of Main Content -->
 
-          >
+            >
 
         </div>
         <!-- End of Content Wrapper -->

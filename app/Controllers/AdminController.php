@@ -221,7 +221,11 @@ class AdminController extends BaseController
 
 		model($data['admin'])->insert($data);
 
+<<<<<<< HEAD
 		return redirect()->to(base_url('admin/v_inputadmin'));
+=======
+		return redirect()->to(base_url('/inputadmin'));
+>>>>>>> bb30fb27a9f914b6a3dd32d94d67ad7ce56d1305
 	}
 
 	public function lihatadmin()
@@ -289,11 +293,37 @@ class AdminController extends BaseController
 
 	public function validasi ($no_registrasi) {
 		$data = [
-			'status' => "siswa"
+			'status' => "siswa",
+			'nama' => session()->get('username')
 		];
 		$where = array('no_registrasi' => $no_registrasi);
 
 		$this->DaftarModel->update($where, $data, 'allMem');
 		return redirect()->to(base_url('/validasisiswa'));
+	}
+
+	public function lihatjadwal($name)
+	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
+		$AdminModel = new AdminModel();
+		$SuperModel = new SuperModel();
+		$ValidatorModel = new ValidatorModel();
+
+		$data = [
+			'admin' => $AdminModel->findAll(),
+			'super' => $SuperModel->findAll(),
+			'validator' => $ValidatorModel->findAll(),
+			'nama' => session()->get('username')
+		];
+
+	
+		$daftar_model = new DaftarModel();
+		$data['jadwal'] = $daftar_model->where('instruktur',$name)->findAll();
+
+		return view('admin/v_lihatjadwal', $data);
 	}
 }

@@ -2,33 +2,28 @@
 
 <?= $this->section('content'); ?>
 
-<form action="/regis" method="post" enctype="multipart/form-data" onsubmit="validasi()">
 
 <head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" >
-    <img class="img-profile rounded-circle"
-    src="/assets/images/logo.png" width=25px;> Princess Solution</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/wellcome">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="/daftar">Daftar</a>
-      <a class="nav-item nav-link" href="#">Harga</a>
-      <a class="nav-item nav-link disabled" href="#">Disabled</a>
-    </div>
-  </div>
-</nav>
-<div
-  class="p-5 text-center bg-image"
-    style=" background-image: url(/assets/images/bgg.jpeg);"
->
-<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand">
+			<img class="img-profile rounded-circle" src="/assets/images/logo.png" width=25px;> Princess Solution</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a class="nav-item nav-link active" href="/wellcome">Dashboard<span class="sr-only">(current)</span></a>
+				<a class="nav-item nav-link" href="/daftar">Daftar</a>
+				<a class="nav-item nav-link" href="#">Harga</a>
+				<a class="nav-item nav-link disabled" href="#">Disabled</a>
+			</div>
+		</div>
+	</nav>
+	<div class="p-5 text-center bg-image" style=" background-image: url(/assets/images/bgg.jpeg);">
+		<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
 </head>
 
-<form action="/regis" method="post" enctype="multipart/form-data">
+<form action="/regis" method="post" enctype="multipart/form-data" id='form-daftar'>
 	<?= csrf_field(); ?>
 	<center>
 		<table id="jadwal">
@@ -145,24 +140,7 @@
 		</table>
 	</center>
 
-<script type="text/javascript">
-	function validasi() {
-		var nama = document.getElementById("nama").value;
-		var ttl = document.getElementById("ttl").value;
-		var pekerjaan = document.getElementById("pekerjaan").value;
-		var alamat = document.getElementById("alamat").value;
-		var jenis_kendaraan = document.getElementById("jenis_kendaraan").value;
-		var kode_kendaraan = document.getElementById("kode_kendaraan").value;
-		var instruktur = document.getElementById("instruktur").value;
-		var telpon = document.getElementById("telpon").value;
-		var paket = document.getElementById("paket").value;
-		if (nama != "" && ttl!="" && pekerjaan !="" && alamat !="" && jenis_kendaraan !="" && kode_kendaraan !="" && instruktur !="" && telpon !="" && paket !="") {
-			return true;
-		}else{
-			alert('Isi data diri Anda dengan lengkap !');
-		}
-	}
-</script>
+
 
 	<?= csrf_field(); ?>
 	<div class="container" id="formDaDir">
@@ -188,7 +166,7 @@
 				<label for="jenis_kendaraan">Jenis Kendaraan</label>
 				<input type="text" class="form-control" name="jenis_kendaraan" id="jenis_kendaraan" value="">
 				<script>
-					window.addEventListener('load',()=>{
+					window.addEventListener('load', () => {
 						document.getElementById('jenis_kendaraan').value = localStorage.getItem('jenis_kendaraan');
 					});
 				</script>
@@ -197,7 +175,7 @@
 				<label for="kode_kendaraan">Kode Kendaraan</label>
 				<input type="text" class="form-control" name="kode_kendaraan" id="kode_kendaraan" value="">
 				<script>
-					window.addEventListener('load',()=>{
+					window.addEventListener('load', () => {
 						document.getElementById('kode_kendaraan').value = localStorage.getItem('kode_kendaraan');
 					});
 				</script>
@@ -206,7 +184,7 @@
 				<label for="instruktur">Instruktur</label>
 				<input type="text" class="form-control" name="instruktur" id="instruktur" value="">
 				<script>
-					window.addEventListener('load',()=>{
+					window.addEventListener('load', () => {
 						document.getElementById('instruktur').value = localStorage.getItem('instruktur');
 					});
 				</script>
@@ -232,15 +210,15 @@
 					<label class="custom-file-label" for="buktiTF">Upload Bukti Transfer</label>
 				</div>
 			</div>
-			<div class="form-group">
-				<div class="select-list">
-					<select name="status" id="status">
-						<option value="">Status</option>
-						<option value="siswa">Siswa</option>
-						<option value="alumni">Alumni</option>
-					</select>
-				</div>
-			</div>
+			<!-- <div class="form-group">
+					<div class="select-list">
+						<select name="status" id="status">
+							<option value="">Status</option>
+							<option value="siswa">Siswa</option>
+							<option value="alumni">Alumni</option>
+						</select>
+					</div>
+				</div> -->
 			<div class="form-group">
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" id="defaultCheck1">
@@ -274,7 +252,7 @@
 					</div>
 				</div>
 			</div>
-			<input type="submit" class="btn btn-primary" value="Daftar" name="submit" id="submit">
+			<input type="button" class="btn btn-primary" value="Daftar" onclick="validasi()">
 		</div>
 	</div>
 </form>
@@ -283,12 +261,29 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'></script>
 
 <script>
+	function validasi() {
+		var nama = document.getElementById("nama").value;
+		var ttl = document.getElementById("ttl").value;
+		var pekerjaan = document.getElementById("pekerjaan").value;
+		var alamat = document.getElementById("alamat").value;
+		var jenis_kendaraan = document.getElementById("jenis_kendaraan").value;
+		var kode_kendaraan = document.getElementById("kode_kendaraan").value;
+		var instruktur = document.getElementById("instruktur").value;
+		var telpon = document.getElementById("telpon").value;
+		var paket = document.getElementById("paket").value;
+		if (nama != "" && ttl != "" && pekerjaan != "" && alamat != "" && jenis_kendaraan != "" && kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "") {
+			document.getElementById('form-daftar').submit();
+		} else {
+			alert('Isi data diri Anda dengan lengkap !');
+
+		}
+	}
+
 	function jadwalOrang() {
-		var jadwal_orang = <?= isset($jadwal_orang) ? json_encode($jadwal_orang) : '' ?>;
+		var jadwal_orang = <?= ($jadwal_orang != null) ? json_encode($jadwal_orang) : 'null' ?>;
 		for (var i = 0; i < 54; i++) {
 			for (var jo of jadwal_orang) {
 				var arr = jo.split("; ");
-				console.log(arr);
 				for (var nilai of arr) {
 					if (document.getElementById(i).value == nilai) {
 						document.getElementById(i).setAttribute('checked', true);
@@ -303,7 +298,7 @@
 		var nilai = event.value;
 		nilai = nilai.split(" ")
 		var jam = nilai[1]
-		var tabel = document.getElementById("jadwal");
+		var tabel = document.getElementById(" jadwal");
 		var cekbokses = tabel.querySelectorAll('input[type=checkbox]');
 		for (var cekboks of cekbokses) {
 			var val = cekboks.value
@@ -312,15 +307,15 @@
 					cekboks.setAttribute('disabled', true);
 				}
 			} else {
-				for (var cek of cekbokses){
+				for (var cek of cekbokses) {
 					var cval = cek.value
-					if(cval.includes(jam) && cek.checked && !cek.disabled){
+					if (cval.includes(jam) && cek.checked && !cek.disabled) {
 						var Stop = true;
 					}
 				}
-				if(!Stop){
+				if (!Stop) {
 					cekboks.removeAttribute("disabled");
-					jadwalOrang()
+					<?php if (isset($jadwal_orang)) { ?> jadwalOrang() <?php } ?>
 				}
 			}
 		}
@@ -330,22 +325,20 @@
 			jadwalOrang()
 		<?php } ?>
 	})
-
 </script>
 
 <script>
 	$('#formDaDir').hide();
-	$(document).ready(function () {
+	$(document).ready(function() {
 		$('#btnPilih').click(function() {
-		checked = $("input[type=checkbox]:checked").length;
+			checked = $("input[type=checkbox]:checked").length;
 
-		if(!checked) {
-			alert("Pilih jadwal kursus");
-			return false;
-		}
-		else {
-			$('#formDaDir').toggle();
-		}
+			if (!checked) {
+				alert("Pilih jadwal kursus");
+				return false;
+			} else {
+				$('#formDaDir').toggle();
+			}
 
 		});
 	});
