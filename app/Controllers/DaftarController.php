@@ -34,11 +34,11 @@ class DaftarController extends BaseController
         return view('v_jadwal', $data);
     }
 
-    public function instruktur($ins = false)
+    public function instruktur($instrukur = false)
     {
         $daftar_model = new DaftarModel();
 
-        if ($ins == false) {
+        if ($instrukur == false) {
             $data['daftar'] = $daftar_model->findAll();
 
             $i = 0;
@@ -48,7 +48,7 @@ class DaftarController extends BaseController
             }
             return view('v_jadwal', $data);
         } else {
-            $data['daftar'] = $daftar_model->getInstruktur($ins);
+            $data['daftar'] = $daftar_model->getInstruktur($instrukur);
             $i = 0;
             // var_dump($data);
             // exit();

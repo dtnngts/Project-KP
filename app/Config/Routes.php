@@ -58,7 +58,8 @@ $routes->get('/lihatadmin', 'AdminController::lihatadmin');
 $routes->get('/download', 'AdminController::excel');
 $routes->get('/validasisiswa', 'AdminController::valid');
 $routes->post('/validasi/(:any)', 'AdminController::validasi/$1');
-$routes->get('/lihatjadwal/(:segment)', 'AdminController::lihatjadwal/$1');
+$routes->get('/lihatjadwal', 'AdminController::adminjadwal');
+$routes->get('/lihatjadwal/(:any)', 'AdminController::lihatjadwal/$1');
 
 /*
  * --------------------------------------------------------------------
