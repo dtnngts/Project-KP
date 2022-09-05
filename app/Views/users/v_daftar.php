@@ -44,7 +44,7 @@
 					<div id="nab" class="card">
 						<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="NAB">
 						<!-- <input type="radio" name="kode_kendaraan" onclick="klikmobil(this)" value="nab"> -->
-						<img src="assets/images/coba.png"  class="card-img-top">
+						<img src="assets/images/newavanzabiru.png"  class="card-img-top">
 					</div>
 					<div id="nas" class="card">
 						<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="NAS">
@@ -69,7 +69,7 @@
 				
 				<div id="detailsnab" style="display:none">
 				<input type="hidden" name="instruktur" value="Hendri">
-					<img src="assets/images/coba.png" class="card-img-top">
+					<img src="assets/images/newavanzabiru.png" class="card-img-top">
 					<table border=0>
 						<tr>
 							<td colspan="2">NEW AVANZA BIRU</td>

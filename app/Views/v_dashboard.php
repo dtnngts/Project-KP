@@ -37,7 +37,7 @@ https://templatemo.com/tm-538-digital-trend
     <div class="container">
       <a class="navbar-brand" href="index.html">
 
-        <img class="img-profile rounded-circle" src="assets/images/logo.png" width=75px;></i>
+        <img class="img-profile rounded-circle" src="assets/images/logop.png" width=75px;></i>
         Princess Solution
       </a>
 
@@ -57,7 +57,7 @@ https://templatemo.com/tm-538-digital-trend
             <a href="/daftar" class="nav-link">Daftar</a>
           </li>
           <li class="nav-item">
-            <a href="contact.html" class="nav-link contact">Contact</a>
+            <a href="/login" class="nav-link contact">Login</a>
           </li>
         </ul>
       </div>
@@ -77,14 +77,14 @@ https://templatemo.com/tm-538-digital-trend
 
             <a href="contact.html" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Let us discuss together!</a>
 
-            <strong class="d-block py-3 pl-5 text-white" data-aos="fade-up" data-aos-delay="200"><i class="fa fa-phone mr-2"></i> +99 080 070 4224</strong>
+            <strong class="d-block py-3 pl-5 text-white" data-aos="fade-up" data-aos-delay="200"><i class="fa fa-phone mr-2"></i> +62 812-7957-2555</strong>
           </div>
         </div>
 
         <div class="col-lg-6 col-12">
           <div class="hero-image" data-aos="fade-up" data-aos-delay="300">
 
-            <img src="assets/images/coba.png" class="img-fluid" alt="working girl">
+            <img src="assets/images/instruktur.png" class="img-fluid" alt="working girl">
           </div>
         </div>
 
@@ -170,29 +170,28 @@ https://templatemo.com/tm-538-digital-trend
     <div class="container">
       <div class="row">
 
-        <div class="col-lg-6 col-md-5 col-12">
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <div class="contact-image" data-aos="fade-up">
 
-            <img src="images/female-avatar.png" class="img-fluid" alt="website">
+            <img src="assets/images/jam.png" class="img-fluid" alt="website">
           </div>
         </div>
 
         <div class="col-lg-6 col-md-7 col-12">
-          <h4 class="my-5 pt-3" data-aos="fade-up" data-aos-delay="100">Opening Hours</h4>
-
-          <div class="quote" data-aos="fade-up" data-aos-delay="200"></div>
-
-          <h2 class="mb-4" data-aos="fade-up" data-aos-delay="300">Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo.</h2>
-
-          <p data-aos="fade-up" data-aos-delay="400">
-            <strong>Mary Zoe</strong>
-
-            <span class="mx-1">/</span>
-
-            <small>Digital Agency (CEO)</small>
-          </p>
+          <h4 class=" text-center my-5 pt-3" data-aos="fade-up" data-aos-delay="100">Opening Hours</h4>
+          <table class="table text-center text-dark">
+            <tbody class="fw-normal">
+              <tr>
+                <td>Senin - Jum'at:</td>
+                <td>08.00 - 17.00</td>
+              </tr>
+              <tr>
+                <td>Sabtu:</td>
+                <td>08.00 - 15.00</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-
       </div>
     </div>
   </section>
@@ -211,7 +210,7 @@ https://templatemo.com/tm-538-digital-trend
 
           <p class="mb-1">
             <i class="fa fa-phone mr-2 footer-icon"></i>
-            +99 080 070 4224
+            +62 812-7957-2555
           </p>
 
           <p>
