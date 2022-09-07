@@ -34,11 +34,11 @@ class DaftarController extends BaseController
         return view('v_jadwal', $data);
     }
 
-    public function instruktur($ins = false)
+    public function instruktur($instruktur = false)
     {
         $daftar_model = new DaftarModel();
 
-        if ($ins == false) {
+        if ($instruktur == false) {
             $data['daftar'] = $daftar_model->findAll();
 
             $i = 0;
@@ -48,7 +48,7 @@ class DaftarController extends BaseController
             }
             return view('v_jadwal', $data);
         } else {
-            $data['daftar'] = $daftar_model->getInstruktur($ins);
+            $data['daftar'] = $daftar_model->getInstruktur($instruktur);
             $i = 0;
             // var_dump($data);
             // exit();
@@ -76,6 +76,10 @@ class DaftarController extends BaseController
         //     session()->setFlashdata('error', $this->validator->listErrors());
         // 	return redirect()->back()->withInput();
         // }
+
+        $transfer = $this->request->getFile('transfer');
+        $transfer->move('assets/images');
+        $namaTF=$transfer->getName();
         $data = [
             'nama' => $this->request->getVar('nama'),
             'ttl' => $this->request->getVar('ttl'),
@@ -89,11 +93,11 @@ class DaftarController extends BaseController
             'jadwal' => implode('; ', $this->request->getVar('jadwal')),
             // 'jadwal' => $this->request->getVar('jadwal'),
             'status' => " ",
+            'transfer' => $namaTF
         ];
         //
         $DaftarModel = model("DaftarModel");
         $DaftarModel->insert($data);
-
         return redirect()->to(base_url('/daftar'));
     }
 }

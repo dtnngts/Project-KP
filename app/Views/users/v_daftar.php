@@ -68,8 +68,12 @@
 				</div>
 				
 				<div id="detailsnab" style="display:none">
+<<<<<<< HEAD
+					<img src="assets/images/coba.png" class="card-img-top">
+=======
 				<input type="hidden" name="instruktur" value="Hendri">
 					<img src="assets/images/newavanzabiru.png" class="card-img-top">
+>>>>>>> ac4034f598b704b6e4d917b99db2fc7f4b39acc0
 					<table border=0>
 						<tr>
 							<td colspan="2">NEW AVANZA BIRU</td>
@@ -84,7 +88,6 @@
 					</table>
 				</div>
 				<div id="detailsnas" style="display:none">
-				<input type="hidden" name="instruktur" value="Suhadi">
 					<img src="assets/images/coba.png" class="card-img-top">
 					<table border=0>
 						<tr>
@@ -100,7 +103,6 @@
 					</table>
 				</div>
 				<div id="detailsavnew" style="display:none">
-				<input type="hidden" name="instruktur" value="Yono">
 					<img src="assets/images/coba.png" class="card-img-top">
 					<table border=0>
 						<tr>
@@ -116,7 +118,6 @@
 					</table>
 				</div>
 				<div id="detailsgmb" style="display:none">
-				<input type="hidden" name="instruktur" value="Suhadi/Yono">
 					<img src="assets/images/coba.png" class="card-img-top">
 					<table border=0>
 						<tr>
@@ -139,7 +140,6 @@
 					</table>
 				</div>
 				<div id="detailsgmm" style="display:none">
-				<input type="hidden" name="instruktur" value="Eko">
 					<img src="assets/images/coba.png" class="card-img-top">
 					<table border=0>
 						<tr>

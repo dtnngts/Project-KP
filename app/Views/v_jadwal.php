@@ -225,11 +225,12 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="telpon">Bukti Transfer</label>
-				<div class="custom-file">
-					<input type="file" class="custom-file-input" id="buktiTF">
-					<label class="custom-file-label" for="buktiTF">Upload Bukti Transfer</label>
-				</div>
+				<label for="buktiTF">Bukti Transfer</label><br>
+				<!-- <div class="custom-file"> -->
+					<input type="file" id="buktiTF" onchange="return validasiEkstensi()">
+					<!-- <label class="custom-file-label" for="buktiTF">Upload Bukti Transfer</label> -->
+					<div id="preview"></div>
+				<!-- </div> -->
 			</div>
 			<!-- <div class="form-group">
 					<div class="select-list">
@@ -291,12 +292,31 @@
 		var kode_kendaraan = document.getElementById("kode_kendaraan").value;
 		var instruktur = document.getElementById("instruktur").value;
 		var telpon = document.getElementById("telpon").value;
-		var paket = document.getElementById("paket").value;
 		if (nama != "" && ttl != "" && pekerjaan != "" && alamat != "" && jenis_kendaraan != "" && kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "") {
 			document.getElementById('form-daftar').submit();
 		} else {
 			alert('Isi data diri Anda dengan lengkap !');
 
+		}
+	}
+
+	function validasiEkstensi() {
+		var inputFile = document.getElementById('buktiTF');
+		var pathFile = inputFile.value;
+		var ekstensi = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+		if (!ekstensi.exec(pathFile)) {
+			alert('Silakan upload file yang dengan ekstensi .jpeg/.jpg/.png/.gif');
+			inputFile.value = '';
+			return false;
+		} else {
+			// Preview gambar
+			if (inputFile.files && inputFile.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					document.getElementById('preview').innerHTML = '<img src="' + e.target.result + '" style="height:300px"/>';
+				};
+				reader.readAsDataURL(inputFile.files[0]);
+			}
 		}
 	}
 

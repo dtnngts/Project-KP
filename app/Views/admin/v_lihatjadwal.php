@@ -22,7 +22,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item ">
+            <li class="nav-item">
                 <a class="nav-link" href="/admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -43,10 +43,10 @@
                         <a class="collapse-item" href="/seluruhsiswa">Data Seluruh Siswa</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Data per Instruktur:</h6>
-                        <a class="collapse-item" href="/hendri">Siswa Hendri</a>
-                        <a class="collapse-item" href="/suhadi">Siswa Suhadi</a>
-                        <a class="collapse-item" href="/yono">Siswa Yono</a>
-                        <a class="collapse-item" href="/eko">Siswa Eko</a>
+                        <a class="collapse-item" href="/Hendri">Siswa Hendri</a>
+                        <a class="collapse-item" href="/Suhadi">Siswa Suhadi</a>
+                        <a class="collapse-item" href="/Yono">Siswa Yono</a>
+                        <a class="collapse-item" href="/Eko">Siswa Eko</a>
                     </div>
                 </div>
             </li>
@@ -71,9 +71,19 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="/jadwal">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Jadwal</span></a>
+                    <span>Jadwal</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Jadwal per Instruktur:</h6>
+                        <a class="collapse-item" href="/lihatjadwal/Hendri">Jadwal Hendri</a>
+                        <a class="collapse-item" href="/lihatjadwal/Suhadi">Jadwal Suhadi</a>
+                        <a class="collapse-item" href="/lihatjadwal/Yono">Jadwal Yono</a>
+                        <a class="collapse-item" href="/lihatjadwal/Eko">Jadwal Eko</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Divider -->
@@ -127,152 +137,131 @@
                 <div class="container-fluid">
 
                     <div id="container">
-                        <h1>Jadwal Instruktur <br></br></h1>
+                        <center>
+                            <table id="jadwal">
+                                <tr>
+                                    <th>Jam/Hari</th>
+                                    <th>Senin</th>
+                                    <th>Selasa</th>
+                                    <th>Rabu</th>
+                                    <th>Kamis</th>
+                                    <th>Jum'at</th>
+                                    <th>Sabtu</th>
+                                </tr>
 
-                        <div id="body">
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab">
-                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="<?=base_url('lihatjadwal/suhadi')?>" role="tab">Hendri</a>
-                                    <a class="nav-item nav-link" id="nav-profil-tab" data-toggle="tab" href="#nav-suhadi" role="tab">Suhadi</a>
-                                    <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-yono" role="tab">Yono</a>
-                                    <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-eko" role="tab">Eko</a>
-                                </div>
-                            </nav>
+                                <tr>
+                                    <td>08.00-09.00</td>
+                                    <td><label><input type="checkbox" id="0" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 08.00-09.00"></label></td>
+                                    <td><label><input type="checkbox" id="1" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 08.00-09.00"></label></td>
+                                    <td><label><input type="checkbox" id="2" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 08.00-09.00"></label></td>
+                                    <td><label><input type="checkbox" id="3" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 08.00-09.00"></label></td>
+                                    <td><label><input type="checkbox" id="4" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 08.00-09.00"></label></td>
+                                    <td><label><input type="checkbox" id="5" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 08.00-09.00"></label></td>
+                                </tr>
 
-                            <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-hendri" role="tabpanel">
-                                    <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
-                                        <thead>
-                                            <tr>
-                                                <td scope="col">Username</td>
-                                                <td scope="col">Password</td>
-                                                <td scope="col">Nama</td>
-                                                <td scope="col">Action</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            foreach ($admin as $row) :
-                                            ?>
-                                                <tr>
-                                                    <td scope="row"><?= $row['username'] ?></td>
-                                                    <td scope="row"><?= $row['password'] ?></td>
-                                                    <td scope="row"><?= $row['nama'] ?></td>
-                                                    <td scope="row" style="text-align:center">
-                                                        <a href="<?= base_url("edit/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
-                                                        <form action="delete/<?= $row['id'] ?>" method="post" class="d-inline">
-                                                            <?= csrf_field(); ?>
-                                                            <input type="hidden" name="_method" value="Delete">
-                                                            <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <tr>
+                                    <td>09.00-10.00</td>
+                                    <td><label><input type="checkbox" id="6" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 09.00-10.00"></label></td>
+                                    <td><label><input type="checkbox" id="7" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 09.00-10.00"></label></td>
+                                    <td><label><input type="checkbox" id="8" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 09.00-10.00"></label></td>
+                                    <td><label><input type="checkbox" id="9" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 09.00-10.00"></label></td>
+                                    <td><label><input type="checkbox" id="10" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 09.00-10.00"></label></td>
+                                    <td><label><input type="checkbox" id="11" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 09.00-10.00"></label></td>
+                                </tr>
 
-                                <div class="tab-pane fade" id="nav-suhadi" role="tabpanel">
-                                    <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
-                                        <thead>
-                                            <tr>
-                                                <td scope="col">Username</td>
-                                                <td scope="col">Password</td>
-                                                <td scope="col">Nama</td>
-                                                <td scope="col">Action</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            foreach ($super as $row) :
-                                            ?>
-                                                <tr>
-                                                    <td scope="row"><?= $row['username'] ?></td>
-                                                    <td scope="row"><?= $row['password'] ?></td>
-                                                    <td scope="row"><?= $row['nama'] ?></td>
-                                                    <td scope="row" style="text-align:center">
-                                                        <a href="<?= base_url("edit/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
-                                                        <form action="delete/<?= $row['id'] ?>" method="post" class="d-inline">
-                                                            <?= csrf_field(); ?>
-                                                            <input type="hidden" name="_method" value="Delete">
-                                                            <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <tr>
+                                    <td>10.00-11.00</td>
+                                    <td><label><input type="checkbox" id="12" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 10.00-11.00"></label></td>
+                                    <td><label><input type="checkbox" id="13" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 10.00-11.00"></label></td>
+                                    <td><label><input type="checkbox" id="14" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 10.00-11.00"></label></td>
+                                    <td><label><input type="checkbox" id="15" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 10.00-11.00"></label></td>
+                                    <td><label><input type="checkbox" id="16" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 10.00-11.00"></label></td>
+                                    <td><label><input type="checkbox" id="17" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 10.00-11.00"></label></td>
+                                </tr>
 
-                                <div class="tab-pane fade" id="nav-yono" role="tabpanel">
-                                    <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
-                                        <thead>
-                                            <tr>
-                                                <td scope="col">Username</td>
-                                                <td scope="col">Password</td>
-                                                <td scope="col">Nama</td>
-                                                <td scope="col">Action</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            foreach ($validator as $row) :
-                                            ?>
-                                                <tr>
-                                                    <td scope="row"><?= $row['username'] ?></td>
-                                                    <td scope="row"><?= $row['password'] ?></td>
-                                                    <td scope="row"><?= $row['nama'] ?></td>
-                                                    <td scope="row" style="text-align:center">
-                                                        <a href="<?= base_url("edit/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
-                                                        <form action="delete/<?= $row['id'] ?>" method="post" class="d-inline">
-                                                            <?= csrf_field(); ?>
-                                                            <input type="hidden" name="_method" value="Delete">
-                                                            <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <tr>
+                                    <td>11.00-12.00</td>
+                                    <td><label><input type="checkbox" id="18" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 11.00-12.00"></label></td>
+                                    <td><label><input type="checkbox" id="19" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 11.00-12.00"></label></td>
+                                    <td><label><input type="checkbox" id="20" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 11.00-12.00"></label></td>
+                                    <td><label><input type="checkbox" id="21" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 11.00-12.00"></label></td>
+                                    <td><label><input type="checkbox" id="22" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 11.00-12.00"></label></td>
+                                    <td><label><input type="checkbox" id="23" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 11.00-12.00"></label></td>
+                                </tr>
 
-                                <div class="tab-pane fade" id="nav-eko" role="tabpanel">
-                                    <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
-                                        <thead>
-                                            <tr>
-                                                <td scope="col">Username</td>
-                                                <td scope="col">Password</td>
-                                                <td scope="col">Nama</td>
-                                                <td scope="col">Action</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            foreach ($validator as $row) :
-                                            ?>
-                                                <tr>
-                                                    <td scope="row"><?= $row['username'] ?></td>
-                                                    <td scope="row"><?= $row['password'] ?></td>
-                                                    <td scope="row"><?= $row['nama'] ?></td>
-                                                    <td scope="row" style="text-align:center">
-                                                        <a href="<?= base_url("edit/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
-                                                        <form action="delete/<?= $row['id'] ?>" method="post" class="d-inline">
-                                                            <?= csrf_field(); ?>
-                                                            <input type="hidden" name="_method" value="Delete">
-                                                            <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                                <tr>
+                                    <td>12.00-13.00</td>
+                                    <td><label><input type="checkbox" id="24" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 12.00-13.00"></label></td>
+                                    <td><label><input type="checkbox" id="25" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 12.00-13.00"></label></td>
+                                    <td><label><input type="checkbox" id="26" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 12.00-13.00"></label></td>
+                                    <td><label><input type="checkbox" id="27" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 12.00-13.00"></label></td>
+                                    <td><label><input type="checkbox" id="28" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 12.00-13.00"></label></td>
+                                    <td><label><input type="checkbox" id="29" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 12.00-13.00"></label></td>
+                                </tr>
+
+                                <tr>
+                                    <td>13.00-14.00</td>
+                                    <td><label><input type="checkbox" id="30" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 13.00-14.00"></label></td>
+                                    <td><label><input type="checkbox" id="31" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 13.00-14.00"></label></td>
+                                    <td><label><input type="checkbox" id="32" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 13.00-14.00"></label></td>
+                                    <td><label><input type="checkbox" id="33" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 13.00-14.00"></label></td>
+                                    <td><label><input type="checkbox" id="34" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 13.00-14.00"></label></td>
+                                    <td><label><input type="checkbox" id="35" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 13.00-14.00"></label></td>
+                                </tr>
+
+                                <tr>
+                                    <td>14.00-15.00</td>
+                                    <td><label><input type="checkbox" id="36" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 14.00-15.00"></label></td>
+                                    <td><label><input type="checkbox" id="37" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 14.00-15.00"></label></td>
+                                    <td><label><input type="checkbox" id="38" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 14.00-15.00"></label></td>
+                                    <td><label><input type="checkbox" id="39" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 14.00-15.00"></label></td>
+                                    <td><label><input type="checkbox" id="40" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 14.00-15.00"></label></td>
+                                    <td><label><input type="checkbox" id="41" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 14.00-15.00"></label></td>
+                                </tr>
+
+                                <tr>
+                                    <td>15.00-16.00</td>
+                                    <td><label><input type="checkbox" id="42" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 15.00-16.00"></label></td>
+                                    <td><label><input type="checkbox" id="43" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 15.00-16.00"></label></td>
+                                    <td><label><input type="checkbox" id="44" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 15.00-16.00"></label></td>
+                                    <td><label><input type="checkbox" id="45" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 15.00-16.00"></label></td>
+                                    <td><label><input type="checkbox" id="46" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 15.00-16.00"></label></td>
+                                    <td><label><input type="checkbox" id="47" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 15.00-16.00"></label></td>
+                                </tr>
+
+                                <tr>
+                                    <td>16.00-17.00</td>
+                                    <td><label><input type="checkbox" id="48" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 16.00-17.00"></label></td>
+                                    <td><label><input type="checkbox" id="49" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 16.00-17.00"></label></td>
+                                    <td><label><input type="checkbox" id="50" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 16.00-17.00"></label></td>
+                                    <td><label><input type="checkbox" id="51" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 16.00-17.00"></label></td>
+                                    <td><label><input type="checkbox" id="52" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 16.00-17.00"></label></td>
+                                    <td><label><input type="checkbox" id="53" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 16.00-17.00"></label></td>
+                                </tr>
+
+                                <!-- <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button type="button" class="btnPilih" id="btnPilih" style="--clr:#c5c9d3">Pilih Jadwal</button></td>
+                                </tr> -->
+                            </table>
+                        </center>
                     </div>
                 </div>
                 <!-- /.container-fluid -->
             </div>
+
+            <script src="<?= base_url('vendor/simple-datatables/simple-datatables.js') ?>"></script>
+            <script>
+                // Simple Datatable
+                let table1 = document.querySelector('#table1');
+                let dataTable = new simpleDatatables.DataTable(table1);
+            </script>
             <!-- End of Main Content -->
 
             <!-- Footer -->
@@ -315,5 +304,53 @@
         </div>
     </div>
 
+    <script>
+        function jadwalOrang() {
+            var jadwal_orang = <?= ($jadwal_orang != null) ? json_encode($jadwal_orang) : 'null' ?>;
+            for (var i = 0; i < 54; i++) {
+                for (var jo of jadwal_orang) {
+                    var arr = jo.split("; ");
+                    for (var nilai of arr) {
+                        if (document.getElementById(i).value == nilai) {
+                            document.getElementById(i).setAttribute('checked', true);
+                            // document.getElementById(i).setAttribute('disabled', true);
+                        }
+                    }
+                }
+            }
+        }
+
+        function pilihSatu(event) {
+            var nilai = event.value;
+            nilai = nilai.split(" ")
+            var jam = nilai[1]
+            var tabel = document.getElementById(" jadwal");
+            var cekbokses = tabel.querySelectorAll('input[type=checkbox]');
+            for (var cekboks of cekbokses) {
+                var val = cekboks.value
+                if (event.checked) {
+                    if (cekboks != event && !val.includes(jam)) {
+                        cekboks.setAttribute('disabled', true);
+                    }
+                } else {
+                    for (var cek of cekbokses) {
+                        var cval = cek.value
+                        if (cval.includes(jam) && cek.checked && !cek.disabled) {
+                            var Stop = true;
+                        }
+                    }
+                    if (!Stop) {
+                        cekboks.removeAttribute("disabled");
+                        <?php if (isset($jadwal_orang)) { ?> jadwalOrang() <?php } ?>
+                    }
+                }
+            }
+        }
+        window.addEventListener('load', () => {
+            <?php if (isset($jadwal_orang)) { ?>
+                jadwalOrang()
+            <?php } ?>
+        })
+    </script>
 </body>
 <?php $this->endSection(); ?>
