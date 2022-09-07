@@ -7,12 +7,12 @@
 */
 @font-face {
   font-family: cleanwork;
-  src:url('/css/font/Cleanwork.ttf');
+  src: url('/css/font/Cleanwork.ttf');
 }
 
 @font-face {
   font-family: agency;
-  src:url('/css/font/AGENCYR.TTF');
+  src: url('/css/font/AGENCYR.TTF');
 }
 
 body {
@@ -21,15 +21,35 @@ body {
 }
 
 h5 {
-  padding-top:50px;
+  padding-top: 50px;
   padding-left: 45px;
-  text-align:center;
+  text-align: center;
   color: #fff;
   font-family: cleanwork;
 }
 
+#form-daftar input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  height: 70px;
+  width: 70px;
+  outline: none;
+  border-radius: 50%;
+  margin: 0 15px 0 0;
+  cursor: pointer;
+  background-image: url(/assets/images/ban.png);
+  display: grid;
+  align-items: center;
+}
+
+#form-daftar input[type="checkbox"]:checked {
+  background: gold;
+}
+
 p {
-  text-align:center;
+  text-align: center;
   padding-left: 45px;
   color: #fff;
   font-style: italic;
@@ -152,16 +172,14 @@ select.form-control {
   margin-right: 20px;
 }
 
-#pkManual
-{
+#pkManual {
   padding-left: 35px;
   padding-top: 20px;
   display: flex;
   justify-content: center;
 }
 
-#pkMatic
-{
+#pkMatic {
   padding-left: 35px;
   padding-top: 20px;
   display: flex;
@@ -174,8 +192,7 @@ select.form-control {
   cursor: pointer;
 }
 
-.card:hover img
-{
+.card:hover img {
   transform: scale(1.2, 1.2);
 }
 

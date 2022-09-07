@@ -156,7 +156,7 @@
 				<td></td>
 				<td></td>
 				<td><button type="button" class="btnPilih" id="btnPilih" style="--clr:#c5c9d3">Pilih Jadwal</button></td>
-	
+
 			</tr>
 		</table>
 	</center>
