@@ -58,6 +58,10 @@ class Daftar extends Migration
 				'type'               => 'VARCHAR',
 				'constraint'         => '255',
 			],
+			'transfer'                 => [
+				'type'               => 'VARCHAR',
+				'constraint'         => '255',
+			],
             'kehadiran'              => [
 				'type'               => 'INT',
 				'constraint'         => '11',

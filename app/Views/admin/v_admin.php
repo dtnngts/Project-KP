@@ -43,10 +43,10 @@
                         <a class="collapse-item" href="/seluruhsiswa">Data Seluruh Siswa</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Data per Instruktur:</h6>
-                        <a class="collapse-item" href="/hendri">Siswa Hendri</a>
-                        <a class="collapse-item" href="/suhadi">Siswa Suhadi</a>
-                        <a class="collapse-item" href="/yono">Siswa Yono</a>
-                        <a class="collapse-item" href="/eko">Siswa Eko</a>
+                        <a class="collapse-item" href="/Hendri">Siswa Hendri</a>
+                        <a class="collapse-item" href="/Suhadi">Siswa Suhadi</a>
+                        <a class="collapse-item" href="/Yono">Siswa Yono</a>
+                        <a class="collapse-item" href="/Eko">Siswa Eko</a>
                     </div>
                 </div>
             </li>
@@ -71,9 +71,19 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/lihatjadwal">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Jadwal</span></a>
+                    <span>Jadwal</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Jadwal per Instruktur:</h6>
+                        <a class="collapse-item" href="/lihatjadwal/Hendri">Jadwal Hendri</a>
+                        <a class="collapse-item" href="/lihatjadwal/Suhadi">Jadwal Suhadi</a>
+                        <a class="collapse-item" href="/lihatjadwal/Yono">Jadwal Yono</a>
+                        <a class="collapse-item" href="/lihatjadwal/Eko">Jadwal Eko</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Divider -->
@@ -158,7 +168,7 @@
 
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="<?= base_url('/hendri') ?>">
+                            <a href="<?= base_url('/Hendri') ?>">
                                 <div class="card border-left-danger shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -179,7 +189,7 @@
                         </div>
 
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="<?= base_url('/suhadi') ?>">
+                            <a href="<?= base_url('/Suhadi') ?>">
                                 <div class="card border-left-success shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -200,7 +210,7 @@
                         </div>
 
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="<?= base_url('/yono') ?>">
+                            <a href="<?= base_url('/Yono') ?>">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -221,7 +231,7 @@
                         </div>
 
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="<?= base_url('/eko') ?>">
+                            <a href="<?= base_url('/Eko') ?>">
                                 <div class="card border-left-warning shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -247,7 +257,15 @@
             </div>
             <!-- End of Main Content -->
 
-            >
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
