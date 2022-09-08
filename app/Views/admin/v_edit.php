@@ -204,8 +204,6 @@
                                     </tr>
                                     <tr>
                                         <td></td>
-<<<<<<< HEAD
-=======
                                         <td>Jadwal</td>
                                         <td colspan="4">
                                             <center>
@@ -315,7 +313,6 @@
                                     </tr>
                                     <tr>
                                         <td></td>
->>>>>>> 0254c41df530d4f4f0cc2e8a2cfecfffb7fa42cf
                                         <td></td>
                                         <td></td>
                                         <td><input class="btn btn-primary btn-md" style="float:right" type="submit" value="          Save          "></td>

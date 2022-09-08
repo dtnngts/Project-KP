@@ -192,11 +192,6 @@ class AdminController extends BaseController
 
 	public function update($no_registrasi, $instruktur)
 	{
-		if (session()->get('username') == '') {
-			session()->setFlashdata('gagal', 'Anda belum login');
-			return redirect()->to(base_url('/login'));
-		}
-
 		$DaftarModel = model("DaftarModel");
 		$data = $this->request->getPost();
 		$DaftarModel->update($no_registrasi, $data);
@@ -317,7 +312,6 @@ class AdminController extends BaseController
 	public function validasi ($no_registrasi) {
 		$data = [
 			'status' => "siswa",
-			'nama' => session()->get('username')
 		];
 		$where = array('no_registrasi' => $no_registrasi);
 

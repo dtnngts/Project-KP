@@ -148,7 +148,7 @@
                                         <td scope="col">Instruktur</td>
                                         <td scope="col">Paket</td>
                                         <td scope="col">Telpon</td>
-                                        <td scope="col">Kehadiran</td>
+                                        <td scope="col">Bukti Transfer</td>
                                         <td scope="col">Action</td>
                                     </tr>
                                 </thead>
@@ -163,20 +163,25 @@
                                             <td scope="row"><?= $row['instruktur'] ?></td>
                                             <td scope="row"><?= $row['paket'] ?></td>
                                             <td scope="row"><?= $row['telpon'] ?></td>
-                                            <td scope="row"><?= $row['kehadiran'] ?></td>
+                                            <td scope="row"><img class="buktiTF" src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" style="width:100px;"></td>
                                             <td scope="row" style="text-align:center">
-                                                <a href="<?= base_url("detail/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Detail</a>
-                                                <?php if ($row['status'] = "") : ?>
+                                                <!-- <a href="<?= base_url("detail/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Detail</a> -->
+                                                <?php if ($row['status'] != " ") : ?>
+                                                    <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Validasi</button>
+                                                <?php else : ?>
                                                     <form action="validasi/<?= $row['no_registrasi'] ?>" method="post" class="d-inline">
                                                         <button type="submit" class="btn btn-success" style="font: 13px/20px normal Helvetica, Arial, sans-serif;">Validasi</button>
-                                                    </form> <?php else : ?>
-                                                    <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Validasi</button>
+                                                    </form>
                                                 <?php endif ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
+                            <div id="modal" class="modal">
+                                <span class="close">&times;</span>
+                                <img class="modal-content" id="img01">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -230,6 +235,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Get the modal
+        var modal = document.querySelector(".modal");
+        var modalImg = document.querySelector(".modal-content");
+        Array.from(document.querySelectorAll(".buktiTF")).forEach(item => {
+            item.addEventListener("click", event => {
+                modal.style.display = "block";
+                modalImg.src = event.target.src;
+            });
+        });
+
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
 
 </body>
 <?php $this->endSection(); ?>

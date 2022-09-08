@@ -41,9 +41,4 @@ class DaftarModel extends Model
 		}
 		return $this->where('no_registrasi', $no_registrasi)->find();
 	}
-
-	public function getTransfer($buktiTF)
-	{
-		return $this->where('buktiTF', $buktiTF)->find();
-	}
 }
