@@ -156,7 +156,7 @@
 				<td></td>
 				<td></td>
 				<td><button type="button" class="btnPilih" id="btnPilih" style="--clr:#c5c9d3">Pilih Jadwal</button></td>
-	
+
 			</tr>
 		</table>
 	</center>
@@ -227,9 +227,9 @@
 			<div class="form-group">
 				<label for="buktiTF">Bukti Transfer</label><br>
 				<!-- <div class="custom-file"> -->
-					<input type="file" id="buktiTF" onchange="return validasiEkstensi()">
-					<!-- <label class="custom-file-label" for="buktiTF">Upload Bukti Transfer</label> -->
-					<div id="preview"></div>
+				<input type="file" id="buktiTF" name="buktiTF" onchange="return validasiEkstensi()">
+				<!-- <label class="custom-file-label" for="buktiTF">Upload Bukti Transfer</label> -->
+				<div id="preview"></div>
 				<!-- </div> -->
 			</div>
 			<!-- <div class="form-group">
@@ -339,13 +339,14 @@
 		var nilai = event.value;
 		nilai = nilai.split(" ")
 		var jam = nilai[1]
-		var tabel = document.getElementById(" jadwal");
+		var tabel = document.getElementById("jadwal");
 		var cekbokses = tabel.querySelectorAll('input[type=checkbox]');
 		for (var cekboks of cekbokses) {
 			var val = cekboks.value
 			if (event.checked) {
 				if (cekboks != event && !val.includes(jam)) {
 					cekboks.setAttribute('disabled', true);
+					document.getElementById("btnPilih").disabled = false;
 				}
 			} else {
 				for (var cek of cekbokses) {
@@ -355,6 +356,8 @@
 					}
 				}
 				if (!Stop) {
+					document.getElementById("btnPilih").disabled = true;
+					$('#formDaDir').hide();
 					cekboks.removeAttribute("disabled");
 					<?php if (isset($jadwal_orang)) { ?> jadwalOrang() <?php } ?>
 				}
@@ -362,6 +365,7 @@
 		}
 	}
 	window.addEventListener('load', () => {
+		document.getElementById("btnPilih").disabled = true;
 		<?php if (isset($jadwal_orang)) { ?>
 			jadwalOrang()
 		<?php } ?>
@@ -372,14 +376,17 @@
 	$('#formDaDir').hide();
 	$(document).ready(function() {
 		$('#btnPilih').click(function() {
-			checked = $("input[type=checkbox]:checked").length;
+			$('#formDaDir').toggle();
+			var konten = document.getElementById("formDaDir");
+			konten.scrollIntoView();
+			// checked = $("input[type=checkbox]:checked").length;
 
-			if (!checked) {
-				alert("Pilih jadwal kursus");
-				return false;
-			} else {
-				$('#formDaDir').toggle();
-			}
+			// if (!checked) {
+			// 	alert("Pilih jadwal kursus");
+			// 	return false;
+			// } else {
+			// 	$('#formDaDir').toggle();
+			// }
 
 		});
 	});

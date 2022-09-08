@@ -13,4 +13,9 @@ class AdminModel extends Model
     protected $table                = 'admin';
     protected $primaryKey           = 'id';
     protected $allowedFields        = ['id', 'username', 'password', 'nama', 'role'];
+
+    public function getTransfer($buktiTF)
+    {
+        return $this->where('buktiTF', $buktiTF)->find();
+    }
 }

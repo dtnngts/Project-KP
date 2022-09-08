@@ -165,6 +165,7 @@
                                             <td scope="row"><?= $row['telpon'] ?></td>
                                             <td scope="row"><?= $row['kehadiran'] ?></td>
                                             <td scope="row" style="text-align:center">
+                                                <a href="<?= base_url("detail/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Detail</a>
                                                 <?php if ($row['status'] = "") : ?>
                                                     <form action="validasi/<?= $row['no_registrasi'] ?>" method="post" class="d-inline">
                                                         <button type="submit" class="btn btn-success" style="font: 13px/20px normal Helvetica, Arial, sans-serif;">Validasi</button>

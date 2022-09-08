@@ -3,6 +3,7 @@
 
 <head>
 
+  <link rel="shortcut icon" href="/assets/images/logop.png">
   <title>Princess Solution</title>
 
   <!--
