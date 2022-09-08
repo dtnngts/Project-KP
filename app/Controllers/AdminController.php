@@ -213,7 +213,7 @@ class AdminController extends BaseController
 
 		$row = new DaftarModel();
 		$data = $row->find($no_registrasi);
-		unlink("./assets/images/".$data['buktiTF']);
+		unlink("./assets/transfer/".$data['buktiTF']);
 		
 		$row->delete($no_registrasi);
 		return redirect()->to(base_url($instruktur));

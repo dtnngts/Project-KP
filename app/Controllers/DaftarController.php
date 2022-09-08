@@ -97,7 +97,7 @@ class DaftarController extends BaseController
             'buktiTF' => $namaTF
         ];
 
-        $transfer->move('assets/images', $namaTF);
+        $transfer->move('assets/transfer', $namaTF);
         $DaftarModel->insert($data);
         return redirect()->to(base_url('/daftar'));
     }
