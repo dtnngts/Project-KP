@@ -257,9 +257,7 @@
             </div>
             <!-- End of Main Content -->
 
-<<<<<<< HEAD
          
-=======
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
@@ -269,7 +267,6 @@
                 </div>
             </footer>
             <!-- End of Footer -->
->>>>>>> 0254c41df530d4f4f0cc2e8a2cfecfffb7fa42cf
 
         </div>
         <!-- End of Content Wrapper -->
