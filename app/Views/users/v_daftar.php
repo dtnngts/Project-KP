@@ -5,23 +5,37 @@
 <div class="container">
 	<div class="card1">
 		<div>
-			<nav>
-				<ul>
-					<li class="li1">PRINCESS<br>SOLUTION</li>
-				</ul>
+			<nav class="navbar navbar-expand-lg">
+				<div class="container">
+					<a class="navbar-brand" href="/">
+						<img class="img-profile rounded-circle" src="assets/images/logop.png" width=50px;></i>
+						Princess Solution
+					</a>
+
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item">
+								<a href="#about" class="nav-link smoothScroll">Dashboard</a>
+							</li>
+							<li class="nav-item">
+								<a href="#project" class="nav-link smoothScroll">Paket Kursus</a>
+							</li>
+							<li class="nav-item">
+								<a href="/daftar" class="nav-link">Daftar</a>
+							</li>
+							<li class="nav-item">
+								<a href="/login" class="nav-link contact">Login</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</nav>
 		</div>
-		<div>
-			<nav>
-				<ul style="margin: 30px 0px 0px 100px;">
-					<li><a href="<?= base_url('/')?>">Dashboard</li></a> 
-					<li>Daftar</li>
-					<li>Pricing</li>
-					<li><a href="<?= base_url('/login')?>">Login</a></li>
-				</ul>
-			</nav>
-		</div>
-		
+
 
 
 		<!-- <img src="assets/images/logo.png" style="width: 230px; float: right;" id="logo"> -->
@@ -32,48 +46,44 @@
 				<div class="jenis_kendaraan">
 					<div class="btn btn-outline-info btn-lg">
 						<button onclick="klikjenis(this)" style="border: none; background-color: Transparent; color: white;" id="btnManual" value="Manual">
-						<label for="manual">Manual</label>
+							<label for="manual">Manual</label>
 					</div>
 					<div class="btn btn-outline-info btn-lg">
 						<button onclick="klikjenis(this)" style="border: none; background-color: Transparent; color: white;" id="btnMatic" value="Matic">
-						<label for="matic">Matic</label>
+							<label for="matic">Matic</label>
 					</div>
 				</div>
 
 				<div id="pkManual" style="display:none">
 					<div id="nab" class="card">
 						<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="NAB">
-						<!-- <input type="radio" name="kode_kendaraan" onclick="klikmobil(this)" value="nab"> -->
-						<img src="assets/images/newavanzabiru.png"  class="card-img-top">
+							<!-- <input type="radio" name="kode_kendaraan" onclick="klikmobil(this)" value="nab"> -->
+							<img src="assets/images/newavanzabiru.png" class="card-img-top">
 					</div>
 					<div id="nas" class="card">
 						<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="NAS">
-						<img src="assets/images/coba.png" class="card-img-top">
+							<img src="assets/images/coba.png" class="card-img-top">
 					</div>
 					<div id="avnew" class="card">
 						<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="AVNEW">
-						<img src="assets/images/coba.png" class="card-img-top">
+							<img src="assets/images/coba.png" class="card-img-top">
 					</div>
 				</div>
-				
+
 				<div id="pkMatic" style="display:none">
 					<div id="gmb" class="card">
 						<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="GMB">
-						<img src="assets/images/coba.png" class="card-img-top">
+							<img src="assets/images/coba.png" class="card-img-top">
 					</div>
 					<div id="gmm" class="card">
 						<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="GMM">
-						<img src="assets/images/coba.png" class="card-img-top">
+							<img src="assets/images/coba.png" class="card-img-top">
 					</div>
 				</div>
-				
+
 				<div id="detailsnab" style="display:none">
-<<<<<<< HEAD
-					<img src="assets/images/coba.png" class="card-img-top">
-=======
-				<input type="hidden" name="instruktur" value="Hendri">
+					<input type="hidden" name="instruktur" value="Hendri">
 					<img src="assets/images/newavanzabiru.png" class="card-img-top">
->>>>>>> ac4034f598b704b6e4d917b99db2fc7f4b39acc0
 					<table border=0>
 						<tr>
 							<td colspan="2">NEW AVANZA BIRU</td>
@@ -125,11 +135,11 @@
 						</tr>
 						<tr>
 							<td><img src="assets/images/suhadi.png" style="width:180px;"></td>
-							<td data-nama = 'instruktur'>Instruktur : Suhadi</td>
+							<td data-nama='instruktur'>Instruktur : Suhadi</td>
 							<td></td>
 							<td>atau</td>
 							<td><img src="assets/images/yono.png" style="width:180px;"></td>
-							<td data-nama = 'instruktur'>Instruktur : Sumaryono</td>
+							<td data-nama='instruktur'>Instruktur : Sumaryono</td>
 						</tr>
 						<tr>
 							<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
@@ -147,7 +157,7 @@
 						</tr>
 						<tr>
 							<td><img src="assets/images/eko.png" style="width:220px;"></td>
-							<td data-nama = 'instruktur'>Instruktur : Eko Disyanto</td>
+							<td data-nama='instruktur'>Instruktur : Eko Disyanto</td>
 						</tr>
 						<tr>
 							<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Eko"><a href="/jadwal/Eko">Lihat Jadwal Tersedia</a></button></td>
@@ -161,24 +171,23 @@
 
 <script>
 	var lihatJadwal = document.querySelectorAll('#btnJadwal')
-	for(var satuan of lihatJadwal){
-		satuan.addEventListener('click',()=>{
+	for (var satuan of lihatJadwal) {
+		satuan.addEventListener('click', () => {
 			alert(this.data('nama'))
 		})
 	}
 
-	function klikjenis(obj){
-		localStorage.setItem("jenis_kendaraan",obj.value);
+	function klikjenis(obj) {
+		localStorage.setItem("jenis_kendaraan", obj.value);
 	}
 
-	function klikmobil(obj){
-		localStorage.setItem("kode_kendaraan",obj.value);
+	function klikmobil(obj) {
+		localStorage.setItem("kode_kendaraan", obj.value);
 	}
 
-	function klikins(obj){
-		localStorage.setItem("instruktur",obj.value);
+	function klikins(obj) {
+		localStorage.setItem("instruktur", obj.value);
 	}
-
 </script>
 
 <?php $this->endSection(); ?>

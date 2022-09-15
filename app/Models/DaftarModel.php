@@ -8,7 +8,7 @@ class DaftarModel extends Model
 {
     protected $table         = 'daftar';
     protected $primaryKey    = 'no_registrasi';
-    protected $allowedFields = ['nama', 'ttl', 'pekerjaan', 'alamat', 'telpon', 'jenis_kendaraan', 'kode_kendaraan', 'instruktur', 'paket', 'jadwal', 'status', 'transfer', 'kehadiran', 'created_at', 'updated_at'];
+    protected $allowedFields = ['nama', 'ttl', 'pekerjaan', 'alamat', 'telpon', 'jenis_kendaraan', 'kode_kendaraan', 'instruktur', 'paket', 'jadwal', 'status', 'buktiTF', 'kehadiran', 'created_at', 'updated_at'];
     protected $useTimestamps = true;
 
     public function getDaftar($no_registrasi = false)

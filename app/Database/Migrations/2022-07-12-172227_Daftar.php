@@ -58,7 +58,7 @@ class Daftar extends Migration
 				'type'               => 'VARCHAR',
 				'constraint'         => '255',
 			],
-			'transfer'                 => [
+			'buktiTF'                 => [
 				'type'               => 'VARCHAR',
 				'constraint'         => '255',
 			],

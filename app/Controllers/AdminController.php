@@ -192,11 +192,6 @@ class AdminController extends BaseController
 
 	public function update($no_registrasi, $instruktur)
 	{
-		if (session()->get('username') == '') {
-			session()->setFlashdata('gagal', 'Anda belum login');
-			return redirect()->to(base_url('/login'));
-		}
-
 		$DaftarModel = model("DaftarModel");
 		$data = $this->request->getPost();
 		$DaftarModel->update($no_registrasi, $data);
@@ -212,7 +207,10 @@ class AdminController extends BaseController
 		}
 
 		$row = new DaftarModel();
-		$row->where(['no_registrasi' => $no_registrasi])->delete();
+		$data = $row->find($no_registrasi);
+		unlink("./assets/transfer/".$data['buktiTF']);
+		
+		$row->delete($no_registrasi);
 		return redirect()->to(base_url($instruktur));
 	}
 
@@ -314,7 +312,6 @@ class AdminController extends BaseController
 	public function validasi ($no_registrasi) {
 		$data = [
 			'status' => "siswa",
-			'nama' => session()->get('username')
 		];
 		$where = array('no_registrasi' => $no_registrasi);
 

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="shortcut icon" href="/assets/images/logop.png">
 
     <title>Princess Solution</title>
 
@@ -47,6 +48,14 @@
 
 </body>
 
+<!-- Footer -->
+<!-- <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2021</span>
+        </div>
+    </div>
+</footer> -->
 
 
 

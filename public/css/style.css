@@ -15,16 +15,21 @@
   src: url('/css/font/AGENCYR.TTF');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
-  background: #484e52;
+  background: #ffffff;
+  
 }
 
 h5 {
   padding-top: 50px;
   padding-left: 45px;
   text-align: center;
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-family: cleanwork;
 }
 
@@ -33,9 +38,9 @@ h5 {
   -moz-appearance: none;
   appearance: none;
   position: relative;
-  height: 70px;
-  width: 70px;
-  outline: none;
+  height: 50px;
+  width: 50px;
+  outline: 10px;
   border-radius: 50%;
   margin: 0 15px 0 0;
   cursor: pointer;
@@ -45,13 +50,13 @@ h5 {
 }
 
 #form-daftar input[type="checkbox"]:checked {
-  background: gold;
+  background: rgb(56, 54, 45);
 }
 
 p {
   text-align: center;
   padding-left: 45px;
-  color: #fff;
+  color: black;
   font-style: italic;
   font-family: agency;
 }
@@ -62,7 +67,7 @@ p {
 
 td {
   padding: 10px;
-  color: white;
+  color: black;
   text-align: center;
   font-style: bold;
   font-size: large;
@@ -70,7 +75,7 @@ td {
 
 th {
   padding: 10px;
-  color: white;
+  color: black;
   text-align: center;
   font-style: bold;
   font-size: large;
@@ -83,7 +88,7 @@ th {
   padding: 20px;
   border-radius: 10px;
   color: rgba(0, 0, 0, .87);
-  background: rgba(255, 255, 255, 0.1);
+  background-color: #44414185;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -123,13 +128,23 @@ img {
   letter-spacing: 0.10em;
   background: var(--clr);
   box-shadow: 0 0 35px var(--clr)
+ 
 }
 
 .btnPilih:hover {
+ 
   letter-spacing: 0.10em;
   background: var(--clr);
   box-shadow: 0 0 35px var(--clr)
+
 }
+
+/* .btnPilih::before{
+  content: '';
+  position: absolute;
+  inset: 2px;
+ 
+} */
 
 a {
   color: rgb(0, 0, 0);
@@ -166,6 +181,7 @@ select.form-control {
   padding-left: 45px;
   padding-top: 20px;
   font-family: agency;
+  color:  black;
 }
 
 .btn-lg {
@@ -177,6 +193,7 @@ select.form-control {
   padding-top: 20px;
   display: flex;
   justify-content: center;
+  
 }
 
 #pkMatic {
