@@ -1,9 +1,6 @@
 <?= $this->extend('layout/templateDaftar'); ?>
 
 <?= $this->section('content'); ?>
-
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container">
 
@@ -167,72 +164,30 @@
 	<div class="container" id="formDaDir">
 		<div class="card1">
 			<p>Silahkan lanjut mengisi data diri Anda</p>
-			<div class="form-group">
-				<label for="nama">Nama</label>
-				<input type="text" class="form-control" name="nama" id="nama">
-			</div>
-			<div class="form-group">
-				<label for="ttl">Tempat Tanggal Lahir</label>
-				<input type="text" class="form-control" name="ttl" id="ttl">
-			</div>
-			<div class="form-group">
-				<label for="pekerjaan">Pekerjaan</label>
-				<input type="text" class="form-control" name="pekerjaan" id="pekerjaan">
-			</div>
-			<div class="form-group">
-				<label for="alamat">Alamat</label>
-				<input type="text" class="form-control" name="alamat" id="alamat">
-			</div>
-			<div class="form-group">
-				<label for="jenis_kendaraan">Jenis Kendaraan</label>
-				<input type="text" class="form-control" name="jenis_kendaraan" id="jenis_kendaraan" value="">
-				<script>
-					window.addEventListener('load', () => {
-						document.getElementById('jenis_kendaraan').value = localStorage.getItem('jenis_kendaraan');
-					});
-				</script>
-			</div>
-			<div class="form-group">
-				<label for="kode_kendaraan">Kode Kendaraan</label>
-				<input type="text" class="form-control" name="kode_kendaraan" id="kode_kendaraan" value="">
-				<script>
-					window.addEventListener('load', () => {
-						document.getElementById('kode_kendaraan').value = localStorage.getItem('kode_kendaraan');
-					});
-				</script>
-			</div>
-			<div class="form-group">
-				<label for="instruktur">Instruktur</label>
-				<input type="text" class="form-control" name="instruktur" id="instruktur" value="">
-				<script>
-					window.addEventListener('load', () => {
-						document.getElementById('instruktur').value = localStorage.getItem('instruktur');
-					});
-				</script>
-			</div>
-			<div class="form-group">
-				<label for="telpon">Telpon</label>
-				<input type="text" class="form-control" name="telpon" id="telpon">
-			</div>
-			<div class="form-group">
-				<div class="select-list">
-					<select name="paket" id="paket">
-						<option selected="true">Paket</option>
-						<option value="a">A</option>
-						<option value="b">B</option>
-						<option value="c">C</option>
-					</select>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="buktiTF">Bukti Transfer</label><br>
-				<!-- <div class="custom-file"> -->
-				<input type="file" id="buktiTF" name="buktiTF" onchange="return validasiEkstensi()">
-				<!-- <label class="custom-file-label" for="buktiTF">Upload Bukti Transfer</label> -->
-				<div id="preview"></div>
-				<!-- </div> -->
-			</div>
-			<!-- <div class="form-group">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="nama">Nama</label>
+						<input type="text" class="form-control" name="nama" id="nama">
+					</div>
+					<div class="form-group">
+						<label for="ttl">Tempat Tanggal Lahir</label>
+						<input type="text" class="form-control" name="ttl" id="ttl">
+					</div>
+					<div class="form-group">
+						<label for="pekerjaan">Pekerjaan</label>
+						<input type="text" class="form-control" name="pekerjaan" id="pekerjaan">
+					</div>
+					<div class="form-group">
+						<label for="alamat">Alamat</label>
+						<input type="text" class="form-control" name="alamat" id="alamat">
+					</div>
+					<div class="form-group">
+						<label for="telpon">Telpon</label>
+						<input type="text" class="form-control" name="telpon" id="telpon">
+					</div>
+
+					<!-- <div class="form-group">
 					<div class="select-list">
 						<select name="status" id="status">
 							<option value="">Status</option>
@@ -241,6 +196,72 @@
 						</select>
 					</div>
 				</div> -->
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="jenis_kendaraan">Jenis Kendaraan</label>
+						<input type="text" class="form-control" name="jenis_kendaraan" id="jenis_kendaraan" value="" readonly>
+						<script>
+							window.addEventListener('load', () => {
+								document.getElementById('jenis_kendaraan').value = localStorage.getItem('jenis_kendaraan');
+							});
+						</script>
+					</div>
+					<div class="form-group">
+						<label for="kode_kendaraan">Kode Kendaraan</label>
+						<input type="text" class="form-control" name="kode_kendaraan" id="kode_kendaraan" value="" readonly>
+						<script>
+							window.addEventListener('load', () => {
+								document.getElementById('kode_kendaraan').value = localStorage.getItem('kode_kendaraan');
+							});
+						</script>
+					</div>
+					<div class="form-group">
+						<label for="instruktur">Instruktur</label>
+						<input type="text" class="form-control" name="instruktur" id="instruktur" value="" readonly>
+						<script>
+							window.addEventListener('load', () => {
+								document.getElementById('instruktur').value = localStorage.getItem('instruktur');
+							});
+						</script>
+					</div>
+					<div class="form-group">
+						<label for="paket">Paket</label>
+						<div class="select-list">
+							<select name="paket" id="paket">
+								<option selected="true" disabled>Paket</option>
+								<option value="a">A</option>
+								<option value="b">B</option>
+								<option value="c">C</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="pembayaran">Pembayaran</label><br>
+						<div>
+							<input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')" />DP
+							<input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')" />Lunas
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<label for="harga">Harga</label>
+								<input type="text" class="form-control" name="harga" id="harga" readonly>
+							</div>
+							<p id="kurang-text">Silahkan melunasi kekurangan pembayaran sebesar <span id="kurang"></span> pada saat hari pertama kursus</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="buktiTF">Bukti Transfer</label><br>
+						<!-- <div class="custom-file"> -->
+						<input type="file" id="buktiTF" name="buktiTF" onchange="return validasiEkstensi()">
+						<!-- <label class="custom-file-label" for="buktiTF">Upload Bukti Transfer</label> -->
+						<div id="preview"></div>
+						<!-- </div> -->
+					</div>
+				</div>
+			</div>
 			<div class="form-group">
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" id="defaultCheck1">
@@ -274,7 +295,7 @@
 					</div>
 				</div>
 			</div>
-			<input type="button" class="btn btn-primary" value="Daftar" onclick="validasi()">
+			<input type="button" style="place-items:right;" class="btn btn-primary" value="Daftar" onclick="validasi()">
 		</div>
 	</div>
 </form>
@@ -371,7 +392,73 @@
 		<?php } ?>
 	})
 </script>
-
+<script>
+	function Hitung(x) {
+		let harga = document.getElementById('harga');
+		let jk = document.getElementById('jenis_kendaraan').value;
+		let kk = document.getElementById('kode_kendaraan').value;
+		let paket = document.getElementById('paket').value;
+		let byr = document.getElementById(x);
+		if (byr.checked) {
+			byr = byr.value;
+		} else {
+			byr = null;
+		}
+		let minus = document.getElementById('kurang');
+		let txt = document.getElementById('kurang-text');
+		console.log(byr)
+		if (jk == "Manual") {
+			if (kk == "NAB" || kk == "NAS") {
+				if (paket == "a") {
+					var price = 770000;
+					var min = 100000;
+					if (byr == "DP") {
+						harga.value = "Rp. 100.000";
+						kurang = price - min;
+						minus.innerText = String(kurang);
+					} else if (byr == "Lunas") {
+						harga.value = "Rp. 770.000";
+						// txt.classList.add('d-none');
+						minus.innerText = "0";
+					} else {
+						harga.value = '';
+						// txt.classList.add('d-none');
+						// minus.innerText = '';
+						minus.innerText = String(kurang);
+					}
+				} else if (paket == "b") {
+					harga.value = 1135000;
+					kurang = 100000 - int(harga);
+					document.getElementById("kurang").value = kurang;
+				} else {
+					harga.value = 1530000;
+					kurang = 100000 - harga;
+					document.getElementById("kurang").value = kurang;
+				}
+			} else if (kk == "AVNEW") {
+				if (paket == "a") {
+					harga.value = 820000;
+					kurang = 100000 - harga;
+					document.getElementById("kurang").value = kurang;
+				} else if (paket == "b") {
+					harga.value = "Rp. 1.210.000";
+				} else {
+					harga.value = "Rp. 1.600.000";
+				}
+			}
+		} else if (jk == "Matic") {
+			if (kk == "GMB" || "GMM") {
+				if (paket == "a") {
+					harga.value = "Rp. 900.000";
+				} else if (paket == "b") {
+					harga.value = "Rp. 1.330.000";
+				} else {
+					harga.value = "Rp. 1.760.000";
+				}
+			}
+		}
+	}
+</script>
 <script>
 	$('#formDaDir').hide();
 	$(document).ready(function() {

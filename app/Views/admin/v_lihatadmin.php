@@ -152,6 +152,7 @@
                                     <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
                                         <thead>
                                             <tr>
+                                                <td scope="col">Id</td>
                                                 <td scope="col">Username</td>
                                                 <td scope="col">Password</td>
                                                 <td scope="col">Nama</td>
@@ -163,12 +164,13 @@
                                             foreach ($admin as $row) :
                                             ?>
                                                 <tr>
+                                                    <td scope="row"><?= $row['id'] ?></td>
                                                     <td scope="row"><?= $row['username'] ?></td>
                                                     <td scope="row"><?= $row['password'] ?></td>
                                                     <td scope="row"><?= $row['nama'] ?></td>
                                                     <td scope="row" style="text-align:center">
-                                                        <a href="<?= base_url("edit/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
-                                                        <form action="delete/<?= $row['id'] ?>" method="post" class="d-inline">
+                                                        <a href="<?= base_url("editadmin/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
+                                                        <form action="deleteadmin/<?= $row['id'] ?>" method="post" class="d-inline">
                                                             <?= csrf_field(); ?>
                                                             <input type="hidden" name="_method" value="Delete">
                                                             <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
