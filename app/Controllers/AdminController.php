@@ -32,6 +32,7 @@ class AdminController extends BaseController
 			'suhadi' => $DaftarModel->where('instruktur', 'Suhadi')->findAll(),
 			'yono' => $DaftarModel->where('instruktur', 'Yono')->findAll(),
 			'eko' => $DaftarModel->where('instruktur', 'Eko')->findAll(),
+			'rejected' => $DaftarModel->where('status', 'Tidak Diterima')->findAll(),
 			'allMem' => $DaftarModel->findAll(),
 			// 'alumni' => $DaftarModel->where('status', 'alumni')->findAll(),
 			'nama' => session()->get('username')
@@ -149,6 +150,28 @@ class AdminController extends BaseController
         
         return view('admin/data_kursus/v_eko', $data);
     }
+
+	public function notacc()
+	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
+		$keyword = $this->request->getVar('keyword');
+		if ($keyword) {
+			$rejected = $this->DaftarModel->where('status', 'Tidak Diterima')->search($keyword);
+		} else {
+			$rejected = $this->DaftarModel;
+		}
+
+		$data = [
+			'rejected' => $rejected->where('status', 'Tidak Diterima')->findAll(),
+			'nama' => session()->get('username')
+		];
+
+		return view('admin/data_kursus/v_notacc', $data);
+	}
 
 	public function edit($no_registrasi)
 	{
@@ -349,9 +372,20 @@ class AdminController extends BaseController
 		return view("admin/v_validator", $data);
 	}
 
-	public function validasi ($no_registrasi) {
+	public function accepted ($no_registrasi) {
 		$data = [
 			'status' => "siswa",
+		];
+		$where = array('no_registrasi' => $no_registrasi);
+
+		$this->DaftarModel->update($where, $data, 'allMem');
+		return redirect()->to(base_url('/validasisiswa'));
+	}
+
+	public function rejected($no_registrasi)
+	{
+		$data = [
+			'status' => "Tidak Diterima",
 		];
 		$where = array('no_registrasi' => $no_registrasi);
 
