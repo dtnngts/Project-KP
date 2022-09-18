@@ -47,6 +47,8 @@
                         <a class="collapse-item" href="/Suhadi">Siswa Suhadi</a>
                         <a class="collapse-item" href="/Yono">Siswa Yono</a>
                         <a class="collapse-item" href="/Eko">Siswa Eko</a>
+                        <h6 class="collapse-header">Data Tidak Lengkap:</h6>
+                        <a class="collapse-item" href="/NotAcc">Data Tidak Diterima</a>
                     </div>
                 </div>
             </li>
@@ -257,7 +259,7 @@
             </div>
             <!-- End of Main Content -->
 
-         
+
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
