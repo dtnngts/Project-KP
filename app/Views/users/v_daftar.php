@@ -68,7 +68,6 @@
 				</div>
 				
 				<div id="detailsnab" style="display:none">
-				<input type="hidden" name="instruktur" value="Hendri">
 					<img src="assets/images/coba.png" class="card-img-top">
 					<table border=0>
 						<tr>
@@ -84,7 +83,6 @@
 					</table>
 				</div>
 				<div id="detailsnas" style="display:none">
-				<input type="hidden" name="instruktur" value="Suhadi">
 					<img src="assets/images/coba.png" class="card-img-top">
 					<table border=0>
 						<tr>
@@ -100,7 +98,6 @@
 					</table>
 				</div>
 				<div id="detailsavnew" style="display:none">
-				<input type="hidden" name="instruktur" value="Yono">
 					<img src="assets/images/coba.png" class="card-img-top">
 					<table border=0>
 						<tr>
@@ -116,7 +113,6 @@
 					</table>
 				</div>
 				<div id="detailsgmb" style="display:none">
-				<input type="hidden" name="instruktur" value="Suhadi/Yono">
 					<img src="assets/images/coba.png" class="card-img-top">
 					<table border=0>
 						<tr>
@@ -139,7 +135,6 @@
 					</table>
 				</div>
 				<div id="detailsgmm" style="display:none">
-				<input type="hidden" name="instruktur" value="Eko">
 					<img src="assets/images/coba.png" class="card-img-top">
 					<table border=0>
 						<tr>

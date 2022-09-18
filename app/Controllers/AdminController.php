@@ -77,7 +77,7 @@ class AdminController extends BaseController
 		}
 
         $data = [
-			'hendri' => $hendri->where('instruktur', 'hendri')->findAll(),
+			'hendri' => $hendri->where('instruktur', 'Hendri')->findAll(),
 			'nama' => session()->get('username')
 		];
         
@@ -162,6 +162,31 @@ class AdminController extends BaseController
 			'nama' => session()->get('username')
 		];
 
+		$daftar_model = new DaftarModel();
+
+		if ($no_registrasi == false) {
+			$data['daftar'] = $daftar_model->findAll();
+
+			$i = 0;
+			foreach ($data['daftar'] as $dt) {
+				$data['jadwal_orang'][$i] = $dt['jadwal'];
+				$i++;
+			}
+			return view('v_jadwal', $data);
+		} else {
+			$data['daftar'] = $daftar_model->getNoReg($no_registrasi);
+			$i = 0;
+			// var_dump($data);
+			// exit();
+			foreach ($data['daftar'] as $dt) {
+				$data['jadwal_orang'][$i] = $dt['jadwal'];
+				$i++;
+			}
+			if (!isset($data['jadwal_orang'])) {
+				$data['jadwal_orang'] = null;
+			}
+		}
+
 		return view("admin/v_edit", $data);
 	}
 
@@ -220,7 +245,7 @@ class AdminController extends BaseController
 		];
 
 		model($data['admin'])->insert($data);
-		return redirect()->to(base_url('admin/v_inputadmin'));
+		return redirect()->to(base_url('/lihatadmin'));
 	}
 
 	public function lihatadmin()
@@ -315,6 +340,9 @@ class AdminController extends BaseController
 
 		$daftar_model = new DaftarModel();
 
+		$data = [
+			'nama' => session()->get('username')
+		];
 		$data['daftar'] = $daftar_model->getInstruktur($instruktur);
 		$i = 0;
 		// var_dump($data);
@@ -326,6 +354,6 @@ class AdminController extends BaseController
 		if (!isset($data['jadwal_orang'])) {
 			$data['jadwal_orang'] = null;
 		}
-		return view('v_lihatjadwal', $data);
+		return view('admin/v_lihatjadwal', $data);
 	}
 }

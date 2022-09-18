@@ -42,10 +42,10 @@ $routes->get('/jadwal', 'DaftarController::jadwal');
 $routes->get('/jadwal/(:any)', 'DaftarController::instruktur/$1');
 $routes->post('/regis', 'DaftarController::regis');
 $routes->get('/seluruhsiswa', 'AdminController::allMem');
-$routes->get('/hendri', 'AdminController::hendri');
-$routes->get('/suhadi', 'AdminController::suhadi');
-$routes->get('/yono', 'AdminController::yono');
-$routes->get('/eko', 'AdminController::eko');
+$routes->get('/Hendri', 'AdminController::hendri');
+$routes->get('/Suhadi', 'AdminController::suhadi');
+$routes->get('/Yono', 'AdminController::yono');
+$routes->get('/Eko', 'AdminController::eko');
 $routes->get('/edit/(:any)', 'AdminController::edit/$1');
 $routes->post('/update/(:any)/(:any)', 'AdminController::update/$1/$2');
 $routes->delete('/delete/(:any)/(:any)', 'AdminController::delete/$1/$2');
@@ -58,7 +58,7 @@ $routes->get('/lihatadmin', 'AdminController::lihatadmin');
 $routes->get('/download', 'AdminController::excel');
 $routes->get('/validasisiswa', 'AdminController::valid');
 $routes->post('/validasi/(:any)', 'AdminController::validasi/$1');
-$routes->get('/lihatjadwal', 'AdminController::adminjadwal');
+// $routes->get('/lihatjadwal', 'AdminController::adminjadwal');
 $routes->get('/lihatjadwal/(:any)', 'AdminController::lihatjadwal/$1');
 
 /*

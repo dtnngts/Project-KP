@@ -43,10 +43,10 @@
                         <a class="collapse-item" href="/seluruhsiswa">Data Seluruh Siswa</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Data per Instruktur:</h6>
-                        <a class="collapse-item" href="/hendri">Siswa Hendri</a>
-                        <a class="collapse-item" href="/suhadi">Siswa Suhadi</a>
-                        <a class="collapse-item" href="/yono">Siswa Yono</a>
-                        <a class="collapse-item" href="/eko">Siswa Eko</a>
+                        <a class="collapse-item" href="/Hendri">Siswa Hendri</a>
+                        <a class="collapse-item" href="/Suhadi">Siswa Suhadi</a>
+                        <a class="collapse-item" href="/Yono">Siswa Yono</a>
+                        <a class="collapse-item" href="/Eko">Siswa Eko</a>
                     </div>
                 </div>
             </li>
@@ -71,9 +71,19 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/jadwal">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Jadwal</span></a>
+                    <span>Jadwal</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Jadwal per Instruktur:</h6>
+                        <a class="collapse-item" href="/lihatjadwal/Hendri">Jadwal Hendri</a>
+                        <a class="collapse-item" href="/lihatjadwal/Suhadi">Jadwal Suhadi</a>
+                        <a class="collapse-item" href="/lihatjadwal/Yono">Jadwal Yono</a>
+                        <a class="collapse-item" href="/lihatjadwal/Eko">Jadwal Eko</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Divider -->
