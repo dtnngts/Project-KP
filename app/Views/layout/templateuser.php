@@ -22,7 +22,7 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/templatemo-digital-trend.css">
-    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -107,5 +107,8 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04b387f51728f1a2f380f7006098ed4fa9dbd61d
 </html>
