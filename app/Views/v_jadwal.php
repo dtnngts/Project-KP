@@ -296,7 +296,7 @@
 					</div>
 				</div>
 			</div>
-			<input type="button" style="place-items:right;" class="btn btn-primary" value="Daftar" onclick="validasi()">
+			<input type="button" style="place-items:right;" class="btn btn-secondary" value="Daftar" onclick="validasi()">
 		</div>
 	</div>
 </form>
