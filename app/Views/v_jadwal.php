@@ -164,72 +164,30 @@
 	<div class="container" id="formDaDir">
 		<div class="card1">
 			<p>Silahkan lanjut mengisi data diri Anda</p>
-			<div class="form-group">
-				<label for="nama">Nama</label>
-				<input type="text" class="form-control" name="nama" id="nama">
-			</div>
-			<div class="form-group">
-				<label for="ttl">Tempat Tanggal Lahir</label>
-				<input type="text" class="form-control" name="ttl" id="ttl">
-			</div>
-			<div class="form-group">
-				<label for="pekerjaan">Pekerjaan</label>
-				<input type="text" class="form-control" name="pekerjaan" id="pekerjaan">
-			</div>
-			<div class="form-group">
-				<label for="alamat">Alamat</label>
-				<input type="text" class="form-control" name="alamat" id="alamat">
-			</div>
-			<div class="form-group">
-				<label for="jenis_kendaraan">Jenis Kendaraan</label>
-				<input type="text" class="form-control" name="jenis_kendaraan" id="jenis_kendaraan" value="">
-				<script>
-					window.addEventListener('load', () => {
-						document.getElementById('jenis_kendaraan').value = localStorage.getItem('jenis_kendaraan');
-					});
-				</script>
-			</div>
-			<div class="form-group">
-				<label for="kode_kendaraan">Kode Kendaraan</label>
-				<input type="text" class="form-control" name="kode_kendaraan" id="kode_kendaraan" value="">
-				<script>
-					window.addEventListener('load', () => {
-						document.getElementById('kode_kendaraan').value = localStorage.getItem('kode_kendaraan');
-					});
-				</script>
-			</div>
-			<div class="form-group">
-				<label for="instruktur">Instruktur</label>
-				<input type="text" class="form-control" name="instruktur" id="instruktur" value="">
-				<script>
-					window.addEventListener('load', () => {
-						document.getElementById('instruktur').value = localStorage.getItem('instruktur');
-					});
-				</script>
-			</div>
-			<div class="form-group">
-				<label for="telpon">Telpon</label>
-				<input type="text" class="form-control" name="telpon" id="telpon">
-			</div>
-			<div class="form-group">
-				<div class="select-list">
-					<select name="paket" id="paket">
-						<option selected="true">Paket</option>
-						<option value="a">A</option>
-						<option value="b">B</option>
-						<option value="c">C</option>
-					</select>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="buktiTF">Bukti Transfer</label><br>
-				<!-- <div class="custom-file"> -->
-					<input type="file" id="buktiTF" onchange="return validasiEkstensi()">
-					<!-- <label class="custom-file-label" for="buktiTF">Upload Bukti Transfer</label> -->
-					<div id="preview"></div>
-				<!-- </div> -->
-			</div>
-			<!-- <div class="form-group">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="nama">Nama</label>
+						<input type="text" class="form-control" name="nama" id="nama">
+					</div>
+					<div class="form-group">
+						<label for="ttl">Tempat Tanggal Lahir</label>
+						<input type="text" class="form-control" name="ttl" id="ttl">
+					</div>
+					<div class="form-group">
+						<label for="pekerjaan">Pekerjaan</label>
+						<input type="text" class="form-control" name="pekerjaan" id="pekerjaan">
+					</div>
+					<div class="form-group">
+						<label for="alamat">Alamat</label>
+						<input type="text" class="form-control" name="alamat" id="alamat">
+					</div>
+					<div class="form-group">
+						<label for="telpon">Telpon</label>
+						<input type="text" class="form-control" name="telpon" id="telpon">
+					</div>
+
+					<!-- <div class="form-group">
 					<div class="select-list">
 						<select name="status" id="status">
 							<option value="">Status</option>
@@ -337,7 +295,7 @@
 					</div>
 				</div>
 			</div>
-			<input type="button" style="place-items:right;" class="btn btn-primary" value="Daftar" onclick="validasi()">
+			<input type="button" style="place-items:right;" class="btn btn-secondary" value="Daftar" onclick="validasi()">
 		</div>
 	</div>
 </form>

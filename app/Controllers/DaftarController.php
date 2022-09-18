@@ -77,16 +77,10 @@ class DaftarController extends BaseController
         // 	return redirect()->back()->withInput();
         // }
 
-<<<<<<< HEAD
-        $transfer = $this->request->getFile('transfer');
-        $transfer->move('assets/images');
-        $namaTF=$transfer->getName();
-=======
 
         $DaftarModel = model("DaftarModel");
         $transfer = $this->request->getFile('buktiTF');
         $namaTF = $transfer->getName();
->>>>>>> 04b387f51728f1a2f380f7006098ed4fa9dbd61d
         $data = [
             'nama' => $this->request->getVar('nama'),
             'ttl' => $this->request->getVar('ttl'),
@@ -100,17 +94,10 @@ class DaftarController extends BaseController
             'jadwal' => implode('; ', $this->request->getVar('jadwal')),
             // 'jadwal' => $this->request->getVar('jadwal'),
             'status' => " ",
-<<<<<<< HEAD
             'transfer' => $namaTF
         ];
         //
         $DaftarModel = model("DaftarModel");
-=======
-            'buktiTF' => $namaTF
-        ];
-
-        $transfer->move('assets/transfer', $namaTF);
->>>>>>> 04b387f51728f1a2f380f7006098ed4fa9dbd61d
         $DaftarModel->insert($data);
         return redirect()->to(base_url('/daftar'));
     }

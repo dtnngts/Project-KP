@@ -82,12 +82,8 @@
 				</div>
 
 				<div id="detailsnab" style="display:none">
-<<<<<<< HEAD
-					<img src="assets/images/coba.png" class="card-img-top">
-=======
 					<input type="hidden" name="instruktur" value="Hendri">
 					<img src="assets/images/newavanzabiru.png" class="card-img-top">
->>>>>>> 04b387f51728f1a2f380f7006098ed4fa9dbd61d
 					<table border=0>
 						<tr>
 							<td colspan="2">NEW AVANZA BIRU</td>
