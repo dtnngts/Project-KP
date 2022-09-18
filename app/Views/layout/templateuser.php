@@ -41,7 +41,69 @@
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
 
+    <script>
+        $('#pkManual').hide();
+        $('#pkMatic').hide();
+        $('#detailsnab').hide();
+        $('#detailsnas').hide();
+        $('#detailsavnew').hide();
+        $('#detailsgmb').hide();
+        $('#detailsgmm').hide();
+
+        $('#btnManual').click(function() {
+            $('#pkManual').toggle();
+            $('#pkMatic').hide();
+        });
+
+        $('#btnMatic').click(function() {
+            $('#pkMatic').toggle();
+            $('#pkManual').hide();
+        });
+
+        $('#nab').click(function() {
+            $('#detailsnab').toggle();
+            $('#detailsnas').hide();
+            $('#detailsavnew').hide();
+            $('#detailsgmb').hide();
+            $('#detailsgmm').hide();
+        })
+
+        $('#nas').click(function() {
+            $('#detailsnas').toggle();
+            $('#detailsnab').hide();
+            $('#detailsavnew').hide();
+            $('#detailsgmb').hide();
+            $('#detailsgmm').hide();
+        })
+
+        $('#avnew').click(function() {
+            $('#detailsavnew').toggle();
+            $('#detailsnab').hide();
+            $('#detailsnas').hide();
+            $('#detailsgmb').hide();
+            $('#detailsgmm').hide();
+        })
+
+        $('#gmb').click(function() {
+            $('#detailsgmb').toggle();
+            $('#detailsnab').hide();
+            $('#detailsnas').hide();
+            $('#detailsavnew').hide();
+            $('#detailsgmm').hide();
+        })
+
+        $('#gmm').click(function() {
+            $('#detailsgmm').toggle();
+            $('#detailsnab').hide();
+            $('#detailsnas').hide();
+            $('#detailsavnew').hide();
+            $('#detailsgmb').hide();
+        })
+    </script>
+
 </body>
+
+
 
 
 
