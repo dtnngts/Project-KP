@@ -168,7 +168,7 @@
 
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="<?= base_url('/hendri') ?>">
+                            <a href="<?= base_url('/Hendri') ?>">
                                 <div class="card border-left-danger shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -189,7 +189,7 @@
                         </div>
 
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="<?= base_url('/suhadi') ?>">
+                            <a href="<?= base_url('/Suhadi') ?>">
                                 <div class="card border-left-success shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -210,7 +210,7 @@
                         </div>
 
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="<?= base_url('/yono') ?>">
+                            <a href="<?= base_url('/Yono') ?>">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -231,7 +231,7 @@
                         </div>
 
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="<?= base_url('/eko') ?>">
+                            <a href="<?= base_url('/Eko') ?>">
                                 <div class="card border-left-warning shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -257,7 +257,16 @@
             </div>
             <!-- End of Main Content -->
 
-            >
+         
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->

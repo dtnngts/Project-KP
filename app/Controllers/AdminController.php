@@ -190,18 +190,42 @@ class AdminController extends BaseController
 		return view("admin/v_edit", $data);
 	}
 
-	public function update($no_registrasi, $instruktur)
+	public function editAdmin($id)
 	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
 		}
 
+		$this->AdminModel = new AdminModel();
+
+		$data = [
+			'row' => $this->AdminModel->getData($id),
+			'nama' => session()->get('username')
+		];
+
+		return view("admin/v_editadmin", $data);
+		}
+
+	public function update($no_registrasi, $instruktur)
+	{
 		$DaftarModel = model("DaftarModel");
 		$data = $this->request->getPost();
 		$DaftarModel->update($no_registrasi, $data);
 
 		return redirect()->to(base_url($instruktur));
+	}
+	public function updateAdmin($id)
+	{
+		$AdminModel = model("AdminModel");
+		$SuperModel = model("SuperModel");
+		$ValidatorModel = model("ValidatorModel");
+		$data = $this->request->getPost();
+		$AdminModel->update($id, $data);
+		$SuperModel->update($id, $data);
+		$ValidatorModel->update($id, $data);
+
+		return redirect()->to(base_url('/lihatadmin'));
 	}
 
 	public function delete($no_registrasi, $instruktur)
@@ -212,8 +236,22 @@ class AdminController extends BaseController
 		}
 
 		$row = new DaftarModel();
-		$row->where(['no_registrasi' => $no_registrasi])->delete();
+		$data = $row->find($no_registrasi);
+		unlink("./assets/transfer/".$data['buktiTF']);
+		
+		$row->delete($no_registrasi);
 		return redirect()->to(base_url($instruktur));
+	}
+
+	public function deleteAdmin($id)
+	{
+		$admin = new AdminModel();
+		$super= new SuperModel();
+		$validator = new ValidatorModel();
+		$admin->where(['id' => $id])->delete();
+		$super->where(['id' => $id])->delete();
+		$validator->where(['id' => $id])->delete();
+		return redirect()->to(base_url('/lihatadmin'));
 	}
 
 	public function create() {
@@ -314,7 +352,6 @@ class AdminController extends BaseController
 	public function validasi ($no_registrasi) {
 		$data = [
 			'status' => "siswa",
-			'nama' => session()->get('username')
 		];
 		$where = array('no_registrasi' => $no_registrasi);
 
