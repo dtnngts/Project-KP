@@ -47,6 +47,8 @@
                         <a class="collapse-item" href="/Suhadi">Siswa Suhadi</a>
                         <a class="collapse-item" href="/Yono">Siswa Yono</a>
                         <a class="collapse-item" href="/Eko">Siswa Eko</a>
+                        <h6 class="collapse-header">Data Tidak Lengkap:</h6>
+                        <a class="collapse-item" href="/NotAcc">Data Tidak Diterima</a>
                     </div>
                 </div>
             </li>
@@ -276,7 +278,22 @@
                 <!-- End of Main Content -->
 
             </div>
+<<<<<<< HEAD
             <!-- End of Content Wrapper -->
+=======
+            <!-- End of Main Content -->
+
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+>>>>>>> 45dd1339004e922ec93ff72919957821268a4a17
 
         </div>
         <!-- End of Page Wrapper -->
