@@ -10,6 +10,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/assets/images/logop.png">
+    <link rel="stylesheet" href="<?php echo base_url() . 'assets/sb/css/sb-admin-2.css' ?>">
+    <link rel="stylesheet" href="<?php echo base_url() . 'assets/sb/css/sb-admin-2.min.css' ?>">
 
     <title>Princess Solution</title>
 
@@ -43,7 +45,7 @@
     <script src="assets/sb/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="assets/sb/js/demo/chart-area-demo.js"></script>
+    <script src="assets/sb/js/demo/chart-bar-demo.js"></script>
     <script src="assets/sb/js/demo/chart-pie-demo.js"></script>
 
 </body>
@@ -56,10 +58,6 @@
         </div>
     </div>
 </footer> -->
-<<<<<<< HEAD
-
-=======
->>>>>>> 5675f08457a5a0265cf03f1fe14b63be42b7434a
 
 
 
