@@ -1,8 +1,14 @@
 <?= $this->extend('layout/templateDaftar'); ?>
 
 <?= $this->section('content'); ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+<nav class="navbar navbar-expand-lg">
 	<div class="container">
+		<a class="navbar-brand">
+			<img class="img-profile rounded-circle" src="assets/images/logop.png" width=50px;></i>
+			Princess Solution
+		</a>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -18,8 +24,6 @@
 			</nav>
 		</div>
 
-
-
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -32,7 +36,7 @@
 					<a href="/daftar" class="nav-link">Daftar</a>
 				</li>
 				<li class="nav-item">
-					<a href="contact.html" class="nav-link contact">Contact</a>
+					<a href="/login" class="nav-link contact">Login</a>
 				</li>
 			</ul>
 		</div>
@@ -55,12 +59,12 @@
 
 			<tr>
 				<td>08.00-09.00</td>
-				<td><label><input type="checkbox" id="0" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 08.00-09.00"></label></td>
-				<td><label><input type="checkbox" id="1" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 08.00-09.00"></label></td>
-				<td><label><input type="checkbox" id="2" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 08.00-09.00"></label></td>
-				<td><label><input type="checkbox" id="3" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 08.00-09.00"></label></td>
-				<td><label><input type="checkbox" id="4" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 08.00-09.00"></label></td>
-				<td><label><input type="checkbox" id="5" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 08.00-09.00"></label></td>
+				<td><input type="checkbox" id="0" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 08.00-09.00"><label for="form-daftar input"></label></td>
+				<td><input type="checkbox" id="1" name="jadwal[]" onclick="pilihSatu(this)" value="Selasa 08.00-09.00"><label for="form-daftar input"></label></td>
+				<td><input type="checkbox" id="2" name="jadwal[]" onclick="pilihSatu(this)" value="Rabu 08.00-09.00"><label for="form-daftar input"></label></td>
+				<td><input type="checkbox" id="3" name="jadwal[]" onclick="pilihSatu(this)" value="Kamis 08.00-09.00"><label for="form-daftar input"></label></td>
+				<td><input type="checkbox" id="4" name="jadwal[]" onclick="pilihSatu(this)" value="Jum'at 08.00-09.00"><label for="form-daftar input"></label></td>
+				<td><input type="checkbox" id="5" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 08.00-09.00"><label for="form-daftar input"></label></td>
 			</tr>
 
 			<tr>
@@ -151,7 +155,7 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td><button type="button" class="btnPilih" id="btnPilih" style="--clr:#c5c9d3">Pilih Jadwal</button></td>
+				<td><button type="button" class="btnPilih btn btn-success" id="btnPilih" style="--clr:#c5c9d3">Pilih Jadwal</button></td>
 
 			</tr>
 		</table>
@@ -264,13 +268,14 @@
 			</div>
 			<div class="form-group">
 				<div class="form-check">
-					<input class="form-check-input" type="checkbox" id="defaultCheck1">
+					<input class="form-check-input" type="radio" id="defaultCheck1">
 					<label class="form-check-label" for="defaultCheck1">
 						Saya telah membaca, memahami, dan setuju berdasarkan syarat dan ketentuan yang telah ditetapkan
 						<a type="button" data-toggle="modal" data-target="#exampleModal" style="color:blue">
 							<u> Baca Syarat dan Ketentuan </u>
 						</a>
 					</label>
+
 				</div>
 			</div>
 
