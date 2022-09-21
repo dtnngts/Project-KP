@@ -14,6 +14,16 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
+		<div>
+			<nav>
+				<ul class="navbar-brand" href="index.html">
+
+					<img class="img-profile rounded-circle" src="/assets/images/logo.png" width=40px;></i>
+					Princess Solution
+				</ul>
+			</nav>
+		</div>
+
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -32,12 +42,6 @@
 		</div>
 	</div>
 </nav>
-
-
-
-
-
-
 
 <form action="/regis" method="post" enctype="multipart/form-data" id='form-daftar'>
 	<?= csrf_field(); ?>
@@ -305,6 +309,8 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'></script>
 
 <script>
+	$('#kurang-text').hide();
+
 	function validasi() {
 		var nama = document.getElementById("nama").value;
 		var ttl = document.getElementById("ttl").value;
@@ -328,6 +334,10 @@
 		var ekstensi = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
 		if (!ekstensi.exec(pathFile)) {
 			alert('Silakan upload file yang dengan ekstensi .jpeg/.jpg/.png/.gif');
+			inputFile.value = '';
+			return false;
+		} else if (inputFile.files[0].size > 1000000) {
+			alert("Ukuran File Terlalu Besar. Maksimal Upload 1 MB");
 			inputFile.value = '';
 			return false;
 		} else {
@@ -417,44 +427,125 @@
 						harga.value = "Rp. 100.000";
 						kurang = price - min;
 						minus.innerText = String(kurang);
+						$('#kurang-text').show();
 					} else if (byr == "Lunas") {
 						harga.value = "Rp. 770.000";
+						$('#kurang-text').hide();
 						// txt.classList.add('d-none');
-						minus.innerText = "0";
-					} else {
-						harga.value = '';
-						// txt.classList.add('d-none');
-						// minus.innerText = '';
-						minus.innerText = String(kurang);
 					}
 				} else if (paket == "b") {
-					harga.value = 1135000;
-					kurang = 100000 - int(harga);
-					document.getElementById("kurang").value = kurang;
+					var price = 1135000;
+					var min = 100000;
+					if (byr == "DP") {
+						harga.value = "Rp. 100.000";
+						kurang = price - min;
+						minus.innerText = String(kurang);
+						$('#kurang-text').show();
+					} else if (byr == "Lunas") {
+						harga.value = "Rp. 1.135.000";
+						$('#kurang-text').hide();
+						// txt.classList.add('d-none');
+					}
+				} else if (paket == "c") {
+					var price = 1530000;
+					var min = 100000;
+					if (byr == "DP") {
+						harga.value = "Rp. 100.000";
+						kurang = price - min;
+						minus.innerText = String(kurang);
+						$('#kurang-text').show();
+					} else if (byr == "Lunas") {
+						harga.value = "Rp. 1.530.000";
+						$('#kurang-text').hide();
+						// txt.classList.add('d-none');
+					}
 				} else {
-					harga.value = 1530000;
-					kurang = 100000 - harga;
-					document.getElementById("kurang").value = kurang;
+					harga.value = " ";
+					$('#kurang-text').hide();
 				}
 			} else if (kk == "AVNEW") {
 				if (paket == "a") {
-					harga.value = 820000;
-					kurang = 100000 - harga;
-					document.getElementById("kurang").value = kurang;
+					var price = 820000;
+					var min = 100000;
+					if (byr == "DP") {
+						harga.value = "Rp. 100.000";
+						kurang = price - min;
+						minus.innerText = String(kurang);
+						$('#kurang-text').show();
+					} else if (byr == "Lunas") {
+						harga.value = "Rp. 820.000";
+						$('#kurang-text').hide();
+						// txt.classList.add('d-none');
+					}
 				} else if (paket == "b") {
-					harga.value = "Rp. 1.210.000";
+					var price = 1210000;
+					var min = 100000;
+					if (byr == "DP") {
+						harga.value = "Rp. 100.000";
+						kurang = price - min;
+						minus.innerText = String(kurang);
+						$('#kurang-text').show();
+					} else if (byr == "Lunas") {
+						harga.value = "Rp. 1.210.000";
+						$('#kurang-text').hide();
+						// txt.classList.add('d-none');
+					}
 				} else {
-					harga.value = "Rp. 1.600.000";
+					var price = 1600000;
+					var min = 100000;
+					if (byr == "DP") {
+						harga.value = "Rp. 100.000";
+						kurang = price - min;
+						minus.innerText = String(kurang);
+						$('#kurang-text').show();
+					} else if (byr == "Lunas") {
+						harga.value = "Rp. 1.600.000";
+						$('#kurang-text').hide();
+						// txt.classList.add('d-none');
+					}
 				}
 			}
 		} else if (jk == "Matic") {
 			if (kk == "GMB" || "GMM") {
 				if (paket == "a") {
-					harga.value = "Rp. 900.000";
+					var price = 900000;
+					var min = 100000;
+					if (byr == "DP") {
+						harga.value = "Rp. 100.000";
+						kurang = price - min;
+						minus.innerText = String(kurang);
+						$('#kurang-text').show();
+					} else if (byr == "Lunas") {
+						harga.value = "Rp. 900.000";
+						$('#kurang-text').hide();
+						// txt.classList.add('d-none');
+					}
 				} else if (paket == "b") {
-					harga.value = "Rp. 1.330.000";
+					var price = 1330000;
+					var min = 100000;
+					if (byr == "DP") {
+						harga.value = "Rp. 100.000";
+						kurang = price - min;
+						minus.innerText = String(kurang);
+						$('#kurang-text').show();
+					} else if (byr == "Lunas") {
+						harga.value = "Rp. 1.330.000";
+						$('#kurang-text').hide();
+						// txt.classList.add('d-none');
+					}
 				} else {
-					harga.value = "Rp. 1.760.000";
+					var price = 1760000;
+					var min = 100000;
+					if (byr == "DP") {
+						harga.value = "Rp. 100.000";
+						kurang = price - min;
+						minus.innerText = String(kurang);
+						$('#kurang-text').show();
+					} else if (byr == "Lunas") {
+						harga.value = "Rp. 1.760.000";
+						$('#kurang-text').hide();
+						// txt.classList.add('d-none');
+					}
 				}
 			}
 		}
