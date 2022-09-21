@@ -246,6 +246,9 @@ class AdminController extends BaseController
 	{
 		$DaftarModel = model("DaftarModel");
 		$data = $this->request->getPost();
+		$data['jadwal']= implode('; ', $this->request->getVar('jadwal'));
+		// var_dump($data['jadwal']);
+		// exit();
 		$DaftarModel->update($no_registrasi, $data);
 
 		return redirect()->to(base_url($instruktur));
