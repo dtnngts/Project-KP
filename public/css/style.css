@@ -34,23 +34,12 @@ h5 {
 }
 
 #form-daftar input[type="checkbox"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  position: relative;
-  height: 50px;
-  width: 50px;
-  outline: 10px;
-  border-radius: 50%;
-  margin: 0 15px 0 0;
-  cursor: pointer;
-  background-image: url(/assets/images/ban.png);
-  display: grid;
-  align-items: center;
-}
-
-#form-daftar input[type="checkbox"]:checked {
-  background: rgb(56, 54, 45);
+    position: relative;
+      right: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      margin: 0 auto;     
 }
 
 p {

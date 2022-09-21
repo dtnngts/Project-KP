@@ -21,7 +21,7 @@
     <link href="/assets/sb/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 
-    
+
 </head>
 
 <?= $this->renderSection('myscript'); ?>
@@ -52,9 +52,6 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'></script>
 
     <script>
         $('#pkManual').hide();

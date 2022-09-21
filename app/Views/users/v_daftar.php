@@ -43,12 +43,12 @@
 <p class="text-center"><var>Anda sudah menentukan pilihan kendaraan atau paket yang diinginkan</var> </p>
 <center>
 	<div class="daftar">
-		<div class="jenis_kendaraan">
-			<div class="btn btn-outline-info btn-primary ">
+		<div class="jenis_kendaraan mb-2 ">
+			<div class="btn btn-warning">
 				<button onclick=" klikjenis(this)" style="border: none; background-color: Transparent; color: white;" id="btnManual" value="Manual">
 					<label for="manual">Manual</label>
 			</div>
-			<div class="btn btn-outline-info btn-primary">
+			<div class="btn btn-warning">
 				<button onclick="klikjenis(this)" style="border: none; background-color: Transparent; color: white;" id="btnMatic" value="Matic">
 					<label for="matic">Matic</label>
 			</div>
@@ -93,7 +93,7 @@
 					<td>Instruktur : Agus Hendri</td>
 				</tr>
 				<tr>
-					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Hendri"><a href="/jadwal/Hendri">Lihat Jadwal Tersedia</a></button></td>
+					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Hendri"><a href="/jadwal/Hendri">Lihat Jadwal Tersedia</a></button></td>
 				</tr>
 			</table>
 		</div>
@@ -108,7 +108,7 @@
 					<td>Instruktur : Suhadi</td>
 				</tr>
 				<tr>
-					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
+					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
 				</tr>
 			</table>
 		</div>
@@ -123,7 +123,7 @@
 					<td>Instruktur : Sumaryono</td>
 				</tr>
 				<tr>
-					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Yono"><a href="/jadwal/Yono">Lihat Jadwal Tersedia</a></button></td>
+					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Yono"><a href="/jadwal/Yono">Lihat Jadwal Tersedia</a></button></td>
 				</tr>
 			</table>
 		</div>
@@ -142,10 +142,10 @@
 					<td data-nama='instruktur'>Instruktur : Sumaryono</td>
 				</tr>
 				<tr>
-					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
+					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
 					<td></td>
 					<td></td>
-					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Yono"><a href="/jadwal/Yono">Lihat Jadwal Tersedia</a></button></td>
+					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Yono"><a href="/jadwal/Yono">Lihat Jadwal Tersedia</a></button></td>
 				</tr>
 			</table>
 		</div>
@@ -160,7 +160,7 @@
 					<td data-nama='instruktur'>Instruktur : Eko Disyanto</td>
 				</tr>
 				<tr>
-					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal" style="--clr:#c5c9d3" value="Eko"><a href="/jadwal/Eko">Lihat Jadwal Tersedia</a></button></td>
+					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Eko"><a href="/jadwal/Eko">Lihat Jadwal Tersedia</a></button></td>
 				</tr>
 			</table>
 		</div>
@@ -171,7 +171,7 @@
 	<div class="container">
 		<div class="row">
 
-			<div class="col-lg-5 mx-lg-auto col-md-8 col-10">
+			<div class=" pt-2 col-lg-5 mx-lg-auto col-md-8 col-10">
 				<h1 class="text-white" data-aos="fade-up" data-aos-delay="100">Princess <strong>Solution</strong>.</h1>
 			</div>
 
