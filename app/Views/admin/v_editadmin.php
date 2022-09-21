@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 
-<body id="page-top">
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -211,6 +211,6 @@
             </div>
         </div>
     </div>
-</body>
+
 
 <?php $this->endSection(); ?>

@@ -366,7 +366,7 @@
                     for (var nilai of arr) {
                         if (document.getElementById(i).value == nilai) {
                             document.getElementById(i).setAttribute('checked', true);
-                            document.getElementById(i).setAttribute('disabled', true);
+                            // document.getElementById(i).setAttribute('disabled', true);
                         }
                     }
                 }

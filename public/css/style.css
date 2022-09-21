@@ -113,20 +113,20 @@ img {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
 }
 
-.btnJadwal:hover {
+/* .btnJadwal:hover {
   letter-spacing: 0.10em;
   background: var(--clr);
   box-shadow: 0 0 35px var(--clr)
  
-}
+} */
 
-.btnPilih:hover {
+/* .btnPilih:hover {
  
   letter-spacing: 0.10em;
   background: var(--clr);
   box-shadow: 0 0 35px var(--clr)
 
-}
+} */
 
 /* .btnPilih::before{
   content: '';

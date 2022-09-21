@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\AdminModel;
 use App\Models\SuperModel;
 use App\Models\ValidatorModel;
@@ -9,7 +10,7 @@ use App\Models\DaftarModel;
 class AdminController extends BaseController
 {
 
-    public function __construct()
+	public function __construct()
 	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
@@ -18,14 +19,23 @@ class AdminController extends BaseController
 		$this->DaftarModel = new DaftarModel();
 	}
 
-    public function admin()
+	public function admin()
 	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
 		}
-		
-		$DaftarModel = model("DaftarModel");
+
+
+		$DaftarModel = new DaftarModel();
+		$get_tahun = date('Y');
+		$get_bulan = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+		$i = 0;
+		foreach ($get_bulan as $bulan) {
+			$data_perbulan[$i] = $DaftarModel->like('created_at', $get_tahun . "-" . $bulan)->countAllResults();
+			$i++;
+		}
+
 		$data = [
 			'title' => "Home",
 			'hendri' => $DaftarModel->where('instruktur', 'Hendri')->findAll(),
@@ -35,121 +45,123 @@ class AdminController extends BaseController
 			'rejected' => $DaftarModel->where('status', 'Tidak Diterima')->findAll(),
 			'allMem' => $DaftarModel->findAll(),
 			// 'alumni' => $DaftarModel->where('status', 'alumni')->findAll(),
-			'nama' => session()->get('username')
+			'nama' => session()->get('username'),
+			'data_perbulan' => json_encode($data_perbulan),
 		];
+		// return var_dump($data['data_perbulan']);
 		return view('admin/v_admin', $data);
 	}
 
 	public function allMem()
-    {
+	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
 		}
 
-        $keyword = $this->request->getVar('keyword');
+		$keyword = $this->request->getVar('keyword');
 		if ($keyword) {
 			$allMem = $this->DaftarModel->search($keyword);
 		} else {
 			$allMem = $this->DaftarModel;
 		}
-		
 
-        $data = [
+
+		$data = [
 			'allMem' => $allMem->findAll(),
 			'nama' => session()->get('username')
 		];
-        
-        return view('admin/data_kursus/v_allMem', $data);
-    }
 
-    public function hendri()
-    {
+		return view('admin/data_kursus/v_allMem', $data);
+	}
+
+	public function hendri()
+	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
 		}
 
-        $keyword = $this->request->getVar('keyword');
+		$keyword = $this->request->getVar('keyword');
 		if ($keyword) {
 			$hendri = $this->DaftarModel->where('instruktur', 'Hendri')->search($keyword);
 		} else {
 			$hendri = $this->DaftarModel;
 		}
 
-        $data = [
+		$data = [
 			'hendri' => $hendri->where('instruktur', 'Hendri')->findAll(),
 			'nama' => session()->get('username')
 		];
-        
-        return view('admin/data_kursus/v_hendri', $data);
-    }
+
+		return view('admin/data_kursus/v_hendri', $data);
+	}
 
 	public function suhadi()
-    {
+	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
 		}
-		
-        $keyword = $this->request->getVar('keyword');
+
+		$keyword = $this->request->getVar('keyword');
 		if ($keyword) {
 			$suhadi = $this->DaftarModel->where('instruktur', 'Suhadi')->search($keyword);
 		} else {
 			$suhadi = $this->DaftarModel;
 		}
 
-        $data = [
+		$data = [
 			'suhadi' => $suhadi->where('instruktur', 'Suhadi')->findAll(),
 			'nama' => session()->get('username')
 		];
-        
-        return view('admin/data_kursus/v_suhadi', $data);
-    }
+
+		return view('admin/data_kursus/v_suhadi', $data);
+	}
 
 	public function yono()
-    {
+	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
 		}
-		
-        $keyword = $this->request->getVar('keyword');
+
+		$keyword = $this->request->getVar('keyword');
 		if ($keyword) {
 			$yono = $this->DaftarModel->where('instruktur', 'Yono')->search($keyword);
 		} else {
 			$yono = $this->DaftarModel;
 		}
 
-        $data = [
+		$data = [
 			'yono' => $yono->where('instruktur', 'Yono')->findAll(),
 			'nama' => session()->get('username')
 		];
-        
-        return view('admin/data_kursus/v_yono', $data);
-    }
+
+		return view('admin/data_kursus/v_yono', $data);
+	}
 
 	public function eko()
-    {
+	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
 		}
-		
-        $keyword = $this->request->getVar('keyword');
+
+		$keyword = $this->request->getVar('keyword');
 		if ($keyword) {
 			$eko = $this->DaftarModel->where('instruktur', 'Eko')->search($keyword);
 		} else {
 			$eko = $this->DaftarModel;
 		}
 
-        $data = [
+		$data = [
 			'eko' => $eko->where('instruktur', 'Eko')->findAll(),
 			'nama' => session()->get('username')
 		];
-        
-        return view('admin/data_kursus/v_eko', $data);
-    }
+
+		return view('admin/data_kursus/v_eko', $data);
+	}
 
 	public function notacc()
 	{
@@ -228,12 +240,15 @@ class AdminController extends BaseController
 		];
 
 		return view("admin/v_editadmin", $data);
-		}
+	}
 
 	public function update($no_registrasi, $instruktur)
 	{
 		$DaftarModel = model("DaftarModel");
 		$data = $this->request->getPost();
+		$data['jadwal']= implode('; ', $this->request->getVar('jadwal'));
+		// var_dump($data['jadwal']);
+		// exit();
 		$DaftarModel->update($no_registrasi, $data);
 
 		return redirect()->to(base_url($instruktur));
@@ -260,8 +275,8 @@ class AdminController extends BaseController
 
 		$row = new DaftarModel();
 		$data = $row->find($no_registrasi);
-		unlink("./assets/transfer/".$data['buktiTF']);
-		
+		unlink("./assets/transfer/" . $data['buktiTF']);
+
 		$row->delete($no_registrasi);
 		return redirect()->to(base_url($instruktur));
 	}
@@ -269,7 +284,7 @@ class AdminController extends BaseController
 	public function deleteAdmin($id)
 	{
 		$admin = new AdminModel();
-		$super= new SuperModel();
+		$super = new SuperModel();
 		$validator = new ValidatorModel();
 		$admin->where(['id' => $id])->delete();
 		$super->where(['id' => $id])->delete();
@@ -277,7 +292,8 @@ class AdminController extends BaseController
 		return redirect()->to(base_url('/lihatadmin'));
 	}
 
-	public function create() {
+	public function create()
+	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
@@ -296,7 +312,8 @@ class AdminController extends BaseController
 		return view('admin/v_inputadmin', $data);
 	}
 
-	public function store() {
+	public function store()
+	{
 		$data = [
 			'username' => $this->request->getVar('username'),
 			'password' => $this->request->getVar('password'),
@@ -310,13 +327,13 @@ class AdminController extends BaseController
 	}
 
 	public function lihatadmin()
-    {
+	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
 		}
 
-        $AdminModel = new AdminModel();
+		$AdminModel = new AdminModel();
 		$SuperModel = new SuperModel();
 		$ValidatorModel = new ValidatorModel();
 
@@ -327,28 +344,28 @@ class AdminController extends BaseController
 			'nama' => session()->get('username')
 		];
 		return view('admin/v_lihatadmin', $data);
-    }
+	}
 
-	public function excel () 
+	public function excel()
 	{
 		if (session()->get('username') == '') {
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
 		}
 
-        $keyword = $this->request->getVar('keyword');
+		$keyword = $this->request->getVar('keyword');
 		if ($keyword) {
 			$siswa = $this->DaftarModel->where('status', 'siswa')->search($keyword);
 		} else {
 			$siswa = $this->DaftarModel;
 		}
 
-        $data = [
+		$data = [
 			'siswa' => $siswa->where('status', 'siswa')->findAll(),
 			'nama' => session()->get('username')
 		];
-        
-        return view('admin/data_kursus/excel_siswa', $data);
+
+		return view('admin/data_kursus/excel_siswa', $data);
 	}
 
 	public function valid()
@@ -358,13 +375,13 @@ class AdminController extends BaseController
 			return redirect()->to(base_url('/login'));
 		}
 
-        $keyword = $this->request->getVar('keyword');
+		$keyword = $this->request->getVar('keyword');
 		if ($keyword) {
 			$allMem = $this->DaftarModel->search($keyword);
 		} else {
 			$allMem = $this->DaftarModel;
 		}
-		
+
 		$data = [
 			'allMem' => $allMem->findAll(),
 			'nama' => session()->get('username')
@@ -372,7 +389,8 @@ class AdminController extends BaseController
 		return view("admin/v_validator", $data);
 	}
 
-	public function accepted ($no_registrasi) {
+	public function accepted($no_registrasi)
+	{
 		$data = [
 			'status' => "siswa",
 		];
