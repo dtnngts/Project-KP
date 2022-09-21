@@ -278,9 +278,8 @@
                 <!-- End of Main Content -->
 
             </div>
-<<<<<<< HEAD
             <!-- End of Content Wrapper -->
-=======
+
             <!-- End of Main Content -->
 
 
@@ -293,7 +292,6 @@
                 </div>
             </footer>
             <!-- End of Footer -->
->>>>>>> 45dd1339004e922ec93ff72919957821268a4a17
 
         </div>
         <!-- End of Page Wrapper -->
