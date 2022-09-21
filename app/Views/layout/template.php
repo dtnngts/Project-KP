@@ -32,7 +32,7 @@
     <?= $this->renderSection('content'); ?>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="assets/sb/vendor/jquery/jquery.min.js"></script>
+    <script src="<?= base_url('assets/sb/vendor/jquery/jquery.min.js') ?>"></script>
     <script src="assets/sb/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -58,10 +58,5 @@
         </div>
     </div>
 </footer> -->
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 45dd1339004e922ec93ff72919957821268a4a17
 
 </html>
