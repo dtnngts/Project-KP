@@ -130,7 +130,8 @@
 
                     <!-- Navbar -->
                     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                        <li class="nav-item dropdown no-arrow">
+                        <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                        <!-- <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-800"><?php echo ucwords($nama) ?></span>
                                 <i class="fa fa-user mr-2 text-gray-800"></i>
@@ -140,9 +141,8 @@
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
-
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </nav>
@@ -151,12 +151,8 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <div id="container">
+                    <div id="container" style="padding: 20px;">
                         <h1>Siswa Tidak Diterima<br></br></h1>
-
-                        <div class="col-md">
-                            <a href="/download" class="btn btn-outline-primary shadow float-right"><i class="fa fa-file-excel"></i> Excel</a>
-                        </div>
 
                         <div id="body">
                             <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
@@ -233,7 +229,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -249,7 +245,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </body>
 <?php $this->endSection(); ?>

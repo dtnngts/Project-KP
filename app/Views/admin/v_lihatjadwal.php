@@ -115,7 +115,8 @@
 
                     <!-- Navbar -->
                     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                        <li class="nav-item dropdown no-arrow">
+                        <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                        <!-- <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-800"><?php echo ucwords($nama) ?></span>
                                 <i class="fa fa-user mr-2 text-gray-800"></i>
@@ -125,9 +126,8 @@
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
-
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </nav>
@@ -135,13 +135,11 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <center>
-                        <h1 style="padding-top: 20px;"><i class="fas fa-fw fa-table"></i>Jadwal Siswa Kursus <br></h1>
-                    </center>
+                    <h1 style="padding-top: 20px;">Jadwal Siswa Kursus <br></h1>
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold">Jadwal Siswa Kursus</h6>
+                            <h6 class="m-0 font-weight-bold">Jadwal Siswa</h6>
                         </div>
                         <div class="card-body">
                             <center>
@@ -310,7 +308,7 @@
                         for (var nilai of arr) {
                             if (document.getElementById(i).value == nilai) {
                                 document.getElementById(i).setAttribute('checked', true);
-                                // document.getElementById(i).setAttribute('disabled', true);
+                                document.getElementById(i).setAttribute('disabled', true);
                             }
                         }
                     }

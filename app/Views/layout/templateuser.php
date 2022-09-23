@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/templatemo-digital-trend.css">
+    <link href="/css/templatemo-digital-trend.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 
 </head>

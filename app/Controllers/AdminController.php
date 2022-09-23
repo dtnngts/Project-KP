@@ -191,13 +191,11 @@ class AdminController extends BaseController
 			session()->setFlashdata('gagal', 'Anda belum login');
 			return redirect()->to(base_url('/login'));
 		}
-
+		$daftar_model = new DaftarModel();
 		$data = [
 			'row' => $this->DaftarModel->getDaftar($no_registrasi),
 			'nama' => session()->get('username')
 		];
-
-		$daftar_model = new DaftarModel();
 
 		if ($no_registrasi == false) {
 			$data['daftar'] = $daftar_model->findAll();
@@ -221,6 +219,9 @@ class AdminController extends BaseController
 				$data['jadwal_orang'] = null;
 			}
 		}
+
+		// var_dump($data);
+		// exit();
 
 		return view("admin/v_edit", $data);
 	}
@@ -246,13 +247,29 @@ class AdminController extends BaseController
 	{
 		$DaftarModel = model("DaftarModel");
 		$data = $this->request->getPost();
-		$data['jadwal']= implode('; ', $this->request->getVar('jadwal'));
+		$transfer = $this->request->getFile('buktiTF');
+		$namaTF = $transfer->getName();
+		$data = [
+			'jadwal' => implode('; ', $this->request->getVar('jadwal')),
+			'buktiTF' => $namaTF,
+		];
+		// $data['jadwal'] = implode('; ', $this->request->getVar('jadwal'));
+		// $transfer = $this->request->getFile('buktiTF');
+		if ($transfer == $namaTF) {
+			$namaTF = $this->request->getVar('buktiTFLama');
+		} else {
+			$namaTF = $transfer->getName();
+			$transfer->move('assets/transfer', $namaTF);
+			unlink("./assets/transfer/" . $this->request->getVar('buktiTFLama'));
+			$data['buktiTF'] = $namaTF;
+		}
 		// var_dump($data['jadwal']);
 		// exit();
 		$DaftarModel->update($no_registrasi, $data);
 
 		return redirect()->to(base_url($instruktur));
 	}
+
 	public function updateAdmin($id)
 	{
 		$AdminModel = model("AdminModel");
@@ -403,7 +420,7 @@ class AdminController extends BaseController
 	public function rejected($no_registrasi)
 	{
 		$data = [
-			'status' => "Tidak Diterima",
+			'status' => "tidak diterima",
 		];
 		$where = array('no_registrasi' => $no_registrasi);
 

@@ -114,7 +114,8 @@
 
                     <!-- Navbar -->
                     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                        <li class="nav-item dropdown no-arrow">
+                        <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                        <!-- <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-800"><?php echo ucwords($nama) ?></span>
                                 <i class="fa fa-user mr-2 text-gray-800"></i>
@@ -124,9 +125,8 @@
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
-
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </nav>
@@ -135,45 +135,51 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <div id="container">
-                        <h1>Tambah Data Admin<br></br></h1>
+                    <div id="container" style="padding: 20px;">
 
-                        <div id="body">
-                            <form action="/storeadmin" method="post">
-                                <table border="0" cellpadding="12" cellspacing="5">
-                                    <tr>
-                                        <td>Username</td>
-                                        <td class="col-sm-6"><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="username" autocomplete="off" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Password</td>
-                                        <td class="col-sm-6"><input type="password" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="password" autocomplete="off" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nama</td>
-                                        <td class="col-sm-6"><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="nama" autocomplete="off" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Role</td>
-                                        <td class="col-sm-6">
-                                            <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="admin" id="admin" required>
-                                                <option selected="true" value="" disabled selected>Pilih...</option>
-                                                <option value="AdminModel" id="Admin">Admin</option>
-                                                <option value="SuperModel" id="Super">Super Admin</option>
-                                                <option value="ValidatorModel" id="Validator">Validator</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <input type="hidden" name="role" id="role" value="">
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td><input class="btn btn-info btn-md" style="float:right" type="submit" value="          Save          "></td>
-                                    </tr>
-                                </table>
-                            </form>
-                        </div>
+                        <h1>Tambah Data Admin<br></br></h1>
+                        <center>
+                            <div id=" body">
+                                <div class="card" style="width: 45rem; border-radius: 20px">
+                                    <div class="card-body">
+                                        <form action="/storeadmin" method="post">
+                                            <table border="0" cellpadding="12" cellspacing="5">
+                                                <tr>
+                                                    <td>Username</td>
+                                                    <td class="col-sm-6"><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="username" autocomplete="off" required></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Password</td>
+                                                    <td class="col-sm-6"><input type="password" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="password" autocomplete="off" required></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nama</td>
+                                                    <td class="col-sm-6"><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="nama" autocomplete="off" required></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Role</td>
+                                                    <td class="col-sm-6">
+                                                        <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="admin" id="admin" required>
+                                                            <option selected="true" value="" disabled selected>Pilih...</option>
+                                                            <option value="AdminModel" id="Admin">Admin</option>
+                                                            <option value="SuperModel" id="Super">Super Admin</option>
+                                                            <option value="ValidatorModel" id="Validator">Validator</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <input type="hidden" name="role" id="role" value="">
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><input class="btn btn-info btn-md" style="float:right" type="submit" value="          Save          "></td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </center>
                     </div>
                 </div>
                 <!-- /.container-fluid -->
@@ -214,7 +220,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -230,7 +236,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 
 <?php $this->endSection(); ?>

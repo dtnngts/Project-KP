@@ -130,7 +130,8 @@
 
                     <!-- Navbar -->
                     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                        <li class="nav-item dropdown no-arrow">
+                        <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                        <!-- <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-800"><?php echo ucwords($nama) ?></span>
                                 <i class="fa fa-user mr-2 text-gray-800"></i>
@@ -142,7 +143,7 @@
                                 </a>
 
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </nav>
@@ -151,7 +152,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <div id="container">
+                    <div id="container" style="padding: 20px;">
                         <h1>Siswa Suhadi <br></br></h1>
 
                         <div id="body">
@@ -187,11 +188,6 @@
                                                     <input type="hidden" name="_method" value="Delete">
                                                     <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
                                                 </form>
-                                                <?php if ($row['status'] == 2) : ?>
-                                                    <a href="<?= base_url("cetak/" . $row['no_registrasi']) ?>" class="btn btn-warning" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Cetak</a>
-                                                <?php else : ?>
-                                                    <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Cetak</button>
-                                                <?php endif ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -233,7 +229,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -249,7 +245,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </body>
 <?php $this->endSection(); ?>
