@@ -253,7 +253,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <img src="/assets/images/image-default.png" class="img-preview" style="height:110px">
+                            <img src="/assets/images/image-default.png" class="img-preview" style="height:100px">
                         </div>
                     </div>
                 </div>
@@ -264,11 +264,10 @@
                     <input class="form-check-input" type="radio" id="defaultCheck1">
                     <label class="form-check-label" for="defaultCheck1">
                         Saya telah membaca, memahami, dan setuju berdasarkan syarat dan ketentuan yang telah ditetapkan
-                        <a type="button" data-toggle="modal" data-target="#exampleModal" style="color:blue" onclick="return alert('Apakah anda yakin ingin Logout ?');">>
+                        <a type="button" data-toggle="modal" data-target="#exampleModal" style="color:blue" onclick="return alert('Syarat dan Ketentuan\n1. Harus hadir di tempat 5 menit sebelum jam yang telah ditentukan, jika terlambat ditunda besok.\n2. Jika dalam 10 hari berturut-turut tidak hadir, maka dianggap berhenti dari Kursus Mengemudi.\n3. Dalam Kursus Mengemudi tidak diperkenankan melebihi kecepatan 40Km/Jam.\n4. Murid Kursus Mengemudi wajib mentaati Instruksi dari instruktur.\n5. Jika paket Kursus Mengemudi telah habis di perkenankan untuk memperpanjang paket berikutnya.\n6. Bagi yang menggunakan Fasilitas antar jemput kursus mengemudi, waktu penjemputan tersebut sudah termasuk dalam waktu belajar.');">
                             <u> Baca Syarat dan Ketentuan </u>
                         </a>
                     </label>
-
                 </div>
             </div>
 
@@ -294,6 +293,7 @@
                 </div>
             </div>
             <input type="button" style="place-items:right;" class="btn btn-secondary" value="Daftar" onclick="validasi()">
+            <button type="button" style="place-items:right;" class="btn btn-secondary" id="Daftar"></button>
         </div>
     </div>
 </form>
@@ -360,6 +360,7 @@
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'></script>
+<script src="js/sweetalert2.all.min.js"></script>
 
 <script>
     $('#kurang-text').hide();
@@ -657,6 +658,17 @@
 <script>
     $(document).ready(function() {
         $('#telpon').inputmask("(9999-9999-9999)||(9999-9999-99999)");
+    });
+</script>
+<script>
+    const daftar = document.querySelector('#Daftar');
+
+    daftar.addEventListener('click', function() {
+        Swal({
+            title: 'Hello World',
+            text: 'Nyoba',
+            type: 'succes'
+        });
     });
 </script>
 
