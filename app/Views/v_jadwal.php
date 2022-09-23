@@ -153,7 +153,7 @@
     <?= csrf_field(); ?>
     <div class="container" id="formDaDir">
         <div class="card1">
-            <p>Silahkan lanjut mengisi data diri Anda</p>
+            <p class="text-center">Silahkan lanjut mengisi data diri Anda</p>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -218,7 +218,7 @@
                     <div class="form-group">
                         <label for="paket">Paket</label>
                         <div class="select-list">
-                            <select name="paket" id="paket">
+                            <select name="paket" id="paket" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <option selected="true" disabled>Paket</option>
                                 <option value="a">A</option>
                                 <option value="b">B</option>
@@ -302,7 +302,7 @@
     <div class="container">
         <div class="row">
 
-            <div class=" pt-2 col-lg-5 mx-lg-auto col-md-8 col-10">
+            <div class="col-lg-5 mx-lg-auto col-md-8 col-10">
                 <h1 class="text-white" data-aos="fade-up" data-aos-delay="100">Princess <strong>Solution</strong>.</h1>
             </div>
 
