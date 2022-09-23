@@ -58,7 +58,8 @@
 
                     <!-- Navbar -->
                     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                        <li class="nav-item dropdown no-arrow">
+                        <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                        <!-- <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-800"><?php echo ucwords($nama) ?></span>
                                 <i class="fa fa-user mr-2 text-gray-800"></i>
@@ -69,7 +70,7 @@
                                     Logout
                                 </a>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </nav>
@@ -79,10 +80,8 @@
                 <div class="container-fluid">
 
                     <div id="container">
-                        <center>
-                            <h1 style="padding-top: 20px;"><i class="fa fa-edit"></i>Edit Data <br></h1>
-                            <hr>
-                        </center>
+
+                        <h1 style="padding-top: 20px;">Edit Data <br></h1>
 
                         <div id="body">
 
@@ -156,16 +155,8 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Paket</td>
-                                                        <td>
-                                                            <div class="input-group">
-                                                                <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="paket" id="paket" required value="<?php echo $row['paket'] ?>">
-                                                                    <option selected="true" disabled>Paket</option>
-                                                                    <option value="a">A</option>
-                                                                    <option value="b">B</option>
-                                                                    <option value="c">C</option>
-                                                                </select>
-                                                            </div>
-                                                        </td>
+                                                        <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" value="<?php echo strtoupper($row['paket']) ?>" disabled></td>
+                                                        <input type="hidden" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="paket" value="<?php echo $row['paket'] ?>">
                                                     </tr>
                                                     <tr>
                                                         <td>Status</td>
@@ -175,6 +166,7 @@
                                                                     <option selected="true" disabled="disabled">Status</option>
                                                                     <option value="siswa">Siswa</option>
                                                                     <option value="alumni">Alumni</option>
+                                                                    <option value="tidak diterima">Tidak Diterima</option>
                                                                 </select>
                                                             </div>
                                                         </td>
@@ -191,7 +183,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <center>
-                                                    <table id="jadwal" cellpadding="8" cellspacing="5">
+                                                    <table id="jadwal" cellpadding="3" cellspacing="3">
                                                         <tr>
                                                             <th>Jam/Hari</th>
                                                             <th>Senin</th>
@@ -301,7 +293,35 @@
                                                 <h6 class="m-0 font-weight-bold">Transaksi</h6>
                                             </div>
                                             <div class="card-body">
-                                                <img class="buktiTF" src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" style="width:100px;">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div class="form-group">
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" name="buktiTF" id="buktiTF" onchange="gambar()">
+                                                                <label class="custom-file-label" for="customFile"><?= $row['buktiTF']; ?></label>
+                                                                <input type="hidden" name="buktiTFLama" value="<?= $row['buktiTF'] ?>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <img src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" class="img-preview" style="height:95px">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="pembayaran">Pembayaran</label><br>
+                                                    <div>
+                                                        <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')" />DP
+                                                        <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')" />Lunas
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="harga">Harga</label>
+                                                            <input type="text" class="form-control" name="harga" id="harga" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -338,8 +358,9 @@
 
     </div>
     <!-- End of Page Wrapper -->
+
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -355,7 +376,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script>
         function jadwalOrang() {
@@ -404,12 +425,187 @@
                 jadwalOrang()
             <?php } ?>
         })
+
+        function gambar() {
+            var inputFile = document.getElementById('buktiTF');
+            var pathFile = inputFile.value;
+            var ekstensi = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+            const gambar = document.querySelector('.custom-file-input');
+            const gambarLabel = document.querySelector('.custom-file-label');
+            const imgPreview = document.querySelector('.img-preview');
+            const fileGambar = new FileReader();
+
+            if (!ekstensi.exec(pathFile)) {
+                alert("Silakan upload file yang dengan ekstensi .jpeg/.jpg/.png/.gif");
+                inputFile.value = '';
+                return false;
+            } else if (inputFile.files[0].size > 1000000) {
+                alert("Ukuran File Terlalu Besar. Maksimal Upload 1 MB");
+                inputFile.value = '';
+                return false;
+            } else {
+                gambarLabel.textContent = gambar.files[0].name;
+
+                fileGambar.readAsDataURL(gambar.files[0]);
+
+                fileGambar.onload = function(e) {
+                    imgPreview.src = e.target.result;
+                }
+            }
+        }
+
+        function Hitung(x) {
+            let harga = document.getElementById('harga');
+            let jk = document.getElementById('jenis_kendaraan').value;
+            let kk = document.getElementById('kode_kendaraan').value;
+            let paket = document.getElementById('paket').value;
+            let byr = document.getElementById(x);
+            if (byr.checked) {
+                byr = byr.value;
+            } else {
+                byr = null;
+            }
+            let minus = document.getElementById('kurang');
+            let txt = document.getElementById('kurang-text');
+            console.log(byr)
+            if ($row['jenis_kendaraan'] == "Manual") {
+                if ($row['kode_kendaraan'] == "NAB" || $row['kode_kendaraan'] == "NAS") {
+                    if ($row['paket'] == "a") {
+                        var price = 770000;
+                        var min = 100000;
+                        if (byr == "DP") {
+                            harga.value = "Rp. 100.000";
+                            kurang = price - min;
+                            minus.innerText = String(kurang);
+                            $('#kurang-text').show();
+                        } else if (byr == "Lunas") {
+                            harga.value = "Rp. 770.000";
+                            $('#kurang-text').hide();
+                            // txt.classList.add('d-none');
+                        }
+                    } else if (paket == "b") {
+                        var price = 1135000;
+                        var min = 100000;
+                        if (byr == "DP") {
+                            harga.value = "Rp. 100.000";
+                            kurang = price - min;
+                            minus.innerText = String(kurang);
+                            $('#kurang-text').show();
+                        } else if (byr == "Lunas") {
+                            harga.value = "Rp. 1.135.000";
+                            $('#kurang-text').hide();
+                            // txt.classList.add('d-none');
+                        }
+                    } else if (paket == "c") {
+                        var price = 1530000;
+                        var min = 100000;
+                        if (byr == "DP") {
+                            harga.value = "Rp. 100.000";
+                            kurang = price - min;
+                            minus.innerText = String(kurang);
+                            $('#kurang-text').show();
+                        } else if (byr == "Lunas") {
+                            harga.value = "Rp. 1.530.000";
+                            $('#kurang-text').hide();
+                            // txt.classList.add('d-none');
+                        }
+                    } else {
+                        harga.value = " ";
+                        $('#kurang-text').hide();
+                    }
+                } else if (kk == "AVNEW") {
+                    if (paket == "a") {
+                        var price = 820000;
+                        var min = 100000;
+                        if (byr == "DP") {
+                            harga.value = "Rp. 100.000";
+                            kurang = price - min;
+                            minus.innerText = String(kurang);
+                            $('#kurang-text').show();
+                        } else if (byr == "Lunas") {
+                            harga.value = "Rp. 820.000";
+                            $('#kurang-text').hide();
+                            // txt.classList.add('d-none');
+                        }
+                    } else if (paket == "b") {
+                        var price = 1210000;
+                        var min = 100000;
+                        if (byr == "DP") {
+                            harga.value = "Rp. 100.000";
+                            kurang = price - min;
+                            minus.innerText = String(kurang);
+                            $('#kurang-text').show();
+                        } else if (byr == "Lunas") {
+                            harga.value = "Rp. 1.210.000";
+                            $('#kurang-text').hide();
+                            // txt.classList.add('d-none');
+                        }
+                    } else {
+                        var price = 1600000;
+                        var min = 100000;
+                        if (byr == "DP") {
+                            harga.value = "Rp. 100.000";
+                            kurang = price - min;
+                            minus.innerText = String(kurang);
+                            $('#kurang-text').show();
+                        } else if (byr == "Lunas") {
+                            harga.value = "Rp. 1.600.000";
+                            $('#kurang-text').hide();
+                            // txt.classList.add('d-none');
+                        }
+                    }
+                }
+            } else if ($row['jenis_kendaraan'] == "Matic") {
+                if ($row['kode_kendaraan'] == "GMB" || $row['kode_kendaraan'] == "GMM") {
+                    if ($row['paket'] == "a") {
+                        var price = 900000;
+                        var min = 100000;
+                        if (byr == "DP") {
+                            harga.value = "Rp. 100.000";
+                            kurang = price - min;
+                            minus.innerText = String(kurang);
+                            $('#kurang-text').show();
+                        } else if (byr == "Lunas") {
+                            harga.value = "Rp. 900.000";
+                            $('#kurang-text').hide();
+                            // txt.classList.add('d-none');
+                        }
+                    } else if (paket == "b") {
+                        var price = 1330000;
+                        var min = 100000;
+                        if (byr == "DP") {
+                            harga.value = "Rp. 100.000";
+                            kurang = price - min;
+                            minus.innerText = String(kurang);
+                            $('#kurang-text').show();
+                        } else if (byr == "Lunas") {
+                            harga.value = "Rp. 1.330.000";
+                            $('#kurang-text').hide();
+                            // txt.classList.add('d-none');
+                        }
+                    } else {
+                        var price = 1760000;
+                        var min = 100000;
+                        if (byr == "DP") {
+                            harga.value = "Rp. 100.000";
+                            kurang = price - min;
+                            minus.innerText = String(kurang);
+                            $('#kurang-text').show();
+                        } else if (byr == "Lunas") {
+                            harga.value = "Rp. 1.760.000";
+                            $('#kurang-text').hide();
+                            // txt.classList.add('d-none');
+                        }
+                    }
+                }
+            }
+        }
     </script>
     <script>
         // Get the modal
         var modal = document.querySelector(".modal");
         var modalImg = document.querySelector(".modal-content");
-        Array.from(document.querySelectorAll(".buktiTF")).forEach(item => {
+        Array.from(document.querySelectorAll(".img-preview")).forEach(item => {
             item.addEventListener("click", event => {
                 modal.style.display = "block";
                 modalImg.src = event.target.src;

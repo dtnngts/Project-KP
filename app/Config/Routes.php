@@ -46,7 +46,7 @@ $routes->get('/Hendri', 'AdminController::hendri');
 $routes->get('/Suhadi', 'AdminController::suhadi');
 $routes->get('/Yono', 'AdminController::yono');
 $routes->get('/Eko', 'AdminController::eko');
-$routes->get('/NotAcc', 'AdminController::notacc');
+$routes->get('/tidak-diterima', 'AdminController::notacc');
 $routes->get('/edit/(:any)', 'AdminController::edit/$1');
 $routes->get('/editadmin/(:any)', 'AdminController::editAdmin/$1');
 $routes->post('/update/(:any)/(:any)', 'AdminController::update/$1/$2');

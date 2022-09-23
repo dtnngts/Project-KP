@@ -34,7 +34,7 @@
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
+                <i class="fa fa-book"></i>
                 <span>Data Kursus</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -48,7 +48,7 @@
                     <a class="collapse-item" href="/Yono">Siswa Yono</a>
                     <a class="collapse-item" href="/Eko">Siswa Eko</a>
                     <h6 class="collapse-header">Data Tidak Lengkap:</h6>
-                    <a class="collapse-item" href="/NotAcc">Data Tidak Diterima</a>
+                    <a class="collapse-item" href="/tidak-diterima">Data Tidak Diterima</a>
                 </div>
             </div>
         </li>
@@ -117,7 +117,8 @@
 
                 <!-- Navbar -->
                 <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                    <li class="nav-item dropdown no-arrow">
+                    <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                    <!-- <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-800"><?php echo ucwords($nama) ?></span>
                             <i class="fa fa-user mr-2 text-gray-800"></i>
@@ -127,9 +128,8 @@
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
-
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
 
             </nav>
@@ -140,7 +140,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div id="container">
+                <div id="container" style="padding: 20px;">
                     <h1>Dashboard <br></br></h1>
 
                     <div id="body">
@@ -276,11 +276,8 @@
                 <!-- /.container-fluid -->
 
             </div>
-<<<<<<< HEAD
             <!-- End of Content Wrapper -->
 
-=======
->>>>>>> f4385141b0e9eaa2cd6671a3d3f5c87aac36fdd6
             <!-- End of Main Content -->
 
         </div>
@@ -302,7 +299,7 @@
 
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -318,11 +315,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
-
-
-
-
 
 <?php $this->endSection(); ?>
