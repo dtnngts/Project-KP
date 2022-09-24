@@ -76,35 +76,40 @@
                 <div id="container" style="padding: 20px;">
                     <h1>Edit Data Admin <br></br></h1>
 
-                    <div id="body">
-
-                        <form action="/updateadmin/<?= $row['id'] ?>" method="post">
-                            <table border="0" cellpadding="12" cellspacing="5">
-                                <tr>
-                                    <td>Id</td>
-                                    <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" value="<?php echo strtoupper($row['id']) ?>" disabled></td>
-                                    <td><input type="hidden" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="id" value="<?php echo $row['id'] ?>"></td>
-                                </tr>
-                                <tr>
-                                    <td>Username</td>
-                                    <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="usernama" autocomplete="off" required value="<?php echo $row['username'] ?>"></td>
-                                </tr>
-                                <tr>
-                                    <td>Password</td>
-                                    <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="password" autocomplete="off" required value="<?php echo $row['password'] ?>"></td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="nama" autocomplete="off" required value="<?php echo $row['nama'] ?>"></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td><input class="btn btn-primary btn-md" style="float:right" type="submit" value="          Save          "></td>
-                                </tr>
-                            </table>
-                        </form>
-                    </div>
+                    <center>
+                        <div id="body">
+                            <div class="card" style="width: 45rem; border-radius: 20px">
+                                <div class="card-body">
+                                    <form action="/updateadmin/<?= $row['id'] ?>" method="post">
+                                        <table border="0" cellpadding="12" cellspacing="5">
+                                            <tr>
+                                                <td>Id</td>
+                                                <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" value="<?php echo strtoupper($row['id']) ?>" disabled></td>
+                                                <td><input type="hidden" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="id" value="<?php echo $row['id'] ?>"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Username</td>
+                                                <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="usernama" autocomplete="off" required value="<?php echo $row['username'] ?>"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Password</td>
+                                                <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="password" autocomplete="off" required value="<?php echo $row['password'] ?>"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nama</td>
+                                                <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="nama" autocomplete="off" required value="<?php echo $row['nama'] ?>"></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td><input class="btn btn-primary btn-md" style="float:right" type="submit" value="          Save          "></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </center>
                 </div>
             </div>
             <!-- /.container-fluid -->

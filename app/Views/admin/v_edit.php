@@ -126,7 +126,7 @@
                                                         <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="nama" autocomplete="off" required value="<?php echo $row['nama'] ?>"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Tempat, Tanggal Lahir</td>
+                                                        <td>Tanggal Lahir</td>
                                                         <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="ttl" autocomplete="off" required value="<?php echo $row['ttl'] ?>"></td>
                                                     </tr>
                                                     <tr>
@@ -138,7 +138,7 @@
                                                         <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="alamat" autocomplete="off" required value="<?php echo $row['alamat'] ?>"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Telpon</td>
+                                                        <td>WhatsApp</td>
                                                         <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="telpon" autocomplete="off" required value="<?php echo $row['telpon'] ?>"></td>
                                                     </tr>
                                                     <tr>
@@ -163,10 +163,10 @@
                                                         <td>
                                                             <div class="input-group">
                                                                 <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="status" id="status" required value="<?php echo $row['status'] ?>">
-                                                                    <option selected="true" disabled="disabled">Status</option>
-                                                                    <option value="siswa">Siswa</option>
-                                                                    <option value="alumni">Alumni</option>
-                                                                    <option value="tidak diterima">Tidak Diterima</option>
+                                                                    <option selected="true" value="" disabled selected>Status</option>
+                                                                    <option value="siswa" <?= ($row['status'] == 'siswa') ? 'selected' : '' ?>>Siswa</option>
+                                                                    <option value="alumni" <?= ($row['status'] == 'alumni') ? 'selected' : '' ?>>Alumni</option>
+                                                                    <option value="tidak diterima" <?= ($row['status'] == 'tidak diterima') ? 'selected' : '' ?>>Tidak Diterima</option>
                                                                 </select>
                                                             </div>
                                                         </td>
@@ -310,15 +310,15 @@
                                                 <div class="form-group">
                                                     <label for="pembayaran">Pembayaran</label><br>
                                                     <div>
-                                                        <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')" />DP
-                                                        <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')" />Lunas
+                                                        <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')" <?= ($row['pembayaran'] == 'DP') ? 'checked' : '' ?>>DP
+                                                        <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')" <?= ($row['pembayaran'] == 'Lunas') ? 'checked' : '' ?>>Lunas
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <label for="harga">Harga</label>
-                                                            <input type="text" class="form-control" name="harga" id="harga" readonly>
+                                                            <input type="text" class="form-control" name="harga" id="harga" value="" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -453,24 +453,41 @@
                 }
             }
         }
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.querySelector(".modal");
+        var modalImg = document.querySelector(".modal-content");
+        Array.from(document.querySelectorAll(".img-preview")).forEach(item => {
+            item.addEventListener("click", event => {
+                modal.style.display = "block";
+                modalImg.src = event.target.src;
+            });
+        });
 
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
+    <script>
         function Hitung(x) {
             let harga = document.getElementById('harga');
-            let jk = document.getElementById('jenis_kendaraan').value;
-            let kk = document.getElementById('kode_kendaraan').value;
-            let paket = document.getElementById('paket').value;
+            let jk = $row['jenis_kendaraan'];
+            let kk = $row['kode_kendaraan'];
+            let paket = $row['paket'];
             let byr = document.getElementById(x);
             if (byr.checked) {
                 byr = byr.value;
             } else {
                 byr = null;
             }
-            let minus = document.getElementById('kurang');
-            let txt = document.getElementById('kurang-text');
             console.log(byr)
-            if ($row['jenis_kendaraan'] == "Manual") {
-                if ($row['kode_kendaraan'] == "NAB" || $row['kode_kendaraan'] == "NAS") {
-                    if ($row['paket'] == "a") {
+            if (jk == "Manual") {
+                if (kk == "NAB" || kk == "NAS") {
+                    if (paket == "a") {
                         var price = 770000;
                         var min = 100000;
                         if (byr == "DP") {
@@ -555,9 +572,9 @@
                         }
                     }
                 }
-            } else if ($row['jenis_kendaraan'] == "Matic") {
-                if ($row['kode_kendaraan'] == "GMB" || $row['kode_kendaraan'] == "GMM") {
-                    if ($row['paket'] == "a") {
+            } else if (jk == "Matic") {
+                if (kk == "GMB" || kk == "GMM") {
+                    if (paket == "a") {
                         var price = 900000;
                         var min = 100000;
                         if (byr == "DP") {
@@ -599,24 +616,6 @@
                     }
                 }
             }
-        }
-    </script>
-    <script>
-        // Get the modal
-        var modal = document.querySelector(".modal");
-        var modalImg = document.querySelector(".modal-content");
-        Array.from(document.querySelectorAll(".img-preview")).forEach(item => {
-            item.addEventListener("click", event => {
-                modal.style.display = "block";
-                modalImg.src = event.target.src;
-            });
-        });
-
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
         }
     </script>
 </body>

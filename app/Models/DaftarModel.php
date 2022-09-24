@@ -23,7 +23,8 @@ class DaftarModel extends Model
 	{
 		return $this->table('daftar')->like('no_registrasi', $keyword)
 		->orLike('nama', $keyword)->orLike('kode_kendaraan', $keyword)
-        ->orLike('instruktur', $keyword)->orLike('paket', $keyword);
+        ->orLike('instruktur', $keyword)->orLike('paket', $keyword)
+		->orLike('jadwal', $keyword);
 	}
 
 	public function getInstruktur($instruktur = false)

@@ -28,7 +28,7 @@
                     <span>Dashboard</span></a>
             </li>
 
-        
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -46,7 +46,6 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-5">
                         <i class="fa fa-bars"></i>
                     </button>
-
 
                     <!-- Navbar -->
                     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -186,12 +185,6 @@
 
                 </div>
 
-                <script src="<?= base_url('vendor/simple-datatables/simple-datatables.js') ?>"></script>
-                <script>
-                    // Simple Datatable
-                    let table1 = document.querySelector('#table1');
-                    let dataTable = new simpleDatatables.DataTable(table1);
-                </script>
                 <!-- End of Main Content -->
 
                 <!-- Footer -->
