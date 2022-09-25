@@ -4,7 +4,7 @@
 
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/" id="dashboard">
             <img class="img-profile rounded-circle" src="<?php echo base_url(); ?>/assets/images/logop.png" width=50px;></i>
             Princess Solution
         </a>
@@ -17,13 +17,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="#about" class="nav-link smoothScroll">Dashboard</a>
+                    <a href="/" class="nav-link smoothScroll">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#project" class="nav-link smoothScroll">Paket Kursus</a>
+                    <a href="/" class="nav-link smoothScroll">Paket Kursus</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/daftar" class="nav-link">Daftar</a>
+                    <a href="/daftar" class="nav-link" id="disabled">Daftar</a>
                 </li>
                 <li class="nav-item">
                     <a href="/login" class="nav-link contact">Login</a>
@@ -211,9 +211,9 @@
                         <div class="select-list">
                             <select name="paket" id="paket" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <option selected="true" disabled>Paket</option>
-                                <option value="a">A</option>
-                                <option value="b">B</option>
-                                <option value="c">C</option>
+                                <option value="a" data-toggle="tooltip" data-placement="right" title="Untuk melancarkan mengemudi">A</option>
+                                <option value="b" data-toggle="tooltip" data-placement="right" title="Disarankan untuk pemula">B</option>
+                                <option value="c" data-toggle="tooltip" data-placement="right" title="Disarankan untuk pemula dengan jam kursus yang lebih lama">C</option>
                             </select>
                         </div>
                     </div>
@@ -230,7 +230,7 @@
                                 <label for="harga">Harga</label>
                                 <input type="text" class="form-control" name="harga" id="harga" readonly>
                             </div>
-                            <p id="kurang-text">Silahkan melunasi kekurangan pembayaran sebesar <span id="kurang"></span> pada saat hari pertama kursus</p>
+                            <p id="kurang-text" style="font-size: 15px;">Silahkan melunasi kekurangan pembayaran sebesar <span id="kurang"></span> pada saat hari pertama kursus</p>
                         </div>
                     </div>
                     <div class="row">
@@ -272,7 +272,7 @@
         <div class="row">
 
             <div class="col-lg-5 mx-lg-auto col-md-8 col-10">
-                <h1 class="text-white" data-aos="fade-up" data-aos-delay="100">Princess <strong>Solution</strong>.</h1>
+                <h1 class="text-white" data-aos="fade-up" data-aos-delay="100" id="footer">Princess <strong>Solution</strong>.</h1>
             </div>
 
             <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
@@ -280,7 +280,7 @@
 
                 <p class="mb-1">
                     <i class="fa fa-phone mr-2 footer-icon"></i>
-                    +62 812-7957-2555
+                    <a href="https://wa.me/6281279572555">+62 812-7957-2555</a>
                 </p>
 
                 <p>
@@ -582,7 +582,7 @@
             $('#formDaDir').toggle();
             var konten = document.getElementById("formDaDir");
             konten.scrollIntoView();
-            
+
         });
     });
 </script>
