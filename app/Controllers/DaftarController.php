@@ -31,7 +31,7 @@ class DaftarController extends BaseController
             $data['jadwal_orang'][$i] = $dt['jadwal'];
             $i++;
         }
-        return view('v_jadwal', $data);
+        return view('/users/v_jadwal', $data);
     }
 
     public function instruktur($instruktur = false)
@@ -46,7 +46,7 @@ class DaftarController extends BaseController
                 $data['jadwal_orang'][$i] = $dt['jadwal'];
                 $i++;
             }
-            return view('v_jadwal', $data);
+            return view('/users/v_jadwal', $data);
         } else {
             $data['daftar'] = $daftar_model->getInstruktur($instruktur);
             $i = 0;
@@ -59,7 +59,7 @@ class DaftarController extends BaseController
             if (!isset($data['jadwal_orang'])) {
                 $data['jadwal_orang'] = null;
             }
-            return view('v_jadwal', $data);
+            return view('/users/v_jadwal', $data);
         }
     }
 

@@ -67,28 +67,36 @@
   <!-- ABOUT -->
   <section class="about section-padding pb-0" id="about">
     <div class="container">
+      <h2 class="mb-4" data-aos="fade-up">the best <br><strong>Car Driving Course</strong> in Lampung</h2>
       <div class="row">
-
-        <div class="col-lg-7 mx-auto col-md-10 col-12">
+        <div class="col-lg-7 col-md-7 col-12 mb-4">
           <div class="about-info">
-
-            <h2 class="mb-4" data-aos="fade-up">the best <strong>Car Driving Course</strong> in Lampung</h2>
-
-            <p class="mb-0" data-aos="fade-up">Perusahaan PRINCESS berawal dari sebuah usaha Kursus Mengemudi yang kemudian juga dikembangkan di bidang Biro Jasa.
+            <br>
+            <p class="mb-0" data-aos="fade-up">Perusahaan PRINCESS berawal dari sebuah usaha Kursus Mengemudi yang kemudian juga
+              dikembangkan di bidang Biro Jasa.
               Perusahaan ini didirikan oleh Bapak Rinaldo PB dan Ibu Fatmawati S. pada tanggal 5 Mei 1990 yang bertempat di sebuah
               lokasi kecil di sisi Jalan Raden Intan, Bandar Lampung.
               <br><br>Perusahaan ini dirintis <strong>pertama</strong> kali dengan hanya memiliki 3
-              karyawan untuk melayani konsumen Biro Jasa dan memiliki sebuah mobil Jimny Katana merah sebagai armada Kursus Mengemudi.
+              karyawan untuk melayani konsumen Biro Jasa dan memiliki sebuah mobil Jimny Katana merah sebagai armada Kursus
+              Mengemudi.
               Pendiri memberi nama usahanya tersebut dengan nama PRINCESS..
             </p>
           </div>
-
-          <div class="about-image" data-aos="fade-up" data-aos-delay="200">
-
-            <img src="assets/images/pp.png" class="img-fluid" alt="office">
-          </div>
         </div>
 
+        <div class="col-lg-5 col-ml-5 col-12 mr-0 mb-4 pt-4" style="display: flex;">
+          <div class="blog-sidebar d-flex justify-content-center align-items-center " data-aos="fade-up" data-aos-delay="200">
+            <iframe src="https://www.youtube.com/embed/Qgqr9yRilBw?autoplay=1&mute=1" frameborder="0" allow="autoplay" width="440" height="240"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="about-image" data-aos=" fade-up" data-aos-delay="200">
+        <center>
+          <img src="assets/images/pp.png" class="img-fluid " alt="office">
+        </center>
       </div>
     </div>
   </section>
@@ -207,15 +215,6 @@
           <p class="copyright-text">Copyright &copy; 2022 DotaAprilLase
             <br>
           </p>
-        </div>
-
-        <div class="col-lg-4 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
-
-          <ul class="footer-link">
-            <li><a href="#">Stories</a></li>
-            <li><a href="#">Work with us</a></li>
-            <li><a href="#">Privacy</a></li>
-          </ul>
         </div>
 
         <div class="col-lg-3 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">

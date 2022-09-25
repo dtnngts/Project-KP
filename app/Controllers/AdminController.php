@@ -204,7 +204,7 @@ class AdminController extends BaseController
 				$data['jadwal_orang'][$i] = $dt['jadwal'];
 				$i++;
 			}
-			return view('v_jadwal', $data);
+			return view('/users/v_jadwal', $data);
 		} else {
 			$data['daftar'] = $daftar_model->getNoReg($no_registrasi);
 			$i = 0;
