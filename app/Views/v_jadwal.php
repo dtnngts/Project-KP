@@ -8,10 +8,10 @@
             <img class="img-profile rounded-circle" src="<?php echo base_url(); ?>/assets/images/logop.png" width=50px;></i>
             Princess Solution
         </a>
-       
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 
-        <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -177,16 +177,6 @@
                         <label for="telpon">No. WhatsApp</label>
                         <input type="text" class="form-control" name="telpon" id="telpon">
                     </div>
-
-                    <!-- <div class="form-group">
-					<div class="select-list">
-						<select name="status" id="status">
-							<option value="">Status</option>
-							<option value="siswa">Siswa</option>
-							<option value="alumni">Alumni</option>
-						</select>
-					</div>
-				</div> -->
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -687,7 +677,7 @@
             then(function() {
                 window.location = "/daftar";
             })
-            );
+        );
 
 
     }

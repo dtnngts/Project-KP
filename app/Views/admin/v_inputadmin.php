@@ -164,7 +164,6 @@
                                                         <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="admin" id="admin" required>
                                                             <option selected="true" value="" disabled selected>Pilih...</option>
                                                             <option value="AdminModel" id="Admin">Admin</option>
-                                                            <option value="SuperModel" id="Super">Super Admin</option>
                                                             <option value="ValidatorModel" id="Validator">Validator</option>
                                                         </select>
                                                     </td>
@@ -189,11 +188,9 @@
                 <script>
                     document.getElementById('admin').onchange = function() {
                         if (this.value == 'AdminModel') {
-                            document.getElementById('role').value = "Admin";
-                        } else if (this.value == 'SuperModel') {
-                            document.getElementById('role').value = "Super";
+                            document.getElementById('role').value = "admin";
                         } else {
-                            document.getElementById('role').value = "Validator";
+                            document.getElementById('role').value = "validator";
                         }
                     }
                 </script>

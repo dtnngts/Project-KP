@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\AdminModel;
-use App\Models\SuperModel;
 use App\Models\ValidatorModel;
 use App\Models\DaftarModel;
 
@@ -290,11 +289,9 @@ class AdminController extends BaseController
 	public function updateAdmin($id)
 	{
 		$AdminModel = model("AdminModel");
-		$SuperModel = model("SuperModel");
 		$ValidatorModel = model("ValidatorModel");
 		$data = $this->request->getPost();
 		$AdminModel->update($id, $data);
-		$SuperModel->update($id, $data);
 		$ValidatorModel->update($id, $data);
 
 		return redirect()->to(base_url('/lihatadmin'));
@@ -318,10 +315,8 @@ class AdminController extends BaseController
 	public function deleteAdmin($id)
 	{
 		$admin = new AdminModel();
-		$super = new SuperModel();
 		$validator = new ValidatorModel();
 		$admin->where(['id' => $id])->delete();
-		$super->where(['id' => $id])->delete();
 		$validator->where(['id' => $id])->delete();
 		return redirect()->to(base_url('/lihatadmin'));
 	}
@@ -334,12 +329,10 @@ class AdminController extends BaseController
 		}
 
 		$AdminModel = new AdminModel();
-		$SuperModel = new SuperModel();
 		$ValidatorModel = new ValidatorModel();
 
 		$data = [
 			'admin' => $AdminModel->findAll(),
-			'super' => $SuperModel->findAll(),
 			'validator' => $ValidatorModel->findAll(),
 			'nama' => session()->get('username')
 		];
@@ -368,12 +361,10 @@ class AdminController extends BaseController
 		}
 
 		$AdminModel = new AdminModel();
-		$SuperModel = new SuperModel();
 		$ValidatorModel = new ValidatorModel();
 
 		$data = [
 			'admin' => $AdminModel->findAll(),
-			'super' => $SuperModel->findAll(),
 			'validator' => $ValidatorModel->findAll(),
 			'nama' => session()->get('username')
 		];

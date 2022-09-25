@@ -145,7 +145,6 @@
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab">
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-admin" role="tab">Admin</a>
-                                    <a class="nav-item nav-link" id="nav-profil-tab" data-toggle="tab" href="#nav-super" role="tab">Super Admin</a>
                                     <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-validator" role="tab">Validator Admin</a>
                                 </div>
                             </nav>
@@ -171,44 +170,11 @@
                                                     <td scope="row"><?= $row['password'] ?></td>
                                                     <td scope="row"><?= $row['nama'] ?></td>
                                                     <td scope="row" style="text-align:center">
-                                                        <a href="<?= base_url("editadmin/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
+                                                        <a href="<?= base_url("editadmin/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button"><i class="fas fa-pencil-alt"></i></a>
                                                         <form action="deleteadmin/<?= $row['id'] ?>" method="post" class="d-inline">
                                                             <?= csrf_field(); ?>
                                                             <input type="hidden" name="_method" value="Delete">
-                                                            <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="tab-pane fade" id="nav-super" role="tabpanel">
-                                    <table style="text-align:center" class="table table-striped" width="1200px" id="table1">
-                                        <thead>
-                                            <tr>
-                                                <td scope="col">id</td>
-                                                <td scope="col">Username</td>
-                                                <td scope="col">Password</td>
-                                                <td scope="col">Nama</td>
-                                                <td scope="col">Action</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            foreach ($super as $row) :
-                                            ?>
-                                                <tr>
-                                                    <td scope="row"><?= $row['id'] ?></td>
-                                                    <td scope="row"><?= $row['username'] ?></td>
-                                                    <td scope="row"><?= $row['password'] ?></td>
-                                                    <td scope="row"><?= $row['nama'] ?></td>
-                                                    <td scope="row" style="text-align:center">
-                                                        <a href="<?= base_url("editadmin/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
-                                                        <form action="deleteadmin/<?= $row['id'] ?>" method="post" class="d-inline">
-                                                            <?= csrf_field(); ?>
-                                                            <input type="hidden" name="_method" value="Delete">
-                                                            <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
+                                                            <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); "><i class="fa fa-trash"></i></button>
                                                         </form>
                                                     </td>
                                                 </tr>
@@ -237,11 +203,11 @@
                                                     <td scope="row"><?= $row['password'] ?></td>
                                                     <td scope="row"><?= $row['nama'] ?></td>
                                                     <td scope="row" style="text-align:center">
-                                                        <a href="<?= base_url("editadmin/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
+                                                        <a href="<?= base_url("editadmin/" . $row['id']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button"><i class="fas fa-pencil-alt"></i></a>
                                                         <form action="deleteadmin/<?= $row['id'] ?>" method="post" class="d-inline">
                                                             <?= csrf_field(); ?>
                                                             <input type="hidden" name="_method" value="Delete">
-                                                            <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
+                                                            <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); "><i class="fa fa-trash"></i></button>
                                                         </form>
                                                     </td>
                                                 </tr>
