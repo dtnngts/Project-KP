@@ -211,9 +211,9 @@
                         <div class="select-list">
                             <select name="paket" id="paket" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <option selected="true" disabled>Paket</option>
-                                <option value="a">A</option>
-                                <option value="b">B</option>
-                                <option value="c">C</option>
+                                <option value="a" data-toggle="tooltip" data-placement="right" title="untuk melancarkan mengemudi">A</option>
+                                <option value="b" data-toggle="tooltip" data-placement="right" title="disarankan untuk pemula">B</option>
+                                <option value="c" data-toggle="tooltip" data-placement="right" title="disarankan untuk pemula dengan jam kursus yang lebih lama">C</option>
                             </select>
                         </div>
                     </div>
@@ -582,7 +582,7 @@
             $('#formDaDir').toggle();
             var konten = document.getElementById("formDaDir");
             konten.scrollIntoView();
-            
+
         });
     });
 </script>

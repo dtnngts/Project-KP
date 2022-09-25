@@ -117,7 +117,7 @@
                     <!-- Navbar -->
                     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
                         <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
-                    
+
                     </ul>
 
                 </nav>
@@ -141,7 +141,11 @@
                                                 </tr>
                                                 <tr>
                                                     <td>Password</td>
-                                                    <td class="col-sm-6"><input type="password" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="password" autocomplete="off" required></td>
+                                                    <td class="col-sm-6"><input type="password" id="password" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="password" autocomplete="off" required></td>
+                                                    <td onclick="hide()">
+                                                        <i id="icon1" style="display: none;" class="fa fa-eye"></i>
+                                                        <i id="icon2" class="fa fa-eye-slash"></i>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Nama</td>
@@ -207,7 +211,25 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    
+    <script>
+        function hide() {
+            var x = document.getElementById("password");
+            var y = document.getElementById("icon1");
+            var z = document.getElementById("icon2");
+
+            if (x.type === 'password') {
+                x.type = "text";
+                y.style.display = "block";
+                z.style.display = "none";
+            } else {
+                x.type = "password";
+                y.style.display = "none";
+                z.style.display = "block";
+            }
+        }
+    </script>
+
+
 </body>
 
 <?php $this->endSection(); ?>

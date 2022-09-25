@@ -163,7 +163,7 @@
                                                         <td>
                                                             <div class="input-group">
                                                                 <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="status" id="status" required value="<?php echo $row['status'] ?>">
-                                                                    <option selected="true" value="" disabled selected>Status</option>
+                                                                    <option selected="true" value="">Status</option>
                                                                     <option value="siswa" <?= ($row['status'] == 'siswa') ? 'selected' : '' ?>>Siswa</option>
                                                                     <option value="alumni" <?= ($row['status'] == 'alumni') ? 'selected' : '' ?>>Alumni</option>
                                                                     <option value="tidak diterima" <?= ($row['status'] == 'tidak diterima') ? 'selected' : '' ?>>Tidak Diterima</option>
