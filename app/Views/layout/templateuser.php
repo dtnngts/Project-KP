@@ -12,9 +12,8 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="/assets/images/logop.png">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -40,6 +39,7 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
 
     <script>
         $('#pkManual').hide();
@@ -102,9 +102,5 @@
     </script>
 
 </body>
-
-
-
-
 
 </html>

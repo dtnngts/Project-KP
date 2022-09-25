@@ -80,7 +80,7 @@ class DaftarController extends BaseController
 
         $DaftarModel = model("DaftarModel");
         $transfer = $this->request->getFile('buktiTF');
-        $namaTF = $transfer->getName();
+        $namaTF = $transfer->getRandomName();
         $data = [
             'nama' => $this->request->getVar('nama'),
             'ttl' => $this->request->getVar('ttl'),

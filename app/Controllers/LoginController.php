@@ -1,7 +1,6 @@
 <?php
 namespace App\Controllers;
 use App\Models\AdminModel;
-use App\Models\SuperModel;
 use App\Models\ValidatorModel;
 class LoginController extends BaseController
 {
@@ -17,14 +16,12 @@ class LoginController extends BaseController
 	public function login_action()
 	{
 		$admin = new AdminModel();
-		$super = new SuperModel();
 		$validator = new ValidatorModel();
 		// $table = 'admin';
 		$username = $this->request->getPost('username');
 		$password = $this->request->getPost('password');
 		
 		$cekadmin = $admin->get_data($username, $password);
-		$ceksuper = $super->get_data($username, $password);
 		$cekvalidator = $validator->get_data($username, $password);
 		if ($cekadmin != null) {
 			
@@ -33,13 +30,6 @@ class LoginController extends BaseController
 				];
 				session()->set($login);
 				return redirect()->to(base_url('/admin'));
-		} 
-		else if ($ceksuper != null) {
-			$login = [
-				'username' => $username,
-			];
-			session()->set($login);
-			return redirect()->to(base_url('/super'));
 		} 
 		else if($cekvalidator != null) {
 			$login = [

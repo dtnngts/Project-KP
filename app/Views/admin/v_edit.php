@@ -13,7 +13,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <img class="img-profile rounded-circle" src="/assets/images/logo.png" width=50px;>
+                    <img class="img-profile rounded-circle" src="/assets/images/logop.png" width=50px;>
                 </div>
                 <div class="sidebar-brand-text mx-3"> Princess Solution <sup></sup></div>
             </a>
@@ -126,7 +126,7 @@
                                                         <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="nama" autocomplete="off" required value="<?php echo $row['nama'] ?>"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Tempat, Tanggal Lahir</td>
+                                                        <td>Tanggal Lahir</td>
                                                         <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="ttl" autocomplete="off" required value="<?php echo $row['ttl'] ?>"></td>
                                                     </tr>
                                                     <tr>
@@ -138,35 +138,35 @@
                                                         <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="alamat" autocomplete="off" required value="<?php echo $row['alamat'] ?>"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Telpon</td>
+                                                        <td>WhatsApp</td>
                                                         <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="telpon" autocomplete="off" required value="<?php echo $row['telpon'] ?>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Jenis Kendaraan</td>
-                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="jenis_kendaraan" autocomplete="off" required value="<?php echo $row['jenis_kendaraan'] ?>"></td>
+                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="jenis_kendaraan" id="jenis_kendaraan" autocomplete="off" required value="<?php echo $row['jenis_kendaraan'] ?>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Kode Kendaraan</td>
-                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="kode_kendaraan" autocomplete="off" required value="<?php echo $row['kode_kendaraan'] ?>"></td>
+                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="kode_kendaraan" id="kode_kendaraan" autocomplete="off" required value="<?php echo $row['kode_kendaraan'] ?>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Instruktur</td>
-                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="instruktur" autocomplete="off" required value="<?php echo $row['instruktur'] ?>"></td>
+                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="instruktur" id="instruktur" autocomplete="off" required value="<?php echo $row['instruktur'] ?>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Paket</td>
                                                         <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" value="<?php echo strtoupper($row['paket']) ?>" disabled></td>
-                                                        <input type="hidden" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="paket" value="<?php echo $row['paket'] ?>">
+                                                        <input type="hidden" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="paket" id="paket" value="<?php echo $row['paket'] ?>">
                                                     </tr>
                                                     <tr>
                                                         <td>Status</td>
                                                         <td>
                                                             <div class="input-group">
                                                                 <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="status" id="status" required value="<?php echo $row['status'] ?>">
-                                                                    <option selected="true" disabled="disabled">Status</option>
-                                                                    <option value="siswa">Siswa</option>
-                                                                    <option value="alumni">Alumni</option>
-                                                                    <option value="tidak diterima">Tidak Diterima</option>
+                                                                    <option selected="true" value="" disabled selected>Status</option>
+                                                                    <option value="siswa" <?= ($row['status'] == 'siswa') ? 'selected' : '' ?>>Siswa</option>
+                                                                    <option value="alumni" <?= ($row['status'] == 'alumni') ? 'selected' : '' ?>>Alumni</option>
+                                                                    <option value="tidak diterima" <?= ($row['status'] == 'tidak diterima') ? 'selected' : '' ?>>Tidak Diterima</option>
                                                                 </select>
                                                             </div>
                                                         </td>
@@ -304,21 +304,21 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <img src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" class="img-preview" style="height:95px">
+                                                        <img src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" class="img-preview" style="height:80px">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="pembayaran">Pembayaran</label><br>
                                                     <div>
-                                                        <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')" />DP
-                                                        <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')" />Lunas
+                                                        <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')" <?= ($row['pembayaran'] == 'DP') ? 'checked' : '' ?>>DP
+                                                        <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')" <?= ($row['pembayaran'] == 'Lunas') ? 'checked' : '' ?>>Lunas
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <label for="harga">Harga</label>
-                                                            <input type="text" class="form-control" name="harga" id="harga" readonly>
+                                                            <input type="text" class="form-control" name="harga" id="harga" value="<?= $row['harga'] ?>" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -332,7 +332,8 @@
                                 </div>
 
                                 <center>
-                                    <input class="btn btn-primary btn-md" type="submit" value="          Save          ">
+
+                                    <input class="btn btn-primary btn-md" type="submit" id="save" value="          Save          ">
                                 </center>
                                 <br>
                             </form>
@@ -398,13 +399,14 @@
             var nilai = event.value;
             nilai = nilai.split(" ")
             var jam = nilai[1]
-            var tabel = document.getElementById(" jadwal");
+            var tabel = document.getElementById("jadwal");
             var cekbokses = tabel.querySelectorAll('input[type=checkbox]');
             for (var cekboks of cekbokses) {
                 var val = cekboks.value
                 if (event.checked) {
                     if (cekboks != event && !val.includes(jam)) {
-                        cekboks.setAttribute('disabled', true);
+                        // cekboks.setAttribute('disabled', true);
+                        document.getElementById("save").disabled = false;
                     }
                 } else {
                     for (var cek of cekbokses) {
@@ -414,6 +416,8 @@
                         }
                     }
                     if (!Stop) {
+                        document.getElementById("save").disabled = true;
+                        $('#formDaDir').hide();
                         cekboks.removeAttribute("disabled");
                         <?php if (isset($jadwal_orang)) { ?> jadwalOrang() <?php } ?>
                     }
@@ -421,10 +425,17 @@
             }
         }
         window.addEventListener('load', () => {
+            <?php if ($row['status'] == 'alumni') : ?>
+                document.getElementById("save").disabled = true;
+            <?php else : ?>
+                document.getElementById("save").disabled = false;
+            <?php endif ?>
+
             <?php if (isset($jadwal_orang)) { ?>
                 jadwalOrang()
             <?php } ?>
         })
+
 
         function gambar() {
             var inputFile = document.getElementById('buktiTF');
@@ -453,7 +464,26 @@
                 }
             }
         }
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.querySelector(".modal");
+        var modalImg = document.querySelector(".modal-content");
+        Array.from(document.querySelectorAll(".img-preview")).forEach(item => {
+            item.addEventListener("click", event => {
+                modal.style.display = "block";
+                modalImg.src = event.target.src;
+            });
+        });
 
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
+    <script>
         function Hitung(x) {
             let harga = document.getElementById('harga');
             let jk = document.getElementById('jenis_kendaraan').value;
@@ -465,12 +495,10 @@
             } else {
                 byr = null;
             }
-            let minus = document.getElementById('kurang');
-            let txt = document.getElementById('kurang-text');
             console.log(byr)
-            if ($row['jenis_kendaraan'] == "Manual") {
-                if ($row['kode_kendaraan'] == "NAB" || $row['kode_kendaraan'] == "NAS") {
-                    if ($row['paket'] == "a") {
+            if (jk == "Manual") {
+                if (kk == "NAB" || kk == "NAS") {
+                    if (paket == "a") {
                         var price = 770000;
                         var min = 100000;
                         if (byr == "DP") {
@@ -555,9 +583,9 @@
                         }
                     }
                 }
-            } else if ($row['jenis_kendaraan'] == "Matic") {
-                if ($row['kode_kendaraan'] == "GMB" || $row['kode_kendaraan'] == "GMM") {
-                    if ($row['paket'] == "a") {
+            } else if (jk == "Matic") {
+                if (kk == "GMB" || kk == "GMM") {
+                    if (paket == "a") {
                         var price = 900000;
                         var min = 100000;
                         if (byr == "DP") {
@@ -599,24 +627,6 @@
                     }
                 }
             }
-        }
-    </script>
-    <script>
-        // Get the modal
-        var modal = document.querySelector(".modal");
-        var modalImg = document.querySelector(".modal-content");
-        Array.from(document.querySelectorAll(".img-preview")).forEach(item => {
-            item.addEventListener("click", event => {
-                modal.style.display = "block";
-                modalImg.src = event.target.src;
-            });
-        });
-
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
         }
     </script>
 </body>

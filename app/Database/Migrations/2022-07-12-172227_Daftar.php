@@ -19,8 +19,8 @@ class Daftar extends Migration
 				'constraint'         => '255',
 			],
 			'ttl'                    => [
-				'type'               => 'VARCHAR',
-				'constraint'         => '255',
+				'type'               => 'DATE',
+				'null'               => true
 			],
 			'pekerjaan'              => [
 				'type'               => 'VARCHAR',

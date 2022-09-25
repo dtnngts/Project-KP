@@ -52,6 +52,7 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
+    <script src="/vendor/sweetalert/sweetalert2.all.js"></script>
 
     <script>
         $('#pkManual').hide();

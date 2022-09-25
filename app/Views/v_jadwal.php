@@ -1,15 +1,16 @@
-<?= $this->extend('layout/templateDaftar'); ?>
+<?= $this->extend('layout/templateuser'); ?>
 
 <?= $this->section('content'); ?>
 
 <nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img class="img-profile rounded-circle" src="assets/images/logop.png" width=50px;></i>
+            <img class="img-profile rounded-circle" src="<?php echo base_url(); ?>/assets/images/logop.png" width=50px;></i>
             Princess Solution
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -153,7 +154,7 @@
     <?= csrf_field(); ?>
     <div class="container" id="formDaDir">
         <div class="card1">
-            <p>Silahkan lanjut mengisi data diri Anda</p>
+            <p class="text-center">Silahkan lanjut mengisi data diri Anda</p>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -161,8 +162,8 @@
                         <input type="text" class="form-control" name="nama" id="nama">
                     </div>
                     <div class="form-group">
-                        <label for="ttl">Tempat Tanggal Lahir</label>
-                        <input type="text" class="form-control" name="ttl" id="ttl">
+                        <label for="ttl">Tanggal Lahir</label>
+                        <input type="date" class="form-control" name="ttl" id="ttl">
                     </div>
                     <div class="form-group">
                         <label for="pekerjaan">Pekerjaan</label>
@@ -173,19 +174,9 @@
                         <input type="text" class="form-control" name="alamat" id="alamat">
                     </div>
                     <div class="form-group">
-                        <label for="telpon">Telpon</label>
+                        <label for="telpon">No. WhatsApp</label>
                         <input type="text" class="form-control" name="telpon" id="telpon">
                     </div>
-
-                    <!-- <div class="form-group">
-					<div class="select-list">
-						<select name="status" id="status">
-							<option value="">Status</option>
-							<option value="siswa">Siswa</option>
-							<option value="alumni">Alumni</option>
-						</select>
-					</div>
-				</div> -->
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -218,7 +209,7 @@
                     <div class="form-group">
                         <label for="paket">Paket</label>
                         <div class="select-list">
-                            <select name="paket" id="paket">
+                            <select name="paket" id="paket" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <option selected="true" disabled>Paket</option>
                                 <option value="a">A</option>
                                 <option value="b">B</option>
@@ -253,7 +244,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <img src="/assets/images/image-default.png" class="img-preview" style="height:110px">
+                            <img src="/assets/images/image-default.png" class="img-preview" style="height:95px">
                         </div>
                     </div>
                 </div>
@@ -264,16 +255,15 @@
                     <input class="form-check-input" type="radio" id="defaultCheck1">
                     <label class="form-check-label" for="defaultCheck1">
                         Saya telah membaca, memahami, dan setuju berdasarkan syarat dan ketentuan yang telah ditetapkan
-                        <a type="button" data-toggle="modal" data-target="#exampleModal" style="color:blue" onclick="return alert('Apakah anda yakin ingin Logout ?');">>
+                        <a type="button" style="color:blue" onclick="return alert('Syarat dan Ketentuan\n1. Harus hadir di tempat 5 menit sebelum jam yang telah ditentukan, jika terlambat ditunda besok.\n2. Jika dalam 10 hari berturut-turut tidak hadir, maka dianggap berhenti dari Kursus Mengemudi.\n3. Dalam Kursus Mengemudi tidak diperkenankan melebihi kecepatan 40Km/Jam.\n4. Murid Kursus Mengemudi wajib mentaati Instruksi dari instruktur.\n5. Jika paket Kursus Mengemudi telah habis di perkenankan untuk memperpanjang paket berikutnya.\n6. Bagi yang menggunakan Fasilitas antar jemput kursus mengemudi, waktu penjemputan tersebut sudah termasuk dalam waktu belajar.');">
                             <u> Baca Syarat dan Ketentuan </u>
                         </a>
                     </label>
-
                 </div>
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -292,8 +282,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <input type="button" style="place-items:right;" class="btn btn-secondary" value="Daftar" onclick="validasi()">
+            </div> -->
+            <input type="button" style="place-items:right;" class="btn btn-secondary" value="Daftar" onclick="validasi(); berhasilDaftar('/daftar');">
+            <!-- <button type="button" class="coba">Coba</button> -->
         </div>
     </div>
 </form>
@@ -302,7 +293,7 @@
     <div class="container">
         <div class="row">
 
-            <div class=" pt-2 col-lg-5 mx-lg-auto col-md-8 col-10">
+            <div class="col-lg-5 mx-lg-auto col-md-8 col-10">
                 <h1 class="text-white" data-aos="fade-up" data-aos-delay="100">Princess <strong>Solution</strong>.</h1>
             </div>
 
@@ -375,6 +366,7 @@
         var telpon = document.getElementById("telpon").value;
         var paket = document.getElementById("paket").value;
         var buktiTF = document.getElementById("buktiTF").value;
+        const daftar = document.querySelector('#Daftar');
         if (nama != "" && ttl != "" && pekerjaan != "" && alamat != "" && jenis_kendaraan != "" && kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != "") {
             document.getElementById('form-daftar').submit();
         } else {
@@ -485,8 +477,7 @@
             jadwalOrang()
         <?php } ?>
     })
-</script>
-<script>
+
     function Hitung(x) {
         let harga = document.getElementById('harga');
         let jk = document.getElementById('jenis_kendaraan').value;
@@ -649,7 +640,6 @@
             // } else {
             // 	$('#formDaDir').toggle();
             // }
-
         });
     });
 </script>
@@ -658,6 +648,49 @@
     $(document).ready(function() {
         $('#telpon').inputmask("(9999-9999-9999)||(9999-9999-99999)");
     });
+</script>
+<script>
+    // function berhasilDaftar(url) {
+    //     Swal.fire({
+    //         title: 'Pendaftaran Berhasil !!',
+    //         text: 'Silahkan datang ke Princess di hari dan jam kursus anda',
+    //         type: 'success',
+    //         confirmButtonText: 'Ok',
+    //         closeOnConfirm: false
+    //     }).then((result) => {
+    //         /* Read more about isConfirmed, isDenied below */
+    //         if (result.isConfirmed) {
+    //             window.location.href = url;
+    //         }
+    //     })
+    // }
+
+    function berhasilDaftar(url) {
+        Swal.fire({
+                title: 'Pendaftaran Berhasil !!',
+                text: 'Silahkan datang ke Princess di hari dan jam kursus anda',
+                icon: 'success'
+
+
+            },
+
+            then(function() {
+                window.location = "/daftar";
+            })
+        );
+
+
+    }
+    // $(document).on('click', '.btn-secondary', function(e) {
+    // })
+    // const swal = $('.coba');
+    // if (swal) {
+    //     Swal.fire({
+    //         title: 'Hello World',
+    //         text: 'Nyoba',
+    //         type: 'succes'
+    //     });
+    // }
 </script>
 
 <?php $this->endSection(); ?>

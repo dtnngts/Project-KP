@@ -12,7 +12,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <img class="img-profile rounded-circle" src="/assets/images/logo.png" width=50px;>
+                    <img class="img-profile rounded-circle" src="/assets/images/logop.png" width=50px;>
                 </div>
                 <div class="sidebar-brand-text mx-3"> Princess Solution <sup></sup></div>
             </a>
@@ -33,7 +33,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa fa-book"></i>
                     <span>Data Kursus</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -46,6 +46,8 @@
                         <a class="collapse-item" href="/Suhadi">Siswa Suhadi</a>
                         <a class="collapse-item" href="/Yono">Siswa Yono</a>
                         <a class="collapse-item" href="/Eko">Siswa Eko</a>
+                        <h6 class="collapse-header">Data Tidak Lengkap:</h6>
+                        <a class="collapse-item" href="/tidak-diterima">Data Tidak Diterima</a>
                     </div>
                 </div>
             </li>
@@ -162,7 +164,6 @@
                                                         <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="admin" id="admin" required>
                                                             <option selected="true" value="" disabled selected>Pilih...</option>
                                                             <option value="AdminModel" id="Admin">Admin</option>
-                                                            <option value="SuperModel" id="Super">Super Admin</option>
                                                             <option value="ValidatorModel" id="Validator">Validator</option>
                                                         </select>
                                                     </td>
@@ -187,11 +188,9 @@
                 <script>
                     document.getElementById('admin').onchange = function() {
                         if (this.value == 'AdminModel') {
-                            document.getElementById('role').value = "Admin";
-                        } else if (this.value == 'SuperModel') {
-                            document.getElementById('role').value = "Super";
+                            document.getElementById('role').value = "admin";
                         } else {
-                            document.getElementById('role').value = "Validator";
+                            document.getElementById('role').value = "validator";
                         }
                     }
                 </script>
