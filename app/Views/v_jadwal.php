@@ -1,4 +1,4 @@
-<?= $this->extend('layout/templateDaftar'); ?>
+<?= $this->extend('layout/templateuser'); ?>
 
 <?= $this->section('content'); ?>
 
