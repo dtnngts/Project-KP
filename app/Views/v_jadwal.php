@@ -5,12 +5,13 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img class="img-profile rounded-circle" src="assets/images/logop.png" width=50px;></i>
+            <img class="img-profile rounded-circle" src="<?php echo base_url(); ?>/assets/images/logop.png" width=50px;></i>
             Princess Solution
         </a>
-
+       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+
+        <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
