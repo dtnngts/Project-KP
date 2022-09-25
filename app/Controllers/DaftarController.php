@@ -92,12 +92,14 @@ class DaftarController extends BaseController
             'instruktur' => $this->request->getVar('instruktur'),
             'paket' => $this->request->getVar('paket'),
             'jadwal' => implode('; ', $this->request->getVar('jadwal')),
-            // 'jadwal' => $this->request->getVar('jadwal'),
             'status' => " ",
-            'transfer' => $namaTF
+            'harga'=> $this->request->getVar('harga'),
+            'pembayaran'=> $this->request->getVar('pembayaran'),
+            // 'jadwal' => $this->request->getVar('jadwal'),
+            'buktiTF' => $namaTF
         ];
         //
-        $DaftarModel = model("DaftarModel");
+        $transfer->move('assets/transfer', $namaTF);
         $DaftarModel->insert($data);
         return redirect()->to(base_url('/daftar'));
     }
