@@ -230,7 +230,7 @@
                                 <label for="harga">Harga</label>
                                 <input type="text" class="form-control" name="harga" id="harga" readonly>
                             </div>
-                            <p id="kurang-text">Silahkan melunasi kekurangan pembayaran sebesar <span id="kurang"></span> pada saat hari pertama kursus</p>
+                            <p id="kurang-text" style="font-size: 15px;">Silahkan melunasi kekurangan pembayaran sebesar <span id="kurang"></span> pada saat hari pertama kursus</p>
                         </div>
                     </div>
                     <div class="row">
