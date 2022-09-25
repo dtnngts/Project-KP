@@ -163,3 +163,9 @@ a {
   margin: 15px;
   padding: 5px;
 }
+
+a#disabled {
+  pointer-events: none;
+  cursor: default;
+  color: #b3b3b3;
+}

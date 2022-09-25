@@ -23,7 +23,7 @@
                     <a href="#project" class="nav-link smoothScroll">Paket Kursus</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/daftar" class="nav-link">Daftar</a>
+                    <a href="/daftar" class="nav-link" id="disabled">Daftar</a>
                 </li>
                 <li class="nav-item">
                     <a href="/login" class="nav-link contact">Login</a>
