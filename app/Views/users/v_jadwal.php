@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="#about" class="nav-link smoothScroll">Dashboard</a>
+                    <a href="/" class="nav-link smoothScroll">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#project" class="nav-link smoothScroll">Paket Kursus</a>
+                    <a href="/" class="nav-link smoothScroll">Paket Kursus</a>
                 </li>
                 <li class="nav-item">
                     <a href="/daftar" class="nav-link">Daftar</a>

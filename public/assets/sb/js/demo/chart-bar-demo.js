@@ -34,7 +34,7 @@ var myBarChart = new Chart(ctx, {
 
   type: 'bar',
   data: {
-    labels: ["Jan", "Feb", "Maret", "April", "Mei", "Juni", "juli", "Agust", "Sept", "Okt", "Nov", "Des"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Juni", "juli", "Agust", "Sept", "Okt", "Nov", "Des"],
     datasets: [{
       label: "Jumlah",
       backgroundColor: "#4e73df",
