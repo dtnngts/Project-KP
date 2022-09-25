@@ -248,21 +248,38 @@ class AdminController extends BaseController
 		$DaftarModel = model("DaftarModel");
 		$data = $this->request->getPost();
 		$transfer = $this->request->getFile('buktiTF');
-		$namaTF = $transfer->getRandomName();
-		$data = [
-			'jadwal' => implode('; ', $this->request->getVar('jadwal')),
-			'buktiTF' => $namaTF,
-		];
-		// $data['jadwal'] = implode('; ', $this->request->getVar('jadwal'));
-		// $transfer = $this->request->getFile('buktiTF');
+		$namaTF = $transfer->getName();
 		if ($transfer == $namaTF) {
 			$namaTF = $this->request->getVar('buktiTFLama');
 		} else {
 			$namaTF = $transfer->getRandomName();
 			$transfer->move('assets/transfer', $namaTF);
 			unlink("./assets/transfer/" . $this->request->getVar('buktiTFLama'));
-			$data['buktiTF'] = $namaTF;
+			// $data['buktiTF'] = $namaTF;
 		}
+		// $namaTF = $transfer->getRandomName();
+		$data = [
+			'nama' => $this->request->getVar('nama'),
+            'ttl' => $this->request->getVar('ttl'),
+            'pekerjaan' => $this->request->getVar('pekerjaan'),
+            'alamat' => $this->request->getVar('alamat'),
+            'telpon' => $this->request->getVar('telpon'),
+            'jenis_kendaraan' => $this->request->getVar('jenis_kendaraan'),
+            'kode_kendaraan' => $this->request->getVar('kode_kendaraan'),
+            'instruktur' => $this->request->getVar('instruktur'),
+            'paket' => $this->request->getVar('paket'),
+			'jadwal' => implode('; ', $this->request->getVar('jadwal')),
+            'status' =>$this->request->getVar('status'),
+            'pembayaran' => $this->request->getVar('pembayaran'),
+            'harga' => $this->request->getVar('harga'),
+			'buktiTF' => $namaTF
+		];
+		if ($data['status'] == "alumni") {
+			$data['jadwal'] = "";
+		}
+		// $data['jadwal'] = implode('; ', $this->request->getVar('jadwal'));
+		// $transfer = $this->request->getFile('buktiTF');
+		
 		// var_dump($data['jadwal']);
 		// exit();
 		$DaftarModel->update($no_registrasi, $data);

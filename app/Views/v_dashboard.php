@@ -197,7 +197,9 @@
 
           <p class="mb-1">
             <i class="fa fa-home mr-2 footer-icon"></i>
-            No.06, Jl.Jenderal Ahmad Yani, Gotong Royong, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35119.
+            <a href="https://www.google.com/maps/place/Biro+Jasa+Dan+Kursus+Mengemudi+Princess/@-5.4223805,105.2531808,17z/data=!4m12!1m6!3m5!1s0x2e40da4ed66816dd:0x8ff01b3b16a3e2d8!2sBiro+Jasa+Dan+Kursus+Mengemudi+Princess!8m2!3d-5.4223859!4d105.257408!3m4!1s0x2e40da4ed66816dd:0x8ff01b3b16a3e2d8!8m2!3d-5.4223859!4d105.257408" target="_blank">
+              No.06, Jl.Jenderal Ahmad Yani, Gotong Royong, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35119.
+            </a>
           </p>
         </div>
 
@@ -218,13 +220,12 @@
 
         <div class="col-lg-3 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
           <ul class="social-icon">
-            <li><a href="#" class="fa fa-instagram"></a></li>
-            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="https://instagram.com/birojasa_princess?igshid=YmMyMTA2M2Y=" target="_blank" class="fa fa-instagram"></a></li>
+            <li><a href="https://twitter.com/bjprincess_lpg" target="_blank" class="fa fa-twitter"></a></li>
             <li><a href="#" class="fa fa-dribbble"></a></li>
             <li><a href="#" class="fa fa-behance"></a></li>
           </ul>
         </div>
-
       </div>
     </div>
   </footer>
@@ -232,4 +233,3 @@
 
 </body>
 <?php $this->endSection(); ?>
-

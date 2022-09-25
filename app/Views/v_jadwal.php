@@ -254,7 +254,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <img src="/assets/images/image-default.png" class="img-preview" style="height:100px">
+                            <img src="/assets/images/image-default.png" class="img-preview" style="height:95px">
                         </div>
                     </div>
                 </div>
@@ -293,7 +293,8 @@
                     </div>
                 </div>
             </div> -->
-            <input type="button" style="place-items:right;" class="btn btn-secondary" value="Daftar" onclick="validasi()">
+            <input type="button" style="place-items:right;" class="btn btn-secondary" value="Daftar" onclick="validasi(); berhasilDaftar('/daftar');">
+            <!-- <button type="button" class="coba">Coba</button> -->
         </div>
     </div>
 </form>
@@ -360,7 +361,6 @@
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'></script>
-<script src="js/sweetalert2.all.min.js"></script>
 
 <script>
     $('#kurang-text').hide();
@@ -383,14 +383,6 @@
             alert('Isi data diri Anda dengan lengkap !');
 
         }
-
-        daftar.addEventListener('click', function() {
-            Swal({
-                title: 'Hello World',
-                text: 'Nyoba',
-                type: 'succes'
-            });
-        });
     }
 
     function gambar() {
@@ -495,8 +487,7 @@
             jadwalOrang()
         <?php } ?>
     })
-</script>
-<script>
+
     function Hitung(x) {
         let harga = document.getElementById('harga');
         let jk = document.getElementById('jenis_kendaraan').value;
@@ -659,7 +650,6 @@
             // } else {
             // 	$('#formDaDir').toggle();
             // }
-
         });
     });
 </script>
@@ -670,15 +660,47 @@
     });
 </script>
 <script>
-    const daftar = document.querySelector('#Daftar');
+    // function berhasilDaftar(url) {
+    //     Swal.fire({
+    //         title: 'Pendaftaran Berhasil !!',
+    //         text: 'Silahkan datang ke Princess di hari dan jam kursus anda',
+    //         type: 'success',
+    //         confirmButtonText: 'Ok',
+    //         closeOnConfirm: false
+    //     }).then((result) => {
+    //         /* Read more about isConfirmed, isDenied below */
+    //         if (result.isConfirmed) {
+    //             window.location.href = url;
+    //         }
+    //     })
+    // }
 
-    daftar.addEventListener('click', function() {
-        Swal({
-            title: 'Hello World',
-            text: 'Nyoba',
-            type: 'succes'
-        });
-    });
+    function berhasilDaftar(url) {
+        Swal.fire({
+                title: 'Pendaftaran Berhasil !!',
+                text: 'Silahkan datang ke Princess di hari dan jam kursus anda',
+                icon: 'success'
+
+
+            },
+
+            then(function() {
+                window.location = "/daftar";
+            })
+            );
+
+
+    }
+    // $(document).on('click', '.btn-secondary', function(e) {
+    // })
+    // const swal = $('.coba');
+    // if (swal) {
+    //     Swal.fire({
+    //         title: 'Hello World',
+    //         text: 'Nyoba',
+    //         type: 'succes'
+    //     });
+    // }
 </script>
 
 <?php $this->endSection(); ?>
