@@ -133,18 +133,6 @@
                     <!-- Navbar -->
                     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
                         <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
-                        <!-- <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-800"><?php echo ucwords($nama) ?></span>
-                                <i class="fa fa-user mr-2 text-gray-800"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li> -->
                     </ul>
 
                 </nav>
@@ -178,7 +166,55 @@
                                     <?php
                                     foreach ($allMem as $row) :
                                     ?>
-                                        <tr>
+
+                                        <?php if ($row['status'] != "tidak diterima") : ?>
+                                            <tr>
+                                                <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>
+                                                <td scope="row"><?= ucwords($row['nama']) ?></td>
+                                                <td scope="row"><?= $row['kode_kendaraan'] ?></td>
+                                                <td scope="row"><?= $row['instruktur'] ?></td>
+                                                <td scope="row"><?= $row['paket'] ?></td>
+                                                <td scope="row"><?= $row['telpon'] ?></td>
+                                                <td scope="row"><?= $row['kehadiran'] ?></td>
+                                                <td scope="row" style="text-align:center">
+                                                    <a href="https://kirimwa.id/<?= $row['telpon'] ?>" class="btn btn-success" target="_blank"><img src="/assets/images/icon-whatsapp.png" width="20px"></a>
+                                                    <?php if ($row['status'] != " ") : ?>
+                                                        <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="width: auto;" role="button"><i class="fas fa-pencil-alt"></i></a>
+                                                    <?php else : ?>
+                                                        <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-secondary" style="width: auto;" role="button" id="disabled"><i class="fas fa-pencil-alt"></i></a>
+                                                    <?php endif ?>
+                                                    <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['instruktur'] ?>" method="post" class="d-inline">
+                                                        <?= csrf_field(); ?>
+                                                        <input type="hidden" name="_method" value="Delete">
+                                                        <button type="submit" class="btn btn-danger" style="width: auto;" onclick="return confirm('Apakah anda yakin menghapus data ini ?'); "><i class="fa fa-trash"></i></button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        <?php else : ?>
+                                            <tr style="background-color: #f5deb3;">
+                                                <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>
+                                                <td scope="row"><?= ucwords($row['nama']) ?></td>
+                                                <td scope="row"><?= $row['kode_kendaraan'] ?></td>
+                                                <td scope="row"><?= $row['instruktur'] ?></td>
+                                                <td scope="row"><?= $row['paket'] ?></td>
+                                                <td scope="row"><?= $row['telpon'] ?></td>
+                                                <td scope="row"><?= $row['kehadiran'] ?></td>
+                                                <td scope="row" style="text-align:center">
+                                                    <a href="https://kirimwa.id/<?= $row['telpon'] ?>" class="btn btn-success" target="_blank"><img src="/assets/images/icon-whatsapp.png" width="20px"></a>
+                                                    <?php if ($row['status'] != " ") : ?>
+                                                        <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="width: auto;" role="button"><i class="fas fa-pencil-alt"></i></a>
+                                                    <?php else : ?>
+                                                        <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-secondary" style="width: auto;" role="button" id="disabled"><i class="fas fa-pencil-alt"></i></a>
+                                                    <?php endif ?>
+                                                    <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['instruktur'] ?>" method="post" class="d-inline">
+                                                        <?= csrf_field(); ?>
+                                                        <input type="hidden" name="_method" value="Delete">
+                                                        <button type="submit" class="btn btn-danger" style="width: auto;" onclick="return confirm('Apakah anda yakin menghapus data ini ?'); "><i class="fa fa-trash"></i></button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        <?php endif ?>
+                                        <!-- <tr>
                                             <td scope="row"><?= strtoupper($row['no_registrasi']) ?></td>
                                             <td scope="row"><?= ucwords($row['nama']) ?></td>
                                             <td scope="row"><?= $row['kode_kendaraan'] ?></td>
@@ -193,14 +229,13 @@
                                                 <?php else : ?>
                                                     <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-secondary" style="width: auto;" role="button" id="disabled"><i class="fas fa-pencil-alt"></i></a>
                                                 <?php endif ?>
-                                                <!-- <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="width: auto;" role="button"><i class="fas fa-pencil-alt"></i></a> -->
                                                 <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['instruktur'] ?>" method="post" class="d-inline">
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Delete">
                                                     <button type="submit" class="btn btn-danger" style="width: auto;" onclick="return confirm('Apakah anda yakin menghapus data ini ?'); "><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
@@ -238,25 +273,6 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-    <!-- Logout Modal-->
-    <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/logout">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
 </body>
 <?php $this->endSection(); ?>
