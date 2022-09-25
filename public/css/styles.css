@@ -109,6 +109,11 @@ body {
   cursor: pointer;
 }
 
+a#disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
 /* h1 {
   padding-top: 50px;
   padding-left: 45px;

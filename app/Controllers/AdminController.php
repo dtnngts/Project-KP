@@ -248,7 +248,7 @@ class AdminController extends BaseController
 		$DaftarModel = model("DaftarModel");
 		$data = $this->request->getPost();
 		$transfer = $this->request->getFile('buktiTF');
-		$namaTF = $transfer->getName();
+		$namaTF = $transfer->getRandomName();
 		$data = [
 			'jadwal' => implode('; ', $this->request->getVar('jadwal')),
 			'buktiTF' => $namaTF,
@@ -258,7 +258,7 @@ class AdminController extends BaseController
 		if ($transfer == $namaTF) {
 			$namaTF = $this->request->getVar('buktiTFLama');
 		} else {
-			$namaTF = $transfer->getName();
+			$namaTF = $transfer->getRandomName();
 			$transfer->move('assets/transfer', $namaTF);
 			unlink("./assets/transfer/" . $this->request->getVar('buktiTFLama'));
 			$data['buktiTF'] = $namaTF;

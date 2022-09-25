@@ -163,7 +163,7 @@
                                         <td scope="col">Kode</td>
                                         <td scope="col">Instruktur</td>
                                         <td scope="col">Paket</td>
-                                        <td scope="col">Telpon</td>
+                                        <td scope="col">WhatsApp</td>
                                         <td scope="col">Kehadiran</td>
                                         <td scope="col">Action</td>
                                     </tr>
@@ -181,11 +181,17 @@
                                             <td scope="row"><?= $row['telpon'] ?></td>
                                             <td scope="row"><?= $row['kehadiran'] ?></td>
                                             <td scope="row" style="text-align:center">
-                                                <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" role="button">Edit</a>
+                                                <a href="https://kirimwa.id/<?= $row['telpon'] ?>" class="btn btn-success" target="_blank"><img src="/assets/images/icon-whatsapp.png" width="20px"></a>
+                                                <?php if ($row['status'] != " ") : ?>
+                                                    <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="width: auto;" role="button"><i class="fas fa-pencil-alt"></i></a>
+                                                <?php else : ?>
+                                                    <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-secondary" style="width: auto;" role="button" id="disabled"><i class="fas fa-pencil-alt" disabled="true"></i></a>
+                                                <?php endif ?>
+                                                <!-- <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="width: auto;" role="button"><i class="fas fa-pencil-alt"></i></a> -->
                                                 <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['instruktur'] ?>" method="post" class="d-inline">
                                                     <?= csrf_field(); ?>
                                                     <input type="hidden" name="_method" value="Delete">
-                                                    <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); ">Delete</button>
+                                                    <button type="submit" class="btn btn-danger" style="width: auto;" onclick="return confirm('Apakah anda yakin menghapus data ini ?'); "><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
