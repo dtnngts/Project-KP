@@ -4,13 +4,17 @@ use App\Models\AdminModel;
 use App\Models\ValidatorModel;
 class LoginController extends BaseController
 {
+	public function wellcome()
+	{
+		return view('/users/v_dashboard');
+	}
 
 	public function login()
 	{
 		if (!session()->get('username') == '') {
 			return redirect()->to(base_url('/admin'));
 		}
-        echo view('v_login');
+        echo view('/admin/v_login');
 	}
 
 	public function login_action()

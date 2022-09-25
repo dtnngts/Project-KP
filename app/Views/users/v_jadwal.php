@@ -261,29 +261,7 @@
                     </label>
                 </div>
             </div>
-
-            <!-- Modal -->
-            <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Syarat dan Ketentuan</h5>
-                        </div>
-                        <div class="modal-body">
-                            1. Harus hadir di tempat 5 menit sebelum jam yang telah ditentukan, jika terlambat ditunda besok.<br>
-                            2. Jika dalam 10 hari berturut-turut tidak hadir, maka dianggap berhenti dari Kursus Mengemudi.<br>
-                            3. Dalam Kursus Mengemudi tidak diperkenankan melebihi kecepatan 40Km/Jam.<br>
-                            4. Murid Kursus Mengemudi wajib mentaati Instruksi dari instruktur.<br>
-                            5. Jika paket Kursus Mengemudi telah habis di perkenankan untuk memperpanjang paket berikutnya.<br>
-                            6. Bagi yang menggunakan Fasilitas antar jemput kursus mengemudi, waktu penjemputan tersebut sudah termasuk dalam waktu belajar.<br>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Setuju</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <input type="button" style="place-items:right;" class="btn btn-secondary" value="Daftar" onclick="validasi(); berhasilDaftar('/daftar');">
+            <input type="button" style="place-items:right;" class="btn btn-primary" value="Daftar" onclick="validasi()">
             <!-- <button type="button" class="coba">Coba</button> -->
         </div>
     </div>
@@ -318,7 +296,9 @@
 
                 <p class="mb-1">
                     <i class="fa fa-home mr-2 footer-icon"></i>
-                    No.06, Jl.Jenderal Ahmad Yani, Gotong Royong, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35119.
+                    <a href="https://www.google.com/maps/place/Biro+Jasa+Dan+Kursus+Mengemudi+Princess/@-5.4223805,105.2531808,17z/data=!4m12!1m6!3m5!1s0x2e40da4ed66816dd:0x8ff01b3b16a3e2d8!2sBiro+Jasa+Dan+Kursus+Mengemudi+Princess!8m2!3d-5.4223859!4d105.257408!3m4!1s0x2e40da4ed66816dd:0x8ff01b3b16a3e2d8!8m2!3d-5.4223859!4d105.257408" target="_blank">
+                        No.06, Jl.Jenderal Ahmad Yani, Gotong Royong, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35119.
+                    </a>
                 </p>
             </div>
 
@@ -328,19 +308,10 @@
                 </p>
             </div>
 
-            <div class="col-lg-4 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
-
-                <ul class="footer-link">
-                    <li><a href="#">Stories</a></li>
-                    <li><a href="#">Work with us</a></li>
-                    <li><a href="#">Privacy</a></li>
-                </ul>
-            </div>
-
             <div class="col-lg-3 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
                 <ul class="social-icon">
-                    <li><a href="#" class="fa fa-instagram"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="https://instagram.com/birojasa_princess?igshid=YmMyMTA2M2Y=" target="_blank" class="fa fa-instagram"></a></li>
+                    <li><a href="https://twitter.com/bjprincess_lpg" target="_blank" class="fa fa-twitter"></a></li>
                     <li><a href="#" class="fa fa-dribbble"></a></li>
                     <li><a href="#" class="fa fa-behance"></a></li>
                 </ul>
@@ -348,6 +319,7 @@
         </div>
     </div>
 </footer>
+
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'></script>
@@ -403,29 +375,7 @@
         }
     }
 
-    // function validasiEkstensi() {
-    //     var inputFile = document.getElementById('buktiTF');
-    //     var pathFile = inputFile.value;
-    //     var ekstensi = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-    //     if (!ekstensi.exec(pathFile)) {
-    //         alert("Silakan upload file yang dengan ekstensi .jpeg/.jpg/.png/.gif");
-    //         inputFile.value = '';
-    //         return false;
-    //     } else if (inputFile.files[0].size > 1000000) {
-    //         alert("Ukuran File Terlalu Besar. Maksimal Upload 1 MB");
-    //         inputFile.value = '';
-    //         return false;
-    //     } else {
-    //         // Preview gambar
-    //         if (inputFile.files && inputFile.files[0]) {
-    //             var reader = new FileReader();
-    //             reader.onload = function(e) {
-    //                 document.getElementById('preview').innerHTML = '<img src="' + e.target.result + '" style="height:300px"/>';
-    //             };
-    //             reader.readAsDataURL(inputFile.files[0]);
-    //         }
-    //     }
-    // }
+
 
     function jadwalOrang() {
         var jadwal_orang = <?= ($jadwal_orang != null) ? json_encode($jadwal_orang) : 'null' ?>;
@@ -632,14 +582,7 @@
             $('#formDaDir').toggle();
             var konten = document.getElementById("formDaDir");
             konten.scrollIntoView();
-            // checked = $("input[type=checkbox]:checked").length;
-
-            // if (!checked) {
-            // 	alert("Pilih jadwal kursus");
-            // 	return false;
-            // } else {
-            // 	$('#formDaDir').toggle();
-            // }
+            
         });
     });
 </script>
@@ -649,48 +592,6 @@
         $('#telpon').inputmask("(9999-9999-9999)||(9999-9999-99999)");
     });
 </script>
-<script>
-    // function berhasilDaftar(url) {
-    //     Swal.fire({
-    //         title: 'Pendaftaran Berhasil !!',
-    //         text: 'Silahkan datang ke Princess di hari dan jam kursus anda',
-    //         type: 'success',
-    //         confirmButtonText: 'Ok',
-    //         closeOnConfirm: false
-    //     }).then((result) => {
-    //         /* Read more about isConfirmed, isDenied below */
-    //         if (result.isConfirmed) {
-    //             window.location.href = url;
-    //         }
-    //     })
-    // }
 
-    function berhasilDaftar(url) {
-        Swal.fire({
-                title: 'Pendaftaran Berhasil !!',
-                text: 'Silahkan datang ke Princess di hari dan jam kursus anda',
-                icon: 'success'
-
-
-            },
-
-            then(function() {
-                window.location = "/daftar";
-            })
-        );
-
-
-    }
-    // $(document).on('click', '.btn-secondary', function(e) {
-    // })
-    // const swal = $('.coba');
-    // if (swal) {
-    //     Swal.fire({
-    //         title: 'Hello World',
-    //         text: 'Nyoba',
-    //         type: 'succes'
-    //     });
-    // }
-</script>
 
 <?php $this->endSection(); ?>
