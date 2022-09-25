@@ -143,20 +143,20 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Jenis Kendaraan</td>
-                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="jenis_kendaraan" autocomplete="off" required value="<?php echo $row['jenis_kendaraan'] ?>"></td>
+                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="jenis_kendaraan" id="jenis_kendaraan" autocomplete="off" required value="<?php echo $row['jenis_kendaraan'] ?>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Kode Kendaraan</td>
-                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="kode_kendaraan" autocomplete="off" required value="<?php echo $row['kode_kendaraan'] ?>"></td>
+                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="kode_kendaraan" id="kode_kendaraan" autocomplete="off" required value="<?php echo $row['kode_kendaraan'] ?>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Instruktur</td>
-                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="instruktur" autocomplete="off" required value="<?php echo $row['instruktur'] ?>"></td>
+                                                        <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="instruktur" id="instruktur" autocomplete="off" required value="<?php echo $row['instruktur'] ?>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Paket</td>
                                                         <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" value="<?php echo strtoupper($row['paket']) ?>" disabled></td>
-                                                        <input type="hidden" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="paket" value="<?php echo $row['paket'] ?>">
+                                                        <input type="hidden" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="paket" id="paket" value="<?php echo $row['paket'] ?>">
                                                     </tr>
                                                     <tr>
                                                         <td>Status</td>
@@ -304,7 +304,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <img src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" class="img-preview" style="height:95px">
+                                                        <img src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" class="img-preview" style="height:80px">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -318,7 +318,7 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <label for="harga">Harga</label>
-                                                            <input type="text" class="form-control" name="harga" id="harga" value="" readonly>
+                                                            <input type="text" class="form-control" name="harga" id="harga" value="<?= $row['harga'] ?>" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -475,9 +475,9 @@
     <script>
         function Hitung(x) {
             let harga = document.getElementById('harga');
-            let jk = $row['jenis_kendaraan'];
-            let kk = $row['kode_kendaraan'];
-            let paket = $row['paket'];
+            let jk = document.getElementById('jenis_kendaraan').value;
+            let kk = document.getElementById('kode_kendaraan').value;
+            let paket = document.getElementById('paket').value;
             let byr = document.getElementById(x);
             if (byr.checked) {
                 byr = byr.value;
