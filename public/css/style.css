@@ -169,3 +169,13 @@ a#disabled {
   cursor: default;
   color: #b3b3b3;
 }
+
+#dashboard {
+  font-family: cleanwork;
+  font-size: 20pt;
+}
+
+h1#footer {
+  font-family: cleanwork;
+  font-size: 30pt;
+}

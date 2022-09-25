@@ -4,7 +4,7 @@
 
 <nav class="navbar navbar-expand-lg">
 	<div class="container">
-		<a class="navbar-brand" href="/">
+		<a class="navbar-brand" href="/" id="dashboard">
 			<img class="img-profile rounded-circle" src="assets/images/logop.png" width=50px;></i>
 			Princess Solution
 		</a>
@@ -169,7 +169,7 @@
 		<div class="row">
 
 			<div class="col-lg-5 mx-lg-auto col-md-8 col-10">
-				<h1 class="text-white" data-aos="fade-up" data-aos-delay="100">Princess <strong>Solution</strong>.</h1>
+				<h1 class="text-white" data-aos="fade-up" data-aos-delay="100" id="footer">Princess <strong>Solution</strong>.</h1>
 			</div>
 
 			<div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
