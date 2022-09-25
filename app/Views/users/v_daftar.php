@@ -177,7 +177,7 @@
 
 				<p class="mb-1">
 					<i class="fa fa-phone mr-2 footer-icon"></i>
-					+62 812-7957-2555
+					<a href="https://wa.me/6281279572555">+62 812-7957-2555</a>
 				</p>
 
 				<p>

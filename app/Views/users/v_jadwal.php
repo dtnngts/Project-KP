@@ -211,9 +211,9 @@
                         <div class="select-list">
                             <select name="paket" id="paket" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <option selected="true" disabled>Paket</option>
-                                <option value="a" data-toggle="tooltip" data-placement="right" title="untuk melancarkan mengemudi">A</option>
-                                <option value="b" data-toggle="tooltip" data-placement="right" title="disarankan untuk pemula">B</option>
-                                <option value="c" data-toggle="tooltip" data-placement="right" title="disarankan untuk pemula dengan jam kursus yang lebih lama">C</option>
+                                <option value="a" data-toggle="tooltip" data-placement="right" title="Untuk melancarkan mengemudi">A</option>
+                                <option value="b" data-toggle="tooltip" data-placement="right" title="Disarankan untuk pemula">B</option>
+                                <option value="c" data-toggle="tooltip" data-placement="right" title="Disarankan untuk pemula dengan jam kursus yang lebih lama">C</option>
                             </select>
                         </div>
                     </div>
@@ -280,7 +280,7 @@
 
                 <p class="mb-1">
                     <i class="fa fa-phone mr-2 footer-icon"></i>
-                    +62 812-7957-2555
+                    <a href="https://wa.me/6281279572555">+62 812-7957-2555</a>
                 </p>
 
                 <p>
