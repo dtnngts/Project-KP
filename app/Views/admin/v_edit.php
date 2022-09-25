@@ -332,7 +332,8 @@
                                 </div>
 
                                 <center>
-                                    <input class="btn btn-primary btn-md" type="submit" value="          Save          ">
+
+                                    <input class="btn btn-primary btn-md" type="submit" id="save" value="          Save          ">
                                 </center>
                                 <br>
                             </form>
@@ -398,13 +399,14 @@
             var nilai = event.value;
             nilai = nilai.split(" ")
             var jam = nilai[1]
-            var tabel = document.getElementById(" jadwal");
+            var tabel = document.getElementById("jadwal");
             var cekbokses = tabel.querySelectorAll('input[type=checkbox]');
             for (var cekboks of cekbokses) {
                 var val = cekboks.value
                 if (event.checked) {
                     if (cekboks != event && !val.includes(jam)) {
-                        cekboks.setAttribute('disabled', true);
+                        // cekboks.setAttribute('disabled', true);
+                        document.getElementById("save").disabled = false;
                     }
                 } else {
                     for (var cek of cekbokses) {
@@ -414,6 +416,8 @@
                         }
                     }
                     if (!Stop) {
+                        document.getElementById("save").disabled = true;
+                        $('#formDaDir').hide();
                         cekboks.removeAttribute("disabled");
                         <?php if (isset($jadwal_orang)) { ?> jadwalOrang() <?php } ?>
                     }
@@ -421,10 +425,17 @@
             }
         }
         window.addEventListener('load', () => {
+            <?php if ($row['status'] == 'alumni') : ?>
+                document.getElementById("save").disabled = true;
+            <?php else : ?>
+                document.getElementById("save").disabled = false;
+            <?php endif ?>
+
             <?php if (isset($jadwal_orang)) { ?>
                 jadwalOrang()
             <?php } ?>
         })
+
 
         function gambar() {
             var inputFile = document.getElementById('buktiTF');

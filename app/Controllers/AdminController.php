@@ -274,6 +274,9 @@ class AdminController extends BaseController
             'harga' => $this->request->getVar('harga'),
 			'buktiTF' => $namaTF
 		];
+		if ($data['status'] == "alumni") {
+			$data['jadwal'] = "";
+		}
 		// $data['jadwal'] = implode('; ', $this->request->getVar('jadwal'));
 		// $transfer = $this->request->getFile('buktiTF');
 		

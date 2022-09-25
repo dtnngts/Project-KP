@@ -188,7 +188,7 @@
                                                 <?php if ($row['status'] != " ") : ?>
                                                     <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="width: auto;" role="button"><i class="fas fa-pencil-alt"></i></a>
                                                 <?php else : ?>
-                                                    <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-secondary" style="width: auto;" role="button" id="disabled"><i class="fas fa-pencil-alt" disabled="true"></i></a>
+                                                    <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-secondary" style="width: auto;" role="button" id="disabled"><i class="fas fa-pencil-alt"></i></a>
                                                 <?php endif ?>
                                                 <!-- <a href="<?= base_url("edit/" . $row['no_registrasi']) ?>" class="btn btn-primary" style="width: auto;" role="button"><i class="fas fa-pencil-alt"></i></a> -->
                                                 <form action="delete/<?= $row['no_registrasi'] ?>/<?= $row['instruktur'] ?>" method="post" class="d-inline">
