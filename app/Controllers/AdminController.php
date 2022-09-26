@@ -259,18 +259,18 @@ class AdminController extends BaseController
 		// $namaTF = $transfer->getRandomName();
 		$data = [
 			'nama' => $this->request->getVar('nama'),
-            'ttl' => $this->request->getVar('ttl'),
-            'pekerjaan' => $this->request->getVar('pekerjaan'),
-            'alamat' => $this->request->getVar('alamat'),
-            'telpon' => $this->request->getVar('telpon'),
-            'jenis_kendaraan' => $this->request->getVar('jenis_kendaraan'),
-            'kode_kendaraan' => $this->request->getVar('kode_kendaraan'),
-            'instruktur' => $this->request->getVar('instruktur'),
-            'paket' => $this->request->getVar('paket'),
+			'ttl' => $this->request->getVar('ttl'),
+			'pekerjaan' => $this->request->getVar('pekerjaan'),
+			'alamat' => $this->request->getVar('alamat'),
+			'telpon' => $this->request->getVar('telpon'),
+			'jenis_kendaraan' => $this->request->getVar('jenis_kendaraan'),
+			'kode_kendaraan' => $this->request->getVar('kode_kendaraan'),
+			'instruktur' => $this->request->getVar('instruktur'),
+			'paket' => $this->request->getVar('paket'),
 			'jadwal' => implode('; ', $this->request->getVar('jadwal')),
-            'status' =>$this->request->getVar('status'),
-            'pembayaran' => $this->request->getVar('pembayaran'),
-            'harga' => $this->request->getVar('harga'),
+			'status' => $this->request->getVar('status'),
+			'pembayaran' => $this->request->getVar('pembayaran'),
+			'harga' => $this->request->getVar('harga'),
 			'buktiTF' => $namaTF
 		];
 		if ($data['status'] == "alumni") {
@@ -278,7 +278,7 @@ class AdminController extends BaseController
 		}
 		// $data['jadwal'] = implode('; ', $this->request->getVar('jadwal'));
 		// $transfer = $this->request->getFile('buktiTF');
-		
+
 		// var_dump($data['jadwal']);
 		// exit();
 		$DaftarModel->update($no_registrasi, $data);
@@ -408,7 +408,7 @@ class AdminController extends BaseController
 		}
 
 		$data = [
-			'allMem' => $allMem->findAll(),
+			'allMem' => $allMem->orderBy('no_registrasi', 'desc')->findAll(),
 			'nama' => session()->get('username')
 		];
 		return view("admin/v_validator", $data);
