@@ -177,6 +177,11 @@
                         <label for="telpon">No. WhatsApp</label>
                         <input type="text" class="form-control" name="telpon" id="telpon">
                     </div>
+                    <div class="form-group">
+                        <center>
+                            <img src="/assets/images/image-default.png" class="img-preview" style="height:200px">
+                        </center>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -248,9 +253,9 @@
                                     <label class="custom-file-label" for="customFile">Upload Foto Bukti Transfer</label>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <!-- <div class="col-md-4">
                                 <img src="/assets/images/image-default.png" class="img-preview" style="height:95px">
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -333,6 +338,7 @@
 <script>
     $('#kurang-text').hide();
     $('#tujuan-text').hide();
+    $('.img-preview').hide();
 
     function validasi() {
         var nama = document.getElementById("nama").value;
@@ -372,6 +378,7 @@
             inputFile.value = '';
             return false;
         } else {
+            $('.img-preview').show();
             gambarLabel.textContent = gambar.files[0].name;
 
             fileGambar.readAsDataURL(gambar.files[0]);
