@@ -62,7 +62,15 @@ class Daftar extends Migration
 				'type'               => 'VARCHAR',
 				'constraint'         => '255',
 			],
+<<<<<<< HEAD
 			'harga'                 => [
+=======
+			'harga'             	 => [
+				'type'               => 'VARCHAR',
+				'constraint'         => '255',
+			],
+			'anTransfer'             => [
+>>>>>>> a1e8338b33557481a1a3e6b99805e40377fce11d
 				'type'               => 'VARCHAR',
 				'constraint'         => '255',
 			],

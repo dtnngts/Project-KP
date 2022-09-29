@@ -46,7 +46,7 @@ h5 {
 
 p {
   text-align: justify;
-  padding-left: 45px;
+  padding-left: 10px;
   font-family: agency;
 }
 
@@ -120,8 +120,6 @@ img {
 a {
   color: rgb(0, 0, 0);
 }
-
-
 
 .jenis_kendaraan {
   padding-left: 45px;

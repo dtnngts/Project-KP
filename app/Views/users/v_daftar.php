@@ -55,32 +55,32 @@
 			<div id="nab" class="card">
 				<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="NAB">
 					<!-- <input type="radio" name="kode_kendaraan" onclick="klikmobil(this)" value="nab"> -->
-					<img src="assets/images/newavanzabiru.png" class="card-img-top">
+					<img src="assets/images/NAB.png" class="card-img-top">
 			</div>
 			<div id="nas" class="card">
 				<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="NAS">
-					<img src="assets/images/coba.png" class="card-img-top">
+					<img src="assets/images/NAS.png" class="card-img-top">
 			</div>
 			<div id="avnew" class="card">
 				<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="AVNEW">
-					<img src="assets/images/coba.png" class="card-img-top">
+					<img src="assets/images/AVNEW.png" class="card-img-top">
 			</div>
 		</div>
 
 		<div id="pkMatic" style="display:none">
 			<div id="gmb" class="card">
 				<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="GMB">
-					<img src="assets/images/coba.png" class="card-img-top">
+					<img src="assets/images/GMB.png" class="card-img-top">
 			</div>
 			<div id="gmm" class="card">
 				<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="GMM">
-					<img src="assets/images/coba.png" class="card-img-top">
+					<img src="assets/images/GMM.png" class="card-img-top">
 			</div>
 		</div>
 
 		<div id="detailsnab" style="display:none">
 			<input type="hidden" name="instruktur" value="Hendri">
-			<img src="assets/images/newavanzabiru.png" class="card-img-top">
+			<img src="assets/images/NAB.png" class="card-img-top">
 			<table border=0>
 				<tr>
 					<td colspan="2">NEW AVANZA BIRU</td>
@@ -95,7 +95,7 @@
 			</table>
 		</div>
 		<div id="detailsnas" style="display:none">
-			<img src="assets/images/coba.png" class="card-img-top">
+			<img src="assets/images/NAS.png" class="card-img-top">
 			<table border=0>
 				<tr>
 					<td colspan="2">NEW AVANZA SILVER</td>
@@ -110,7 +110,7 @@
 			</table>
 		</div>
 		<div id="detailsavnew" style="display:none">
-			<img src="assets/images/coba.png" class="card-img-top">
+			<img src="assets/images/AVNEW.png" class="card-img-top">
 			<table border=0>
 				<tr>
 					<td colspan="2">ALL NEW AVANZA</td>
@@ -125,7 +125,7 @@
 			</table>
 		</div>
 		<div id="detailsgmb" style="display:none">
-			<img src="assets/images/coba.png" class="card-img-top">
+			<img src="assets/images/GMB.png" class="card-img-top">
 			<table border=0>
 				<tr>
 					<td colspan="6">GRAND MATIC BIRU</td>
@@ -147,7 +147,7 @@
 			</table>
 		</div>
 		<div id="detailsgmm" style="display:none">
-			<img src="assets/images/coba.png" class="card-img-top">
+			<img src="assets/images/GMM.png" class="card-img-top">
 			<table border=0>
 				<tr>
 					<td colspan="2">GRAND MATIC MERAH</td>
