@@ -246,16 +246,11 @@
                                 <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="anTransfer" id="anTransfer"></td>
                             </tr>
                         </table>
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="buktiTF" id="buktiTF" onchange="gambar()">
-                                    <label class="custom-file-label" for="customFile">Upload Foto Bukti Transfer</label>
-                                </div>
+                        <div class="col-md-8">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="buktiTF" id="buktiTF" onchange="gambar()">
+                                <label class="custom-file-label" for="customFile">Upload Foto Bukti Transfer</label>
                             </div>
-                            <!-- <div class="col-md-4">
-                                <img src="/assets/images/image-default.png" class="img-preview" style="height:95px">
-                            </div> -->
                         </div>
                     </div>
                 </div>
