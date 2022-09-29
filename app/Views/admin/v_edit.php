@@ -293,25 +293,32 @@
                                                 <h6 class="m-0 font-weight-bold">Transaksi</h6>
                                             </div>
                                             <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-8">
-                                                        <div class="form-group">
+
+                                                <div class="form-group">
+                                                    <table>
+                                                        <tr>
+                                                            <td>an. </td>
+                                                            <td><input type="text" class="form-control" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" name="anTransfer" id="anTransfer" autocomplete="off" required value="<?= $row['anTransfer'] ?>" readonly></td>
+                                                        </tr>
+                                                    </table>
+                                                    <div class="row">
+                                                        <div class="col-md-8">
                                                             <div class="custom-file">
                                                                 <input type="file" class="custom-file-input" name="buktiTF" id="buktiTF" onchange="gambar()">
                                                                 <label class="custom-file-label" for="customFile"><?= $row['buktiTF']; ?></label>
                                                                 <input type="hidden" name="buktiTFLama" value="<?= $row['buktiTF'] ?>">
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <img src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" class="img-preview" style="height:80px">
+                                                        <div class="col-md-4">
+                                                            <img src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" class="img-preview" style="height:80px">
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="pembayaran">Pembayaran</label><br>
                                                     <div>
-                                                        <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')" <?= ($row['pembayaran'] == 'DP') ? 'checked' : '' ?>>DP
-                                                        <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')" <?= ($row['pembayaran'] == 'Lunas') ? 'checked' : '' ?>>Lunas
+                                                        <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')" <?= ($row['pembayaran'] == 'DP') ? 'checked' : '' ?>> DP
+                                                        <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')" <?= ($row['pembayaran'] == 'Lunas') ? 'checked' : '' ?>> Lunas
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

@@ -271,6 +271,7 @@ class AdminController extends BaseController
 			'status' => $this->request->getVar('status'),
 			'pembayaran' => $this->request->getVar('pembayaran'),
 			'harga' => $this->request->getVar('harga'),
+			'anTransfer' => $this->request->getVar('anTransfer'),
 			'buktiTF' => $namaTF
 		];
 		if ($data['status'] == "alumni") {

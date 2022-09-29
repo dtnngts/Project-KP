@@ -96,6 +96,7 @@ class DaftarController extends BaseController
             'status' => " ",
             'pembayaran' => $this->request->getVar('pembayaran'),
             'harga' => $this->request->getVar('harga'),
+            'anTransfer' => $this->request->getVar('anTransfer'),
             'buktiTF' => $namaTF
         ];
 

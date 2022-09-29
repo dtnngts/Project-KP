@@ -207,10 +207,10 @@
                         </script>
                     </div>
                     <div class="form-group">
-                        <label for="paket">Paket</label>
+                        <label for="paket">Paket Kursus</label>
                         <div class="select-list">
                             <select name="paket" id="paket" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <option selected="true" disabled>Paket</option>
+                                <option selected="true" value="" disabled>Paket</option>
                                 <option value="a" data-toggle="tooltip" data-placement="right" title="Untuk melancarkan mengemudi">A</option>
                                 <option value="b" data-toggle="tooltip" data-placement="right" title="Disarankan untuk pemula">B</option>
                                 <option value="c" data-toggle="tooltip" data-placement="right" title="Disarankan untuk pemula dengan jam kursus yang lebih lama">C</option>
@@ -220,31 +220,37 @@
                     <div class="form-group">
                         <label for="pembayaran">Pembayaran</label><br>
                         <div>
-                            <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')" />DP
-                            <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')" />Lunas
+                            <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')"> DP
+                            <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')"> Lunas
+                            <p id="tujuan-text" style="font-size: 17px;">Silahkan melakukan transfer ke <strong>BCA 0207 400 169 an Muhammad Fario PB</strong> sebesar harga dibawah ini</p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="harga">Harga</label>
-                                <input type="text" class="form-control" name="harga" id="harga" readonly>
-                            </div>
-                            <p id="kurang-text" style="font-size: 15px;">Silahkan melunasi kekurangan pembayaran sebesar <span id="kurang"></span> pada saat hari pertama kursus</p>
+                        <div class="col-md-6">
+                            <label for="harga">Harga</label>
+                            <input type="text" class="form-control" name="harga" id="harga" readonly>
                         </div>
+                        <p id="kurang-text" style="font-size: 15px;">Lunasi kekurangan pembayaran sebesar <span id="kurang"></span> pada saat hari pertama kursus</p>
                     </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="buktiTF">Bukti Transfer</label>
+
+                    <div class="form-group">
+                        <label for="buktiTF">Bukti Transfer</label>
+                        <table>
+                            <tr>
+                                <td>an.</td>
+                                <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="anTransfer" id="anTransfer"></td>
+                            </tr>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-8">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="buktiTF" id="buktiTF" onchange="gambar()">
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                    <label class="custom-file-label" for="customFile">Upload Foto Bukti Transfer</label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="/assets/images/image-default.png" class="img-preview" style="height:95px">
+                            <div class="col-md-4">
+                                <img src="/assets/images/image-default.png" class="img-preview" style="height:95px">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -326,6 +332,7 @@
 
 <script>
     $('#kurang-text').hide();
+    $('#tujuan-text').hide();
 
     function validasi() {
         var nama = document.getElementById("nama").value;
@@ -451,9 +458,11 @@
                         harga.value = "Rp. 100.000";
                         kurang = price - min;
                         minus.innerText = String(kurang);
+                        $('#tujuan-text').show();
                         $('#kurang-text').show();
                     } else if (byr == "Lunas") {
                         harga.value = "Rp. 770.000";
+                        $('#tujuan-text').show();
                         $('#kurang-text').hide();
                         // txt.classList.add('d-none');
                     }
@@ -464,9 +473,11 @@
                         harga.value = "Rp. 100.000";
                         kurang = price - min;
                         minus.innerText = String(kurang);
+                        $('#tujuan-text').show();
                         $('#kurang-text').show();
                     } else if (byr == "Lunas") {
                         harga.value = "Rp. 1.135.000";
+                        $('#tujuan-text').show();
                         $('#kurang-text').hide();
                         // txt.classList.add('d-none');
                     }
@@ -477,15 +488,16 @@
                         harga.value = "Rp. 100.000";
                         kurang = price - min;
                         minus.innerText = String(kurang);
+                        $('#tujuan-text').show();
                         $('#kurang-text').show();
                     } else if (byr == "Lunas") {
                         harga.value = "Rp. 1.530.000";
+                        $('#tujuan-text').show();
                         $('#kurang-text').hide();
                         // txt.classList.add('d-none');
                     }
                 } else {
-                    harga.value = " ";
-                    $('#kurang-text').hide();
+                    harga.value = "Pilih paket kursus terlebih dahulu";
                 }
             } else if (kk == "AVNEW") {
                 if (paket == "a") {
@@ -495,9 +507,11 @@
                         harga.value = "Rp. 100.000";
                         kurang = price - min;
                         minus.innerText = String(kurang);
+                        $('#tujuan-text').show();
                         $('#kurang-text').show();
                     } else if (byr == "Lunas") {
                         harga.value = "Rp. 820.000";
+                        $('#tujuan-text').show();
                         $('#kurang-text').hide();
                         // txt.classList.add('d-none');
                     }
@@ -508,25 +522,31 @@
                         harga.value = "Rp. 100.000";
                         kurang = price - min;
                         minus.innerText = String(kurang);
+                        $('#tujuan-text').show();
                         $('#kurang-text').show();
                     } else if (byr == "Lunas") {
                         harga.value = "Rp. 1.210.000";
+                        $('#tujuan-text').show();
                         $('#kurang-text').hide();
                         // txt.classList.add('d-none');
                     }
-                } else {
+                } else if (paket == "c") {
                     var price = 1600000;
                     var min = 100000;
                     if (byr == "DP") {
                         harga.value = "Rp. 100.000";
                         kurang = price - min;
                         minus.innerText = String(kurang);
+                        $('#tujuan-text').show();
                         $('#kurang-text').show();
                     } else if (byr == "Lunas") {
                         harga.value = "Rp. 1.600.000";
+                        $('#tujuan-text').show();
                         $('#kurang-text').hide();
                         // txt.classList.add('d-none');
                     }
+                } else {
+                    harga.value = "Pilih paket kursus terlebih dahulu";
                 }
             }
         } else if (jk == "Matic") {
@@ -538,9 +558,11 @@
                         harga.value = "Rp. 100.000";
                         kurang = price - min;
                         minus.innerText = String(kurang);
+                        $('#tujuan-text').show();
                         $('#kurang-text').show();
                     } else if (byr == "Lunas") {
                         harga.value = "Rp. 900.000";
+                        $('#tujuan-text').show();
                         $('#kurang-text').hide();
                         // txt.classList.add('d-none');
                     }
@@ -551,25 +573,31 @@
                         harga.value = "Rp. 100.000";
                         kurang = price - min;
                         minus.innerText = String(kurang);
+                        $('#tujuan-text').show();
                         $('#kurang-text').show();
                     } else if (byr == "Lunas") {
                         harga.value = "Rp. 1.330.000";
+                        $('#tujuan-text').show();
                         $('#kurang-text').hide();
                         // txt.classList.add('d-none');
                     }
-                } else {
+                } else if (paket == "c") {
                     var price = 1760000;
                     var min = 100000;
                     if (byr == "DP") {
                         harga.value = "Rp. 100.000";
                         kurang = price - min;
                         minus.innerText = String(kurang);
+                        $('#tujuan-text').show();
                         $('#kurang-text').show();
                     } else if (byr == "Lunas") {
                         harga.value = "Rp. 1.760.000";
+                        $('#tujuan-text').show();
                         $('#kurang-text').hide();
                         // txt.classList.add('d-none');
                     }
+                } else {
+                    harga.value = "Pilih paket kursus terlebih dahulu";
                 }
             }
         }
@@ -592,6 +620,5 @@
         $('#telpon').inputmask("(9999-9999-9999)||(9999-9999-99999)");
     });
 </script>
-
 
 <?php $this->endSection(); ?>
