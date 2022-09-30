@@ -1,5 +1,4 @@
 <?= $this->extend('layout/template'); ?>
-
 <?= $this->section('content'); ?>
 
 <body class="bg-gradient-muted">
@@ -34,7 +33,8 @@
                                                 <tr>
                                                     <td><i class="fa fa-user"></i></td>
                                                     <td class="col-sm-12"><input type="username" name="username" class="form-control form-control-user"
-                                                        id="username" placeholder="Masukkan Username" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;"></td>
+                                                        id="username" placeholder="Masukkan Username" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3)
+                                                         center bottom 5px /calc(100% - 10px) 1px no-repeat;"></td>
                                                 </tr>
                                             </table>
                                         </div>
