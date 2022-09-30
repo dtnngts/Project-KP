@@ -21,13 +21,10 @@ class DaftarModel extends Model
 
     public function search($keyword)
     {
-        return $this->table('daftar')->like('no_registrasi', $keyword)
-            ->orLike('nama', $keyword)->orLike('kode_kendaraan', $keyword)
-            ->orLike('instruktur', $keyword)->orLike('paket', $keyword)
-            ->orLike('jadwal', $keyword);
+        return $this->table('daftar')->like('no_registrasi', $keyword)->orLike('nama', $keyword)->orLike('kode_kendaraan', $keyword)->orLike('instruktur', $keyword)->orLike('paket', $keyword)->orLike('jadwal', $keyword);
     }
 
-    public function getInstruktur($instruktur = false)
+    public function getInstruktur($instruktur)
     {
         if ($instruktur == false) {
             return $this->findAll();
@@ -35,7 +32,7 @@ class DaftarModel extends Model
         return $this->where('instruktur', $instruktur)->find();
     }
 
-    public function getNoReg($no_registrasi = false)
+    public function getNoReg($no_registrasi)
     {
         if ($no_registrasi == false) {
             return $this->findAll();
