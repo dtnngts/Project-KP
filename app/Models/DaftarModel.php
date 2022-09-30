@@ -11,7 +11,7 @@ class DaftarModel extends Model
     protected $allowedFields = ['nama', 'ttl', 'pekerjaan', 'alamat', 'telpon', 'jenis_kendaraan', 'kode_kendaraan', 'instruktur', 'paket', 'jadwal', 'status', 'pembayaran', 'harga', 'anTransfer', 'buktiTF', 'kehadiran', 'created_at', 'updated_at'];
     protected $useTimestamps = true;
 
-    public function getDaftar($no_registrasi = false)
+    public function getDaftar($no_registrasi)
     {
         if ($no_registrasi == false) {
             return $this->findAll();
