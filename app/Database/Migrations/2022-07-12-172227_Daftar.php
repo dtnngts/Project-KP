@@ -8,6 +8,7 @@ class Daftar extends Migration
 {
 	public function up()
 	{
+		//list field
 		$this->forge->addField([
 			'no_registrasi'          => [
 				'type'               => 'INT',
@@ -87,7 +88,9 @@ class Daftar extends Migration
 				'null'               => true
 			],
 		]);
+		//primary key
 		$this->forge->addKey('no_registrasi', true);
+		//nama tabel
 		$this->forge->createTable('daftar');
 	}
 

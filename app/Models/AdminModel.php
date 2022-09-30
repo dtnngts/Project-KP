@@ -8,7 +8,7 @@ class AdminModel extends Model
 {
     protected $table                = 'admin';
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id', 'username', 'password', 'nama', 'role'];
+    protected $allowedFields        = ['username', 'password', 'nama', 'role'];
 
     public function get_data($username, $password)
     {
