@@ -188,14 +188,23 @@
           <h4 class="my-4">Contact Info</h4>
 
           <p class="mb-1">
-            <i class="fa fa-phone mr-2 footer-icon"></i>
-            <a href="https://wa.me/6281279572555">+62 812-7957-2555</a>
+            <a href="https://wa.me/6281279572555" target="_blank">
+              <i class="fa fa-phone mr-2 footer-icon"></i>
+              +62 812-7957-2555
+            </a>
           </p>
 
-          <p>
-            <a href="#">
-              <i class="fa fa-envelope mr-2 footer-icon"></i>
-              hello@company.com
+          <p class="mb-1">
+            <a href="https://instagram.com/birojasa_princess?igshid=YmMyMTA2M2Y=" target="_blank">
+              <i class="fa fa-instagram mr-2 footer-icon"></i>
+              @birojasa_princess
+            </a>
+          </p>
+
+          <p class="mb-1">
+            <a href="https://twitter.com/bjprincess_lpg" target="_blank">
+              <i class="fa fa-twitter mr-2 footer-icon"></i>
+              @bjprincess_lpg
             </a>
           </p>
         </div>
@@ -215,15 +224,6 @@
           <p class="copyright-text">Copyright &copy; 2022 DotaAprilLase
             <br>
           </p>
-        </div>
-
-        <div class="col-lg-3 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
-          <ul class="social-icon">
-            <li><a href="https://instagram.com/birojasa_princess?igshid=YmMyMTA2M2Y=" target="_blank" class="fa fa-instagram"></a></li>
-            <li><a href="https://twitter.com/bjprincess_lpg" target="_blank" class="fa fa-twitter"></a></li>
-            <li><a href="#" class="fa fa-dribbble"></a></li>
-            <li><a href="#" class="fa fa-behance"></a></li>
-          </ul>
         </div>
       </div>
     </div>

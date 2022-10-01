@@ -34,7 +34,7 @@ class DaftarController extends BaseController
         return view('/users/v_jadwal', $data);
     }
 
-    public function instruktur($instruktur = false)
+    public function instruktur($instruktur)
     {
         $daftar_model = new DaftarModel();
 
