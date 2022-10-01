@@ -49,11 +49,12 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
+                <i class="fa fa-arrow-left"></i><a href="javascript:window.history.go(-1);">Kembali</a>
 
                 <!-- Navbar -->
                 <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
                     <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
-                  
+
                 </ul>
 
             </nav>
