@@ -93,15 +93,9 @@ class DaftarController extends BaseController
             'paket' => $this->request->getVar('paket'),
             'jadwal' => implode('; ', $this->request->getVar('jadwal')),
             'status' => " ",
-<<<<<<< HEAD
             'harga'=> $this->request->getVar('harga'),
             'pembayaran'=> $this->request->getVar('pembayaran'),
             // 'jadwal' => $this->request->getVar('jadwal'),
-=======
-            'pembayaran' => $this->request->getVar('pembayaran'),
-            'harga' => $this->request->getVar('harga'),
-            'anTransfer' => $this->request->getVar('anTransfer'),
->>>>>>> a1e8338b33557481a1a3e6b99805e40377fce11d
             'buktiTF' => $namaTF
         ];
         //
