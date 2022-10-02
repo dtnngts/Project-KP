@@ -182,7 +182,7 @@
                         <div class="copyright text-center my-auto">
                             <span>Copyright &copy; Your Website 2021</span>
                         </div>
-                    </div>
+                    </div><br><br><br>
                 </footer>
                 <!-- End of Footer -->
 
