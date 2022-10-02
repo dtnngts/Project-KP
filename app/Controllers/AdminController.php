@@ -272,7 +272,8 @@ class AdminController extends BaseController
 			'pembayaran' => $this->request->getVar('pembayaran'),
 			'harga' => $this->request->getVar('harga'),
 			'anTransfer' => $this->request->getVar('anTransfer'),
-			'buktiTF' => $namaTF
+			'buktiTF' => $namaTF,
+			'kehadiran' => $this->request->getVar('kehadiran'),
 		];
 		if ($data['status'] == "alumni") {
 			$data['jadwal'] = "";
@@ -379,15 +380,11 @@ class AdminController extends BaseController
 			return redirect()->to(base_url('/login'));
 		}
 
-		$keyword = $this->request->getVar('keyword');
-		if ($keyword) {
-			$siswa = $this->DaftarModel->where('status', 'siswa')->search($keyword);
-		} else {
-			$siswa = $this->DaftarModel;
-		}
+		$siswa = $this->DaftarModel;
 
 		$data = [
 			'siswa' => $siswa->where('status', 'siswa')->findAll(),
+			'alumni' => $siswa->where('status', 'alumni')->findAll(),
 			'nama' => session()->get('username')
 		];
 
