@@ -49,7 +49,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <i class="fa fa-arrow-left"></i><a href="javascript:window.history.go(-1);">Kembali</a>
+                <i class="fa fa-arrow-left"></i><a href="javascript:window.history.go(-1);"> Kembali</a>
 
                 <!-- Navbar -->
                 <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
