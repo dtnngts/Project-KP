@@ -49,10 +49,13 @@ $routes->get('/Eko', 'AdminController::eko');
 $routes->get('/tidak-diterima', 'AdminController::notacc');
 $routes->get('/edit/(:any)', 'AdminController::edit/$1');
 $routes->get('/editadmin/(:any)', 'AdminController::editAdmin/$1');
+$routes->get('/editvalid/(:any)', 'AdminController::editValid/$1');
 $routes->post('/update/(:any)/(:any)', 'AdminController::update/$1/$2');
 $routes->post('/updateadmin/(:any)', 'AdminController::updateAdmin/$1');
+$routes->post('/updatevalid/(:any)', 'AdminController::updateValid/$1');
 $routes->delete('/delete/(:any)/(:any)', 'AdminController::delete/$1/$2');
 $routes->delete('/deleteadmin/(:any)', 'AdminController::deleteAdmin/$1');
+$routes->delete('/deletevalid/(:any)', 'AdminController::deleteValid/$1');
 $routes->get('/login', 'LoginController::login');
 $routes->post('/login_action', 'LoginController::login_action');
 $routes->get('/logout', 'LoginController::logout');
@@ -63,7 +66,6 @@ $routes->get('/download', 'AdminController::excel');
 $routes->get('/validasisiswa', 'AdminController::valid');
 $routes->post('/accepted/(:any)', 'AdminController::accepted/$1');
 $routes->post('/rejected/(:any)', 'AdminController::rejected/$1');
-// $routes->get('/lihatjadwal', 'AdminController::adminjadwal');
 $routes->get('/lihatjadwal/(:any)', 'AdminController::lihatjadwal/$1');
 
 /*

@@ -41,8 +41,8 @@ class AdminController extends BaseController
 			'suhadi' => $DaftarModel->where('instruktur', 'Suhadi')->findAll(),
 			'yono' => $DaftarModel->where('instruktur', 'Yono')->findAll(),
 			'eko' => $DaftarModel->where('instruktur', 'Eko')->findAll(),
-			'rejected' => $DaftarModel->where('status', 'Tidak Diterima')->findAll(),
-			'allMem' => $DaftarModel->findAll(),
+			// 'rejected' => $DaftarModel->where('status', 'Tidak Diterima')->findAll(),
+			// 'allMem' => $DaftarModel->findAll(),
 			// 'alumni' => $DaftarModel->where('status', 'alumni')->findAll(),
 			'nama' => session()->get('username'),
 			'data_perbulan' => json_encode($data_perbulan),
@@ -242,6 +242,23 @@ class AdminController extends BaseController
 		return view("admin/v_editadmin", $data);
 	}
 
+	public function editValid($id)
+	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
+		$this->ValidatorModel = new ValidatorModel();
+
+		$data = [
+			'row' => $this->ValidatorModel->getData($id),
+			'nama' => session()->get('username')
+		];
+
+		return view("admin/v_editadmin", $data);
+	}
+
 	public function update($no_registrasi, $instruktur)
 	{
 		$DaftarModel = model("DaftarModel");
@@ -291,9 +308,30 @@ class AdminController extends BaseController
 	public function updateAdmin($id)
 	{
 		$AdminModel = model("AdminModel");
+		$data = $this->request->getPost();
+		$data = [
+			'username' => $this->request->getVar('username'),
+			'password' => $this->request->getVar('password'),
+			'nama' => $this->request->getVar('nama'),
+			'admin' => $this->request->getVar('admin'),
+			'role' => $this->request->getVar('role'),
+		];
+		$AdminModel->update($id, $data);
+
+		return redirect()->to(base_url('/lihatadmin'));
+	}
+
+	public function updateValid($id)
+	{
 		$ValidatorModel = model("ValidatorModel");
 		$data = $this->request->getPost();
-		$AdminModel->update($id, $data);
+		$data = [
+			'username' => $this->request->getVar('username'),
+			'password' => $this->request->getVar('password'),
+			'nama' => $this->request->getVar('nama'),
+			'admin' => $this->request->getVar('admin'),
+			'role' => $this->request->getVar('role'),
+		];
 		$ValidatorModel->update($id, $data);
 
 		return redirect()->to(base_url('/lihatadmin'));
@@ -317,8 +355,13 @@ class AdminController extends BaseController
 	public function deleteAdmin($id)
 	{
 		$admin = new AdminModel();
-		$validator = new ValidatorModel();
 		$admin->where(['id' => $id])->delete();
+		return redirect()->to(base_url('/lihatadmin'));
+	}
+
+	public function deleteValid($id)
+	{
+		$validator = new ValidatorModel();
 		$validator->where(['id' => $id])->delete();
 		return redirect()->to(base_url('/lihatadmin'));
 	}
@@ -432,15 +475,6 @@ class AdminController extends BaseController
 
 		$this->DaftarModel->update($where, $data, 'allMem');
 		return redirect()->to(base_url('/validasisiswa'));
-	}
-
-	public function adminjadwal()
-	{
-		$data = [
-			'title' => "Home",
-			'nama' => session()->get('username')
-		];
-		return view('admin/v_lihatjadwal', $data);
 	}
 
 	public function lihatjadwal($instruktur)

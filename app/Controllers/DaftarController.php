@@ -15,9 +15,6 @@ class DaftarController extends BaseController
 
     public function daftar()
     {
-        // $uri = new \CodeIgniter\HTTP\URI();
-        // $data['url'] = $uri->getSegment('1');
-        // return var_dump($data['url']);
         return view('users/v_daftar');
     }
 
@@ -65,19 +62,6 @@ class DaftarController extends BaseController
 
     public function regis()
     {
-        // if(!$this->validate([
-        //     'nama' => [
-        //         'rules' => 'required',
-        //         'errors' => [
-        //         'required' => '{field} harus diisi'
-        //         ]
-        //     ]
-        // ])) {
-        //     session()->setFlashdata('error', $this->validator->listErrors());
-        // 	return redirect()->back()->withInput();
-        // }
-
-
         $DaftarModel = model("DaftarModel");
         $transfer = $this->request->getFile('buktiTF');
         $namaTF = $transfer->getRandomName();
