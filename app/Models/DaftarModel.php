@@ -21,7 +21,7 @@ class DaftarModel extends Model
 
     public function search($keyword)
     {
-        return $this->table('daftar')->like('no_registrasi', $keyword)->orLike('nama', $keyword)->orLike('kode_kendaraan', $keyword)->orLike('instruktur', $keyword)->orLike('paket', $keyword)->orLike('jadwal', $keyword);
+        return $this->table('daftar')->like('no_registrasi', $keyword)->orLike('nama', $keyword)->orLike('kode_kendaraan', $keyword)->orLike('instruktur', $keyword)->orLike('paket', $keyword)->orLike('jadwal', $keyword)->orLike('status', $keyword);
     }
 
     public function getInstruktur($instruktur)

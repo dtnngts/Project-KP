@@ -221,12 +221,12 @@
 
 
 <script>
-	var lihatJadwal = document.querySelectorAll('#btnJadwal')
-	for (var satuan of lihatJadwal) {
-		satuan.addEventListener('click', () => {
-			alert(this.data('nama'))
-		})
-	}
+	// var lihatJadwal = document.querySelectorAll('#btnJadwal')
+	// for (var satuan of lihatJadwal) {
+	// 	satuan.addEventListener('click', () => {
+	// 		alert(this.data('nama'))
+	// 	})
+	// }
 
 	function klikjenis(obj) {
 		localStorage.setItem("jenis_kendaraan", obj.value);
