@@ -23,17 +23,16 @@
                                         <h1 class="h4 text-gray-900 mb-4">LOGIN ADMIN</h1>
                                     </div>
                                     <?php
-                                    if(session()->getFlashdata('gagal')):?>
-                                    <div class="alert alert-danger">
-                                        <?= session()->getFlashdata('gagal')?> </div>
-                                        <?php endif;?>
+                                    if (session()->getFlashdata('gagal')) : ?>
+                                        <div class="alert alert-danger">
+                                            <?= session()->getFlashdata('gagal') ?> </div>
+                                    <?php endif; ?>
                                     <form method="POST" action="<?= base_url('/login_action'); ?>">
                                         <div class="form-group">
                                             <table>
                                                 <tr>
                                                     <td><i class="fa fa-user"></i></td>
-                                                    <td class="col-sm-12"><input type="username" name="username" class="form-control form-control-user"
-                                                        id="username" placeholder="Masukkan Username" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3)
+                                                    <td class="col-sm-12"><input type="username" name="username" class="form-control form-control-user" id="username" placeholder="Masukkan Username" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3)
                                                          center bottom 5px /calc(100% - 10px) 1px no-repeat;"></td>
                                                 </tr>
                                             </table>
@@ -43,8 +42,8 @@
                                                 <tr>
                                                     <td><i class="fa fa-key"></i></td>
                                                     <td class="col-sm-12">
-                                                        <input type="password" name="password" class="form-control form-control-user"
-                                                            id="password" placeholder="Masukkan Password" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat; margin-right:10px;"></td>
+                                                        <input type="password" name="password" class="form-control form-control-user" id="password" placeholder="Masukkan Password" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat; margin-right:10px;">
+                                                    </td>
                                                     <td onclick="hide()">
                                                         <i id="icon1" style="display: none;" class="fa fa-eye"></i>
                                                         <i id="icon2" class="fa fa-eye-slash"></i>
@@ -70,10 +69,8 @@
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
@@ -87,8 +84,7 @@
                 x.type = "text";
                 y.style.display = "block";
                 z.style.display = "none";
-            }
-            else {
+            } else {
                 x.type = "password";
                 y.style.display = "none";
                 z.style.display = "block";
