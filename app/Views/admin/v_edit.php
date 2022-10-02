@@ -91,7 +91,6 @@
                                         <tr>
                                             <td style="font-size: 20px;">Kehadiran<br>
                                                 <div class="absen">
-                                                    <!-- <button class="btn minus-btn disabled" type="button">-</button> -->
                                                     <?php if ($row['paket'] == 'a') : ?>
                                                         <input type="number" name="kehadiran" id="absen" style="border: none;" value="<?= $row['kehadiran'] ?>" max="10" min="0">
                                                     <?php elseif ($row['paket'] == 'b') : ?>
@@ -99,7 +98,6 @@
                                                     <?php else : ?>
                                                         <input type="number" name="kehadiran" id="absen" style="border: none;" value="<?= $row['kehadiran'] ?>" max="20" min="0">
                                                     <?php endif ?>
-                                                    <!-- <button class="btn plus-btn" type="button">+</button> -->
                                                 </div>
                                             </td>
                                         </tr>
