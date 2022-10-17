@@ -72,9 +72,14 @@
 
                     <!-- Navbar -->
                     <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
+<<<<<<< HEAD
                         <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
                         
+=======
+                        <a href="/logout" type="button" onclick="return confirm('Apakah anda yakin ingin Logout ?');"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+
+>>>>>>> d5f57902143768b303080679022b65a84504ec7b
                     </ul>
 
 
@@ -113,19 +118,33 @@
                                             <td scope="row"><?= $row['instruktur'] ?></td>
                                             <td scope="row"><?= $row['paket'] ?></td>
                                             <td scope="row"><?= $row['telpon'] ?></td>
-                                            <td scope="row"><img class="buktiTF" src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" style="width:100px;"></td>
+                                            <td scope="row"><img class="buktiTF" src="<?= base_url("./assets/transfer/" . $row['buktiTF']) ?>" 
+                                            style="width:100px;"></td>
                                             <td scope="row"><?= $row['status'] ?></td>
                                             <td scope="row" style="text-align:center">
                                                 <?php if ($row['status'] != " ") : ?>
-                                                    <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Accepted</button>
-                                                    <button class="btn btn-secondary" type="button" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>Rejected</button>
+                                                    <button class="btn btn-secondary" type="button" s
+                                                    tyle="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>
+                                                        Accepted
+                                                    </button>
+                                                    <button class="btn btn-secondary" type="button" 
+                                                    style="font: 13px/20px normal Helvetica, Arial, sans-serif;" disabled>
+                                                        Rejected
+                                                    </button>
                                                 <?php else : ?>
                                                     <form action="accepted/<?= $row['no_registrasi'] ?>" method="post" class="d-inline">
-                                                        <button type="submit" class="btn btn-success" style="font: 13px/20px normal Helvetica, Arial, sans-serif;">Accepted</button>
+                                                        <button type="submit" class="btn btn-success" 
+                                                        style="font: 13px/20px normal Helvetica, Arial, sans-serif;">
+                                                            Accepted
+                                                        </button>
                                                     </form>
                                                     <form action="rejected/<?= $row['no_registrasi'] ?>" method="post" class="d-inline">
                                                         <?= csrf_field(); ?>
-                                                        <button type="submit" class="btn btn-danger" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" onclick="return confirm('Apakah anda yakin me-reject siswa ini ?'); ">Rejected</button>
+                                                        <button type="submit" class="btn btn-danger" 
+                                                        style="font: 13px/20px normal Helvetica, Arial, sans-serif;" 
+                                                        onclick="return confirm('Apakah anda yakin me-reject siswa ini ?'); ">
+                                                            Rejected
+                                                        </button>
                                                     </form>
                                                 <?php endif ?>
                                             </td>

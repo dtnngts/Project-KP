@@ -41,13 +41,8 @@ class AdminController extends BaseController
 			'suhadi' => $DaftarModel->where('instruktur', 'Suhadi')->findAll(),
 			'yono' => $DaftarModel->where('instruktur', 'Yono')->findAll(),
 			'eko' => $DaftarModel->where('instruktur', 'Eko')->findAll(),
-			// 'rejected' => $DaftarModel->where('status', 'Tidak Diterima')->findAll(),
-			// 'allMem' => $DaftarModel->findAll(),
-			// 'alumni' => $DaftarModel->where('status', 'alumni')->findAll(),
-			'nama' => session()->get('username'),
 			'data_perbulan' => json_encode($data_perbulan),
 		];
-		// return var_dump($data['data_perbulan']);
 		return view('admin/v_admin', $data);
 	}
 
@@ -68,7 +63,6 @@ class AdminController extends BaseController
 
 		$data = [
 			'allMem' => $allMem->findAll(),
-			'nama' => session()->get('username')
 		];
 
 		return view('admin/data_kursus/v_allMem', $data);
@@ -90,7 +84,6 @@ class AdminController extends BaseController
 
 		$data = [
 			'hendri' => $hendri->where('instruktur', 'Hendri')->findAll(),
-			'nama' => session()->get('username')
 		];
 
 		return view('admin/data_kursus/v_hendri', $data);
@@ -112,7 +105,6 @@ class AdminController extends BaseController
 
 		$data = [
 			'suhadi' => $suhadi->where('instruktur', 'Suhadi')->findAll(),
-			'nama' => session()->get('username')
 		];
 
 		return view('admin/data_kursus/v_suhadi', $data);
@@ -134,7 +126,6 @@ class AdminController extends BaseController
 
 		$data = [
 			'yono' => $yono->where('instruktur', 'Yono')->findAll(),
-			'nama' => session()->get('username')
 		];
 
 		return view('admin/data_kursus/v_yono', $data);
@@ -156,7 +147,6 @@ class AdminController extends BaseController
 
 		$data = [
 			'eko' => $eko->where('instruktur', 'Eko')->findAll(),
-			'nama' => session()->get('username')
 		];
 
 		return view('admin/data_kursus/v_eko', $data);
@@ -178,7 +168,6 @@ class AdminController extends BaseController
 
 		$data = [
 			'rejected' => $rejected->where('status', 'Tidak Diterima')->findAll(),
-			'nama' => session()->get('username')
 		];
 
 		return view('admin/data_kursus/v_notacc', $data);
@@ -193,7 +182,6 @@ class AdminController extends BaseController
 		$daftar_model = new DaftarModel();
 		$data = [
 			'row' => $this->DaftarModel->getDaftar($no_registrasi),
-			'nama' => session()->get('username')
 		];
 
 		if ($no_registrasi == false) {
@@ -208,8 +196,6 @@ class AdminController extends BaseController
 		} else {
 			$data['daftar'] = $daftar_model->getNoReg($no_registrasi);
 			$i = 0;
-			// var_dump($data);
-			// exit();
 			foreach ($data['daftar'] as $dt) {
 				$data['jadwal_orang'][$i] = $dt['jadwal'];
 				$i++;
@@ -218,10 +204,6 @@ class AdminController extends BaseController
 				$data['jadwal_orang'] = null;
 			}
 		}
-
-		// var_dump($data);
-		// exit();
-
 		return view("admin/v_edit", $data);
 	}
 
@@ -236,7 +218,6 @@ class AdminController extends BaseController
 
 		$data = [
 			'row' => $this->AdminModel->getData($id),
-			'nama' => session()->get('username')
 		];
 
 		return view("admin/v_editadmin", $data);
@@ -253,7 +234,6 @@ class AdminController extends BaseController
 
 		$data = [
 			'row' => $this->ValidatorModel->getData($id),
-			'nama' => session()->get('username')
 		];
 
 		return view("admin/v_editadmin", $data);
@@ -261,6 +241,10 @@ class AdminController extends BaseController
 
 	public function update($no_registrasi, $instruktur)
 	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
 		$DaftarModel = model("DaftarModel");
 		$data = $this->request->getPost();
 		$transfer = $this->request->getFile('buktiTF');
@@ -273,7 +257,6 @@ class AdminController extends BaseController
 			unlink("./assets/transfer/" . $this->request->getVar('buktiTFLama'));
 			// $data['buktiTF'] = $namaTF;
 		}
-		// $namaTF = $transfer->getRandomName();
 		$data = [
 			'nama' => $this->request->getVar('nama'),
 			'ttl' => $this->request->getVar('ttl'),
@@ -295,18 +278,17 @@ class AdminController extends BaseController
 		if ($data['status'] == "alumni") {
 			$data['jadwal'] = "";
 		}
-		// $data['jadwal'] = implode('; ', $this->request->getVar('jadwal'));
-		// $transfer = $this->request->getFile('buktiTF');
-
-		// var_dump($data['jadwal']);
-		// exit();
 		$DaftarModel->update($no_registrasi, $data);
-
 		return redirect()->to(base_url($instruktur));
 	}
 
 	public function updateAdmin($id)
 	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
 		$AdminModel = model("AdminModel");
 		$data = $this->request->getPost();
 		$data = [
@@ -323,6 +305,11 @@ class AdminController extends BaseController
 
 	public function updateValid($id)
 	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
 		$ValidatorModel = model("ValidatorModel");
 		$data = $this->request->getPost();
 		$data = [
@@ -354,6 +341,11 @@ class AdminController extends BaseController
 
 	public function deleteAdmin($id)
 	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
 		$admin = new AdminModel();
 		$admin->where(['id' => $id])->delete();
 		return redirect()->to(base_url('/lihatadmin'));
@@ -361,6 +353,11 @@ class AdminController extends BaseController
 
 	public function deleteValid($id)
 	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
 		$validator = new ValidatorModel();
 		$validator->where(['id' => $id])->delete();
 		return redirect()->to(base_url('/lihatadmin'));
@@ -373,19 +370,16 @@ class AdminController extends BaseController
 			return redirect()->to(base_url('/login'));
 		}
 
-		$AdminModel = new AdminModel();
-		$ValidatorModel = new ValidatorModel();
-
-		$data = [
-			'admin' => $AdminModel->findAll(),
-			'validator' => $ValidatorModel->findAll(),
-			'nama' => session()->get('username')
-		];
-		return view('admin/v_inputadmin', $data);
+		return view('admin/v_inputadmin');
 	}
 
 	public function store()
 	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
 		$data = [
 			'username' => $this->request->getVar('username'),
 			'password' => $this->request->getVar('password'),
@@ -411,7 +405,6 @@ class AdminController extends BaseController
 		$data = [
 			'admin' => $AdminModel->findAll(),
 			'validator' => $ValidatorModel->findAll(),
-			'nama' => session()->get('username')
 		];
 		return view('admin/v_lihatadmin', $data);
 	}
@@ -428,7 +421,6 @@ class AdminController extends BaseController
 		$data = [
 			'siswa' => $siswa->where('status', 'siswa')->findAll(),
 			'alumni' => $siswa->where('status', 'alumni')->findAll(),
-			'nama' => session()->get('username')
 		];
 
 		return view('admin/data_kursus/excel_siswa', $data);
@@ -450,13 +442,17 @@ class AdminController extends BaseController
 
 		$data = [
 			'allMem' => $allMem->orderBy('no_registrasi', 'desc')->findAll(),
-			'nama' => session()->get('username')
 		];
 		return view("admin/v_validator", $data);
 	}
 
 	public function accepted($no_registrasi)
 	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
 		$data = [
 			'status' => "siswa",
 		];
@@ -468,6 +464,11 @@ class AdminController extends BaseController
 
 	public function rejected($no_registrasi)
 	{
+		if (session()->get('username') == '') {
+			session()->setFlashdata('gagal', 'Anda belum login');
+			return redirect()->to(base_url('/login'));
+		}
+
 		$data = [
 			'status' => "tidak diterima",
 		];
@@ -485,14 +486,8 @@ class AdminController extends BaseController
 		}
 
 		$daftar_model = new DaftarModel();
-
-		$data = [
-			'nama' => session()->get('username')
-		];
 		$data['daftar'] = $daftar_model->getInstruktur($instruktur);
 		$i = 0;
-		// var_dump($data);
-		// exit();
 		foreach ($data['daftar'] as $dt) {
 			$data['jadwal_orang'][$i] = $dt['jadwal'];
 			$i++;

@@ -40,7 +40,8 @@ var myBarChart = new Chart(ctx, {
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [data_bulan[0], data_bulan[1], data_bulan[2], data_bulan[3], data_bulan[4], data_bulan[5], data_bulan[6], data_bulan[7], data_bulan[8], data_bulan[9], data_bulan[10], data_bulan[11]],
+      data: [data_bulan[0], data_bulan[1], data_bulan[2], data_bulan[3], data_bulan[4], 
+      data_bulan[5], data_bulan[6], data_bulan[7], data_bulan[8], data_bulan[9], data_bulan[10], data_bulan[11]],
     }],
   },
   options: {

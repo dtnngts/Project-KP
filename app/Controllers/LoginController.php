@@ -21,7 +21,6 @@ class LoginController extends BaseController
 	{
 		$admin = new AdminModel();
 		$validator = new ValidatorModel();
-		// $table = 'admin';
 		$username = $this->request->getPost('username');
 		$password = $this->request->getPost('password');
 		
@@ -52,19 +51,5 @@ class LoginController extends BaseController
 	{
 		session()->destroy();
 		return redirect()->to(base_url('/login'));
-	}
-
-	public function store() {
-		$data = [
-			'username' => $this->request->getVar('username'),
-			'password' => $this->request->getVar('password'),
-			'nama' => $this->request->getVar('nama'),
-			'admin' => $this->request->getVar('admin'),
-			'role' => $this->request->getVar('role'),
-		];
-
-		model($data['admin'])->insert($data);
-
-		return redirect()->to(base_url('/inputadmin'));
 	}
 }
