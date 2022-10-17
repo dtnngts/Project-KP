@@ -1,10 +1,7 @@
 <?php
 header("Content-Type: application/vnds-ms-excel");
-header("Content-Disposition: attachment; filename=Data Siswa.xls");
-?>
-
+header("Content-Disposition: attachment; filename=Data Siswa.xls"); ?>
 <html lang="en">
-
 <body>
     <center>
         <h1>Data Kursus Mengemudi<br>CV. PRINCESS SOLUTION</h1>

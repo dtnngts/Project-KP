@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class ValidatorAdmin extends Migration
+class Validator extends Migration
 {
     public function up()
 	{
@@ -32,11 +32,11 @@ class ValidatorAdmin extends Migration
 			],
 		]);
 		$this->forge->addKey('id', true);
-		$this->forge->createTable('validatoradmin');
+		$this->forge->createTable('validator');
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('validatoradmin');
+		$this->forge->dropTable('validator');
 	}
 }

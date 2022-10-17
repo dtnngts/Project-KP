@@ -134,7 +134,7 @@
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab">
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-admin" role="tab">Admin</a>
-                                    <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-validator" role="tab">Validator Admin</a>
+                                    <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-validator" role="tab">Validator</a>
                                 </div>
                             </nav>
                             <div class="tab-content" id="nav-tabContent">

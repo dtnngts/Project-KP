@@ -154,7 +154,8 @@
                                                 <tr>
                                                     <td>Role</td>
                                                     <td class="col-sm-6">
-                                                        <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" name="admin" id="admin" required>
+                                                        <select class="custom-select" style="font: 13px/20px normal Helvetica, Arial, sans-serif;" 
+                                                        name="admin" id="admin" required>
                                                             <option selected="true" value="" disabled selected>Pilih...</option>
                                                             <option value="AdminModel" id="Admin">Admin</option>
                                                             <option value="ValidatorModel" id="Validator">Validator</option>
