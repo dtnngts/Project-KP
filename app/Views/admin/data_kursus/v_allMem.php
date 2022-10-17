@@ -117,7 +117,8 @@
                     <!-- Topbar Search -->
                     <div class="col-4">
                         <ul class="navbar-nav ml-auto">
-                            <form action="" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-5 my-md-0 mw-100 navbar-search">
+                            <form action="" method="get" 
+                             class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-5 my-md-0 mw-100 navbar-search">
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="keyword" autocomplete="off" placeholder="Search">
                                     <div class="input-group-append">

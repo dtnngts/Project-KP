@@ -102,7 +102,7 @@
   </section>
 
 
-  <!-- PROJECT -->
+  <!-- DAFTAR PAKET -->
   <section class="project section-padding" id="project">
     <div class="container-fluid">
       <div class="row">
@@ -117,34 +117,24 @@
           <div class="owl-carousel owl-theme" id="project-slide">
             <div class="item project-wrapper" data-aos="fade-up" data-aos-delay="100">
               <img src="assets/images/1.png" class="img-fluid" alt="project image">
-
-
             </div>
 
             <div class="item project-wrapper" data-aos="fade-up">
               <img src="assets/images/2.png" class="img-fluid" alt="project image">
-
-
             </div>
 
             <div class="item project-wrapper" data-aos="fade-up">
               <img src="assets/images/3.png" class="img-fluid" alt="project image">
-
-
             </div>
-
-
-
 
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
 
-  <!-- TESTIMONIAL -->
+ 
   <section class="testimonial section-padding">
     <div class="container">
       <div class="row">
