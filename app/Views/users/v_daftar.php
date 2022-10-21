@@ -54,7 +54,6 @@
 		<div id="pkManual" style="display:none">
 			<div id="nab" class="card">
 				<button onclick="klikmobil(this)" style="border: none; background-color: Transparent;" value="NAB">
-					<!-- <input type="radio" name="kode_kendaraan" onclick="klikmobil(this)" value="nab"> -->
 					<img src="assets/images/NAB.png" class="card-img-top">
 			</div>
 			<div id="nas" class="card">
@@ -90,7 +89,9 @@
 					<td>Instruktur : Agus Hendri</td>
 				</tr>
 				<tr>
-					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Hendri"><a href="/jadwal/Hendri">Lihat Jadwal Tersedia</a></button></td>
+					<td colspan="2">
+						<button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Hendri"><a href="/jadwal/Hendri">Lihat Jadwal Tersedia</a></button>
+					</td>
 				</tr>
 			</table>
 		</div>
@@ -105,7 +106,8 @@
 					<td>Instruktur : Suhadi</td>
 				</tr>
 				<tr>
-					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
+					<td colspan="2">
+						<button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
 				</tr>
 			</table>
 		</div>
@@ -120,7 +122,8 @@
 					<td>Instruktur : Sumaryono</td>
 				</tr>
 				<tr>
-					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Yono"><a href="/jadwal/Yono">Lihat Jadwal Tersedia</a></button></td>
+					<td colspan="2">
+						<button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Yono"><a href="/jadwal/Yono">Lihat Jadwal Tersedia</a></button></td>
 				</tr>
 			</table>
 		</div>

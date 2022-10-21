@@ -1,18 +1,19 @@
 <?php
-
 namespace App\Models;
-
 use CodeIgniter\Model;
 
 class ValidatorModel extends Model
 {
-    protected $table                = 'validatoradmin';
+    protected $table                = 'validator';
     protected $primaryKey           = 'id';
     protected $allowedFields        = ['username', 'password', 'nama', 'role'];
 
     public function get_data($username, $password)
     {
-        return $this->db->table('validatoradmin')->where(array('username' => $username, 'password' => $password))->get()->getRowArray();
+        return $this->db->table('validator')->where(array(
+            'username' => $username,
+            'password' => $password
+        ))->get()->getRowArray();
     }
 
     public function getData($id)
@@ -23,3 +24,5 @@ class ValidatorModel extends Model
         return $this->where(['id' => $id])->first();
     }
 }
+
+

@@ -47,8 +47,6 @@ class DaftarController extends BaseController
         } else {
             $data['daftar'] = $daftar_model->getInstruktur($instruktur);
             $i = 0;
-            // var_dump($data);
-            // exit();
             foreach ($data['daftar'] as $dt) {
                 $data['jadwal_orang'][$i] = $dt['jadwal'];
                 $i++;

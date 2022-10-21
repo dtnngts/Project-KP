@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Models;
-
 use CodeIgniter\Model;
 
 class AdminModel extends Model
@@ -12,7 +10,8 @@ class AdminModel extends Model
 
     public function get_data($username, $password)
     {
-        return $this->db->table('admin')->where(array('username' => $username, 'password' => $password))->get()->getRowArray();
+        return $this->db->table('admin')->where(array('username' => $username,
+        'password' => $password))->get()->getRowArray();
     }
 
     public function getData($id)
@@ -23,3 +22,4 @@ class AdminModel extends Model
         return $this->where(['id' => $id])->first();
     }
 }
+
