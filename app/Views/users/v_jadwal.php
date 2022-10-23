@@ -361,7 +361,7 @@
             <div class="form-group">
                 <br>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" id="defaultCheck1">
+                    <input class="form-check-input" type="checkbox" id="defaultCheck1" style="width: 15px; height: 15px;">
                     <label class="form-check-label" for="defaultCheck1">
                         Saya telah membaca, memahami, dan setuju berdasarkan syarat dan ketentuan yang telah ditetapkan
                         <a type="button" style="color:blue" onclick="return alert('Syarat dan Ketentuan\n1. Harus hadir di tempat 5 menit sebelum jam yang telah ditentukan, jika terlambat ditunda besok.\n2. Jika dalam 10 hari berturut-turut tidak hadir, maka dianggap berhenti dari Kursus Mengemudi.\n3. Dalam Kursus Mengemudi tidak diperkenankan melebihi kecepatan 40Km/Jam.\n4. Murid Kursus Mengemudi wajib mentaati Instruksi dari instruktur.\n5. Jika paket Kursus Mengemudi telah habis di perkenankan untuk memperpanjang paket berikutnya.\n6. Bagi yang menggunakan Fasilitas antar jemput kursus mengemudi, waktu penjemputan tersebut sudah termasuk dalam waktu belajar.');">
@@ -371,7 +371,6 @@
                 </div>
             </div>
             <input type="button" style="place-items:right;" class="btn btn-primary" value="Daftar" onclick="validasi()">
-            <!-- <button type="button" class="coba">Coba</button> -->
         </div>
     </div>
 </form>
@@ -449,10 +448,13 @@
         var telpon = document.getElementById("telpon").value;
         var paket = document.getElementById("paket").value;
         var buktiTF = document.getElementById("buktiTF").value;
+        var sk = document.getElementById("defaultCheck1");
         const daftar = document.querySelector('#Daftar');
-        if (nama != "" && ttl != "" && pekerjaan != "" && alamat != "" && jenis_kendaraan != "" 
-        && kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != "") {
+        if (nama != "" && ttl != "" && pekerjaan != "" && alamat != "" && jenis_kendaraan != "" &&
+            kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != "" && sk.checked == true) {
             document.getElementById('form-daftar').submit();
+        } else if (sk.checked == false) {
+            alert('Setujui Syarat dan Ketentuan');
         } else {
             alert('Isi data diri Anda dengan lengkap !');
         }
@@ -486,8 +488,6 @@
             }
         }
     }
-
-
 
     function jadwalOrang() {
         var jadwal_orang = <?= ($jadwal_orang != null) ? json_encode($jadwal_orang) : 'null' ?>;
