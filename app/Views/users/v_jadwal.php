@@ -330,8 +330,7 @@
                         <div>
                             <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')"> DP
                             <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')"> Lunas
-                            <p id="tujuan-text" style="font-size: 17px;">Silahkan melakukan transfer ke <strong>
-                                    BCA 0207 400 169 an Muhammad Fario PB</strong> sebesar harga dibawah ini</p>
+                            <p id="tujuan-text" style="font-size: 17px;">Silahkan melakukan transfer ke <strong>BCA 0207 400 169 an Muhammad Fario PB</strong> sebesar harga dibawah ini</p>
                         </div>
                     </div>
                     <div class="form-group">
@@ -339,8 +338,7 @@
                             <label for="harga">Harga</label>
                             <input type="text" class="form-control" name="harga" id="harga" readonly>
                         </div>
-                        <p id="kurang-text" style="font-size: 15px;">Lunasi kekurangan pembayaran sebesar <span id="kurang">
-                            </span> pada saat hari pertama kursus</p>
+                        <p id="kurang-text" style="font-size: 15px;">Lunasi kekurangan pembayaran sebesar <span id="kurang"></span> pada saat hari pertama kursus</p>
                     </div>
 
                     <div class="form-group">
@@ -348,8 +346,7 @@
                         <table>
                             <tr>
                                 <td>an.</td>
-                                <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) 
-                                center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="anTransfer" id="anTransfer"></td>
+                                <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="anTransfer" id="anTransfer"></td>
                             </tr>
                         </table>
                         <div class="col-md-8">
@@ -364,7 +361,7 @@
             <div class="form-group">
                 <br>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" id="defaultCheck1">
+                    <input class="form-check-input" type="checkbox" id="defaultCheck1" style="width: 15px; height: 15px;">
                     <label class="form-check-label" for="defaultCheck1">
                         Saya telah membaca, memahami, dan setuju berdasarkan syarat dan ketentuan yang telah ditetapkan
                         <a type="button" style="color:blue" onclick="return alert('Syarat dan Ketentuan\n1. Harus hadir di tempat 5 menit sebelum jam yang telah ditentukan, jika terlambat ditunda besok.\n2. Jika dalam 10 hari berturut-turut tidak hadir, maka dianggap berhenti dari Kursus Mengemudi.\n3. Dalam Kursus Mengemudi tidak diperkenankan melebihi kecepatan 40Km/Jam.\n4. Murid Kursus Mengemudi wajib mentaati Instruksi dari instruktur.\n5. Jika paket Kursus Mengemudi telah habis di perkenankan untuk memperpanjang paket berikutnya.\n6. Bagi yang menggunakan Fasilitas antar jemput kursus mengemudi, waktu penjemputan tersebut sudah termasuk dalam waktu belajar.');">
@@ -374,7 +371,6 @@
                 </div>
             </div>
             <input type="button" style="place-items:right;" class="btn btn-primary" value="Daftar" onclick="validasi()">
-
         </div>
     </div>
 </form>
@@ -452,10 +448,14 @@
         var telpon = document.getElementById("telpon").value;
         var paket = document.getElementById("paket").value;
         var buktiTF = document.getElementById("buktiTF").value;
+        var sk = document.getElementById("defaultCheck1");
         const daftar = document.querySelector('#Daftar');
         if (nama != "" && ttl != "" && pekerjaan != "" && alamat != "" && jenis_kendaraan != "" &&
-            kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != "") {
+            kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != ""
+            && sk.checked == true) {
             document.getElementById('form-daftar').submit();
+        } else if (sk.checked == false) {
+            alert('Setujui Syarat dan Ketentuan');
         } else {
             alert('Isi data diri Anda dengan lengkap !');
         }
@@ -489,8 +489,6 @@
             }
         }
     }
-
-
 
     function jadwalOrang() {
         var jadwal_orang = <?= ($jadwal_orang != null) ? json_encode($jadwal_orang) : 'null' ?>;

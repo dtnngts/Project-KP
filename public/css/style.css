@@ -34,14 +34,18 @@ h5 {
   font-family: cleanwork;
 }
 
+.form-check-input input[type="checkbox"] {
+  width: 5px;
+  height: 5px;
+}
+
 #form-daftar input[type="checkbox"] {
-    position: relative;
-      right: 0;
-      left: 0;
-      width: 30px;
-      height: 30px;
-      margin: 0 auto;  
-     
+  position: relative;
+  right: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
 }
 
 p {
