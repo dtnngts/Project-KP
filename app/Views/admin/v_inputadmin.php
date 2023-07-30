@@ -85,7 +85,7 @@
                         <a class="collapse-item" href="/lihatjadwal/Eko">Jadwal Eko</a>
                     </div>
                 </div>
-            </li>
+            </li> 
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

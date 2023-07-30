@@ -49,20 +49,6 @@
 
             <tr>
                 <td>08.00-09.00</td>
-<<<<<<< HEAD
-                <td><input type="checkbox" id="0" name="jadwal[]" onclick="pilihSatu(this)"
-                 value="Senin 08.00-09.00"><label for="form-daftar input"></label></td>
-                <td><input type="checkbox" id="1" name="jadwal[]" onclick="pilihSatu(this)" 
-                value="Selasa 08.00-09.00"><label for="form-daftar input"></label></td>
-                <td><input type="checkbox" id="2" name="jadwal[]" onclick="pilihSatu(this)" 
-                value="Rabu 08.00-09.00"><label for="form-daftar input"></label></td>
-                <td><input type="checkbox" id="3" name="jadwal[]" onclick="pilihSatu(this)" 
-                value="Kamis 08.00-09.00"><label for="form-daftar input"></label></td>
-                <td><input type="checkbox" id="4" name="jadwal[]" onclick="pilihSatu(this)"
-                value="Jum'at 08.00-09.00"><label for="form-daftar input"></label></td>
-                <td><input type="checkbox" id="5" name="jadwal[]" onclick="pilihSatu(this)" 
-                value="Sabtu 08.00-09.00"><label for="form-daftar input"></label></td>
-=======
                 <td>
                     <input type="checkbox" id="0" name="jadwal[]" onclick="pilihSatu(this)" value="Senin 08.00-09.00">
                 </td>
@@ -81,7 +67,6 @@
                 <td>
                     <input type="checkbox" id="5" name="jadwal[]" onclick="pilihSatu(this)" value="Sabtu 08.00-09.00">
                 </td>
->>>>>>> d5f57902143768b303080679022b65a84504ec7b
             </tr>
             <tr>
                 <td>09.00-10.00</td>
@@ -332,13 +317,11 @@
                     <div class="form-group">
                         <label for="paket">Paket Kursus</label>
                         <div class="select-list">
-                            <select name="paket" id="paket" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" 
-                            aria-haspopup="true" aria-expanded="false">
+                            <select name="paket" id="paket" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <option selected="true" value="" disabled>Paket</option>
                                 <option value="a" data-toggle="tooltip" data-placement="right" title="Untuk melancarkan mengemudi">A</option>
                                 <option value="b" data-toggle="tooltip" data-placement="right" title="Disarankan untuk pemula">B</option>
-                                <option value="c" data-toggle="tooltip" data-placement="right" title="Disarankan untuk pemula dengan jam kursus yang lebih lama"
-                                >C</option>
+                                <option value="c" data-toggle="tooltip" data-placement="right" title="Disarankan untuk pemula dengan jam kursus yang lebih lama">C</option>
                             </select>
                         </div>
                     </div>
@@ -348,7 +331,7 @@
                             <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')"> DP
                             <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')"> Lunas
                             <p id="tujuan-text" style="font-size: 17px;">Silahkan melakukan transfer ke <strong>
-                                BCA 0207 400 169 an Muhammad Fario PB</strong> sebesar harga dibawah ini</p>
+                                    BCA 0207 400 169 an Muhammad Fario PB</strong> sebesar harga dibawah ini</p>
                         </div>
                     </div>
                     <div class="form-group">
@@ -366,8 +349,7 @@
                             <tr>
                                 <td>an.</td>
                                 <td><input type="text" style="border:none; outline:none; background:linear-gradient(#d3d3d3, #d3d3d3) 
-                                center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="anTransfer" 
-                                id="anTransfer"></td>
+                                center bottom 5px /calc(100% - 10px) 1px no-repeat;" class="form-control" name="anTransfer" id="anTransfer"></td>
                             </tr>
                         </table>
                         <div class="col-md-8">
@@ -392,7 +374,7 @@
                 </div>
             </div>
             <input type="button" style="place-items:right;" class="btn btn-primary" value="Daftar" onclick="validasi()">
-           
+
         </div>
     </div>
 </form>
@@ -471,8 +453,8 @@
         var paket = document.getElementById("paket").value;
         var buktiTF = document.getElementById("buktiTF").value;
         const daftar = document.querySelector('#Daftar');
-        if (nama != "" && ttl != "" && pekerjaan != "" && alamat != "" && jenis_kendaraan != "" 
-        && kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != "") {
+        if (nama != "" && ttl != "" && pekerjaan != "" && alamat != "" && jenis_kendaraan != "" &&
+            kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != "") {
             document.getElementById('form-daftar').submit();
         } else {
             alert('Isi data diri Anda dengan lengkap !');

@@ -53,13 +53,8 @@
         <hr class="sidebar-divider">
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-<<<<<<< HEAD
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" 
-            aria-controls="collapsePages">
-=======
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" 
             aria-expanded="true" aria-controls="collapsePages">
->>>>>>> d5f57902143768b303080679022b65a84504ec7b
                 <i class="fas fa-fw fa-folder"></i>
                 <span>Admin</span>
             </a>
