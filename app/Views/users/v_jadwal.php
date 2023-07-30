@@ -451,7 +451,8 @@
         var sk = document.getElementById("defaultCheck1");
         const daftar = document.querySelector('#Daftar');
         if (nama != "" && ttl != "" && pekerjaan != "" && alamat != "" && jenis_kendaraan != "" &&
-            kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != "" && sk.checked == true) {
+            kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != ""
+            && sk.checked == true) {
             document.getElementById('form-daftar').submit();
         } else if (sk.checked == false) {
             alert('Setujui Syarat dan Ketentuan');

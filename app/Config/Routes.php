@@ -35,6 +35,15 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->group('api', function ($routes) {
+    // $routes->get('show/(:any)', 'APIAkunContoller::show');
+    $routes->post('login', 'APILoginController::index');
+    $routes->get('berita', 'APILoginController::showBerita');
+    $routes->post("ubahprofil", "APILoginController::ubahProfil");
+    $routes->post("test", "APIBeritaController::index");
+});
+// $routes->post('/akun', 'APIAkunController::create');
+
 $routes->get('/admin', 'AdminController::admin');
 $routes->get('/', 'LoginController::wellcome');
 $routes->get('/daftar', 'DaftarController::daftar');

@@ -6,6 +6,7 @@ class LoginController extends BaseController
 {
 	public function wellcome()
 	{
+		// echo password_hash('aaninisasa26010', PASSWORD_DEFAULT);
 		return view('/users/v_dashboard');
 	}
 
