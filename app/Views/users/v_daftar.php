@@ -9,7 +9,8 @@
 			Princess Solution
 		</a>
 
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+		aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
@@ -42,11 +43,13 @@
 	<div class="daftar">
 		<div class="jenis_kendaraan mb-2 ">
 			<div class="btn btn-warning">
-				<button onclick=" klikjenis(this)" style="border: none; background-color: Transparent; color: white;" id="btnManual" value="Manual">
+				<button onclick=" klikjenis(this)" style="border: none; background-color:
+				 Transparent; color: white;" id="btnManual" value="Manual">
 					<label for="manual">Manual</label>
 			</div>
 			<div class="btn btn-warning">
-				<button onclick="klikjenis(this)" style="border: none; background-color: Transparent; color: white;" id="btnMatic" value="Matic">
+				<button onclick="klikjenis(this)" style="border: none; background-color: 
+				Transparent; color: white;" id="btnMatic" value="Matic">
 					<label for="matic">Matic</label>
 			</div>
 		</div>
@@ -89,9 +92,14 @@
 					<td>Instruktur : Agus Hendri</td>
 				</tr>
 				<tr>
+<<<<<<< HEAD
+					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" 
+					value="Hendri"><a href="/jadwal/Hendri">Lihat Jadwal Tersedia</a></button></td>
+=======
 					<td colspan="2">
 						<button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Hendri"><a href="/jadwal/Hendri">Lihat Jadwal Tersedia</a></button>
 					</td>
+>>>>>>> d5f57902143768b303080679022b65a84504ec7b
 				</tr>
 			</table>
 		</div>
@@ -106,8 +114,13 @@
 					<td>Instruktur : Suhadi</td>
 				</tr>
 				<tr>
+<<<<<<< HEAD
+					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" 
+					value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
+=======
 					<td colspan="2">
 						<button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
+>>>>>>> d5f57902143768b303080679022b65a84504ec7b
 				</tr>
 			</table>
 		</div>
@@ -170,28 +183,23 @@
 <footer class="site-footer">
 	<div class="container">
 		<div class="row">
-
 			<div class="col-lg-5 mx-lg-auto col-md-8 col-10">
 				<h1 class="text-white" data-aos="fade-up" data-aos-delay="100" id="footer">Princess <strong>Solution</strong>.</h1>
 			</div>
-
 			<div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
 				<h4 class="my-4">Contact Info</h4>
-
 				<p class="mb-1">
 					<a href="https://wa.me/6281279572555" target="_blank">
 						<i class="fa fa-phone mr-2 footer-icon"></i>
 						+62 812-7957-2555
 					</a>
 				</p>
-
 				<p class="mb-1">
 					<a href="https://instagram.com/birojasa_princess?igshid=YmMyMTA2M2Y=" target="_blank">
 						<i class="fa fa-instagram mr-2 footer-icon"></i>
 						@birojasa_princess
 					</a>
 				</p>
-
 				<p class="mb-1">
 					<a href="https://twitter.com/bjprincess_lpg" target="_blank">
 						<i class="fa fa-twitter mr-2 footer-icon"></i>
@@ -199,10 +207,8 @@
 					</a>
 				</p>
 			</div>
-
 			<div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
 				<h4 class="my-4">Alamat</h4>
-
 				<p class="mb-1">
 					<i class="fa fa-home mr-2 footer-icon"></i>
 					<a href="https://www.google.com/maps/place/Biro+Jasa+Dan+Kursus+Mengemudi+Princess/@-5.4223805,105.2531808,17z/data=!4m12!1m6!3m5!1s0x2e40da4ed66816dd:0x8ff01b3b16a3e2d8!2sBiro+Jasa+Dan+Kursus+Mengemudi+Princess!8m2!3d-5.4223859!4d105.257408!3m4!1s0x2e40da4ed66816dd:0x8ff01b3b16a3e2d8!8m2!3d-5.4223859!4d105.257408" target="_blank">
@@ -210,7 +216,6 @@
 					</a>
 				</p>
 			</div>
-
 			<div class="col-lg-4 mx-lg-auto text-center col-md-8 col-12" data-aos="fade-up" data-aos-delay="400">
 				<p class="copyright-text">Copyright &copy; 2022 DotaAprilLase
 					<br>
