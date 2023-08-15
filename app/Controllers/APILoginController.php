@@ -5,6 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\SiswaModel;
+use App\Models\InstrukturModel;
 use App\Models\BeritaModel;
 
 class APILoginController extends ResourceController
@@ -20,6 +21,7 @@ class APILoginController extends ResourceController
     public function index()
     {
         $SiswaModel = new SiswaModel();
+        $InstrukturModel = new InstrukturModel();
 
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
@@ -30,9 +32,9 @@ class APILoginController extends ResourceController
             return $this->respond(['error' => 'Email atau Password salah.'], 401);
         }
 
+        $instruktur = $InstrukturModel->find($akun['id_instruktur']);
+
         $data = array(
-            "code" => 200,
-            "message" => 'Login Succesful',
             "no_registrasi" => $akun['no_registrasi'],
             "nama" => $akun['nama'],
             "ttl" => $akun['ttl'],
@@ -43,7 +45,7 @@ class APILoginController extends ResourceController
             "foto_profil" => $akun['foto_profil'],
             "jenis_kendaraan" => $akun['jenis_kendaraan'],
             "kode_kendaraan" => $akun['kode_kendaraan'],
-            "instruktur" => $akun['instruktur'],
+            "instruktur" => $instruktur,
             "paket" => $akun['paket'],
             "jadwal" => $akun['jadwal'],
             "status" => $akun['status'],
@@ -56,20 +58,44 @@ class APILoginController extends ResourceController
             "updated_at" => $akun['updated_at'],
         );
 
-        // $response = [
-        //     'code' => 200,
-        //     'message' => 'Login Succesful',
-        //     'data' => $data,
-        // ];
+        $response = [
+            'code' => 200,
+            'message' => 'Login Succesful',
+            'data' => $data,
+        ];
         
-        return $this->respond($data, 200);
+        return $this->respond($response, 200);
+    }
+
+    public function getInstruktur($id_Instruktur) {
+        $InstrukturModel = new InstrukturModel();
+        
+        $instruktur = $InstrukturModel->find($id_Instruktur);
+
+        if (is_null($instruktur)) {
+            return $this->respond(['error' => 'Instruktur not found.'], 404);
+        }
+
+        $data = array(
+            'id_instruktur' => $instruktur['id_instruktur'],
+            'nama' => $instruktur['nama'],
+            'usia' => $instruktur['usia'],
+        );
+
+        $response = [
+            'code' => 200,
+            'message' => 'Instruktur found',
+            'data' => $data,
+        ];
+
+        return $this->respond($response, 200);
     }
 
     public function showBerita()
     {
         $BeritaModel = new BeritaModel();
 
-        $get = $BeritaModel->findAll();
+        $get = $BeritaModel->orderBy('id', 'desc')->findAll();
         $data = array();
         $data['data'] = $get;
         $data['code'] = 200;
@@ -78,71 +104,123 @@ class APILoginController extends ResourceController
         return $this->respond($data, 200);
     }
 
-    public function ubahProfil () {
+    // public function ubahProfil () {
+    //     $SiswaModel = new SiswaModel();
+    //     $foto = $this->request->getFile('foto_profil');
+    //     $nama_foto = $foto->getName();
+    //     $data_old = $SiswaModel->where("no_registrasi", $this->request->getVar('no_registrasi'))->first();
+
+    //     // if ($foto == null) {
+    //     //     $nama_foto = $data_old['foto_profil'];
+    //     // }
+
+    //     // $hasil = false;
+        
+    //     if ($foto != null) {
+    //         $SiswaModel = new SiswaModel();
+    //         $hasil = $SiswaModel->update ($this->request->getVar('no_registrasi') ,[
+    //             'nama' => $this->request->getVar('nama'),
+    //             'ttl' => $this->request->getVar('ttl'),
+    //             'email' => $this->request->getVar('email'),
+    //             'telpon' => $this->request->getVar('telpon'),
+    //             'pekerjaan' => $this->request->getVar('pekerjaan'),
+    //             'alamat' => $this->request->getVar('alamat'),
+    //             'foto_profil' => $nama_foto,
+    //         ]);
+    //     } 
+    //     else {
+    //         $SiswaModel = new SiswaModel();
+    //         $hasil = $SiswaModel->update($this->request->getVar('no_registrasi'), [
+    //             'nama' => $this->request->getVar('nama'),
+    //             'ttl' => $this->request->getVar('ttl'),
+    //             'email' => $this->request->getVar('email'),
+    //             'telpon' => $this->request->getVar('telpon'),
+    //             'pekerjaan' => $this->request->getVar('pekerjaan'),
+    //             'alamat' => $this->request->getVar('alamat'),
+    //             'foto_profil' => '',
+    //         ]);
+    //     }
+
+    //     if ($hasil) {
+    //         if ($foto != null && $data_old['foto_profil'] == null) {
+    //             $foto->move('assets/images/profil', $nama_foto);
+    //         }
+    //         else if ($foto != null && $foto == $nama_foto) {
+    //             $nama_foto =  $this->request->getVar('foto_profil');
+    //             // $foto->move('assets/images/profil', $nama_foto);
+    //         }
+    //         else if ($foto != null && $foto != $nama_foto) {
+    //             unlink('assets/images/profil/' . $data_old['foto_profil']);
+    //             $foto->move('assets/images/profil', $nama_foto);
+    //         } else if ($foto == '') {
+    //             unlink('assets/images/profil/' . $data_old['foto_profil']);
+    //             // $foto->move('assets/images/profil', $nama_foto);
+    //         }
+    //         $data['code'] = 200;
+    //         $data['message'] = "Data berhasil diubah";
+    //         $data['data'] = $SiswaModel->where("no_registrasi", $this->request->getVar('no_registrasi'))->first();
+    //         return $this->respond($data, 200);
+    //     } 
+    //     else {
+    //         $data['code'] = 200;
+    //         $data['message'] = "error";
+    //         return $this->respond($data, 200);
+    //     }
+    // }
+
+    public function ubahProfil()
+    {
         $SiswaModel = new SiswaModel();
         $foto = $this->request->getFile('foto_profil');
         $nama_foto = $foto->getName();
         $data_old = $SiswaModel->where("no_registrasi", $this->request->getVar('no_registrasi'))->first();
 
-        // if ($foto == null) {
-        //     $SiswaModel = new SiswaModel();
-        //     $hasil = $SiswaModel->update($this->request->getVar('no_registrasi'), [
-        //         'nama' => $this->request->getVar('nama'),
-        //         'ttl' => $this->request->getVar('ttl'),
-        //         'email' => $this->request->getVar('email'),
-        //         'telpon' => $this->request->getVar('telpon'),
-        //         'pekerjaan' => $this->request->getVar('pekerjaan'),
-        //         'alamat' => $this->request->getVar('alamat'),
-        //     ]);
-        // }
-        if ($foto != null) {
-            $SiswaModel = new SiswaModel();
-            $hasil = $SiswaModel->update ($this->request->getVar('no_registrasi') ,[
-                'nama' => $this->request->getVar('nama'),
-                'ttl' => $this->request->getVar('ttl'),
-                'email' => $this->request->getVar('email'),
-                'telpon' => $this->request->getVar('telpon'),
-                'pekerjaan' => $this->request->getVar('pekerjaan'),
-                'alamat' => $this->request->getVar('alamat'),
-                'foto_profil' => $nama_foto,
-            ]);
-        } 
-        else {
-            $SiswaModel = new SiswaModel();
-            $hasil = $SiswaModel->update($this->request->getVar('no_registrasi'), [
-                'nama' => $this->request->getVar('nama'),
-                'ttl' => $this->request->getVar('ttl'),
-                'email' => $this->request->getVar('email'),
-                'telpon' => $this->request->getVar('telpon'),
-                'pekerjaan' => $this->request->getVar('pekerjaan'),
-                'alamat' => $this->request->getVar('alamat'),
-                'foto_profil' == '',
-            ]);
-        }
 
-        if ($hasil) {
-            if ($foto != null && $data_old['foto_profil'] == null) {
+        if ($foto != null) {
+            if ($data_old['foto_profil'] == null && $nama_foto != 'default') {
+                $nama_foto = $foto->getRandomName();
                 $foto->move('assets/images/profil', $nama_foto);
             }
-            else if ($foto != null && $foto == $nama_foto) {
-                $nama_foto =  $this->request->getVar('foto_profil');
-                // $foto->move('assets/images/profil', $nama_foto);
+            else if ($data_old['foto_profil'] == null && $nama_foto == 'default') {
+                $nama_foto = '';
             }
-            else if ($foto != null && $foto != $nama_foto) {
+            else if ($nama_foto == 'default') {
+                unlink('assets/images/profil/' . $data_old['foto_profil']);
+                $nama_foto = '';
+            }
+            else if ($foto == $nama_foto) {
+                $nama_foto =  $this->request->getVar('foto_profil');
+                // $nama_foto = $data_old['foto_profil'];
+            }
+            else if ($nama_foto != $data_old['foto_profil']) {
+                $nama_foto = $foto->getRandomName();
                 unlink('assets/images/profil/' . $data_old['foto_profil']);
                 $foto->move('assets/images/profil', $nama_foto);
-            } 
-            // else if ($data_old['foto_profil'] != null) {
-            //     unlink('assets/images/profil/' . $data_old['foto_profil']);
-            // }
+            }
+        } 
+        // else {
+        //     $nama_foto = $data_old['foto_profil'];
+        // }
+
+        $hasil = $SiswaModel->update($this->request->getVar('no_registrasi'), [
+            'nama' => $this->request->getVar('nama'),
+            'ttl' => $this->request->getVar('ttl'),
+            'email' => $this->request->getVar('email'),
+            'telpon' => $this->request->getVar('telpon'),
+            'pekerjaan' => $this->request->getVar('pekerjaan'),
+            'alamat' => $this->request->getVar('alamat'),
+            'foto_profil' => $nama_foto,
+        ]);
+
+        if ($hasil) {
             $data['code'] = 200;
             $data['message'] = "Data berhasil diubah";
+            $data['data'] = $SiswaModel->where("no_registrasi", $this->request->getVar('no_registrasi'))->first();
             return $this->respond($data, 200);
-        } 
-        else {
-            $data['code'] = 200;
-            $data['message'] = "error";
-            return $this->respond($data, 200);
+        } else {
+            $data['code'] = 500;
+            $data['message'] = "Error";
+            return $this->respond($data, 500);
         }
     }
 
