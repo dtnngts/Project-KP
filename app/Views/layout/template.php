@@ -26,9 +26,7 @@
     <link href="/css/styles.css" rel="stylesheet">
 
 </head>
-
 <?= $this->renderSection('myscript'); ?>
-
 <body>
     <?= $this->renderSection('content'); ?>
 
@@ -50,5 +48,4 @@
     <script src="assets/sb/js/demo/chart-pie-demo.js"></script>
 
 </body>
-
 </html>

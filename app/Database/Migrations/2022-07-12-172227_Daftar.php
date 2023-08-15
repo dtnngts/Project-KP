@@ -59,15 +59,15 @@ class Daftar extends Migration
 				'type'               => 'VARCHAR',
 				'constraint'         => '255',
 			],
-			'pembayaran'             => [
+			'pembayaran'                 => [
 				'type'               => 'VARCHAR',
 				'constraint'         => '255',
 			],
-			'harga'             	 => [
+			'harga'                 => [
 				'type'               => 'VARCHAR',
 				'constraint'         => '255',
 			],
-			'anTransfer'             => [
+			'anTransfer'                 => [
 				'type'               => 'VARCHAR',
 				'constraint'         => '255',
 			],
