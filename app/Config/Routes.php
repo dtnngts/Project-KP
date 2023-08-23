@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->group('api', function ($routes) {
     // $routes->get('show/(:any)', 'APIAkunContoller::show');
     $routes->post('login', 'APILoginController::index');
+    $routes->get('instruktur/(:any)', 'APILoginController::getInstruktur/$1');
     $routes->get('berita', 'APILoginController::showBerita');
     $routes->post("ubahprofil", "APILoginController::ubahProfil");
     $routes->post("test", "APIBeritaController::index");

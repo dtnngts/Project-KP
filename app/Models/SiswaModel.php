@@ -10,7 +10,7 @@ class SiswaModel extends Model
     protected $primaryKey    = 'no_registrasi';
     protected $allowedFields = [
         'nama', 'ttl', 'email', 'password', 'telpon', 'pekerjaan', 'alamat', 'foto_profil', 'jenis_kendaraan',
-        'kode_kendaraan', 'instruktur', 'paket', 'jadwal', 'status', 'jenis_pembayaran', 'jumlah_pembayaran', 'sisa_pembayaran',
+        'kode_kendaraan', 'id_instruktur', 'paket', 'jadwal', 'status', 'jenis_pembayaran', 'jumlah_pembayaran', 'sisa_pembayaran',
         'kehadiran', 'qr', 'created_at', 'updated_at'
     ];
     protected $useTimestamps = true;
@@ -23,4 +23,10 @@ class SiswaModel extends Model
         ))->get()->getRowArray();
     }
 
+    public function getSiswaWithInstruktur()
+    {
+        $this->select('siswa.*, instruktur.nama as nama');
+        $this->join('instruktur', 'instruktur.id_instruktur = siswa.id_instruktur');
+        return $this->findAll();
+    }
 }
