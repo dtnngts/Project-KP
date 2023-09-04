@@ -10,7 +10,8 @@ class DaftarModel extends Model
     protected $allowedFields = [
         'nama', 'ttl', 'pekerjaan', 'alamat', 'telpon', 'jenis_kendaraan',
         'kode_kendaraan', 'instruktur', 'paket', 'jadwal', 'status', 'pembayaran', 'harga', 'anTransfer',
-        'buktiTF', 'kehadiran', 'created_at', 'updated_at'
+        'buktiTF', 'kehadiran', 'created_at', 'updated_at','metode', 'order_id', 'payment_type', 'transaction_status', 
+        'va_number', 'bank', 'transaction_time'
     ];
     protected $useTimestamps = true;
 
