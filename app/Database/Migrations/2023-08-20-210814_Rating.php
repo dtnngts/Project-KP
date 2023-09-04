@@ -4,33 +4,28 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Instruktur extends Migration
+class Rating extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_instruktur'          => [
+            'id_rating'          => [
                 'type'               => 'INT',
                 'constraint'         => 11,
                 'auto_increment'     => true,
             ],
-            'nama'                   => [
-                'type'               => 'VARCHAR',
-                'constraint'         => '255',
-            ],
-            'id_akun'                => [
+            'no_registrasi'          => [
                 'type'               => 'INT',
                 'constraint'         => 11,
             ],
-            'telpon'                 => [
-                'type'               => 'VARCHAR',
-                'constraint'         => '255',
-            ],
-            'usia'                   => [
+            'id_instruktur'          => [
                 'type'               => 'INT',
-                'null'               => true
+                'constraint'         => 11,
             ],
-            'foto_profil'            => [
+            'rating'                 => [
+                'type'               => 'DOUBLE',
+            ],
+            'review'                 => [
                 'type'               => 'VARCHAR',
                 'constraint'         => '255',
             ],
@@ -43,12 +38,12 @@ class Instruktur extends Migration
                 'null'               => true
             ],
         ]);
-        $this->forge->addKey('id_instruktur', true);
-        $this->forge->createTable('instruktur');
+        $this->forge->addKey('id_rating', true);
+        $this->forge->createTable('rating');
     }
 
     public function down()
     {
-        $this->forge->dropTable('instruktur');
+        $this->forge->dropTable('rating');
     }
 }

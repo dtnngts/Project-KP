@@ -18,21 +18,17 @@ class Siswa extends Migration
                 'type'               => 'VARCHAR',
                 'constraint'         => '255',
             ],
+            'id_akun'                => [
+                'type'               => 'INT',
+                'constraint'         => 11,
+            ],
             'ttl'                    => [
                 'type'               => 'DATE',
                 'null'               => true
             ],
-            'email'                  => [
-                'type'               => 'VARCHAR',
-                'constraint'         => '255',
-            ],
-            'password'               => [
-                'type'               => 'VARCHAR',
-                'constraint'         => '255',
-            ],
             'telpon'                 => [
                 'type'               => 'VARCHAR',
-                'constraint'         => '255',
+                'constraint'         => '13',
             ],
             'pekerjaan'              => [
                 'type'               => 'VARCHAR',
@@ -54,9 +50,9 @@ class Siswa extends Migration
                 'type'               => 'VARCHAR',
                 'constraint'         => '255',
             ],
-            'instruktur'             => [
-                'type'               => 'VARCHAR',
-                'constraint'         => '255',
+            'id_instruktur'          => [
+                'type'               => 'INT',
+                'constraint'         => 11,
             ],
             'paket'                  => [
                 'type'               => 'VARCHAR',
