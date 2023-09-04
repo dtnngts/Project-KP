@@ -484,12 +484,21 @@ class APILoginController extends ResourceController
                 unlink('assets/images/profil/' . $data_old['foto_profil']);
                 $foto->move('assets/images/profil', $nama_foto);
             }
+
+            $AkunSiswaModel = new AkunSiswaModel(); // Gantilah dengan nama model yang sesuai dengan tabel akun_siswa
+            $id_akun = $data_old['id_akun'];
+
+            $updatedEmail = $this->request->getVar('email');
+
+            $AkunSiswaModel->update($id_akun, [
+                'email' => $updatedEmail,
+            ]);
         }
 
         $hasil = $SiswaModel->update($this->request->getVar('no_registrasi'), [
             'nama' => $this->request->getVar('nama'),
             'ttl' => $this->request->getVar('ttl'),
-            'email' => $this->request->getVar('email'),
+            'email' => $updatedEmail,
             'telpon' => $this->request->getVar('telpon'),
             'pekerjaan' => $this->request->getVar('pekerjaan'),
             'alamat' => $this->request->getVar('alamat'),
@@ -499,7 +508,9 @@ class APILoginController extends ResourceController
         if ($hasil) {
             $data['code'] = 200;
             $data['message'] = "Data berhasil diubah";
-            $data['data'] = $SiswaModel->where("no_registrasi", $this->request->getVar('no_registrasi'))->first();
+            $updatedData = $SiswaModel->where("no_registrasi", $this->request->getVar('no_registrasi'))->first();
+            $updatedData['email'] = $updatedEmail;
+            $data['data'] = $updatedData;
             return $this->respond($data, 200);
         } else {
             $data['code'] = 500;
