@@ -4,33 +4,25 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Instruktur extends Migration
+class AkunApp extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_instruktur'          => [
+            'id_akun'          => [
                 'type'               => 'INT',
                 'constraint'         => 11,
                 'auto_increment'     => true,
             ],
-            'nama'                   => [
+            'email'                  => [
                 'type'               => 'VARCHAR',
                 'constraint'         => '255',
             ],
-            'id_akun'                => [
-                'type'               => 'INT',
-                'constraint'         => 11,
-            ],
-            'telpon'                 => [
+            'password'               => [
                 'type'               => 'VARCHAR',
                 'constraint'         => '255',
             ],
-            'usia'                   => [
-                'type'               => 'INT',
-                'null'               => true
-            ],
-            'foto_profil'            => [
+            'role'                   => [
                 'type'               => 'VARCHAR',
                 'constraint'         => '255',
             ],
@@ -43,12 +35,12 @@ class Instruktur extends Migration
                 'null'               => true
             ],
         ]);
-        $this->forge->addKey('id_instruktur', true);
-        $this->forge->createTable('instruktur');
+        $this->forge->addKey('id_akun', true);
+        $this->forge->createTable('akun_app');
     }
 
     public function down()
     {
-        $this->forge->dropTable('instruktur');
+        $this->forge->dropTable('akun_app');
     }
 }

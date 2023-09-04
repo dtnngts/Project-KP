@@ -9,24 +9,33 @@ class SiswaModel extends Model
     protected $table         = 'siswa';
     protected $primaryKey    = 'no_registrasi';
     protected $allowedFields = [
-        'nama', 'ttl', 'email', 'password', 'telpon', 'pekerjaan', 'alamat', 'foto_profil', 'jenis_kendaraan',
+        'nama', 'id_akun', 'ttl', 'telpon', 'pekerjaan', 'alamat', 'foto_profil', 'jenis_kendaraan',
         'kode_kendaraan', 'id_instruktur', 'paket', 'jadwal', 'status', 'jenis_pembayaran', 'jumlah_pembayaran', 'sisa_pembayaran',
         'kehadiran', 'qr', 'created_at', 'updated_at'
     ];
     protected $useTimestamps = true;
 
-    public function get_data($email, $password)
+    public function getAkun($id_akun)
     {
-        return $this->db->table('siswa')->where(array(
-            'email' => $email,
-            'password' => md5($password)
-        ))->get()->getRowArray();
+        return $this->where('id_akun', $id_akun)->first();
     }
 
-    public function getSiswaWithInstruktur()
+    public function countSiswa($id_instruktur)
     {
-        $this->select('siswa.*, instruktur.nama as nama');
-        $this->join('instruktur', 'instruktur.id_instruktur = siswa.id_instruktur');
-        return $this->findAll();
+        return $this->where('id_instruktur', $id_instruktur)->countAllResults();
+    }
+
+    // public function getInstruktur($id_instruktur)
+    // {
+    //     return $this->where('id_instruktur', $id_instruktur)->get()->getRowArray();
+    // }
+
+    public function getInstruktur($id_instruktur)
+    {
+        return $this->db->table('siswa')
+        ->select('*')
+        ->where('id_instruktur', $id_instruktur)
+        ->get()
+        ->getResultArray();
     }
 }

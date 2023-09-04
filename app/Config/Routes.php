@@ -38,9 +38,17 @@ $routes->set404Override();
 $routes->group('api', function ($routes) {
     // $routes->get('show/(:any)', 'APIAkunContoller::show');
     $routes->post('login', 'APILoginController::index');
-    $routes->get('instruktur/(:any)', 'APILoginController::getInstruktur/$1');
+    $routes->get('user-info/(:any)', 'APILoginController::getUserInfo/$1');
+    // $routes->get('instruktur/(:any)', 'APILoginController::getInstruktur/$1');
     $routes->get('berita', 'APILoginController::showBerita');
+    $routes->post('listsiswa', 'APILoginController::getListSiswa');
+    $routes->get('hari', 'APILoginController::getHari');
+    $routes->post("materi", "APILoginController::getMateri");
+    $routes->post("nilai", "APILoginController::nilai");
+    $routes->post("getNilai", "APILoginController::getNilai");
     $routes->post("ubahprofil", "APILoginController::ubahProfil");
+    $routes->post("rating", "APILoginController::rating");
+    // $routes->get("getRating", "APILoginController::getRating");
     $routes->post("test", "APIBeritaController::index");
 });
 // $routes->post('/akun', 'APIAkunController::create');
