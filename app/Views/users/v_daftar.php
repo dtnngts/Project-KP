@@ -92,14 +92,8 @@
 					<td>Instruktur : Agus Hendri</td>
 				</tr>
 				<tr>
-
 					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" 
 					value="Hendri"><a href="/jadwal/Hendri">Lihat Jadwal Tersedia</a></button></td>
-
-					<td colspan="2">
-						<button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Hendri"><a href="/jadwal/Hendri">Lihat Jadwal Tersedia</a></button>
-					</td>
-
 				</tr>
 			</table>
 		</div>
@@ -114,13 +108,8 @@
 					<td>Instruktur : Suhadi</td>
 				</tr>
 				<tr>
-
 					<td colspan="2"><button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" 
 					value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
-
-					<td colspan="2">
-						<button onclick="klikins(this)" class="btnJadwal btn-warning" style="--clr:#c5c9d3" value="Suhadi"><a href="/jadwal/Suhadi">Lihat Jadwal Tersedia</a></button></td>
-
 				</tr>
 			</table>
 		</div>

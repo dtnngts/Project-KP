@@ -86,6 +86,10 @@ $routes->post('/accepted/(:any)', 'AdminController::accepted/$1');
 $routes->post('/rejected/(:any)', 'AdminController::rejected/$1');
 $routes->get('/lihatjadwal/(:any)', 'AdminController::lihatjadwal/$1');
 
+$routes->get('/pay', 'payment::index');
+$routes->post('/jadwal/payMidtrans', 'DaftarController::payMidtrans');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

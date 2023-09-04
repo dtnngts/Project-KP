@@ -328,18 +328,34 @@
                     <div class="form-group">
                         <label for="pembayaran">Pembayaran</label><br>
                         <div>
-                            <input type="radio" name="pembayaran" value="DP" id="dp" onchange="Hitung('dp')"> DP
-                            <input type="radio" name="pembayaran" value="Lunas" id="lunas" onchange="Hitung('lunas')"> Lunas
+                            <input type="radio" name="pembayaran" value="DP" id="DP" onchange="Hitung('DP')"> DP
+                            <input type="radio" name="pembayaran" value="Lunas" id="Lunas" onchange="Hitung('Lunas')"> Lunas
                             <p id="tujuan-text" style="font-size: 17px;">Silahkan melakukan transfer ke <strong>BCA 0207 400 169 an Muhammad Fario PB</strong> sebesar harga dibawah ini</p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-6">
-                            <label for="harga">Harga</label>
-                            <input type="text" class="form-control" name="harga" id="harga" readonly>
+                        <label for="">Metode Bayar</label>
+                        <div class="select-list">
+                            <select name="metode" id="metode" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <option selected="true" value="" disabled>Pilih</option>
+                                <option value="cash" data-toggle="tooltip" data-placement="right" title="Untuk melancarkan mengemudi">Cash</option>
+                                <option value="cashless" data-toggle="tooltip" data-placement="right" title="Disarankan untuk pemula">Cashless</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="harga">Harga</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="harga" id="harga" readonly>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-primary" id="tombolPay" disabled>Pay</button>
+                            </div>
                         </div>
                         <p id="kurang-text" style="font-size: 15px;">Lunasi kekurangan pembayaran sebesar <span id="kurang"></span> pada saat hari pertama kursus</p>
                     </div>
+
 
                     <div class="form-group">
                         <label for="buktiTF">Bukti Transfer</label>
@@ -427,7 +443,7 @@
         </div>
     </div>
 </footer>
-
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-nzzWJUPUn3dr0TGo"></script>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'></script>
@@ -451,8 +467,8 @@
         var sk = document.getElementById("defaultCheck1");
         const daftar = document.querySelector('#Daftar');
         if (nama != "" && ttl != "" && pekerjaan != "" && alamat != "" && jenis_kendaraan != "" &&
-            kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != ""
-            && sk.checked == true) {
+            kode_kendaraan != "" && instruktur != "" && telpon != "" && paket != "" && buktiTF != "" &&
+            sk.checked == true) {
             document.getElementById('form-daftar').submit();
         } else if (sk.checked == false) {
             alert('Setujui Syarat dan Ketentuan');
@@ -554,7 +570,6 @@
         }
         let minus = document.getElementById('kurang');
         let txt = document.getElementById('kurang-text');
-        console.log(byr)
         if (jk == "Manual") {
             if (kk == "NAB" || kk == "NAS") {
                 if (paket == "a") {
@@ -698,7 +713,12 @@
                 }
             }
         }
+        // checkHarga();
     }
+
+    $("#paket").on("change", function() {
+        Hitung($('input[name="pembayaran"]:checked').val());
+    });
 </script>
 <script>
     $('#formDaDir').hide();
@@ -710,6 +730,103 @@
 
         });
     });
+
+
+    $('#metode').on("change", function() {
+        if (!/\d/.test($('#harga').val())) {
+            $('#tombolPay').attr('disabled', true);
+        } else {
+            $('#tombolPay').attr('disabled', false);
+
+            //handle tombol pay kalau dipilih cashless
+            if ($('#metode').val() == 'cashless') {
+                $.ajax({
+                    type: "post",
+                    url: "/jadwal/payMidtrans",
+                    data: {
+                        nama: $('#nama').val(),
+                        alamat: $('#alamat').val(),
+                        telpon: $('#telpon').val(),
+                        paket: $('#paket').val(),
+                        harga: $('#harga').val()
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.error) {
+                            Swal.fire('Error', response.error, 'error');
+                        } else {
+                            document.getElementById('tombolPay').onclick = function() {
+                                // SnapToken acquired from previous step
+                                snap.pay(response.snapToken, {
+                                    // Optional
+                                    onSuccess: function(result) {
+                                        /* You may add your own js here, this is just example */
+                                        console.log(JSON.stringify(result, null, 2));
+                                    },
+                                    // Optional
+                                    onPending: function(result) {
+                                        /* You may add your own js here, this is just example */
+                                        console.log(JSON.stringify(result, null, 2));
+                                    },
+                                    // Optional
+                                    onError: function(result) {
+                                        /* You may add your own js here, this is just example */
+                                        console.log(JSON.stringify(result, null, 2));
+                                    }
+                                });
+                            }
+                        }
+
+                    }
+                });
+            } else {
+                // tambah code struk disini untuk handle tombol pay kalau dipilih cash
+            }
+        }
+    });
+
+    // $('#tombolPay').click(function(e) {
+    //     e.preventDefault();
+    //     $.ajax({
+    //         type: "post",
+    //         url: "/jadwal/payMidtrans",
+    //         data: {
+    //             nama: $('#nama').val(),
+    //             alamat: $('#alamat').val(),
+    //             telpon: $('#telpon').val(),
+    //             paket: $('#paket').val(),
+    //             harga: $('#harga').val()
+    //         },
+    //         dataType: "json",
+    //         success: function(response) {
+    //             if (response.error) {
+    //                 Swal.fire('Error', response.error, 'error');
+    //             } else {
+    //                 document.getElementById('tombolPay').onclick = function() {
+    //                     // SnapToken acquired from previous step
+    //                     snap.pay(response.snapToken, {
+    //                         // Optional
+    //                         onSuccess: function(result) {
+    //                             /* You may add your own js here, this is just example */
+    //                             console.log(JSON.stringify(result, null, 2));
+    //                         },
+    //                         // Optional
+    //                         onPending: function(result) {
+    //                             /* You may add your own js here, this is just example */
+    //                             console.log(JSON.stringify(result, null, 2));
+    //                         },
+    //                         // Optional
+    //                         onError: function(result) {
+    //                             /* You may add your own js here, this is just example */
+    //                             console.log(JSON.stringify(result, null, 2));
+    //                         }
+    //                     });
+    //                 }
+    //             }
+
+    //         }
+    //     });
+    // });
 </script>
 
 <script>
@@ -717,5 +834,6 @@
         $('#telpon').inputmask("(9999-9999-9999)||(9999-9999-99999)");
     });
 </script>
+
 
 <?php $this->endSection(); ?>
