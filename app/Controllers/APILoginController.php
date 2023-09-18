@@ -294,7 +294,7 @@ class APILoginController extends ResourceController
         $SiswaModel = new SiswaModel();
 
         $id_instruktur = $this->request->getPost('id_instruktur');
-        $siswaDataList = $SiswaModel->getInstruktur($id_instruktur);
+        $siswaDataList = $SiswaModel->getInstruktur($id_instruktur, 'siswa');
 
         $siswaListManual = [];
         $siswaListMatic = [];
@@ -378,41 +378,31 @@ class APILoginController extends ResourceController
         $no_registrasi = $this->request->getVar('no_registrasi');
         $id_instruktur = $this->request->getVar('id_instruktur');
         $nilaiData = $this->request->getVar('nilai');
+        $catatan = $this->request->getVar('catatan');
+        $id_hari = $this->request->getVar('id_hari');
 
-        $nilaiArray = json_decode($nilaiData, true);
-
-        ksort($nilaiArray);
+        $combinedNilai = $nilaiData;
 
         $existingNilai = $NilaiModel
             ->where('no_registrasi', $no_registrasi)
             ->where('id_instruktur', $id_instruktur)
+            ->where('id_hari', $id_hari)
             ->first();
 
         if ($existingNilai) {
-            $existingData = json_decode($existingNilai['nilai'], true);
-
-            foreach ($nilaiArray as $id_materi => $nilai) {
-                if (array_key_exists($id_materi, $existingData)) {
-                    $existingData[$id_materi] = $nilai;
-                } else {
-                    $existingData[$id_materi] = $nilai;
-                }
-            }
-
-            $combinedNilai = json_encode($existingData);
-
             $hasil = $NilaiModel
                 ->where('no_registrasi', $no_registrasi)
                 ->where('id_instruktur', $id_instruktur)
-                ->set(['nilai' => $combinedNilai])
+                ->where('id_hari', $id_hari)
+                ->set(['nilai' => $combinedNilai, 'catatan' => $catatan])
                 ->update();
         } else {
-            $combinedNilai = json_encode($nilaiArray);
-
             $hasil = $NilaiModel->insert([
                 'no_registrasi' => $no_registrasi,
                 'id_instruktur' => $id_instruktur,
                 'nilai' => $combinedNilai,
+                'catatan' => $catatan,
+                'id_hari' => $id_hari
             ]);
         }
 
@@ -422,6 +412,7 @@ class APILoginController extends ResourceController
             $data['data'] = $NilaiModel
                 ->where('no_registrasi', $no_registrasi)
                 ->where('id_instruktur', $id_instruktur)
+                ->where('id_hari', $id_hari)
                 ->findAll();
 
             return $this->respond($data, 200);
@@ -432,16 +423,20 @@ class APILoginController extends ResourceController
         }
     }
 
+
+
     public function getNilai()
     {
         $NilaiModel = new NilaiModel();
 
         $no_registrasi = $this->request->getVar('no_registrasi');
         $id_instruktur = $this->request->getVar('id_instruktur');
+        $id_hari = $this->request->getVar('id_hari');
 
         $nilai = $NilaiModel
             ->where('no_registrasi', $no_registrasi)
             ->where('id_instruktur', $id_instruktur)
+            ->where('id_hari', $id_hari)
             ->findAll();
 
         if ($nilai) {
@@ -459,7 +454,7 @@ class APILoginController extends ResourceController
     }
 
 
-    public function ubahProfil()
+    public function ubahProfilSiswa()
     {
         $SiswaModel = new SiswaModel();
         $foto = $this->request->getFile('foto_profil');
@@ -485,7 +480,7 @@ class APILoginController extends ResourceController
                 $foto->move('assets/images/profil', $nama_foto);
             }
 
-            $AkunSiswaModel = new AkunSiswaModel(); // Gantilah dengan nama model yang sesuai dengan tabel akun_siswa
+            $AkunSiswaModel = new AkunSiswaModel();
             $id_akun = $data_old['id_akun'];
 
             $updatedEmail = $this->request->getVar('email');
@@ -509,6 +504,63 @@ class APILoginController extends ResourceController
             $data['code'] = 200;
             $data['message'] = "Data berhasil diubah";
             $updatedData = $SiswaModel->where("no_registrasi", $this->request->getVar('no_registrasi'))->first();
+            $updatedData['email'] = $updatedEmail;
+            $data['data'] = $updatedData;
+            return $this->respond($data, 200);
+        } else {
+            $data['code'] = 500;
+            $data['message'] = "Error";
+            return $this->respond($data, 500);
+        }
+    }
+
+    public function ubahProfilInstruktur()
+    {
+        $InstrukturModel = new InstrukturModel();
+        $foto = $this->request->getFile('foto_profil');
+        $nama_foto = $foto->getName();
+        $data_old = $InstrukturModel->where("id_instruktur", $this->request->getVar('id_instruktur'))->first();
+
+
+        if ($foto != null) {
+            if ($data_old['foto_profil'] == null && $nama_foto != 'default') {
+                $nama_foto = $foto->getRandomName();
+                $foto->move('assets/images/instruktur', $nama_foto);
+            } else if ($data_old['foto_profil'] == null && $nama_foto == 'default') {
+                $nama_foto = '';
+            } else if ($nama_foto == 'default') {
+                unlink('assets/images/instruktur/' . $data_old['foto_profil']);
+                $nama_foto = '';
+            } else if ($foto == $nama_foto) {
+                $nama_foto =  $this->request->getVar('foto_profil');
+            } else if ($nama_foto != $data_old['foto_profil']) {
+                $nama_foto = $foto->getRandomName();
+                unlink('assets/images/instruktur/' . $data_old['foto_profil']);
+                $foto->move('assets/images/instruktur', $nama_foto);
+            }
+
+            $AkunInstrukturModel = new AkunInstrukturModel();
+            $id_akun = $data_old['id_akun'];
+
+            $updatedEmail = $this->request->getVar('email');
+
+            $AkunInstrukturModel->update($id_akun, [
+                'email' => $updatedEmail,
+            ]);
+        }
+
+        $hasil = $InstrukturModel->update($this->request->getVar('id_instruktur'), [
+            'nama' => $this->request->getVar('nama'),
+            'email' => $updatedEmail,
+            'telpon' => $this->request->getVar('telpon'),
+            'usia' => $this->request->getVar('usia'),
+            'foto_profil' => $nama_foto,
+        ]);
+
+        if ($hasil) {
+            $data['code'] = 200;
+            $data['message'] = "Data berhasil diubah";
+            $updatedData = $InstrukturModel->where("id_instruktur", $this->request->getVar('id_instruktur'))->first();
             $updatedData['email'] = $updatedEmail;
             $data['data'] = $updatedData;
             return $this->respond($data, 200);

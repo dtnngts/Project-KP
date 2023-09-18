@@ -30,11 +30,12 @@ class SiswaModel extends Model
     //     return $this->where('id_instruktur', $id_instruktur)->get()->getRowArray();
     // }
 
-    public function getInstruktur($id_instruktur)
+    public function getInstruktur($id_instruktur, $status)
     {
         return $this->db->table('siswa')
         ->select('*')
-        ->where('id_instruktur', $id_instruktur)
+        ->where('id_instruktur', $id_instruktur) 
+        ->where('status', $status)
         ->get()
         ->getResultArray();
     }
