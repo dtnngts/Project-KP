@@ -25,6 +25,14 @@ class Nilai extends Migration
             'nilai'                  => [
                 'type'               => "TEXT",
             ],
+            'catatan'                => [
+                'type'               => "VARCHAR",
+                'constraint'         => 255,
+            ],
+            'id_hari'                => [
+                'type'               => 'INT',
+                'constraint'         => 11,
+            ],
         ]);
         $this->forge->addKey('id_nilai', true);
         $this->forge->createTable('nilai');
