@@ -46,6 +46,8 @@ $routes->group('api', function ($routes) {
     $routes->post("materi", "APILoginController::getMateri");
     $routes->post("nilai", "APILoginController::nilai");
     $routes->post("getNilai", "APILoginController::getNilai");
+    $routes->post("nilaiAkhir", "APILoginController::nilaiAkhir");
+    $routes->post("getNilaiAkhir", "APILoginController::getNilaiAkhir");
     $routes->post("ubahprofilsiswa", "APILoginController::ubahProfilSiswa");
     $routes->post("ubahprofilins", "APILoginController::ubahProfilInstruktur");
     $routes->post("rating", "APILoginController::rating");

@@ -11,6 +11,7 @@ use App\Models\InstrukturModel;
 use App\Models\HariModel;
 use App\Models\MateriModel;
 use App\Models\NilaiModel;
+use App\Models\NilaiAkhirModel;
 use App\Models\BeritaModel;
 use App\Models\RatingModel;
 
@@ -423,8 +424,6 @@ class APILoginController extends ResourceController
         }
     }
 
-
-
     public function getNilai()
     {
         $NilaiModel = new NilaiModel();
@@ -453,6 +452,88 @@ class APILoginController extends ResourceController
         }
     }
 
+    public function nilaiAkhir()
+    {
+        $NilaiAkhirModel = new NilaiAkhirModel();
+
+        $no_registrasi = $this->request->getVar('no_registrasi');
+        $id_instruktur = $this->request->getVar('id_instruktur');
+        $penilaian = $this->request->getVar('penilaian');
+        $emotional = $this->request->getVar('emotional');
+        $kenyamanan = $this->request->getVar('kenyamanan');
+        $penguasaan = $this->request->getVar('penguasaan');
+
+        $existingNilaiAkhir = $NilaiAkhirModel->where('no_registrasi', $no_registrasi)
+            ->where('id_instruktur', $id_instruktur)
+            ->first();
+
+        if ($existingNilaiAkhir) {
+            $updateData = [
+                'penilaian' => $penilaian,
+                'emotional' => $emotional,
+                'kenyamanan' => $kenyamanan,
+                'penguasaan' => $penguasaan,
+            ];
+            $updated = $NilaiAkhirModel->update($existingNilaiAkhir['id_nilaiAkhir'], $updateData);
+
+            if ($updated) {
+                $data['code'] = 200;
+                $data['message'] = "Penilaian berhasil diperbarui";
+                $data['data'] = $NilaiAkhirModel->where('no_registrasi', $no_registrasi)->where('id_instruktur', $id_instruktur)->first();
+                return $this->respond($data, 200);
+            } else {
+                $data['code'] = 500;
+                $data['message'] = "Gagal memperbarui penilaian";
+                return $this->respond($data, 500);
+            }
+        } else {
+            $hasil = $NilaiAkhirModel->insert([
+                'no_registrasi' => $no_registrasi,
+                'id_instruktur' => $id_instruktur,
+                'penilaian' => $penilaian,
+                'emotional' => $emotional,
+                'kenyamanan' => $kenyamanan,
+                'penguasaan' => $penguasaan,
+            ]);
+
+            if ($hasil) {
+                $data['code'] = 200;
+                $data['message'] = "Penilaian berhasil terkirim";
+                $data['data'] = $NilaiAkhirModel->where('no_registrasi', $no_registrasi)->where('id_instruktur', $id_instruktur)->first();
+                return $this->respond($data, 200);
+            } else {
+                $data['code'] = 500;
+                $data['message'] = "Error";
+                return $this->respond($data, 500);
+            }
+        }
+    }
+
+    public function getNilaiAkhir()
+    {
+        $NilaiAkhirModel = new NilaiAkhirModel();
+
+        $no_registrasi = $this->request->getVar('no_registrasi');
+        $id_instruktur = $this->request->getVar('id_instruktur');
+
+        $nilai = $NilaiAkhirModel
+            ->where('no_registrasi', $no_registrasi)
+            ->where('id_instruktur', $id_instruktur)
+            ->findAll();
+
+        if ($nilai) {
+            $data['code'] = 200;
+            $data['message'] = "Data nilai berhasil diambil";
+            $data['data'] = $nilai;
+
+            return $this->respond($data, 200);
+        } else {
+            $data['code'] = 404;
+            $data['message'] = "Data nilai tidak ditemukan";
+
+            return $this->respond($data, 404);
+        }
+    }
 
     public function ubahProfilSiswa()
     {
