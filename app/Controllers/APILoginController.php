@@ -8,9 +8,11 @@ use App\Models\AkunSiswaModel;
 use App\Models\AkunInstrukturModel;
 use App\Models\SiswaModel;
 use App\Models\InstrukturModel;
+use App\Models\InstrumenMobilModel;
 use App\Models\HariModel;
 use App\Models\MateriModel;
 use App\Models\NilaiModel;
+use App\Models\NilaiInstrumenModel;
 use App\Models\NilaiAkhirModel;
 use App\Models\BeritaModel;
 use App\Models\RatingModel;
@@ -358,6 +360,88 @@ class APILoginController extends ResourceController
         $data['message'] = "success";
 
         return $this->respond($data, 200);
+    }
+
+    public function getInstrumenMobil()
+    {
+        $InstrumenMobilModel = new InstrumenMobilModel();
+
+        $get = $InstrumenMobilModel->findAll();
+        $data = array();
+        $data['data'] = $get;
+        $data['code'] = 200;
+        $data['message'] = "success";
+
+        return $this->respond($data, 200);
+    }
+
+    public function kirimInstrumen()
+    {
+        $NilaiInstrumenModel = new NilaiInstrumenModel();
+
+        $no_registrasi = $this->request->getVar('no_registrasi');
+        $id_instruktur = $this->request->getVar('id_instruktur');
+        $nilaiInstrumen = $this->request->getVar('nilai_instrumen');
+
+        $existingNilai = $NilaiInstrumenModel
+            ->where('no_registrasi', $no_registrasi)
+            ->where('id_instruktur', $id_instruktur)
+            ->first();
+
+        if ($existingNilai) {
+            $hasil = $NilaiInstrumenModel
+                ->where('no_registrasi', $no_registrasi)
+                ->where('id_instruktur', $id_instruktur)
+                ->set(['nilai_instrumen' => $nilaiInstrumen])
+                ->update();
+        } else {
+            $hasil = $NilaiInstrumenModel->insert([
+                'no_registrasi' => $no_registrasi,
+                'id_instruktur' => $id_instruktur,
+                'nilai_instrumen' => $nilaiInstrumen,
+            ]);
+        }
+
+        if ($hasil) {
+            $data['code'] = 200;
+            $data['message'] = "Penilaian berhasil terkirim";
+            $data['data'] = $NilaiInstrumenModel
+                ->where('no_registrasi', $no_registrasi)
+                ->where('id_instruktur', $id_instruktur)
+                ->findAll();
+
+            return $this->respond($data, 200);
+        } else {
+            $data['code'] = 500;
+            $data['message'] = "Error";
+            return $this->respond($data, 500);
+        }
+    }
+
+    public function getNilaiInstrumen()
+    {
+        $NilaiInstrumenModel = new NilaiInstrumenModel();
+
+        $no_registrasi = $this->request->getVar('no_registrasi');
+        $id_instruktur = $this->request->getVar('id_instruktur');
+
+        $nilai = $NilaiInstrumenModel
+            ->where('no_registrasi', $no_registrasi)
+            ->where('id_instruktur', $id_instruktur)
+            ->findAll();
+
+        if ($nilai) {
+            $data['code'] = 200;
+            $data['message'] = "Data nilai instrumen berhasil diambil";
+            $data['data'] = $nilai;
+
+            return $this->respond($data, 200);
+        } else {
+            $data['code'] = 404;
+            $data['message'] = "Data nilai instrumen tidak ditemukan";
+
+            return $this->respond($data, 404);
+        }
     }
 
     public function getMateri()

@@ -43,13 +43,16 @@ $routes->group('api', function ($routes) {
     $routes->get('berita', 'APILoginController::showBerita');
     $routes->post('listsiswa', 'APILoginController::getListSiswa');
     $routes->get('hari', 'APILoginController::getHari');
+    $routes->get("instrumenMobil", "APILoginController::getInstrumenMobil");
     $routes->post("materi", "APILoginController::getMateri");
+    $routes->post("kirimInstrumen", "APILoginController::kirimInstrumen");
+    $routes->post("getNilaiInstrumen", "APILoginController::getNilaiInstrumen");
     $routes->post("nilai", "APILoginController::nilai");
     $routes->post("getNilai", "APILoginController::getNilai");
     $routes->post("nilaiAkhir", "APILoginController::nilaiAkhir");
     $routes->post("getNilaiAkhir", "APILoginController::getNilaiAkhir");
-    $routes->post("ubahprofilsiswa", "APILoginController::ubahProfilSiswa");
-    $routes->post("ubahprofilins", "APILoginController::ubahProfilInstruktur");
+    $routes->post("ubahProfilSiswa", "APILoginController::ubahProfilSiswa");
+    $routes->post("ubahProfilIns", "APILoginController::ubahProfilInstruktur");
     $routes->post("rating", "APILoginController::rating");
     // $routes->get("getRating", "APILoginController::getRating");
     $routes->post("test", "APIBeritaController::index");
